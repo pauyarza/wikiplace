@@ -1,3 +1,28 @@
-html,body{
-    background-color: blue;
+/* TAGS */
+html, body, #map{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+    background-color: rgb(212, 212, 212);
+}
+
+a{
+    text-decoration: none;
+    color: rgb(33, 37, 41);
+}
+
+/* LOGIN & REGISTER FORM */
+.loginFormWrapper{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(156, 156, 156, 0.511);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.loginFormWrapper div{
+    margin: 100px;
+    background-color: aquamarine;
 }
