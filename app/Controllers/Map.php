@@ -6,6 +6,8 @@ class Map extends BaseController
 {
     public function index()
     {
-        echo view("!map.php");
+        $spotsModel = model('App\Models\spots');
+        $spots["spots"] = $spotsModel->select('id_spot, latitude, longitude')->findAll();
+        echo view("!map.php",$spots);
     }
 }
