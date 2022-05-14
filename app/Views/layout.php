@@ -9,11 +9,33 @@
     <!--CSS MarkerCluster--><link rel="stylesheet" type="text/css" href="<?php echo base_url('css/MarkerCluster.css'); ?>">
     <!--Map CSS--><link rel="stylesheet" type="text/css"  href="<?php echo base_url('css/map.css'); ?>"/>
     <!--Own CSS--><link rel="stylesheet" type="text/css" href="<?php echo base_url('css/general.css'); ?>">
-    <title>🌍 WIKIPLACE</title>
+    <!--Unique head--><?= $this->renderSection('head') ?>
 </head>
 <body>
-<?php 
-    echo view("menu.php");
-    echo view("login.php");
-    echo view("register.php");
-?>
+
+<ul id="menu">
+    <li><a href="<?php echo base_url('map')?>">Map</a></li>
+    <li onclick = "openLogin()">Login</li>
+    <li onclick = "openRegister()">Register</li>
+    <li><a href="<?php echo base_url('aboutUs')?>">About us</a></li>
+</ul>
+
+<div class="d-none loginFormWrapper" id="divLoginWraper" onclick="">
+    <div id="divLogin">
+        <h1>LOGIN</h1>
+    </div>
+</div>
+
+<div class="d-none loginFormWrapper" id="divRegisternWraper">
+    <div id="divRegister">
+        <h1>REGISTER</h1>
+    </div>
+</div>
+
+<!-- LOAD CONTENT --><?= $this->renderSection('content') ?>
+
+</body>
+<!-- JS bootstrap 5 --><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<!-- JS Menu --><script src="<?php echo base_url('js/menu.js'); ?>" crossorigin="anonymous"></script>
+
+</html>

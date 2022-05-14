@@ -1,11 +1,16 @@
-<?php echo view("openHtml.php");?>
+<?= $this->extend('layout') ?>
+
+<!-- Unique head -->
+<?= $this->section('head')?>
+    <title>Wikiplace | Map 🗺️</title>
+<?= $this->endSection('head')?>
+
+<!-- Content -->
+<?= $this->section('content') ?>
+
 <!-- load leaflet script --><script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
 <!-- load markercluster script --><script src="<?php echo base_url('js/leaflet.markercluster.js'); ?>"></script>
 
-<?php 
-    echo ("---------------------");
-    print_r($spots);
-?>
 <div id="map"></div>
 
 <script type="text/javascript">
@@ -43,4 +48,4 @@
     map.addLayer(markers);
 
 </script>
-<?php echo view("closeHtml.php"); ?>
+<?= $this->endSection('content') ?>
