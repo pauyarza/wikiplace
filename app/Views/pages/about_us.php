@@ -8,6 +8,6 @@
 <!-- Content -->
 <?= $this->section('content') ?>
 
-<h1>about us</h1>
+<h1>About Us</h1>
 
 <?= $this->endSection('content') ?>

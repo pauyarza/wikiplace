@@ -10,28 +10,40 @@
 </head>
 <body>
 
-<ul id="menu">
-    <li><a href="<?php echo base_url('map')?>">Map</a></li>
-    <li onclick = "openLogin()">Login</li>
-    <li onclick = "openRegister()">Register</li>
-    <li><a href="<?php echo base_url('aboutUs')?>">About us</a></li>
-</ul>
-
-<div class="d-none loginFormWrapper" id="divLoginWraper" onclick="">
-    <div id="divLogin">
-        <h1>LOGIN</h1>
+<nav id="main_nav" class="main-nav">
+        <div class="menu-bar">
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="three"></div>
+        </div>
+        <ul class="menu">
+            <li class="menu__item"><a href="<?php echo base_url('aboutUs')?>" class="menu__link">About Us</a></li>
+            <li class="menu__item"><a onclick = "openRegister()" class="menu__link">Register</a></li>
+            <li class="menu__item"><a onclick = "openLogin()" class="menu__link">Login</a></li>
+            <li class="menu__item"><a href="<?php echo base_url('map')?>" class="menu__link">Map</a></li>
+        </ul>
+        
+    </nav>
+    <div class="d-none loginFormWrapper" id="divLoginWraper" onclick="">
+        <div id="divLogin">
+            <h1>LOGIN</h1>
+        </div>
     </div>
-</div>
 
-<div class="d-none loginFormWrapper" id="divRegisternWraper">
-    <div id="divRegister">
-        <h1>REGISTER</h1>
+    <div class="d-none loginFormWrapper" id="divRegisternWraper">
+        <div id="divRegister">
+            <h1>REGISTER</h1>
+        </div>
     </div>
-</div>
 
+    <!--Typer-->
+    
+    
 <!-- LOAD CONTENT --><?= $this->renderSection('content') ?>
 
 </body>
+<!-- Typer animation --><script src="https://unpkg.com/ityped@0.0.10"></script>
+
 <!-- JS bootstrap 5 --><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <!-- JS Menu --><script src="<?php echo base_url('js/menu.js'); ?>" crossorigin="anonymous"></script>
 

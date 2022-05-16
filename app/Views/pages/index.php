@@ -9,6 +9,7 @@
 <!-- Content -->
 <?= $this->section('content') ?>
 
-<h1>iiiiiiiiiiiiiindex</h1>
+<h1>wikiplace.org</h1>
+<h2><span class="ityped"></span></h2>
 
 <?= $this->endSection('content') ?>
