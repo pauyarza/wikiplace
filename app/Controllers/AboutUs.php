@@ -6,6 +6,10 @@ class AboutUs extends BaseController
 {
     public function index()
     {
-        return view("pages/about_us");
+        $sessionData["username"] = session()->username;
+        $sessionData["mail"] = session()->mail;
+        $sessionData["logged_in"] = session()->logged_in;
+        $data["sessionData"] = $sessionData;
+        return view("pages/about_us",$data);
     }
 }

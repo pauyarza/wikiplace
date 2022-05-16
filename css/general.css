@@ -22,6 +22,12 @@ a{
     background-color: white;
 }
 
+#menu li{
+    display: inline-block;
+    width: 100px;
+    background-color: rgb(176, 176, 176);
+}
+
 
 /*====== LOGIN & REGISTER FORM ======*/
 .loginFormWrapper{

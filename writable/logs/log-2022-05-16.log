@@ -1,0 +1,1047 @@
+CRITICAL - 2022-05-16 01:45:53 --> Undefined variable $registerFormData
+#0 C:\xampp\htdocs\wikiplace\app\Views\parts\register.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 8)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(424): CodeIgniter\View\View->render('parts/register', NULL, true)
+#4 C:\xampp\htdocs\wikiplace\app\Views\layout.php(16): CodeIgniter\View\View->include('parts/register')
+#5 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#8 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/index', Array, true)
+#9 C:\xampp\htdocs\wikiplace\app\Controllers\Home.php(9): view('pages/index')
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#11 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#12 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2022-05-16 03:54:57 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'wikiplace@gmail...', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 03:54:59 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'wikiplace@gmail...', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 03:55:23 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'admin@wikiplace...', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 03:55:26 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'admin@wikiplace...', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 03:55:26 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'admin@wikiplace...', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 03:55:27 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'admin@wikiplace...', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 03:55:27 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'admin@wikiplace...', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 03:56:21 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'admin@wikiplace...', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 03:57:04 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'admin@wikiplace...', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 03:57:06 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'admin@wikiplace...', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 03:57:07 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'admin@wikiplace...', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 03:57:40 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'test@test.com', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 03:57:40 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'test@test.com', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 03:57:40 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'test@test.com', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 03:57:41 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'test@test.com', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 03:57:41 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'test@test.com', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 03:57:41 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'test@test.com', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 03:59:03 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'test@test.c', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 03:59:05 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'test@test.c', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 03:59:15 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'test@test.c', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 03:59:16 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'test@test.c', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 03:59:17 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'test@test.c', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 03:59:17 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'test@test.c', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 03:59:22 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'test@test.c', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 03:59:22 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'test@test.c', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 03:59:23 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'test@test.c', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 04:00:28 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'fasdf', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 04:33:51 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'fasdf', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 04:33:58 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'fasdf', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 04:34:51 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'asdf@gmail.com', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 04:34:56 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'asdf@gmail.com', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 04:35:59 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', 'asdf@gmail.com', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 04:36:21 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', '1234@gmail.com', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 04:36:28 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', '1234', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 04:38:33 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', '1234', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 04:38:37 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', '1234', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 04:39:22 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', '1234', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 04:39:22 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', '1234', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 04:39:56 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', '1234', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 04:39:57 --> valid_mail is not a valid rule.
+#0 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('valid_mail')
+#1 C:\xampp\htdocs\wikiplace\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('mail', 'mail', '1234', Array, Array)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 04:40:13 --> Array to string conversion
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 25)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 04:40:14 --> Array to string conversion
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 25)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 04:41:17 --> Array to string conversion
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 24)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 04:41:20 --> Array to string conversion
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 24)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 04:41:27 --> Array to string conversion
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 24)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 04:42:15 --> Array to string conversion
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 24)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 04:42:17 --> Array to string conversion
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 24)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 04:42:18 --> Array to string conversion
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 24)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 04:43:36 --> Array to string conversion
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 26)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 04:43:38 --> Array to string conversion
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 26)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 04:43:40 --> Array to string conversion
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 26)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 04:45:52 --> Array to string conversion
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 26)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 05:23:15 --> Undefined variable $session
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 46)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 05:42:09 --> Undefined variable $session
+#0 C:\xampp\htdocs\wikiplace\app\Views\layout.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 13)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/about_us', Array, true)
+#5 C:\xampp\htdocs\wikiplace\app\Controllers\AboutUs.php(9): view('pages/about_us')
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\AboutUs->index()
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AboutUs))
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-16 05:42:22 --> Undefined variable $session
+#0 C:\xampp\htdocs\wikiplace\app\Views\layout.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 13)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/about_us', Array, true)
+#5 C:\xampp\htdocs\wikiplace\app\Controllers\AboutUs.php(9): view('pages/about_us')
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\AboutUs->index()
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AboutUs))
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-16 05:48:56 --> Undefined variable $session
+#0 C:\xampp\htdocs\wikiplace\app\Views\layout.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 13)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/index', Array, true)
+#5 C:\xampp\htdocs\wikiplace\app\Controllers\Home.php(9): view('pages/index')
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-16 05:54:11 --> Object of class CodeIgniter\Session\Session could not be converted to string
+#0 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\AboutUs->index()
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AboutUs))
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-16 05:54:30 --> view(): Argument #2 ($data) must be of type array, CodeIgniter\Session\Session given, called in C:\xampp\htdocs\wikiplace\app\Controllers\AboutUs.php on line 10
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\AboutUs.php(10): view('pages/about_us', Object(CodeIgniter\Session\Session))
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\AboutUs->index()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AboutUs))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 05:57:57 --> Cannot use object of type CodeIgniter\Session\Session as array
+#0 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\AboutUs->index()
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AboutUs))
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-16 05:58:01 --> Undefined variable $username
+#0 C:\xampp\htdocs\wikiplace\app\Views\layout.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 18)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/map', Array, true)
+#5 C:\xampp\htdocs\wikiplace\app\Controllers\Map.php(11): view('pages/map', Array)
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Map->index()
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Map))
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-16 05:58:03 --> Cannot use object of type CodeIgniter\Session\Session as array
+#0 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\AboutUs->index()
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AboutUs))
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-16 05:58:19 --> Cannot use object of type CodeIgniter\Session\Session as array
+#0 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\AboutUs->index()
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AboutUs))
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-16 05:59:02 --> Cannot use object of type CodeIgniter\Session\Session as array
+#0 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\AboutUs->index()
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AboutUs))
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-16 06:03:13 --> Undefined variable $username
+#0 C:\xampp\htdocs\wikiplace\app\Views\layout.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 18)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/about_us', Array, true)
+#5 C:\xampp\htdocs\wikiplace\app\Controllers\AboutUs.php(12): view('pages/about_us', Array)
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\AboutUs->index()
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AboutUs))
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-16 06:03:31 --> Undefined variable $seesionData
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\AboutUs.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 12)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\AboutUs->index()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AboutUs))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 06:03:32 --> Undefined variable $seesionData
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\AboutUs.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 12)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\AboutUs->index()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AboutUs))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 06:06:43 --> Undefined array key "loged_in"
+#0 C:\xampp\htdocs\wikiplace\app\Views\layout.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 17)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/about_us', Array, true)
+#5 C:\xampp\htdocs\wikiplace\app\Controllers\AboutUs.php(13): view('pages/about_us', Array)
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\AboutUs->index()
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AboutUs))
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-16 06:17:08 --> Undefined variable $session
+#0 C:\xampp\htdocs\wikiplace\app\Views\parts\menu.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 6)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(424): CodeIgniter\View\View->render('parts/menu', NULL, true)
+#4 C:\xampp\htdocs\wikiplace\app\Views\layout.php(13): CodeIgniter\View\View->include('parts/menu')
+#5 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#8 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/index', Array, true)
+#9 C:\xampp\htdocs\wikiplace\app\Controllers\Home.php(9): view('pages/index')
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#11 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#12 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2022-05-16 06:17:54 --> Undefined variable $session
+#0 C:\xampp\htdocs\wikiplace\app\Views\layout.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 13)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/index', Array, true)
+#5 C:\xampp\htdocs\wikiplace\app\Controllers\Home.php(9): view('pages/index')
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-16 06:17:54 --> Undefined variable $session
+#0 C:\xampp\htdocs\wikiplace\app\Views\layout.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 13)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/index', Array, true)
+#5 C:\xampp\htdocs\wikiplace\app\Controllers\Home.php(9): view('pages/index')
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-16 06:17:55 --> Undefined variable $session
+#0 C:\xampp\htdocs\wikiplace\app\Views\layout.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 13)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/index', Array, true)
+#5 C:\xampp\htdocs\wikiplace\app\Controllers\Home.php(9): view('pages/index')
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-16 06:17:59 --> Undefined variable $session
+#0 C:\xampp\htdocs\wikiplace\app\Views\layout.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 13)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/index', Array, true)
+#5 C:\xampp\htdocs\wikiplace\app\Controllers\Home.php(9): view('pages/index')
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-16 06:18:38 --> Undefined variable $sessionData
+#0 C:\xampp\htdocs\wikiplace\app\Views\parts\menu.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 6)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(424): CodeIgniter\View\View->render('parts/menu', NULL, true)
+#4 C:\xampp\htdocs\wikiplace\app\Views\layout.php(13): CodeIgniter\View\View->include('parts/menu')
+#5 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#8 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/index', Array, true)
+#9 C:\xampp\htdocs\wikiplace\app\Controllers\Home.php(9): view('pages/index')
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#11 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#12 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2022-05-16 06:18:39 --> Undefined variable $sessionData
+#0 C:\xampp\htdocs\wikiplace\app\Views\parts\menu.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 6)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(424): CodeIgniter\View\View->render('parts/menu', NULL, true)
+#4 C:\xampp\htdocs\wikiplace\app\Views\layout.php(13): CodeIgniter\View\View->include('parts/menu')
+#5 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#8 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/index', Array, true)
+#9 C:\xampp\htdocs\wikiplace\app\Controllers\Home.php(9): view('pages/index')
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#11 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#12 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2022-05-16 06:18:59 --> Undefined variable $sessionData
+#0 C:\xampp\htdocs\wikiplace\app\Views\layout.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 13)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/index', Array, true)
+#5 C:\xampp\htdocs\wikiplace\app\Controllers\Home.php(9): view('pages/index')
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-16 06:19:15 --> Undefined variable $sessionData
+#0 C:\xampp\htdocs\wikiplace\app\Views\layout.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 13)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/about_us', Array, true)
+#5 C:\xampp\htdocs\wikiplace\app\Controllers\AboutUs.php(13): view('pages/about_us', Array)
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\AboutUs->index()
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AboutUs))
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-16 06:19:37 --> Undefined variable $logged_in
+#0 C:\xampp\htdocs\wikiplace\app\Views\parts\menu.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 6)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(424): CodeIgniter\View\View->render('parts/menu', Array, true)
+#4 C:\xampp\htdocs\wikiplace\app\Views\layout.php(13): CodeIgniter\View\View->include('parts/menu', Array)
+#5 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#8 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/about_us', Array, true)
+#9 C:\xampp\htdocs\wikiplace\app\Controllers\AboutUs.php(13): view('pages/about_us', Array)
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\AboutUs->index()
+#11 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AboutUs))
+#12 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2022-05-16 06:29:17 --> Undefined variable $sessionData
+#0 C:\xampp\htdocs\wikiplace\app\Views\layout.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 13)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/index', Array, true)
+#5 C:\xampp\htdocs\wikiplace\app\Controllers\Home.php(9): view('pages/index')
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-16 06:29:18 --> Undefined variable $sessionData
+#0 C:\xampp\htdocs\wikiplace\app\Views\layout.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 13)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/index', Array, true)
+#5 C:\xampp\htdocs\wikiplace\app\Controllers\Home.php(9): view('pages/index')
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-16 08:55:27 -->  route cannot be found while reverse-routing.
+#0 C:\xampp\htdocs\wikiplace\system\HTTP\RedirectResponse.php(56): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 C:\xampp\htdocs\wikiplace\system\Common.php(832): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(55): redirect('http://localhos...')
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->logOut()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 08:56:54 -->  route cannot be found while reverse-routing.
+#0 C:\xampp\htdocs\wikiplace\system\HTTP\RedirectResponse.php(56): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 C:\xampp\htdocs\wikiplace\system\Common.php(832): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(55): redirect('http://www.tuto...')
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->logOut()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 08:56:54 -->  route cannot be found while reverse-routing.
+#0 C:\xampp\htdocs\wikiplace\system\HTTP\RedirectResponse.php(56): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 C:\xampp\htdocs\wikiplace\system\Common.php(832): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(55): redirect('http://www.tuto...')
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->logOut()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-16 09:03:15 --> Undefined variable $sessionData
+#0 C:\xampp\htdocs\wikiplace\app\Views\layout.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 13)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/index', Array, true)
+#5 C:\xampp\htdocs\wikiplace\app\Controllers\Home.php(9): view('pages/index')
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-16 09:03:58 --> Undefined variable $sessionData
+#0 C:\xampp\htdocs\wikiplace\app\Views\layout.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 13)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/index', Array, true)
+#5 C:\xampp\htdocs\wikiplace\app\Controllers\Home.php(9): view('pages/index')
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-16 10:22:26 --> Undefined variable $sessionData
+#0 C:\xampp\htdocs\wikiplace\app\Views\layout.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 13)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/index', Array, true)
+#5 C:\xampp\htdocs\wikiplace\app\Controllers\Home.php(9): view('pages/index')
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-16 10:32:35 --> Undefined variable $sessionData
+#0 C:\xampp\htdocs\wikiplace\app\Views\layout.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 13)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/index', Array, true)
+#5 C:\xampp\htdocs\wikiplace\app\Controllers\Home.php(9): view('pages/index')
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-16 10:38:53 --> Undefined variable $sessionData
+#0 C:\xampp\htdocs\wikiplace\app\Views\layout.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 13)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/index', Array, true)
+#5 C:\xampp\htdocs\wikiplace\app\Controllers\Home.php(13): view('pages/index')
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-16 10:38:55 --> Undefined variable $sessionData
+#0 C:\xampp\htdocs\wikiplace\app\Views\layout.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 13)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/index', Array, true)
+#5 C:\xampp\htdocs\wikiplace\app\Controllers\Home.php(13): view('pages/index')
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-16 10:44:27 --> Undefined variable $sessionData
+#0 C:\xampp\htdocs\wikiplace\app\Views\layout.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 13)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/map', Array, true)
+#5 C:\xampp\htdocs\wikiplace\app\Controllers\Map.php(15): view('pages/map', Array)
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Map->index()
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Map))
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-16 11:58:02 --> Undefined property: stdClass::$title
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 84)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 12:01:11 --> Undefined variable $result
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 84)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 12:01:17 --> Undefined variable $result
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 84)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 12:09:02 --> Cannot use object of type stdClass as array
+#0 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-16 12:09:04 --> Cannot use object of type stdClass as array
+#0 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-16 12:09:21 --> Cannot use object of type stdClass as array
+#0 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-16 12:09:59 --> Cannot use object of type stdClass as array
+#0 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-16 12:10:00 --> Cannot use object of type stdClass as array
+#0 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-16 12:24:11 --> Undefined array key "username"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(81): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 81)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 12:25:11 --> Undefined array key "username"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(81): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 81)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 12:25:17 --> Undefined array key "username"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(81): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 81)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 12:29:32 --> Undefined array key "username"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(81): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 81)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 12:32:01 --> Undefined array key "username"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(81): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 81)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 12:32:02 --> Undefined array key "username"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(81): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 81)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 12:33:57 --> Undefined array key "username"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(81): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 81)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 12:34:11 --> Undefined array key "username"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 89)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 12:47:34 --> Object of class CodeIgniter\Database\MySQLi\Builder could not be converted to string
+#0 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->temp()
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-16 12:54:54 --> Undefined property: CodeIgniter\Database\MySQLi\Result::$num_rows
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(111): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 111)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->temp()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 12:55:03 --> Undefined property: CodeIgniter\Database\MySQLi\Result::$num_rows
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(111): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 111)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->temp()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 12:55:47 --> Undefined property: CodeIgniter\Database\MySQLi\Result::$lengths
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(111): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 111)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->temp()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 13:00:44 --> Undefined array key "username"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(82): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 82)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 13:00:48 --> Undefined array key "username"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(82): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 82)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 13:02:10 --> Undefined array key "username"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(82): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 82)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 13:04:55 --> Attempt to assign property "customError" on null
+#0 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-16 13:05:12 --> Attempt to assign property "customError" on null
+#0 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-16 13:06:06 --> Attempt to assign property "customError" on null
+#0 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-16 13:06:07 --> Attempt to assign property "customError" on null
+#0 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-16 13:18:09 --> Undefined array key "usernameMailLogin"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(61): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 61)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

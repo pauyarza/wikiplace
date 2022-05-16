@@ -4,35 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!--CSS Bootstrap 5 --><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--CSS Bootstrap 5--><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--JQuery--><script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!--Own CSS--><link rel="stylesheet" type="text/css" href="<?php echo base_url('css/general.css'); ?>">
     <!--Unique head--><?= $this->renderSection('head') ?>
 </head>
 <body>
-
-<ul id="menu">
-    <li><a href="<?php echo base_url('map')?>">Map</a></li>
-    <li onclick = "openLogin()">Login</li>
-    <li onclick = "openRegister()">Register</li>
-    <li><a href="<?php echo base_url('aboutUs')?>">About us</a></li>
-</ul>
-
-<div class="d-none loginFormWrapper" id="divLoginWraper" onclick="">
-    <div id="divLogin">
-        <h1>LOGIN</h1>
-    </div>
-</div>
-
-<div class="d-none loginFormWrapper" id="divRegisternWraper">
-    <div id="divRegister">
-        <h1>REGISTER</h1>
-    </div>
-</div>
-
-<!-- LOAD CONTENT --><?= $this->renderSection('content') ?>
-
+    <?php 
+        echo $this->include('parts/menu',$sessionData);
+        if(!$sessionData["logged_in"]){
+            echo $this->include('parts/login');
+            echo $this->include('parts/register');
+        }
+        echo $this->renderSection('content');
+    ?>
 </body>
-<!-- JS bootstrap 5 --><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<!-- JS Menu --><script src="<?php echo base_url('js/menu.js'); ?>" crossorigin="anonymous"></script>
 
+<!-- JS bootstrap 5 --><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<!-- login/register script --><script src="<?php echo base_url('js/loginRegister.js'); ?>"></script>
 </html>
