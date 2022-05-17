@@ -64,7 +64,8 @@ a{
     width: 110%;
     background: black;
     height: 3px;
-    transition: all 0.5s;
+    transition-timing-function: ease-in;
+    transition: all 0.3s;
   }
   .two{
     margin: 5px 0;
