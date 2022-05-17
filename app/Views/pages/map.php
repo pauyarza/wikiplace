@@ -15,6 +15,7 @@
 <!-- load markercluster script --><script src="<?php echo base_url('js/leaflet.markercluster.js'); ?>"></script>
 
 <div id="map"></div>
+<a href="<?= base_url('SpotController')?>" class="btn" id="botoNewSpot">Add spot</a>
 
 <script type="text/javascript">
     // PASS SPOTS ARRAY TO JS
@@ -22,7 +23,7 @@
 
     // GENERATE MAP
     var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 18
+            maxZoom: 19
         }),
 
     latlng = new L.LatLng(41.548630, 2.107440);
@@ -49,6 +50,23 @@
     //APPLY
     populate();
     map.addLayer(markers);
+
+
+    //NEW SPOT MARKER
+    map.on('click', onMapClick);
+    var newSpotCoords;
+    var marker = new L.Marker();
+    function onMapClick(e) {
+        if(marker) map.removeLayer(marker);
+        newSpotCoords = e.latlng;
+        marker = new L.Marker(newSpotCoords,{draggable:true});
+        marker.on('dragend', function(e) {
+            var newSpotCoords = e.latlng;
+            console.log(e.target._latlng);
+        });
+        map.addLayer(marker);
+        console.log(newSpotCoords);
+    };
 
 </script>
 <?= $this->endSection('content') ?>

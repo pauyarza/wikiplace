@@ -6,3 +6,9 @@
     z-index: 0;
 }
 
+#botoNewSpot{
+    z-index: 15;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
