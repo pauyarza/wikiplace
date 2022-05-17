@@ -2,10 +2,12 @@
 
 namespace App\Controllers;
 
-class Spot extends BaseController
+class SpotController extends BaseController
 {
-    public function index()
+    public function spotForm()
     {
-        return view("pages/about_us");
+        $sessionData["logged_in"] = session()->logged_in;
+        $data["sessionData"] = $sessionData;
+        return view("pages/new_spot",$data);
     }
 }

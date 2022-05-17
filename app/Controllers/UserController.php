@@ -38,14 +38,16 @@ class UserController extends BaseController
             //create new user
             $UserModel = new UserModel();
             $UserModel->insert($userData);
+            $user_id = $UserModel->getInsertID();
+
             //create session
             $sessionData = [
+                'id_user' => $user_id,
                 'username'  => $userData["username"],
                 'mail'     => $userData["mail"],
                 'logged_in' => true,
             ];
             session()->set($sessionData);
-            
             echo "registerCorrect";
         }
     }
@@ -98,6 +100,7 @@ class UserController extends BaseController
             else{//user found
                 //create session
                 $sessionData = [
+                    'id_user'  => $userData["id_user"],
                     'username'  => $userData["username"],
                     'mail'     => $userData["mail"],
                     'logged_in' => true,
