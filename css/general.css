@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 
 /*====== TAGS ======*/
 html, body{
@@ -19,14 +20,30 @@ a{
 
 
 .indexh1 {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Bree Serif', serif;
   position: absolute;
   top: 35%;
   transform: translateY(-50%);
   margin: 0;
   padding: 0;
   width: 100%;
-  color: black;
+  font-size: 300%;
+  color: #019267;
+  text-align: center;
+}
+
+/*====== ABOUT ======*/
+
+
+.abouth1 {
+  font-family: 'Josefin Sans', sans-serif;
+  position: absolute;
+  top: 15%;
+  transform: translateY(-50%);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  color: #019267;
   text-align: center;
 }
 
@@ -95,7 +112,7 @@ a{
   h2 {
     font-family: 'Josefin Sans', sans-serif;
     position: absolute;
-    top: 50%;
+    top: 55%;
     transform: translateY(-50%);
     margin: 0;
     padding: 0;
