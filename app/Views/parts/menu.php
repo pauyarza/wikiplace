@@ -13,8 +13,8 @@
             //NOT LOGGED IN
             if(!$sessionData["logged_in"]){
             ?>
-                <li class="menu__item"><a onclick = "openLogin()" class="menu__link">Login</a></li>                
-                <li class="menu__item"><a  onclick = "openRegister()" class="menu__link">Register</a></li>
+                <li class="menu__item"><a class="menu__link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></li>                
+                <li class="menu__item"><a class="menu__link" data-bs-toggle="modal" data-bs-target="#registerModal">Register</a></li>
             <?php 
             }
             //LOGGED IN
