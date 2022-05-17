@@ -8,6 +8,11 @@
 <!-- Content -->
 <?= $this->section('content') ?>
 
-<h1>about us</h1>
+<div class="container">
+    <h1 class="abouth1">About us</h1>
+    <p class="aboutp">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+</div>
+
 
 <?= $this->endSection('content') ?>
