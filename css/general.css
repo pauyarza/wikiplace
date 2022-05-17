@@ -21,10 +21,7 @@ a{
 
 .indexh1 {
   font-family: 'Bree Serif', serif;
-  position: absolute;
-  top: 35%;
-  transform: translateY(-50%);
-  margin: 0;
+  margin-top: 60%;
   padding: 0;
   width: 100%;
   font-size: 300%;
@@ -37,13 +34,16 @@ a{
 
 .abouth1 {
   font-family: 'Josefin Sans', sans-serif;
-  position: absolute;
-  top: 15%;
-  transform: translateY(-50%);
-  margin: 0;
+  margin-top: 15%;
   padding: 0;
   width: 100%;
   color: #019267;
+  text-align: center;
+}
+
+.aboutp {
+  font-family: 'Josefin Sans', sans-serif;
+  padding: 0;
   text-align: center;
 }
 
