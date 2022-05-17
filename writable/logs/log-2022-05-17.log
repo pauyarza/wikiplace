@@ -53,3 +53,136 @@ CRITICAL - 2022-05-17 04:44:33 --> Undefined variable $sessionData
 #8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #9 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
 #10 {main}
+CRITICAL - 2022-05-17 05:26:36 --> Undefined array key "user_id"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(102): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 102)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-17 05:26:38 --> Undefined array key "user_id"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(102): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 102)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-17 05:26:38 --> Undefined array key "user_id"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(102): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 102)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-17 05:26:38 --> Undefined array key "user_id"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(102): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 102)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-17 05:26:45 --> Undefined array key "user_id"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(102): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 102)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-17 05:26:45 --> Undefined array key "user_id"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(102): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 102)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-17 05:27:56 --> Undefined array key "user_id"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(102): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 102)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-17 05:30:26 --> Undefined array key "user_id"
+#0 C:\xampp\htdocs\wikiplace\app\Views\pages\about_us.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 12)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/about_us', Array, true)
+#4 C:\xampp\htdocs\wikiplace\app\Controllers\AboutUs.php(12): view('pages/about_us', Array)
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\AboutUs->index()
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AboutUs))
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-17 05:31:58 --> Undefined array key "id_user"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-17 05:32:08 --> Undefined array key "id_user"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-17 05:32:39 --> Undefined array key "id_user"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-17 05:35:04 --> Undefined array key "id_user"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->registerAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-17 05:38:00 --> Undefined variable $sesion_data
+#0 C:\xampp\htdocs\wikiplace\app\Views\pages\about_us.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 12)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/about_us', Array, true)
+#4 C:\xampp\htdocs\wikiplace\app\Controllers\AboutUs.php(12): view('pages/about_us', Array)
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\AboutUs->index()
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AboutUs))
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-17 05:38:05 --> Undefined variable $session_data
+#0 C:\xampp\htdocs\wikiplace\app\Views\pages\about_us.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 12)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/about_us', Array, true)
+#4 C:\xampp\htdocs\wikiplace\app\Controllers\AboutUs.php(12): view('pages/about_us', Array)
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\AboutUs->index()
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AboutUs))
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-17 06:02:06 --> Undefined variable $sessionData
+#0 C:\xampp\htdocs\wikiplace\app\Views\layout.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 14)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/newSpot', Array, true)
+#5 C:\xampp\htdocs\wikiplace\app\Controllers\SpotController.php(9): view('pages/newSpot')
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\SpotController->newSpotForm()
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SpotController))
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-17 06:07:32 --> Undefined variable $formAttributes
+#0 C:\xampp\htdocs\wikiplace\app\Views\pages\newSpot.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 13)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/newSpot', Array, true)
+#4 C:\xampp\htdocs\wikiplace\app\Controllers\SpotController.php(11): view('pages/newSpot', Array)
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\SpotController->spotForm()
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SpotController))
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

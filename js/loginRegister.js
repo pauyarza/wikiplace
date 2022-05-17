@@ -11,6 +11,7 @@ $("#registerForm").submit(function(e) {
         data: form.serialize(),
         success: function(response)
         {
+            console.log(response);
             //login correct
             if (response == "registerCorrect") {
                 location.reload();
