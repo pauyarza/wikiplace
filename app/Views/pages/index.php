@@ -9,9 +9,13 @@
 <!-- Content -->
 <?= $this->section('content') ?>
 
-<h1 class="indexh1">wikiplace.org</h1>
-<!--Typer-->
-<h2><span class="ityped"></span></h2>
-<!-- Necessary for typer --><script src="https://unpkg.com/ityped@0.0.10"></script>
+<div class="index">
+
+    <img class="indexsvg" src="<?php echo base_url('public/img/logo.svg'); ?>" alt="wikiplace.org">
+    <!--Typer-->
+    <h2 class="typerh2"><span class="ityped"></span></h2>
+    <!-- Necessary for typer --><script src="https://unpkg.com/ityped@0.0.10"></script>
+</div>
+
 
 <?= $this->endSection('content') ?>
