@@ -5,16 +5,22 @@ use App\Models\SpotModel;
 
 class SpotController extends BaseController
 {
-    public function spotForm(){
+    private $viewData = [];
+    public function __construct()
+    {
+        $sessionData["is_admin"] = session()->is_admin;
         $sessionData["logged_in"] = session()->logged_in;
-        $data["sessionData"] = $sessionData;
+        $this->viewData["sessionData"] = $sessionData;
+    }
+
+    public function spotForm(){
         //if not logged in
-        if(!$sessionData["logged_in"]){
-            $data["goTo"] = base_url("map");
-            return view("pages/redirecting", $data);
+        if(!session()->logged_in){
+            $this->viewData["goTo"] = base_url("map");
+            return view("pages/redirecting", $this->viewData);
         }
         else{
-            return view("pages/new_spot", $data);
+            return view("pages/new_spot", $this->viewData);
         }
     }
 
@@ -23,7 +29,7 @@ class SpotController extends BaseController
         $validation =  \Config\Services::validation();
 
         $validation->setRules([
-            'name' => 'required|max_length[50]',
+            'name' => 'required|max_length[50]|alpha_space',
             'description' => 'max_length[400]',
             'latitude' => 'required',
             'longitude' => 'required',

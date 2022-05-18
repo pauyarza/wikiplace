@@ -4,10 +4,14 @@ namespace App\Controllers;
 use App\Models\UserModel;
 class UserController extends BaseController
 {
-    public function __construct() {
-        $db = db_connect();
+    private $viewData = [];
+    public function __construct()
+    {
+        $sessionData["is_admin"] = session()->is_admin;
+        $sessionData["logged_in"] = session()->logged_in;
+        $this->viewData["sessionData"] = $sessionData;
     }
-
+    
     //==========REGISTER==========//
     public function registerAjax()
     {
@@ -117,9 +121,9 @@ class UserController extends BaseController
 
     public function logOut(){
         session()->destroy();
-        $data["sessionData"] = null;
-        $data["goTo"] = previous_url();
-        return view("pages/redirecting", $data);
+        $this->viewData["sessionData"] = null;
+        $this->viewData["goTo"] = previous_url();
+        return view("pages/redirecting", $this->viewData);
     }
 
     public function temp(){

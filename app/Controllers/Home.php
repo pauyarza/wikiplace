@@ -4,11 +4,17 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
-    public function index()
+    private $viewData = [];
+    public function __construct()
     {
         $sessionData["is_admin"] = session()->is_admin;
         $sessionData["logged_in"] = session()->logged_in;
-        $data["sessionData"] = $sessionData;
-        return view("pages/index",$data);
+        $this->viewData["sessionData"] = $sessionData;
+        
+    }
+
+    public function index()
+    {
+        return view("pages/index",$this->viewData);
     }
 }

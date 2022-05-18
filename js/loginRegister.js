@@ -95,7 +95,6 @@ $("#loginForm").submit(function (e) {
             response = JSON.parse(response);
             console.log(response);
             if (response.found) {
-                alert("good to go");
                 location.reload();
             }
             else{
