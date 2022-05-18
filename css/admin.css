@@ -1,0 +1,29 @@
+.admin h2{
+    padding-bottom: 20px;
+}
+
+.categories{
+    background-color: rgb(241, 241, 241);
+    border-radius: 24px;
+    padding: 20px 30px 40px 30px;
+    margin-top: 20px;
+}
+
+.admin ul{
+    margin-top: 20px;
+    padding: 0;
+}
+
+.category{
+    margin: 10px 0;
+    list-style: none;
+}
+
+.category button{
+    margin-right: 5px;
+}
+
+.input-group{
+    margin: 0 !important;
+}
+

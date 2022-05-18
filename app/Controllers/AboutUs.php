@@ -11,7 +11,6 @@ class AboutUs extends BaseController
         $sessionData["is_admin"] = session()->is_admin;
         $sessionData["logged_in"] = session()->logged_in;
         $this->viewData["sessionData"] = $sessionData;
-        
     }
 
     public function index()
