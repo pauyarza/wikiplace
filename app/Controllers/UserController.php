@@ -117,7 +117,9 @@ class UserController extends BaseController
 
     public function logOut(){
         session()->destroy();
-        echo '<script>window.location.href = "'.previous_url().'";</script>';
+        $data["sessionData"] = null;
+        $data["goTo"] = previous_url();
+        return view("pages/redirecting", $data);
     }
 
     public function temp(){

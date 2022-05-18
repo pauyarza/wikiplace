@@ -7,13 +7,14 @@ class SpotController extends BaseController
 {
     public function spotForm(){
         $sessionData["logged_in"] = session()->logged_in;
+        $data["sessionData"] = $sessionData;
         //if not logged in
         if(!$sessionData["logged_in"]){
-            
+            $data["goTo"] = base_url("map");
+            return view("pages/redirecting", $data);
         }
         else{
-            $data["sessionData"] = $sessionData;
-            return view("pages/new_spot",$data);
+            return view("pages/new_spot", $data);
         }
     }
 
