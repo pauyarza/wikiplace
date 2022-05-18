@@ -1,0 +1,42 @@
+CRITICAL - 2022-05-18 02:03:40 --> There is no data to insert.
+#0 C:\xampp\htdocs\wikiplace\system\BaseModel.php(718): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\wikiplace\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\SpotController.php(37): CodeIgniter\Model->insert(Object(App\Models\SpotModel))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\SpotController->newSpot()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SpotController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-18 02:08:41 --> There is no data to insert.
+#0 C:\xampp\htdocs\wikiplace\system\BaseModel.php(718): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\wikiplace\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\SpotController.php(37): CodeIgniter\Model->insert(Object(App\Models\SpotModel))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\SpotController->newSpot()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SpotController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-18 02:11:30 --> There is no data to insert.
+#0 C:\xampp\htdocs\wikiplace\system\BaseModel.php(718): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\wikiplace\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\SpotController.php(38): CodeIgniter\Model->insert(Object(App\Models\SpotModel))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\SpotController->newSpot()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SpotController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+ERROR - 2022-05-18 02:12:14 --> Cannot add or update a child row: a foreign key constraint fails (`wikiplace`.`spot`, CONSTRAINT `spot_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON UPDATE CASCADE)
+CRITICAL - 2022-05-18 02:12:14 --> Cannot add or update a child row: a foreign key constraint fails (`wikiplace`.`spot`, CONSTRAINT `spot_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON UPDATE CASCADE)
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `sp...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `sp...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `sp...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `sp...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\wikiplace\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\wikiplace\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\wikiplace\app\Controllers\SpotController.php(38): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\SpotController->newSpot()
+#9 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SpotController))
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}

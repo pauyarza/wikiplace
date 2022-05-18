@@ -8,6 +8,7 @@ class UserController extends BaseController
         $db = db_connect();
     }
 
+    //==========REGISTER==========//
     public function registerAjax()
     {
         $validation =  \Config\Services::validation();
@@ -52,9 +53,9 @@ class UserController extends BaseController
         }
     }
 
+    //==========LOGIN==========//
     public function loginAjax(){
         $loginData = $_POST;
-        $validation =  \Config\Services::validation();
         $validation =  \Config\Services::validation();
         $isMail = false;
 
@@ -97,13 +98,14 @@ class UserController extends BaseController
             if(!$userData){//no result so user not found
                 $userData["customError"] = "Incorrect username or password.";
             }
-            else{//user found
+            else{//user found               
                 //create session
                 $sessionData = [
                     'id_user'  => $userData["id_user"],
                     'username'  => $userData["username"],
                     'mail'     => $userData["mail"],
                     'logged_in' => true,
+                    'is_admin' => $userData["is_admin"],
                 ];
                 session()->set($sessionData);
                 $userData["found"] = true;

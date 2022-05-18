@@ -1,21 +1,33 @@
 <?= $this->extend('layout') ?>
 
 <!-- Unique head -->
-<?= $this->section('head')?>
-    <!--CSS leaflet--><link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
-    <!--CSS MarkerCluster--><link rel="stylesheet" type="text/css" href="<?php echo base_url('css/MarkerCluster.css'); ?>">
-    <!--Map CSS--><link rel="stylesheet" type="text/css"  href="<?php echo base_url('css/map.css'); ?>"/>
-    <title>Wikiplace | Map 🗺️</title>
-<?= $this->endSection('head')?>
+<?= $this->section('head') ?>
+<!--CSS leaflet-->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
+<!--CSS MarkerCluster-->
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/MarkerCluster.css'); ?>">
+<!--Map CSS-->
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/map.css'); ?>" />
+<title>Wikiplace | Map 🗺️</title>
+<?= $this->endSection('head') ?>
 
 <!-- Content -->
 <?= $this->section('content') ?>
 
-<!-- load leaflet script --><script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
-<!-- load markercluster script --><script src="<?php echo base_url('js/leaflet.markercluster.js'); ?>"></script>
+<!-- load leaflet script -->
+<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+<!-- load markercluster script -->
+<script src="<?php echo base_url('js/leaflet.markercluster.js'); ?>"></script>
 
 <div id="map"></div>
-<a href="<?= base_url('SpotController')?>" class="btn" id="botoNewSpot">Add spot</a>
+<a 
+    href="<?= base_url('SpotController/SpotForm') ?>" 
+    class="btn btn-success" 
+    id="botoNewSpot"
+    style="display:none"
+>
+    Add spot
+</a>
 
 <script type="text/javascript">
     // PASS SPOTS ARRAY TO JS
@@ -26,10 +38,10 @@
             maxZoom: 19
         }),
 
-    latlng = new L.LatLng(41.548630, 2.107440);
+        latlng = new L.LatLng(41.548630, 2.107440);
     var map = new L.Map('map', {
-        center: latlng, 
-        zoom: 15, 
+        center: latlng,
+        zoom: 15,
         layers: [tiles],
         attributionControl: false
     });
@@ -38,11 +50,12 @@
     // GENEREATE MARKERS
     var markers = new L.MarkerClusterGroup();
     var markersList = [];
+
     function populate() {
         spots.forEach(function(spot) {
-          var m = new L.Marker([spot.latitude, spot.longitude]);
-          markersList.push(m);
-          markers.addLayer(m);
+            var m = new L.Marker([spot.latitude, spot.longitude]);
+            markersList.push(m);
+            markers.addLayer(m);
         });
         return false;
     }
@@ -56,17 +69,32 @@
     map.on('click', onMapClick);
     var newSpotCoords;
     var marker = new L.Marker();
+
     function onMapClick(e) {
-        if(marker) map.removeLayer(marker);
-        newSpotCoords = e.latlng;
-        marker = new L.Marker(newSpotCoords,{draggable:true});
-        marker.on('dragend', function(e) {
-            var newSpotCoords = e.latlng;
-            console.log(e.target._latlng);
+        //display new spot button
+        $("#botoNewSpot").show();
+
+        //delete past marker
+        if (marker) map.removeLayer(marker);
+
+        //save coords to local storage
+        saveLatLng(e.latlng);
+
+        //set marker drag options
+        marker = new L.Marker(e.latlng, {
+            draggable: true
         });
+        marker.on('dragend', function(e) {
+            saveLatLng(e.target._latlng);
+        });
+
+        //add to map
         map.addLayer(marker);
-        console.log(newSpotCoords);
     };
 
+    function saveLatLng(latlng) {
+        localStorage.setItem('newLatitude', latlng.lat);
+        localStorage.setItem('newLongitude', latlng.lng);
+    }
 </script>
 <?= $this->endSection('content') ?>

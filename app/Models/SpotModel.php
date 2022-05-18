@@ -2,10 +2,10 @@
 namespace App\Models;
 use CodeIgniter\Model;
 
-class Spots extends Model
+class SpotModel extends Model
 {
     protected $table      = 'spot';
-    protected $primaryKey = 'spot_id';
+    protected $primaryKey = 'id_spot';
     protected $returnType = 'array';
     protected $allowedFields = [
         'id_spot',
