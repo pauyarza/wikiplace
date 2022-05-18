@@ -7,6 +7,7 @@ class Map extends BaseController
     private $viewData = [];
     public function __construct()
     {
+        // Load session info to viewData
         $sessionData["is_admin"] = session()->is_admin;
         $sessionData["logged_in"] = session()->logged_in;
         $this->viewData["sessionData"] = $sessionData;
