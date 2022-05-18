@@ -8,3 +8,9 @@ window.ityped.init(document.querySelector('.ityped'),{
     strings: ['parkour','climbing','xavi handsome'],
     loop: true
 })
+
+
+function openMenu(){
+
+    $("#menu").toggleClass("d-none");
+}
