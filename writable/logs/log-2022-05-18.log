@@ -40,3 +40,19 @@ CRITICAL - 2022-05-18 02:12:14 --> Cannot add or update a child row: a foreign k
 #10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #11 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
 #12 {main}
+CRITICAL - 2022-05-18 05:08:01 --> Undefined array key "is_admin"
+#0 C:\xampp\htdocs\wikiplace\app\Views\parts\menu.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 25)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(424): CodeIgniter\View\View->render('parts/menu', Array, true)
+#4 C:\xampp\htdocs\wikiplace\app\Views\layout.php(14): CodeIgniter\View\View->include('parts/menu', Array)
+#5 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#8 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/map', Array, true)
+#9 C:\xampp\htdocs\wikiplace\app\Controllers\Map.php(13): view('pages/map', Array)
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Map->index()
+#11 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Map))
+#12 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
