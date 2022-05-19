@@ -11,6 +11,10 @@ html, body{
   background-color: rgb(212, 212, 212);
 }
 
+body{
+    padding: 50px 0 0 0; /*correct menu height */
+}
+
 a{
     text-decoration: none;
     color: rgb(33, 37, 41);
@@ -19,35 +23,58 @@ a{
 /*====== INDEX ======*/
 
 .index{
-  height: 100%;
-  position: relative; 
+    height: 100%;
+    position: relative;
 }
 
-.indexsvg {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  top: 29%;
-  position: absolute;
-  transform: translateX(5%);
-  width: 90%;
+.index-box{
+    width: 100%;
+    padding-bottom: 400px !important; /*makes box go up*/
+    position: relative;
+    top: 30%;
 }
 
-.typerh2 {
-  font-family: 'Josefin Sans', sans-serif;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  color: black;
-  text-align: center;
+.index .index-logo {
+    display: block;
+    margin: auto;
+    width: 97%;
+    max-width: 450px;
+    margin-bottom: 13px;
+}
+
+.index form{
+    display: block;
+    margin: auto;
+    max-width: 300px;
+}
+
+.search-input{
+    width: 90%;
+    max-width: 410px;
+    display: block;
+    margin: auto;
+    border: 1px solid rgb(31, 31, 31);
+    border-radius: 4px;
+    padding-left: 30px;
+    margin-bottom: 20px;
+    background-color: #e2e2e2;
+}
+
+.index .search-icon{
+    height: 18px;
+    margin: 5.5px 0 0 20px;
+    position: absolute;
+}
+
+.typer{
+    font-family: 'Josefin Sans', sans-serif;
+    width: 100%;
+    color: black;
+    text-align: center;
+    user-select: none;
 }
 
 /*====== ABOUT ======*/
-
-
 .abouth1 {
   font-family: 'Josefin Sans', sans-serif;
   margin-top: 52px;
@@ -85,135 +112,139 @@ a{
     height: 50px;
     display: flex;
     align-items: center;
-  }
-  .menu{
+    position: fixed; /* height corrected at body top margin */
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 100;
+}
+.menu{
     margin: 0;
     padding: 0;
     list-style: none;
     display: flex;
     /*opacity: 0;
     visibility: hidden;*/
-  }
-  .menu-item{
+}
+.menu-item{
     margin: 0 15px;
   }
-  .menu-link{
+.menu-link{
     font-family: 'Josefin Sans', sans-serif;
     color: black;
     text-decoration: none;
-  }
-  .menu-bar{
+}
+
+.menu-bar{
     width: 30px;
     margin: 0 10px;
     cursor: pointer;
     color: white;
-  }
-  .one,.two,.three{
+}
+.one,.two,.three{
     width: 110%;
     background: black;
     height: 3px;
     transition-timing-function: ease-in;
     transition: all 0.3s;
-  }
-  .two{
+}
+.two{
     margin: 5px 0;
-  }
+}
   
 /*====== ANIMATION MENU ======*/
   
-  .menu-bar-show .one{
+.menu-bar-show .one{
     transform: rotate(45deg) translate(5px, 5px);
-  }
-  .menu-bar-show .two{
+}
+.menu-bar-show .two{
     opacity: 0;
-  }
-  .menu-bar-show .three{
+}
+.menu-bar-show .three{
     transform: rotate(-45deg) translate(6px, -7px);
-  }
+}
   
 
 /*====== USERBOX ======*/
 
 .dropdown {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 .dropdown-menu {
-  color: white;
+    color: white;
 }
 
 /*====== LOGIN & REGISTER FORM ======*/
 
-
-
 .modal-content {
-  border-radius: 30px;
-  background-color: #FFD365;
-  border: 6px solid #FDFFA9;
+    border-radius: 30px;
+    background-color: #FFD365;
+    border: 6px solid #FDFFA9;
 }
 
 .modal-header, .modal-footer{
-  border-bottom: 0;
-  border-top: 0;
+    border-bottom: 0;
+    border-top: 0;
 }
 
 .modal-dialog{
-  margin-top: 15% !important;
+    margin-top: 15% !important;
 }
 
 .loginFormWrapper div{
-    margin: 100px;
-    background-color: aquamarine;
+        margin: 100px;
+        background-color: aquamarine;
 }
 
 .modal-body img{
-  display: block ;
-  margin-left: auto ;
-  margin-right: auto ;
-  width: 100%;
-  margin-bottom: 40px;
+    display: block ;
+    margin-left: auto ;
+    margin-right: auto ;
+    width: 100%;
+    margin-bottom: 40px;
 }
 
 .input-group-text {
-  background-color: #FFD365 !important;
-  outline: none;
+    background-color: #FFD365 !important;
+    outline: none;
 }
 
 .form input {
-  display: block;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  border: none;
-  outline: none;
-  padding: 5px 0px;
-  width: 80%;
-  border-bottom: 6px solid #00C897;
-  background-color: #E8F0F2;
+    display: block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    border: none;
+    outline: none;
+    padding: 5px 0px;
+    width: 80%;
+    border-bottom: 6px solid #00C897;
+    background-color: #E8F0F2;
 }
 
 .custom-btn-1 {
-  display: block;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  margin-top: 25px;
-  color: #E8F0F2;
-  width: 50%;
-  background-color: #019267;
-  border: none;
-  border-radius: 25px;
-  transition: all 0.5s;
+    display: block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 25px;
+    color: #E8F0F2;
+    width: 50%;
+    background-color: #019267;
+    border: none;
+    border-radius: 25px;
+    transition: all 0.5s;
 }
 
 .custom-btn-2 {
-  display: block;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  color: #019267;
-  width: 50%;
-  background-color: #FFD365;
-  border: 2px solid #019267;
-  border-radius: 25px;
-  transition: all 0.5s;
+    display: block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    color: #019267;
+    width: 50%;
+    background-color: #FFD365;
+    border: 2px solid #019267;
+    border-radius: 25px;
+    transition: all 0.5s;
 }
 
