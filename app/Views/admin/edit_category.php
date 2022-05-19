@@ -23,7 +23,7 @@
                     <input type="hidden" name="id_category" value="<?=$id_category?>">
                     <br>
                 </form>
-                <a 
+                <a
                     class="btn btn-secondary"
                     href="<?=base_url("admin")?>"
                 >

@@ -30,10 +30,10 @@
 </a>
 
 <script type="text/javascript">
-    // PASS SPOTS ARRAY TO JS
+    //=======PASS SPOTS ARRAY TO JS=======//
     var spots = <?php echo json_encode($spots); ?>;
 
-    // GENERATE MAP
+    //=======GENERATE MAP=======//
     var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19
         }),
@@ -46,26 +46,43 @@
         attributionControl: false
     });
 
-
-    // GENEREATE MARKERS
+    //=======GENEREATE MARKERS=======//
     var markers = new L.MarkerClusterGroup();
     var markersList = [];
-
+    //default icon
+    var DefaultIcon = L.Icon.extend({
+        options: {
+            shadowUrl: '<?=base_url('public/icons/marker-shadow.png')?>',
+            iconSize:     [38, 38], // size of the icon
+            shadowSize:   [60, 80], // size of the shadow
+            iconAnchor:   [19, 42], // point of the icon which will correspond to marker's location
+            shadowAnchor: [19, 82],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        }
+    });
     function populate() {
         spots.forEach(function(spot) {
-            var m = new L.Marker([spot.latitude, spot.longitude]);
+            console.log(spot);
+            //set wich icon
+            var icon = new DefaultIcon({iconUrl: '<?=base_url('public/icons')?>/'+spot.name+'.svg'});
+            
+            //create marker
+            var m = new L.Marker(
+                [spot.latitude, spot.longitude],
+                {icon: icon}
+            );
+            //push maker
             markersList.push(m);
             markers.addLayer(m);
         });
         return false;
     }
-
-    //APPLY
+    //apply
     populate();
     map.addLayer(markers);
 
 
-    //NEW SPOT MARKER
+    //=======NEW SPOT MARKER=======//
     map.on('click', onMapClick);
     var newSpotCoords;
     var marker = new L.Marker();
@@ -80,14 +97,28 @@
         //save coords to local storage
         saveLatLng(e.latlng);
 
-        //set marker drag options
-        marker = new L.Marker(e.latlng, {
-            draggable: true
+        //set icon
+        var iconNew = L.icon({
+            iconUrl: '<?=base_url('public/icons/new.svg')?>',
+            shadowUrl: '<?=base_url('public/icons/marker-shadow.png')?>',
+            
+            iconSize:     [44, 44], // size of the icon
+            shadowSize:   [70, 90], // size of the shadow
+            iconAnchor:   [22, 46], // point of the icon which will correspond to marker's location
+            shadowAnchor: [22, 91],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
         });
+
+        //set marker options
+        marker = new L.Marker(e.latlng, {
+            draggable: true,
+            icon: iconNew
+        });
+
+        //set drag options
         marker.on('dragend', function(e) {
             saveLatLng(e.target._latlng);
         });
-
         //add to map
         map.addLayer(marker);
     };

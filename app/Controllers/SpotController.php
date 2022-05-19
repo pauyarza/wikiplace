@@ -37,7 +37,7 @@ class SpotController extends BaseController
         $validation =  \Config\Services::validation();
 
         $validation->setRules([
-            'name' => 'required|max_length[50]|alpha_space',
+            'name' => 'required|max_length[50]|alpha_numeric_space',
             'description' => 'max_length[400]',
             'latitude' => 'required',
             'longitude' => 'required',

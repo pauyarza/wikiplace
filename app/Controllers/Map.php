@@ -12,12 +12,19 @@ class Map extends BaseController
         $sessionData["logged_in"] = session()->logged_in;
         $this->viewData["sessionData"] = $sessionData;
         
+        // Prepare database
+        $this->db = \Config\Database::connect();
     }
 
     public function index()
     {
-        $spotsModel = model('App\Models\SpotModel');
-        $this->viewData["spots"] = $spotsModel->select('id_spot, latitude, longitude')->findAll();
-        return view("pages/map",$this->viewData);
+        $builder = $this->db->table('spot');
+        $builder->select('*');
+        $builder->join('category', 'category.id_category = spot.id_category');
+        $spots = $builder->get()->getResultArray();
+
+        $this->viewData["spots"] = $spots;
+
+        return view("pages/map", $this->viewData);
     }
 }
