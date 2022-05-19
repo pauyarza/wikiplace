@@ -226,3 +226,36 @@ CRITICAL - 2022-05-19 02:52:18 --> Undefined variable $categories
 #7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 {main}
+ERROR - 2022-05-19 03:15:53 --> Error connecting to the database: Unknown database 'wikiplace'
+CRITICAL - 2022-05-19 03:15:53 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'wikiplace'
+#0 C:\wamp64\www\wikiplace\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\wamp64\www\wikiplace\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\wamp64\www\wikiplace\app\Controllers\Admin.php(31): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\wamp64\www\wikiplace\system\CodeIgniter.php(809): App\Controllers\Admin->__construct()
+#4 C:\wamp64\www\wikiplace\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#5 C:\wamp64\www\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+ERROR - 2022-05-19 03:15:59 --> Error connecting to the database: Unknown database 'wikiplace'
+CRITICAL - 2022-05-19 03:15:59 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'wikiplace'
+#0 C:\wamp64\www\wikiplace\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\wamp64\www\wikiplace\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\wamp64\www\wikiplace\app\Controllers\Admin.php(31): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\wamp64\www\wikiplace\system\CodeIgniter.php(809): App\Controllers\Admin->__construct()
+#4 C:\wamp64\www\wikiplace\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#5 C:\wamp64\www\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+ERROR - 2022-05-19 03:16:05 --> Error connecting to the database: Unknown database 'wikiplace'
+CRITICAL - 2022-05-19 03:16:05 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'wikiplace'
+#0 C:\wamp64\www\wikiplace\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\wamp64\www\wikiplace\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\wamp64\www\wikiplace\app\Controllers\Admin.php(31): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\wamp64\www\wikiplace\system\CodeIgniter.php(809): App\Controllers\Admin->__construct()
+#4 C:\wamp64\www\wikiplace\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#5 C:\wamp64\www\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
