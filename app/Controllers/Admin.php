@@ -29,18 +29,15 @@ class Admin extends BaseController
         // Load categories to viewData
         $builder = $this->db->table('category');
         $catQuery = $builder->get();
-
         $this->viewData["categories"] = $catQuery->getResultArray();
-
-        //load
     }
 
     public function index()
     {
-        return view("pages/admin", $this->viewData);
+        return view("admin/admin", $this->viewData);
     }
 
-    //========= NEW CATEGORY =========//
+    //========= CATEGORIES =========//
     public function newCategory(){
         $categoryData = $_POST;
 
@@ -57,7 +54,7 @@ class Admin extends BaseController
             //last try
             $this->viewData["last_cat_name"] = $categoryData['name'];
 
-            return view("pages/admin", $this->viewData);
+            return view("admin/admin", $this->viewData);
         }
         
         //correct input data
@@ -70,7 +67,7 @@ class Admin extends BaseController
                 $builder = $this->db->table('category');
                 $catQuery = $builder->get();
                 $this->viewData["categories"] = $catQuery->getResultArray();
-                return view("pages/admin", $this->viewData);
+                return view("admin/admin", $this->viewData);
             }
             else{
                 echo "database error";
@@ -87,6 +84,29 @@ class Admin extends BaseController
         }
         else{
             echo "Database errror";
+        }
+    }
+
+    public function loadEditCategory(){
+        $this->viewData["id_category"] = $_GET['id_category'];
+        $this->viewData["name"] = $_GET['name'];
+        return view("admin/edit_category", $this->viewData);
+    }
+
+    public function editCategory(){
+        $id_category = $_POST['id_category'];
+        $name = $_POST['name'];
+
+        $builder = $this->db->table('category');
+        $builder->set('name', $name);
+        $builder->where('id_category',$id_category);
+        if($builder->update()){
+            //load categories again
+            $builder = $this->db->table('category');
+            $catQuery = $builder->get();
+            $this->viewData["categories"] = $catQuery->getResultArray();
+            $this->viewData["message"] = "Category updated successfully.";
+            return view("admin/admin", $this->viewData);
         }
     }
 }

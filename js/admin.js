@@ -1,7 +1,7 @@
-function deleteCategory(id_category,name,url){
+function deleteCategory(id_category,name,urlDelete,urlRedirect){
     if (window.confirm("Do you want to ⚠️DELETE⚠️ " + name + "?")) {
         $.ajax({  
-            url:url,
+            url:urlDelete,
             type: 'post',
             dataType:'text',
             data: {
@@ -9,7 +9,7 @@ function deleteCategory(id_category,name,url){
             },
             success:function(response){
                 if(response == "ok"){
-                    location.reload();
+                    window.location.href = urlRedirect;
                 }
                 else{
                     alert(response);

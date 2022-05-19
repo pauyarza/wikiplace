@@ -22,29 +22,37 @@
     ];
     ?>
     <?= form_open('SpotController/NewSpot', $formAttributes) ?>
-    <label>
-        Name
-        <input name="name" type="text" class="form-control">
-    </label>
-    <br>
-    <label>
-        Description
-        <textarea name="description" rows="10" class="form-control"></textarea>
-    </label>
-    <input type="hidden" name="latitude" id="inputLat">
-    <input type="hidden" name="longitude" id="inputLng">
-    <script>
-        //Set hidden input values
-        $("#inputLat").val(localStorage.getItem("newLatitude"));
-        $("#inputLng").val(localStorage.getItem("newLongitude"));
+        <select name="id_category">
+            <?php foreach($categories as $category){ ?>
+                <option value="<?=$category['id_category']?>">
+                    <?=ucfirst($category['name'])?>
+                </option>
+            <?php } ?>
+        </select>
+        <br>
+        <label>
+            Name
+            <input name="name" type="text" class="form-control">
+        </label>
+        <br>
+        <label>
+            Description
+            <textarea name="description" rows="10" class="form-control"></textarea>
+        </label>
+        <input type="hidden" name="latitude" id="inputLat">
+        <input type="hidden" name="longitude" id="inputLng">
+        <script>
+            //Set hidden input values
+            $("#inputLat").val(localStorage.getItem("newLatitude"));
+            $("#inputLng").val(localStorage.getItem("newLongitude"));
 
-        //Remove from local storage
-        localStorage.removeItem("newLatitude");
-        localStorage.removeItem("newLongitude");
-    </script>
-    <script></script>
-    <br>
-    <button type="submit">Enviar</button>
+            //Remove from local storage
+            localStorage.removeItem("newLatitude");
+            localStorage.removeItem("newLongitude");
+        </script>
+        <script></script>
+        <br>
+        <button type="submit">Enviar</button>
     </form>
 </div>
 <?= $this->endSection('content') ?>

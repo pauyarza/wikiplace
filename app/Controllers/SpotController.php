@@ -12,17 +12,24 @@ class SpotController extends BaseController
         $sessionData["is_admin"] = session()->is_admin;
         $sessionData["logged_in"] = session()->logged_in;
         $this->viewData["sessionData"] = $sessionData;
-    }
 
-    public function spotForm(){
-        //if not logged in
+        // If not logged in
         if(!session()->logged_in){
             $this->viewData["goTo"] = base_url("map");
             return view("pages/redirecting", $this->viewData);
         }
-        else{
-            return view("pages/new_spot", $this->viewData);
-        }
+
+        // Prepare database
+        $this->db = \Config\Database::connect();
+
+        // Load categories to viewData
+        $builder = $this->db->table('category');
+        $catQuery = $builder->get();
+        $this->viewData["categories"] = $catQuery->getResultArray();
+    }
+
+    public function spotForm(){
+        return view("pages/new_spot", $this->viewData);
     }
 
     public function newSpot(){

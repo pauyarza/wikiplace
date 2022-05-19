@@ -85,7 +85,7 @@ $("#loginForm").submit(function (e) {
     e.preventDefault(); // avoid to execute the actual submit of the form.
     
     var form = $(this);
-    var actionUrl = form.attr('action');//get action from form (usercontroller/loginAjax)
+    var actionUrl = form.attr('action');// get action from form (usercontroller/loginAjax)
     
     $.ajax({
         type: "POST",
