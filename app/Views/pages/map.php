@@ -43,7 +43,8 @@
         center: latlng,
         zoom: 15,
         layers: [tiles],
-        attributionControl: false
+        attributionControl: false,
+        zoomControl: false
     });
 
     //=======GENEREATE MARKERS=======//

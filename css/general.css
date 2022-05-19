@@ -29,7 +29,6 @@ a{
 
 .index-box{
     width: 100%;
-    padding-bottom: 400px !important; /*makes box go up*/
     position: relative;
     top: 30%;
 }
@@ -55,7 +54,7 @@ a{
     margin: auto;
     border: 1px solid rgb(31, 31, 31);
     border-radius: 4px;
-    padding-left: 30px;
+    padding: 2px 5px 3px 30px;
     margin-bottom: 20px;
     background-color: #e2e2e2;
 }
@@ -123,16 +122,26 @@ a{
     padding: 0;
     list-style: none;
     display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 420px;
+    margin-right: 30px;
+    height: 100%;
+
     /*opacity: 0;
     visibility: hidden;*/
 }
-.menu-item{
-    margin: 0 15px;
-  }
+
+.menu-item, .menu-link{
+    height: 100%;
+    display: inline-block;
+}
+
 .menu-link{
     font-family: 'Josefin Sans', sans-serif;
     color: black;
     text-decoration: none;
+    padding-top: 14px;
 }
 
 .menu-bar{
@@ -141,12 +150,15 @@ a{
     cursor: pointer;
     color: white;
 }
+
+
 .one,.two,.three{
-    width: 110%;
-    background: black;
+    width: 33px;
+    background: rgb(33, 33, 33);
     height: 3px;
     transition-timing-function: ease-in;
     transition: all 0.3s;
+    border-radius: 3px;
 }
 .two{
     margin: 5px 0;

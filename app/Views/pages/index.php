@@ -27,10 +27,20 @@
 </div>
 
 <script>
+    var categories = [];
+    <?php
+        foreach($categories as $category){
+            echo "categories.push('".$category['name']."');";
+        }
+    ?>
+    console.log(categories);
     window.ityped.init(document.querySelector('.ityped'),{
-    strings: ['parkour','climbing','xavi handsome'],
-    loop: true
-})
+        strings: categories,
+        loop: true,
+        typeSpeed:  90,
+        startDelay: 200,
+        backDelay:  700,
+    })
 </script>
 
 
