@@ -17,5 +17,12 @@
     <!-- Necessary for typer --><script src="https://unpkg.com/ityped@0.0.10"></script>
 </div>
 
+<script>
+    window.ityped.init(document.querySelector('.ityped'),{
+    strings: ['parkour','climbing','xavi handsome'],
+    loop: true
+})
+</script>
+
 
 <?= $this->endSection('content') ?>

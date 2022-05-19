@@ -5,8 +5,7 @@
         <div class="three"></div>
     </div>
 
-
-    <ul id="menu" class="menu">
+    <ul id="menu" class="menu d-none">
 
         <li class="menu-item"><a href="<?php echo base_url('map') ?>" class="menu-link">Map</a></li>
         <li class="menu-item"><a href="<?php echo base_url('aboutUs') ?>" class="menu-link">About Us</a></li>
@@ -45,13 +44,7 @@
             <li>
                 <hr class="dropdown-divider">
             </li>
-            <li class="form-switch ps-0" onclick="event.stopPropagation();">
-                <label class="dropdown-item d-flex flex-row" for="dark-reader-mode-switch" style="cursor: pointer;">
-                    <span class="">Dark Mode Toggle</span>
-                    <input class="form-check-input mx-1 ms-3" type="checkbox" id="dark-reader-mode-switch" onchange="toggleDarkReaderModeSwitch();" style="cursor: pointer;">
-                </label>
-            </li>
-            <li class="menu-item"><a href="<?php echo base_url('UserController/logout') ?>" class="menu-link">Log Out</a></li>
+            <li><a class="menu-link dropdown-item" href="<?php echo base_url('UserController/logout') ?>" >Log Out</a></li>
         </ul>
     </div><?php
 
