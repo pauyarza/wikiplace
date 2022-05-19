@@ -34,9 +34,13 @@
       
     ?>
     <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-            D
-        </button>
+
+        <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="<?php echo base_url('public/img/profile.png') ?>" alt="" width="32" height="32" class="rounded-circle me-2">
+            <strong>xapase</strong>
+        </a>
+
+
         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
             <li><a class="dropdown-item" href="#">Profile</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
