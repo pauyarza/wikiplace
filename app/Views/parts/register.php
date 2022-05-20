@@ -58,7 +58,6 @@
                 <button class="custom-btn-1" type="submit">Register</button>
             </form>
             <button class="custom-btn-2" data-bs-target="#loginModal" data-bs-toggle="modal" data-bs-dismiss="modal">Login</button>
-
         </div>
     </div>
   </div>

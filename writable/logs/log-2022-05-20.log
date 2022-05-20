@@ -392,3 +392,101 @@ CRITICAL - 2022-05-20 03:54:53 --> Call to undefined function form_open()
 #11 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #12 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
 #13 {main}
+ERROR - 2022-05-20 04:55:27 --> Column 'id_category' in field list is ambiguous
+CRITICAL - 2022-05-20 04:55:27 --> Column 'id_category' in field list is ambiguous
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `id_spot...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id_spot...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id_spot...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `id_spot...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\app\Controllers\Map.php(24): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Map->index()
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Map))
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-05-20 04:55:57 --> Unknown column 'spot.category.name' in 'field list'
+CRITICAL - 2022-05-20 04:55:57 --> Unknown column 'spot.category.name' in 'field list'
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `spot`.`...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `spot`.`...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `spot`.`...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `spot`.`...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\app\Controllers\Map.php(24): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Map->index()
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Map))
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-05-20 04:58:52 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.`spot_name`
+FROM `spot`
+JOIN `category` ON `category`.`id_category` = `spot`...' at line 1
+CRITICAL - 2022-05-20 04:58:52 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.`spot_name`
+FROM `spot`
+JOIN `category` ON `category`.`id_category` = `spot`...' at line 1
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `spot`.`...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `spot`.`...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `spot`.`...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `spot`.`...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\app\Controllers\Map.php(24): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Map->index()
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Map))
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-05-20 04:59:14 --> Unknown column 'spot.name' in 'field list'
+CRITICAL - 2022-05-20 04:59:14 --> Unknown column 'spot.name' in 'field list'
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `spot`.`...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `spot`.`...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `spot`.`...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `spot`.`...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\app\Controllers\Map.php(24): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Map->index()
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Map))
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-20 05:17:20 --> Call to undefined function form_open()
+#0 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(424): CodeIgniter\View\View->render('parts/login', NULL, true)
+#3 C:\xampp\htdocs\wikiplace\app\Views\layout.php(16): CodeIgniter\View\View->include('parts/login')
+#4 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#6 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#7 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/redirecti...', Array, true)
+#8 C:\xampp\htdocs\wikiplace\app\Controllers\SpotController.php(19): view('pages/redirecti...', Array)
+#9 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(809): App\Controllers\SpotController->__construct()
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#11 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2022-05-20 05:37:27 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\wikiplace\app\Views\parts\menu.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 15)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(424): CodeIgniter\View\View->render('parts/menu', NULL, true)
+#4 C:\xampp\htdocs\wikiplace\app\Views\layout.php(14): CodeIgniter\View\View->include('parts/menu', NULL)
+#5 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#8 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/redirecti...', Array, true)
+#9 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(127): view('pages/redirecti...', Array)
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->logOut()
+#11 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#12 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2022-05-20 05:37:27 --> Call to undefined function form_open()
+#0 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(424): CodeIgniter\View\View->render('parts/login', NULL, true)
+#3 C:\xampp\htdocs\wikiplace\app\Views\layout.php(16): CodeIgniter\View\View->include('parts/login')
+#4 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#6 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#7 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/redirecti...', Array, true)
+#8 C:\xampp\htdocs\wikiplace\app\Controllers\SpotController.php(19): view('pages/redirecti...', Array)
+#9 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(809): App\Controllers\SpotController->__construct()
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#11 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}

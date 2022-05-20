@@ -19,7 +19,7 @@ class Map extends BaseController
     public function index()
     {
         $builder = $this->db->table('spot');
-        $builder->select('*');
+        $builder->select('category.name ,spot.latitude, spot.longitude, spot.spot_name');
         $builder->join('category', 'category.id_category = spot.id_category');
         $spots = $builder->get()->getResultArray();
 

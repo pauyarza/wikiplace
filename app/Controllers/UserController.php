@@ -74,6 +74,11 @@ class UserController extends BaseController
         $validation->setRules([
             'usernameMail' => 'required',
             'password' => 'required'
+        ],
+        [// Errors
+            'usernameMail' => [
+                'required' => 'The username/mail field is required.',
+            ]
         ]);
 
         //bad user input

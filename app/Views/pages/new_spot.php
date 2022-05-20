@@ -17,11 +17,12 @@
     <h1>New spot</h1>
     <?php
     $formAttributes = [
-        'class'  => 'needs-validation',
+        'class'  => 'needs-validation container new-spot-container',
         'novalidate' => 'true',
     ];
     ?>
     <?= form_open('SpotController/NewSpot', $formAttributes) ?>
+
         <select name="id_category">
             <?php foreach($categories as $category){ ?>
                 <option value="<?=$category['id_category']?>">
@@ -34,6 +35,8 @@
             Name
             <input name="name" type="text" class="form-control">
         </label>
+        <br>
+        <label>Images</label>
         <br>
         <label>
             Description
@@ -50,9 +53,11 @@
             localStorage.removeItem("newLatitude");
             localStorage.removeItem("newLongitude");
         </script>
-        <script></script>
         <br>
         <button type="submit">Enviar</button>
+        <div class="alert alert-danger" role="alert">
+            A simple danger alert—check it out!
+        </div>
     </form>
 </div>
 <?= $this->endSection('content') ?>
