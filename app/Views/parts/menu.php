@@ -42,6 +42,8 @@
 
 
         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+        
+            <li><a class="dropdown-item" href="<?php echo base_url('Home/index') ?>"><img class="logo-dropdown" src="<?php echo base_url('public/img/logo2.svg') ?>"></a></li>
             <li><a class="dropdown-item" href="<?php echo base_url('Usercontroller/displayProfile') ?>">Profile</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>

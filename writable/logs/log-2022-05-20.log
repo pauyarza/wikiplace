@@ -392,6 +392,7 @@ CRITICAL - 2022-05-20 03:54:53 --> Call to undefined function form_open()
 #11 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #12 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
 #13 {main}
+<<<<<<< HEAD
 ERROR - 2022-05-20 04:55:27 --> Column 'id_category' in field list is ambiguous
 CRITICAL - 2022-05-20 04:55:27 --> Column 'id_category' in field list is ambiguous
 #0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `id_spot...', 0)
@@ -490,3 +491,16 @@ CRITICAL - 2022-05-20 05:37:27 --> Call to undefined function form_open()
 #11 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #12 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
 #13 {main}
+=======
+CRITICAL - 2022-05-20 05:37:42 --> Undefined variable: formAttributes
+#0 C:\wamp64\www\wikiplace\app\Views\pages\profile.php(17): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\wamp64\\www\\w...', 17, Array)
+#1 C:\wamp64\www\wikiplace\system\View\View.php(210): include('C:\\wamp64\\www\\w...')
+#2 C:\wamp64\www\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\wamp64\www\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/profile', Array, true)
+#4 C:\wamp64\www\wikiplace\app\Controllers\UserController.php(138): view('pages/profile', Array)
+#5 C:\wamp64\www\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->displayProfile()
+#6 C:\wamp64\www\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#7 C:\wamp64\www\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\wamp64\www\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+>>>>>>> 7775371497cc01d8bcad892195c9ce72e0bef776

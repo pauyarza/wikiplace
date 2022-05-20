@@ -189,17 +189,25 @@ a{
     color: white;
 }
 
+.logo-dropdown{
+    width: 80%;
+}
+
 /*====== LOGIN & REGISTER FORM ======*/
 
 .modal-content {
-    border-radius: 30px;
+    border-radius: 70px;
     background-color: #FFD365;
-    border: 6px solid #FDFFA9;
+    border: 8px solid #FDFFA9;
+    padding-bottom: 30px;
 }
 
 .modal-header, .modal-footer{
     border-bottom: 0;
     border-top: 0;
+}
+.btn-close{
+    margin-top: 5px !important;
 }
 
 .modal-dialog{
@@ -207,8 +215,8 @@ a{
 }
 
 .loginFormWrapper div{
-        margin: 100px;
-        background-color: aquamarine;
+    margin: 100px;
+    background-color: aquamarine;
 }
 
 .modal-body img{
@@ -261,6 +269,7 @@ a{
     transition: all 0.5s;
 }
 
+<<<<<<< HEAD
 #customLoginError{
     color: #dc3545;
     margin-top: .6rem;
@@ -268,3 +277,31 @@ a{
 }
 
 /*====== NEW SPOT FORM ======*/
+=======
+/*====== MAP ======*/
+
+/*====== PROFILE ======*/
+
+
+.profile-box{
+    margin-top: 55px;
+}
+
+.edit-img{
+    position: absolute;
+    width: 120px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-img{
+    position: relative;
+    width: 120px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+>>>>>>> 7775371497cc01d8bcad892195c9ce72e0bef776
