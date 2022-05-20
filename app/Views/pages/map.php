@@ -23,14 +23,26 @@
 
 
 <div id="map"></div>
-<a 
-    href="<?= base_url('SpotController/SpotForm') ?>" 
+<button 
+    onclick="redirectToSpotForm()"
     class="btn btn-success" 
     id="botoNewSpot"
     style="display:none"
 >
     Add spot
-</a>
+</button>
+<script type="text/javascript">
+    function redirectToSpotForm(){
+        <?php
+            if($sessionData["logged_in"]){
+                echo "location.replace('".base_url('SpotController/SpotForm')."');";
+            }
+            else{
+                echo "$('#registerModal').modal('show');";
+            }
+        ?>
+    }
+</script>
 
 <script type="text/javascript">
     //=======PASS SPOTS ARRAY TO JS=======//
