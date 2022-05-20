@@ -24,7 +24,6 @@ class Map extends BaseController
         $spots = $builder->get()->getResultArray();
 
         $this->viewData["spots"] = $spots;
-
         return view("pages/map", $this->viewData);
     }
 }

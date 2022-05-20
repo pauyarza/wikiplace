@@ -14,7 +14,7 @@ class SpotModel extends Model
         'latitude', 
         'longitude', 
         'date', 
-        'name',
+        'spot_name',
         'description'
     ];
 }
