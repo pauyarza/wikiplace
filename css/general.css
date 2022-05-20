@@ -30,7 +30,7 @@ a{
 .index-box{
     width: 100%;
     position: relative;
-    top: 30%;
+    top: 26%;
 }
 
 .index .index-logo {
@@ -38,7 +38,7 @@ a{
     margin: auto;
     width: 97%;
     max-width: 450px;
-    margin-bottom: 13px;
+    margin-bottom: 33px;
 }
 
 .index form{
@@ -48,14 +48,8 @@ a{
 }
 
 .search-input{
-    width: 90%;
-    max-width: 410px;
-    display: block;
-    margin: auto;
-    border: 1px solid rgb(31, 31, 31);
+    border: 1px solid rgb(31, 31, 31, 0.2);
     border-radius: 4px;
-    padding: 2px 5px 3px 30px;
-    margin-bottom: 20px;
     background-color: #e2e2e2;
 }
 
@@ -65,12 +59,19 @@ a{
     position: absolute;
 }
 
+.input-group .btn {
+    color: white;
+    background-color: #00C897;
+    border: 1.5px solid #00C897;
+}
+
 .typer{
     font-family: 'Josefin Sans', sans-serif;
     width: 100%;
     color: black;
     text-align: center;
     user-select: none;
+    margin-top: 35px;
 }
 
 /*====== ABOUT ======*/

@@ -4,6 +4,8 @@
 <!-- Unique head -->
 <?= $this->section('head')?>
     <title>Wikiplace</title>
+    <!--Font Awesome--><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <?= $this->endSection('head')?>
 
 <!-- Content -->
@@ -13,12 +15,23 @@
     <div class="container index-box">
         <img class="index-logo" src="<?php echo base_url('public/img/logo.svg'); ?>" alt="wikiplace.org">
         <?=form_open('home/search')?>
-            <img class="search-icon" src="<?php echo base_url('public/img/search.svg'); ?>">
-            <input type="search" name="search" class="search-input">
-            <!-- <div class="search results">
-                <div>result1</div>
-                <div>result2</div>
-            </div> -->
+        
+        <div class="input-group mb-3">
+            <input type="text" class="form-control search-input" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>    
+        
+        <!--<div class="input-group">
+                <div class="form-outline">
+                    <input type="search" name="search" class="form-control search-input" />
+                    <label class="form-label" for="form1">Search</label>
+                </div>
+                <button type="button" class="btn btn-primary">
+                    <i class="fas fa-search search-ico"></i>
+                </button>
+            </div>-->
         </form>
         <!--Typer-->
         <h2 class="typer"><span class="ityped"></span></h2>
