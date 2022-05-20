@@ -127,23 +127,13 @@ class UserController extends BaseController
         return view("pages/redirecting", $this->viewData);
     }
 
-    public function temp(){
-        //prepare query
-        $db = \Config\Database::connect();
-        $builder = $db->table('user');
-        $builder->get();
-        $builder->where('username', "testUser");
-        $builder->where('password', "123a4");
+    public function displayProfile(){
+        // Load session info to viewData
+        $sessionData["is_admin"] = session()->is_admin;
+        $sessionData["username"] = session()->username;
 
-        //run query
-        $result = $builder->get();
-        $sendObj = $result->getRow();
-        
-        if($sendObj){
-            echo "ok";
-        }
-        else{
-            echo("Incorrect username or password.");
-        }
+        $this->viewData["sessionData"] = $sessionData;
+        print_r($this->viewData);
+        // return view("pages/profile", $this->viewData);      
     }
 }
