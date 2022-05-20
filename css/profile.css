@@ -1,0 +1,19 @@
+.profile-box{
+    margin-top: 55px;
+}
+
+.edit-img{
+    position: absolute;
+    width: 120px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-img{
+    position: relative;
+    width: 120px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,0 +1,52 @@
+
+.index{
+    height: 100%;
+    position: relative;
+}
+
+.index-box{
+    width: 100%;
+    position: relative;
+    top: 26%;
+}
+
+.index .index-logo {
+    display: block;
+    margin: auto;
+    width: 97%;
+    max-width: 450px;
+    margin-bottom: 33px;
+}
+
+.index form{
+    display: block;
+    margin: auto;
+    max-width: 300px;
+}
+
+.search-input{
+    border: 1px solid rgb(31, 31, 31, 0.2);
+    border-radius: 4px;
+    background-color: #e2e2e2;
+}
+
+.index .search-icon{
+    height: 18px;
+    margin: 5.5px 0 0 20px;
+    position: absolute;
+}
+
+.input-group .btn {
+    color: white;
+    background-color: #00C897;
+    border: 1.5px solid #00C897;
+}
+
+.typer{
+    font-family: 'Josefin Sans', sans-serif;
+    width: 100%;
+    color: black;
+    text-align: center;
+    user-select: none;
+    margin-top: 35px;
+}

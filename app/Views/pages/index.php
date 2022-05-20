@@ -4,6 +4,8 @@
 <!-- Unique head -->
 <?= $this->section('head')?>
     <title>Wikiplace</title>
+    <!-- Index CSS--><link rel="stylesheet" type="text/css" href="<?php echo base_url('css/index.css'); ?>">
+
 <?= $this->endSection('head')?>
 
 <!-- Content -->

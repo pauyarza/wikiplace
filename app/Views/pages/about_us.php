@@ -2,6 +2,7 @@
 
 <!-- Unique head -->
 <?= $this->section('head')?>
+    <!-- CSS--><link rel="stylesheet" type="text/css" href="<?php echo base_url('css/about_us.css'); ?>">
     <title>Wikiplace | About us 👨🏻‍💻</title>
 <?= $this->endSection('head')?>
 

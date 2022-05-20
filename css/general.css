@@ -20,92 +20,6 @@ a{
     color: rgb(33, 37, 41);
 }
 
-/*====== INDEX ======*/
-
-.index{
-    height: 100%;
-    position: relative;
-}
-
-.index-box{
-    width: 100%;
-    position: relative;
-    top: 26%;
-}
-
-.index .index-logo {
-    display: block;
-    margin: auto;
-    width: 97%;
-    max-width: 450px;
-    margin-bottom: 33px;
-}
-
-.index form{
-    display: block;
-    margin: auto;
-    max-width: 300px;
-}
-
-.search-input{
-    border: 1px solid rgb(31, 31, 31, 0.2);
-    border-radius: 4px;
-    background-color: #e2e2e2;
-}
-
-.index .search-icon{
-    height: 18px;
-    margin: 5.5px 0 0 20px;
-    position: absolute;
-}
-
-.input-group .btn {
-    color: white;
-    background-color: #00C897;
-    border: 1.5px solid #00C897;
-}
-
-.typer{
-    font-family: 'Josefin Sans', sans-serif;
-    width: 100%;
-    color: black;
-    text-align: center;
-    user-select: none;
-    margin-top: 35px;
-}
-
-/*====== ABOUT ======*/
-.abouth1 {
-  font-family: 'Josefin Sans', sans-serif;
-  margin-top: 52px;
-  margin-bottom: 30px;
-  padding: 0;
-  width: 100%;
-  color: #019267;
-  text-align: center;
-}
-
-.aboutp {
-  font-family: 'Josefin Sans', sans-serif;
-  padding: 0;
-  text-align: center;
-}
-.aboutimgs{
-  margin-top: 32px;
-  position: relative;
-}
-.profile{
-  width: 40%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-.aboutp2{
-  margin-top: 25px;
-  padding: 0 20px;
-}
-
-
 /*====== MENU ======*/
 
 .main-nav{
@@ -269,39 +183,9 @@ a{
     transition: all 0.5s;
 }
 
-<<<<<<< HEAD
 #customLoginError{
     color: #dc3545;
     margin-top: .6rem;
     font-size: .875em;
 }
 
-/*====== NEW SPOT FORM ======*/
-=======
-/*====== MAP ======*/
-
-/*====== PROFILE ======*/
-
-
-.profile-box{
-    margin-top: 55px;
-}
-
-.edit-img{
-    position: absolute;
-    width: 120px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.profile-img{
-    position: relative;
-    width: 120px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
->>>>>>> 7775371497cc01d8bcad892195c9ce72e0bef776
