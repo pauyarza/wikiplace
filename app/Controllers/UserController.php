@@ -130,10 +130,11 @@ class UserController extends BaseController
     public function displayProfile(){
         // Load session info to viewData
         $sessionData["is_admin"] = session()->is_admin;
+        $sessionData["logged_in"] = session()->logged_in;
         $sessionData["username"] = session()->username;
 
         $this->viewData["sessionData"] = $sessionData;
-        print_r($this->viewData);
-        // return view("pages/profile", $this->viewData);      
+
+        return view("pages/profile", $this->viewData);      
     }
 }
