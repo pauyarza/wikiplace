@@ -4,6 +4,10 @@
 <?= $this->section('head') ?>
     <title>Wikiplace | Redirecting...</title>
     <script>
+        <?php
+            if(isset($message))
+            echo "alert('".$message."');"
+        ?>
         window.location.href = "<?= $goTo?>";
     </script>
 <?= $this->endSection('head') ?>

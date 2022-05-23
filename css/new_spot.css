@@ -1,0 +1,15 @@
+.new-spot-form{
+    max-width: 500px;
+}
+
+.new-spot-form input{
+    width: 100%;
+}
+
+.new-spot-form label{
+    padding-top: 10px;
+}
+
+.new-spot-form .send{
+    width: 100%;
+}

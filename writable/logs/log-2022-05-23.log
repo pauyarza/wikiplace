@@ -1,0 +1,25 @@
+ERROR - 2022-05-23 02:09:23 --> Got a packet bigger than 'max_allowed_packet' bytes
+CRITICAL - 2022-05-23 02:09:23 --> Got a packet bigger than 'max_allowed_packet' bytes
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `sp...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `sp...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `sp...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `sp...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\wikiplace\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\wikiplace\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\wikiplace\app\Controllers\SpotController.php(101): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\SpotController->newSpot()
+#9 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SpotController))
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-05-23 02:11:47 --> unlink(C:\xampp\htdocs\wikiplace\writable\debugbar/debugbar_1653252231.json): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(C:\\xampp...', 'C:\\xampp\\htdocs...', 74)
+#1 C:\xampp\htdocs\wikiplace\system\Debug\Toolbar\Collectors\History.php(74): unlink('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\Debug\Toolbar.php(487): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1653289901, 20)
+#3 C:\xampp\htdocs\wikiplace\system\Debug\Toolbar.php(464): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 C:\xampp\htdocs\wikiplace\app\Config\Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#5 C:\xampp\htdocs\wikiplace\system\Events\Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(308): CodeIgniter\Events\Events::trigger('pre_system')
+#7 C:\xampp\htdocs\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}

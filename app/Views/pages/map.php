@@ -24,9 +24,17 @@
 
 <div id="map"></div>
 <button 
+    onclick="setMapToUserLocation()"
+    class="btn btn-success" 
+    id="userLocationButton"
+    style="display:none"
+>
+    Where am I
+</button>
+<button 
     onclick="redirectToSpotForm()"
     class="btn btn-success" 
-    id="botoNewSpot"
+    id="newSpotButton"
     style="display:none"
 >
     Add spot
@@ -55,12 +63,44 @@
 
         latlng = new L.LatLng(41.548630, 2.107440);
     var map = new L.Map('map', {
+        setView: true,
+        enableHighAccuracy: true,
         center: latlng,
         zoom: 15,
         layers: [tiles],
         attributionControl: false,
-        zoomControl: false
+        zoomControl: false,
     });
+
+    //teleport to user location option
+    var userLocation = null;
+    var markerUserLocation;
+    var circleUserLocation;
+
+    function onLocationFound(e) {
+        userLocation = e.latlng;
+        var radius = e.accuracy / 2;
+        if(markerUserLocation){
+            map.removeLayer(markerUserLocation);
+            map.removeLayer(circleUserLocation);
+        }
+        markerUserLocation = L.marker(e.latlng).addTo(map).bindTooltip("You are here").removeEventListener('click');
+        circleUserLocation = L.circle(e.latlng, radius).addTo(map).removeEventListener('click');
+        $("#userLocationButton").show();
+    }
+
+    function setMapToUserLocation(){
+        markerUserLocation.openTooltip();
+        map.setView(userLocation, map.getZoom(), {
+            "animate": true,
+            "pan": {
+                "duration": 1
+            }
+        });
+    }
+
+    map.on('locationfound', onLocationFound);
+    map.locate({watch: true});
 
     //=======GENEREATE MARKERS=======//
     var markers = new L.MarkerClusterGroup();
@@ -85,13 +125,7 @@
             var marker = new L.Marker(
                 [spot.latitude, spot.longitude],
                 {icon: icon}
-            );
-
-            //add popup
-            var popUpContent = '';
-            popUpContent += spot.spot_name;
-            popUpContent += "<button onclick='goMaps("+spot.latitude+","+spot.longitude+")'>Maps</button>";
-            marker.bindPopup(popUpContent);
+            ).on('click', function(){loadSpotData(marker,spot.id_spot);});
 
             //push maker
             markersList.push(marker);
@@ -111,7 +145,7 @@
 
     function onMapClick(e) {
         //display new spot button
-        $("#botoNewSpot").show();
+        $("#newSpotButton").show();
 
         //delete past marker
         if (marker) map.removeLayer(marker);
@@ -141,6 +175,13 @@
         marker.on('dragend', function(e) {
             saveLatLng(e.target._latlng);
         });
+
+        marker.on('click', function(e) {
+            if(confirm("Add new spot here?")){
+
+            }
+        });
+
         //add to map
         map.addLayer(marker);
     };
@@ -148,6 +189,24 @@
     function saveLatLng(latlng) {
         localStorage.setItem('newLatitude', latlng.lat);
         localStorage.setItem('newLongitude', latlng.lng);
+    }
+
+
+    //=======LOAD POPUP DATA=======//
+    function loadSpotData(marker,id_spot){
+        marker.unbindPopup().bindPopup(
+            "<img class='loadingGif' src='<?= base_url('public/img/loading.gif')?>'></img>",
+            {'className' : 'spotPopup'}
+        );
+        marker.openPopup();
+        $.ajax({
+            type: "POST",
+            url: "spotController/getSpotPopupAjax",
+            data: { id_spot : id_spot },
+            success: function (response) {
+                marker.bindPopup(response);
+            }
+        });
     }
 </script>
 <?= $this->endSection('content') ?>

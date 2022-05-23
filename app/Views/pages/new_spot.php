@@ -2,13 +2,16 @@
 
 <!-- Unique head -->
 <?= $this->section('head') ?>
-<title>Wikiplace | New spot 📍</title>
-<!-- if not coords on session storage redirect to map -->
-<script>
-    if (!localStorage.getItem("newLatitude")) {
-        window.location.href = "<?= base_url('Map') ?>"
-    }
-</script>
+    <title>Wikiplace | New spot 📍</title>
+    <!-- if not coords on session storage redirect to map and no errors set -->
+    <?php if(!isset($errors)){ ?>
+        <script>
+            if (!localStorage.getItem("newLatitude")) {
+                window.location.href = "<?= base_url('Map') ?>"
+            }
+        </script>
+    <?php } ?>
+    <!-- New Spot CSS--><link rel="stylesheet" type="text/css" href="<?php echo base_url('css/new_spot.css'); ?>">
 <?= $this->endSection('head') ?>
 
 <!-- Content -->
@@ -17,47 +20,93 @@
     <h1>New spot</h1>
     <?php
     $formAttributes = [
-        'class'  => 'needs-validation container new-spot-container',
+        'class'  => 'new-spot-form',
         'novalidate' => 'true',
     ];
     ?>
-    <?= form_open('SpotController/NewSpot', $formAttributes) ?>
+    <?= form_open_multipart('SpotController/NewSpot', $formAttributes) ?>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <!-- NAME -->
+                <label for="inputName">Name</label>
+                <input 
+                    name="spot_name" 
+                    type="text" 
+                    id="inputName"
+                    class="form-control <?php if(isset($errors["name"])) echo "is-invalid"?>"
+                    value="<?= $lastTry['name'] ?? ''?>"
+                >
+                <div class="invalid-feedback">
+                    <?php if(isset($errors["name"])) echo $errors["name"]?>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <!-- CATEGORY -->
+                <label for="categorySelect">Category</label>
+                <select 
+                    name="id_category" 
+                    required 
+                    id="categorySelect"
+                    class="form-select <?php if(isset($errors["id_category"])) echo "is-invalid"?>" 
+                >
+                    <option disabled <?php if(!isset($lastTry["id_category"])) echo "selected"?>>Select a category</option>
+                    <?php foreach($categories as $category){ ?>
+                        <option 
+                            value="<?=$category['id_category']?>"
+                            <?php
+                                if(isset($lastTry["id_category"]) && $category['id_category'] == $lastTry["id_category"])
+                                echo "selected";
+                            ?>
+                        >
+                            <?=ucfirst($category['name'])?>
+                        </option>
+                    <?php } ?>
+                </select>
+                <div class="invalid-feedback">
+                    <?php if(isset($errors["id_category"])) echo $errors["id_category"]?>
+                </div>
+            </div>
+        </div>
+        <!-- IMAGES -->
+        <label for="images">Images (optional)</label>
+        <input
+            type="file" name="images[]"
+            multiple
+            class="form-control <?php if(isset($errors["images"])) echo "is-invalid"?>"
+        >
+        <div class="invalid-feedback">
+            <?php if(isset($errors["images"])) echo $errors["images"]?>
+        </div>
 
-        <select name="id_category">
-            <?php foreach($categories as $category){ ?>
-                <option value="<?=$category['id_category']?>">
-                    <?=ucfirst($category['name'])?>
-                </option>
-            <?php } ?>
-        </select>
-        <br>
-        <label>
-            Name
-            <input name="name" type="text" class="form-control">
-        </label>
-        <br>
-        <label>Images</label>
-        <br>
-        <label>
-            Description
-            <textarea name="description" rows="10" class="form-control"></textarea>
-        </label>
-        <input type="hidden" name="latitude" id="inputLat">
-        <input type="hidden" name="longitude" id="inputLng">
+        <!-- DESCRIPTION -->
+        <label for="descriptionInput">Description (optional)</label>
+        <textarea 
+            name="description" 
+            id="descriptionInput" 
+            class="form-control <?php if(isset($errors["description"])) echo "is-invalid"?>"
+            rows="2"><?= $lastTry['description'] ?? ''?></textarea>
+        <div class="invalid-feedback">
+                <?php if(isset($errors["description"])) echo $errors["description"]?>
+        </div>
+        <input type="hidden" name="latitude" id="inputLat" value="<?= $lastTry['latitude'] ?? ''?>">
+        <input type="hidden" name="longitude" id="inputLng" value="<?= $lastTry['longitude'] ?? ''?>">
         <script>
-            //Set hidden input values
-            $("#inputLat").val(localStorage.getItem("newLatitude"));
-            $("#inputLng").val(localStorage.getItem("newLongitude"));
-
-            //Remove from local storage
-            localStorage.removeItem("newLatitude");
-            localStorage.removeItem("newLongitude");
+            if(localStorage.getItem("newLatitude")){
+                //Set hidden input values
+                $("#inputLat").val(localStorage.getItem("newLatitude"));
+                $("#inputLng").val(localStorage.getItem("newLongitude"));
+                
+                //Remove from local storage
+                localStorage.removeItem("newLatitude");
+                localStorage.removeItem("newLongitude");
+            }
         </script>
         <br>
-        <button type="submit">Enviar</button>
-        <div class="alert alert-danger" role="alert">
-            A simple danger alert—check it out!
-        </div>
+        <button type="submit" class="btn btn-success send">Enviar</button>
     </form>
+
+    <script>
+
+    </script>
 </div>
 <?= $this->endSection('content') ?>

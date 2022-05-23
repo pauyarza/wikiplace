@@ -6,10 +6,17 @@
     z-index: 0;
 }
 
-#botoNewSpot{
+#newSpotButton{
     z-index: 15;
     position: fixed;
     right: 0;
+    bottom: 0;
+}
+
+#userLocationButton{
+    z-index: 15;
+    position: fixed;
+    left: 0;
     bottom: 0;
 }
 
@@ -17,77 +24,79 @@
     z-index: 100;
 }
 
-/*=====SEARCH BAR======*/
-#description {
-    font-family: Roboto;
-    font-size: 15px;
-    font-weight: 300;
+/*=====SPOT POPUP======*/
+.spotPopup{
+    width: 200px;
 }
 
-#infowindow-content .title {
-    font-weight: bold;
+.spotPopup .leaflet-popup-content{
+    margin: 13px 14px 10px 14px;
 }
 
-#infowindow-content {
+.spotPopup .leaflet-popup-close-button{
     display: none;
 }
 
-#map #infowindow-content {
-    display: inline;
+.spotPopup .loadingGif{
+    height: 30px;
+    margin: auto;
+    display: block;
 }
 
-.pac-card {
-    background-color: #fff;
-    border: 0;
-    border-radius: 2px;
-    box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
-    margin: 10px;
-    padding: 0 0.5em;
-    font: 400 18px Roboto, Arial, sans-serif;
-    overflow: hidden;
-    font-family: Roboto;
+.spotPopup h2{
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.spotPopup p{
+    margin: 0 0 8px 0;
+    font-size: 12px;
+    color: #848484;
+}
+
+.spotPopup .bottomRow{
+    margin: 0;
+    height: 83px;
+}
+
+.spotPopup .imageDiv{
+    align-items: center;
     padding: 0;
+    height: 100%;
 }
 
-#pac-container {
-    padding-bottom: 12px;
-    margin-right: 12px;
+.spotPopup .mainImg{
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 4px;
 }
 
-.pac-controls {
-    display: inline-block;
-    padding: 5px 11px;
+.spotPopup .buttonsDiv{
+    padding: 0 0 0 6px;
 }
 
-.pac-controls label {
-    font-family: Roboto;
-    font-size: 13px;
-    font-weight: 300;
+.spotPopup button, .spotPopup a{
+    width: 100%;
+    border-radius: 100px;
+    display: block;
+    text-align: center;
+    border: none;
 }
 
-#pac-input {
-    background-color: #fff;
-    font-family: Roboto;
-    font-size: 15px;
-    font-weight: 300;
-    margin-left: 12px;
-    padding: 0 11px 0 13px;
-    text-overflow: ellipsis;
-    width: 400px;
+.spotPopup .mapsButton{ 
+    height: 43px;
+    background-color: #E8E8E8;
 }
 
-#pac-input:focus {
-    border-color: #4d90fe;
+.spotPopup .mapsImg{
+    height: 100%;
 }
 
-#title {
-    color: #fff;
-    background-color: #4d90fe;
-    font-size: 25px;
-    font-weight: 500;
-    padding: 6px 12px;
+.spotPopup .moreButton{
+    height: 33px;
+    background-color: #019267;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px;
 }
 
-#target {
-    width: 345px;
-}
