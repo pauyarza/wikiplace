@@ -1,0 +1,39 @@
+CRITICAL - 2022-05-22 10:28:26 --> Use of undefined constant username - assumed 'username' (this will throw an Error in a future version of PHP)
+#0 C:\wamp64\www\wikiplace\app\Controllers\UserController.php(142): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefine...', 'C:\\wamp64\\www\\w...', 142, Array)
+#1 C:\wamp64\www\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->displayProfile()
+#2 C:\wamp64\www\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\wamp64\www\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-22 11:04:26 --> Invalid file: pages/profile.php
+#0 C:\wamp64\www\wikiplace\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/profile.p...')
+#1 C:\wamp64\www\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/profile', Array, true)
+#2 C:\wamp64\www\wikiplace\app\Controllers\UserController.php(146): view('pages/profile', Array)
+#3 C:\wamp64\www\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->displayProfile()
+#4 C:\wamp64\www\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\wamp64\www\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-22 11:45:20 --> Invalid file: pages/profile.php
+#0 C:\wamp64\www\wikiplace\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/profile.p...')
+#1 C:\wamp64\www\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/profile', Array, true)
+#2 C:\wamp64\www\wikiplace\app\Controllers\UserController.php(146): view('pages/profile', Array)
+#3 C:\wamp64\www\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->displayProfile()
+#4 C:\wamp64\www\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\wamp64\www\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-22 12:47:24 --> Undefined index: id_user
+#0 C:\wamp64\www\wikiplace\app\Controllers\UserController.php(181): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\wamp64\\www\\w...', 181, Array)
+#1 C:\wamp64\www\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->editProfile()
+#2 C:\wamp64\www\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\wamp64\www\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-22 12:48:09 --> Undefined index: id_user
+#0 C:\wamp64\www\wikiplace\app\Controllers\UserController.php(181): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\wamp64\\www\\w...', 181, Array)
+#1 C:\wamp64\www\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->editProfile()
+#2 C:\wamp64\www\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\wamp64\www\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\wikiplace\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

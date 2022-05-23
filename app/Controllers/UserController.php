@@ -2,15 +2,27 @@
 
 namespace App\Controllers;
 use App\Models\UserModel;
+use CodeIgniter\Router\RouteCollection;
+
 class UserController extends BaseController
 {
     private $viewData = [];
+    private $db;
+
     public function __construct()
     {
         // Load session info to viewData
         $sessionData["is_admin"] = session()->is_admin;
         $sessionData["logged_in"] = session()->logged_in;
+        $sessionData["username"] = session()->username;
+        $sessionData["mail"] = session()->mail;
         $this->viewData["sessionData"] = $sessionData;
+
+        $this->db = \Config\Database::connect();
+
+        $builder = $this->db->table('user');
+        $userQuery = $builder->get();
+        $this->viewData["users"] = $userQuery->getResultArray();
     }
     
     //==========REGISTER==========//
@@ -137,9 +149,57 @@ class UserController extends BaseController
         $sessionData["is_admin"] = session()->is_admin;
         $sessionData["logged_in"] = session()->logged_in;
         $sessionData["username"] = session()->username;
+        $sessionData["mail"] = session()->mail;
 
-        $this->viewData["sessionData"] = $sessionData;
 
-        return view("pages/profile", $this->viewData);      
+        $this->viewData["sessionData"] = $sessionData;  
+        return view("pages/profile", $this->viewData); 
+          
+    }
+    public function displayEditProfile(){
+        // Load session info to viewData
+        $sessionData["is_admin"] = session()->is_admin;
+        $sessionData["logged_in"] = session()->logged_in;
+        $sessionData["username"] = session()->username;
+        $sessionData["mail"] = session()->mail;
+
+
+        $this->viewData["sessionData"] = $sessionData;  
+        return view("pages/editprofile", $this->viewData); 
+          
+    }
+
+    public function loadEditProfile(){
+        $this->viewData["id_user"] = $_GET['id_user'];
+        $this->viewData["username"] = $_GET['username'];
+        $this->viewData["description"] = $_GET['description'];
+
+        return view("pages/editprofile", $this->viewData);
+    }
+
+    public function editProfile(){
+        $id_user = $_POST['id_user'];
+        $username = $_POST['username'];
+        $description = $_POST['description'];
+
+        $builder = $this->db->table('user');
+
+        if($username == "" || null){
+        }else{
+            $builder->set('username', $username);
+            $builder->where('id_',$id_user);
+        }
+        if($description == "" || null){
+        }else{
+            $builder->set('description', $description);
+            $builder->where('id_',$id_user);
+        } 
+
+        if($builder->update()){
+            //load categories again
+            $builder = $this->db->table('user');
+            $this->viewData["message"] = "User updated successfully.";
+            return view("pages/editprofile", $this->viewData);
+        }
     }
 }

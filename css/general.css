@@ -20,6 +20,17 @@ a{
     color: rgb(33, 37, 41);
 }
 
+/*====== MEDIA QUERY ======*/
+
+@media only screen and (min-width: 400px){
+    .modal-body img{
+        margin-left: -50px !important;
+    }
+    .menu-bar{
+        display: none;
+    }
+}
+
 /*====== MENU ======*/
 
 .main-nav{
@@ -134,10 +145,8 @@ a{
 }
 
 .modal-body img{
-    display: block ;
-    margin-left: auto ;
-    margin-right: auto ;
-    width: 100%;
+    display: block;
+    margin-left: -115px;
     margin-bottom: 40px;
 }
 
@@ -159,10 +168,10 @@ a{
 }
 
 .custom-btn-1 {
-    display: block;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    margin-top: 25px;
+    font-family: 'Bree Serif', serif;
+    margin-top: 40px;
+    padding-top: .3rem !important;
+    padding-bottom: .3rem !important;
     color: #E8F0F2;
     width: 50%;
     background-color: #019267;
@@ -172,9 +181,10 @@ a{
 }
 
 .custom-btn-2 {
-    display: block;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    font-family: 'Bree Serif', serif;
+    margin-top: 20px;
+    padding-top: .3rem !important;
+    padding-bottom: .3rem !important;
     color: #019267;
     width: 50%;
     background-color: #FFD365;
@@ -188,4 +198,6 @@ a{
     margin-top: .6rem;
     font-size: .875em;
 }
+
+
 
