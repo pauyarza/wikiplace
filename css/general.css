@@ -155,7 +155,7 @@ a{
     outline: none;
 }
 
-.form input {
+.form input, .form textarea{
     display: block;
     margin-left: auto !important;
     margin-right: auto !important;

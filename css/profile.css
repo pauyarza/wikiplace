@@ -6,6 +6,8 @@
 
 .profile-input-group{
     background-color: #D4D4D4 !important;
+    outline: none;
+    border-top: 6px solid #00C897;
 }
 
 .avatar-upload {
@@ -44,7 +46,7 @@
     font-family: 'FontAwesome';
     color: #757575;
     position: absolute;
-    top: 10px;
+    top: 6px;
     left: 0;
     right: 0;
     text-align: center;

@@ -23,22 +23,23 @@
 
 
 <div id="map"></div>
-<button 
+<input
+    type="image"
+    src="<?php echo base_url('public/img/current.svg'); ?>"
     onclick="setMapToUserLocation()"
-    class="btn btn-success" 
     id="userLocationButton"
-    style="display:none"
+    class="userLocationButton"
 >
-    Where am I
-</button>
-<button 
+</input>
+<input
+    type="image"
+    src="<?php echo base_url('public/img/newButton.svg'); ?>"
     onclick="redirectToSpotForm()"
-    class="btn btn-success" 
     id="newSpotButton"
+    class="newSpotButton"
     style="display:none"
 >
-    Add spot
-</button>
+</input>
 <script type="text/javascript">
     function redirectToSpotForm(){
         <?php

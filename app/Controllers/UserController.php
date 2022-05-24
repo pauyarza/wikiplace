@@ -145,61 +145,45 @@ class UserController extends BaseController
     }
 
     public function displayProfile(){
-        // Load session info to viewData
-        $sessionData["is_admin"] = session()->is_admin;
-        $sessionData["logged_in"] = session()->logged_in;
-        $sessionData["username"] = session()->username;
-        $sessionData["mail"] = session()->mail;
-
-
-        $this->viewData["sessionData"] = $sessionData;  
         return view("pages/profile", $this->viewData); 
           
     }
-    public function displayEditProfile(){
-        // Load session info to viewData
-        $sessionData["is_admin"] = session()->is_admin;
-        $sessionData["logged_in"] = session()->logged_in;
-        $sessionData["username"] = session()->username;
-        $sessionData["mail"] = session()->mail;
+    public function displayEditProfile(){ 
+        $builder = $this->db->table('user');
+        $builder->select('description');
+        $builder->where('id_user', session()->id_user);
+        $user = $builder->get(1)->getRowArray();
 
+        $this->viewData['description'] = $user['description'];
 
-        $this->viewData["sessionData"] = $sessionData;  
         return view("pages/editprofile", $this->viewData); 
           
     }
 
-    public function loadEditProfile(){
-        $this->viewData["id_user"] = $_GET['id_user'];
-        $this->viewData["username"] = $_GET['username'];
-        $this->viewData["description"] = $_GET['description'];
-
-        return view("pages/editprofile", $this->viewData);
-    }
 
     public function editProfile(){
-        $id_user = $_POST['id_user'];
         $username = $_POST['username'];
         $description = $_POST['description'];
 
+        print_r($_POST);
+
         $builder = $this->db->table('user');
 
-        if($username == "" || null){
-        }else{
+        if($username){
             $builder->set('username', $username);
-            $builder->where('id_',$id_user);
         }
-        if($description == "" || null){
-        }else{
+        if($description){
             $builder->set('description', $description);
-            $builder->where('id_',$id_user);
         } 
+        $builder->where('id_user',session()->id_user);
 
         if($builder->update()){
             //load categories again
-            $builder = $this->db->table('user');
-            $this->viewData["message"] = "User updated successfully.";
-            return view("pages/editprofile", $this->viewData);
+            // $builder = $this->db->table('user');
+            // $this->viewData["message"] = "User updated successfully.";
+            // return view("pages/editprofile", $this->viewData);
+            echo "yes babay";
+            session()->set('username', $username);
         }
     }
 }

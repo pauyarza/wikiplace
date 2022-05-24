@@ -46,8 +46,8 @@
     </script>
     
     <br><br>
-    <h3><?php echo $sessionData["username"]?></h3>
-    <h5 style="color:grey;"><?php echo $sessionData["mail"] = session()->mail; ?></h5>
+    <h3><?=$sessionData["username"]?></h3>
+    <h5 style="color:grey;"><?=$sessionData["mail"]?></h5>
     <div class="text-center modal-body form">
             <?php  
                 echo form_open('UserController/editProfile'); 
@@ -56,20 +56,21 @@
                     
                     <input 
                         type="text" 
-                        placeholder="New username"
-                        id="usernameMailLogin"
-                        name="usernameMail"
+                        id="usernameedit"
+                        name="username"
                         class="input-group-text profile-input-group"
+                        value="<?=$sessionData["username"]?>"
                     >
                     <div class="invalid-feedback" id="usernameMailLoginError"></div>
-                <br>
-                    <input 
-                        type="text" 
-                        placeholder="Description"
-                        id="passwordLogin"
-                        name="password"
+                <br>                    
+                    <textarea 
+                        id="descriptionedit" 
+                        name="description" 
+                        placeholder="Describe yourself here..."
                         class="input-group-text profile-input-group"
                     >
+                        <?=$description?>                    
+                    </textarea>
                     <div class="invalid-feedback" id="passwordLoginError"></div>
                 <br>
                     <button class="custom-btn-1" type="submit">Save changes</button><br>
