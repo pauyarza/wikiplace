@@ -72,10 +72,17 @@
         zoomControl: false,
     });
 
-    //teleport to user location option
+    //======="YOU ARE HERE"=======//
     var userLocation = null;
     var markerUserLocation;
     var circleUserLocation;
+    var iconHere = L.icon({
+        iconUrl: '<?=base_url('public/icons/youarehere.svg')?>',
+        
+        iconSize:     [16, 16], // size of the icon
+        iconAnchor:   [8, 8], // point of the icon which will correspond to marker's location
+        tooltipAnchor:  [8, 0] // point from which the popup should open relative to the iconAnchor
+    });
 
     function onLocationFound(e) {
         userLocation = e.latlng;
@@ -84,7 +91,10 @@
             map.removeLayer(markerUserLocation);
             map.removeLayer(circleUserLocation);
         }
-        markerUserLocation = L.marker(e.latlng).addTo(map).bindTooltip("You are here").removeEventListener('click');
+        markerUserLocation = L.marker(
+            e.latlng,
+            {icon:iconHere}
+        ).addTo(map).bindTooltip("You are here").openTooltip().removeEventListener('click');
         circleUserLocation = L.circle(e.latlng, radius).addTo(map).removeEventListener('click');
         $("#userLocationButton").show();
     }
