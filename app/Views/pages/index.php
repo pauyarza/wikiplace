@@ -23,7 +23,7 @@
                     id="searchCategory"
                     type="text" 
                     class="form-control search-input" 
-                    placeholder="Category to search" 
+                    placeholder="Search a category" 
                     aria-describedby="button-addon2"
                     autocomplete="off"
                 >
