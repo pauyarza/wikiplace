@@ -1,3 +1,11 @@
+@media only screen and (min-width: 400px){
+    .earth{
+        display: block;
+        margin: auto;
+        width: 30%;
+    }
+}
+
 .index{
     height: 100%;
     position: relative;
@@ -6,7 +14,6 @@
 .index-box{
     width: 100%;
     position: relative;
-    top: 26%;
 }
 
 .index .index-logo {
@@ -14,7 +21,7 @@
     margin: auto;
     width: 97%;
     max-width: 450px;
-    margin-bottom: 33px;
+    margin-bottom: 17px;
 }
 
 .index form{
@@ -85,11 +92,17 @@
 .typer{
     font-family: 'Josefin Sans', sans-serif;
     width: 100%;
-    color: black;
+    color: white;
     text-align: center;
     user-select: none;
     margin-top: 35px;
 }
 
+
+/*====== TYPER ======*/
+
+.earth{
+    margin-top: 60px;
+}
 
 

@@ -16,10 +16,12 @@
     <div class="row aboutimgs">
         <div class="col">
             <img class="profile" src="<?php echo base_url('public/img/profile.png'); ?>" alt="" srcset="">
+            <p class="text-center aboutp2" style="color: #FFD800">@Pau Yarza<br>pauyarza.com</p>
             <p class="text-center aboutp2">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
-        <div class="col">
+        <div class="col">   
             <img class="profile" src="<?php echo base_url('public/img/profile.png'); ?>" alt="" srcset="">
+            <p class="text-center aboutp2" style="color: #FFD800">@Xavi Patinyo<br>xpatt.com</p>
             <p class="text-center aboutp2">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
     </div>

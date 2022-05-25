@@ -8,7 +8,7 @@ html, body{
 	width: 100%;
 	height: 100%;
 
-  background-color: rgb(212, 212, 212);
+  background-color: #003C5A;
 }
 
 body{
@@ -17,7 +17,7 @@ body{
 
 a{
     text-decoration: none;
-    color: rgb(33, 37, 41);
+    color: white;
 }
 
 /*====== MEDIA QUERY ======*/
@@ -65,7 +65,7 @@ a{
 
 .menu-link{
     font-family: 'Josefin Sans', sans-serif;
-    color: black;
+    color: white;
     text-decoration: none;
     padding-top: 14px;
 }
@@ -80,11 +80,11 @@ a{
 
 .one,.two,.three{
     width: 33px;
-    background: rgb(33, 33, 33);
+    background: white;
     height: 3px;
     transition-timing-function: ease-in;
     transition: all 0.3s;
-    border-radius: 3px;
+    border-radius: 2px;
 }
 .two{
     margin: 5px 0;

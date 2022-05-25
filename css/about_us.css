@@ -5,7 +5,7 @@
     margin-bottom: 30px;
     padding: 0;
     width: 100%;
-    color: #019267;
+    color: #00C09A;
     text-align: center;
   }
   
@@ -13,6 +13,7 @@
     font-family: 'Josefin Sans', sans-serif;
     padding: 0;
     text-align: center;
+    color: white;
   }
   .aboutimgs{
     margin-top: 32px;
@@ -26,5 +27,6 @@
   }
   .aboutp2{
     margin-top: 25px;
-    padding: 0 20px;
+    padding: 0 15px;
+    color: white;
   }
