@@ -6,7 +6,7 @@
             <div class="three"></div>
         </div>
 
-        <ul id="menu" class="menu d-none">
+        <ul id="menu" class="menu d-none d-flex justify-content-evenly">
 
             <li class="menu-item"><a href="<?php echo base_url('map') ?>" class="menu-link">Map</a></li>
             <li class="menu-item"><a href="<?php echo base_url('aboutUs') ?>" class="menu-link">About Us</a></li>
