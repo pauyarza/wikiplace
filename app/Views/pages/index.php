@@ -81,7 +81,7 @@
             if(catFound >= 5) return false;
         });
         if(!catFound && searchString){
-            $("#catAutcomplete").append('No category found');
+            $("#catAutcomplete").html('<span class="noCatFound">No category found</span>');
         }
         $("#autocompleteWrap").slideDown();
     }
@@ -103,7 +103,7 @@
             $("#autocompleteWrap").slideUp(200,function(){
                 $("#autocompleteWrap").attr('style','display:none !important');
             });
-        }, 10);
+        }, 50);
     });
 </script>
 

@@ -7,7 +7,6 @@
         </div>
 
         <ul id="menu" class="menu d-none d-flex justify-content-evenly">
-
             <li class="menu-item"><a href="<?php echo base_url('map') ?>" class="menu-link">Map</a></li>
             <li class="menu-item"><a href="<?php echo base_url('aboutUs') ?>" class="menu-link">About Us</a></li>
 
@@ -18,13 +17,6 @@
                 <li class="menu-item"><a class="menu-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></li>
                 <li class="menu-item"><a class="menu-link" data-bs-toggle="modal" data-bs-target="#registerModal">Register</a></li>
             <?php
-            }
-            //LOGGED IN
-            else {
-                if ($sessionData["is_admin"]) {
-                    ?><li class="menu-item"><a href="<?php echo base_url('admin') ?>" class="menu-link">Admin</a></li><?php
-                }
-                    
             }
             ?>
         </ul>
@@ -43,14 +35,19 @@
 
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
             
-                <li><a class="dropdown-item" href="<?php echo base_url('Home/index') ?>"><img class="logo-dropdown" src="<?php echo base_url('public/img/logo2.svg') ?>"></a></li>
+                <li><a class="dropdown-item" href="<?=base_url('Home/index') ?>"><img class="logo-dropdown" src="<?php echo base_url('public/img/logo2.svg') ?>"></a></li>
+                <?php 
+                    if ($sessionData["is_admin"]) {
+                        ?><li><a class="dropdown-item" href="<?=base_url('admin')?>">Admin 🔑</a></li><?php
+                    }
+                ?>
                 <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li><a class="dropdown-item" href="<?php echo base_url('Usercontroller/displayEditProfile') ?>">Edit profile</a></li>
+                <li><a class="dropdown-item" href="<?=base_url('Usercontroller/displayEditProfile')?>">Edit profile</a></li>
                 <li><a class="dropdown-item" href="#">My collections</a></li>
                 <li>
                     <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="<?php echo base_url('UserController/logout') ?>" >Log Out<i style="margin-left: 7px;" class="fa-solid fa-right-from-bracket"></i></a></li>
+                <li><a class="dropdown-item" href="<?=base_url('UserController/logout')?>" >Log Out<i style="margin-left: 7px;" class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
         </div><?php
 
