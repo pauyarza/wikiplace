@@ -68,8 +68,8 @@
         $.each(categories, function( index, categoria ) {
             if(categoria.includes(searchString)){
                 catFound++;
-                categoria = boldString(categoria, searchString); 
-                $("#catAutcomplete").append('<button type="button" class="category">'+categoria+'</button>');
+                categoriaBold = boldString(categoria, searchString); 
+                $("#catAutcomplete").append('<button type="button" value="'+categoria+'" class="category">'+categoriaBold+'</button>');
             }
             if(catFound >= 5) return false;
         });
@@ -86,7 +86,7 @@
 
     //submit form when category clicked
     $(document).on('click', '.category', function () {
-        $("#searchCategory").val(this.innerText);
+        $("#searchCategory").val(this.value);
         $("#formCategory").submit();
     });
 
@@ -96,7 +96,7 @@
             $("#autocompleteWrap").slideUp(200,function(){
                 $("#autocompleteWrap").attr('style','display:none !important');
             });
-        }, 3);
+        }, 10);
     });
 </script>
 

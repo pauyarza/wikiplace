@@ -11,16 +11,16 @@ class Home extends BaseController
         $sessionData["is_admin"] = session()->is_admin;
         $sessionData["logged_in"] = session()->logged_in;
         $this->viewData["sessionData"] = $sessionData;
-    }
 
-    public function index()
-    {
         // Load categories to viewData
         $db = \Config\Database::connect();
         $builder = $db->table('category');
         $catQuery = $builder->get();
         $this->viewData["categories"] = $catQuery->getResultArray();
+    }
 
+    public function index()
+    {
         return view("pages/index",$this->viewData);
     }
 }
