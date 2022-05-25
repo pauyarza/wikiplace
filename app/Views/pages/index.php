@@ -10,11 +10,9 @@
 <!-- Content -->
 <?= $this->section('content') ?>
 
-<div class="index" style="overflow:hidden"> 
-<div class="earth">
-        <img src="<?php echo base_url('public/img/earth.gif'); ?>" alt="Computer man" style="width:100%;">
-    </div>
-    <div class="container index-box">
+<div class="index d-flex"> 
+    <div class="container index-box align-self-center">
+        <img class="earth" src="<?php echo base_url('public/img/earth.gif'); ?>" alt="earth gif" style="width:100%;">
         <img class="index-logo" src="<?php echo base_url('public/img/logo.svg'); ?>" alt="wikiplace.org">
         <?=form_open('map',"id='formCategory'")?>
             <div class="input-group">
@@ -38,9 +36,8 @@
         </form>
         <!--Typer-->
         <h2 class="typer"><span class="ityped"></span></h2>
-        <!-- Typer script --><script src="https://unpkg.com/ityped@0.0.10"></script></div>
-    
-  
+        <!-- Typer script --><script src="https://unpkg.com/ityped@0.0.10"></script>
+    </div>
 </div>
 
 
