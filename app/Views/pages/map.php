@@ -88,110 +88,115 @@
 
         //=======PRINT CATEGORIES=======//
         function setCategoryList(){
-            $("#categoriesList").empty();
-            categories.forEach(function(category) {
-                if(catFiltered.includes(category.name)){
-                    var divCat = document.createElement("div");
-                    divCat.className = "catFiltered d-flex align-items-center";
-    
-                    var cross = document.createElement("img");
-                    cross.src = "<?=base_url('public/img/cross.svg')?>";
-                    
-                    var crossDiv = document.createElement("div");
-                    crossDiv.className = "crossDiv d-flex align-items-center";
-                    crossDiv.onclick = function() {
-                        removeCategory(category.name)
-                    }
-
-                    var categoryP = document.createElement("p");
-                    categoryP.append(category.name);
-    
-                    crossDiv.append(cross);
-                    divCat.append(crossDiv);
-                    divCat.append(categoryP);
-                    $("#categoriesList").append(divCat);                
-                }
-            });
-            
-            $('#divNewCat').remove();
-            $('#newCatButton').remove();
-
             if(categories.length == catFiltered.length){
                 allCategoriesSelected = true;
             }
             else{
                 allCategoriesSelected = false;
             }
-            console.log(allCategoriesSelected);
 
-            if(!newCategoryMenuOpened && !allCategoriesSelected){
+            $("#categoriesList").empty();
+
+            if(!allCategoriesSelected){
+                categories.forEach(function(category) {
+                    if(catFiltered.includes(category.name)){
+                        var divCat = document.createElement("div");
+                        divCat.className = "catFiltered d-flex align-items-center";
+        
+                        var cross = document.createElement("img");
+                        cross.src = "<?=base_url('public/img/cross.svg')?>";
+                        
+                        var crossDiv = document.createElement("div");
+                        crossDiv.className = "crossDiv d-flex align-items-center";
+                        crossDiv.onclick = function() {
+                            removeCategory(category.name)
+                        }
+    
+                        var categoryP = document.createElement("p");
+                        categoryP.append(category.name);
+        
+                        crossDiv.append(cross);
+                        divCat.append(crossDiv);
+                        divCat.append(categoryP);
+                        $("#categoriesList").append(divCat);                
+                    }
+                });
+            }
+            
+            $('#divNewCat').remove();
+            $('#newCatButton').remove();
+
+            console.log(newCategoryMenuOpened,allCategoriesSelected);
+
+            if(!newCategoryMenuOpened){
                 closeNewCategoryMenu();
             }
-
-            else if(newCategoryMenuOpened){
+            else if(allCategoriesSelected || newCategoryMenuOpened){
                 openNewCategoryMenu();
             }
         }
 
         function closeNewCategoryMenu(){
             newCategoryMenuOpened = false;
-            if(!allCategoriesSelected){
-                $('#divNewCat').remove();
-                $('#newCatButton').remove();
-                //new category button
-                var newCatButton = document.createElement("div");
-                newCatButton.id = "newCatButton";
-                newCatButton.className = "catFiltered newCatButton d-flex align-items-center";
-                newCatButton.onclick = function() {
-                    openNewCategoryMenu();
-                }
-    
+            $('#divNewCat').remove();
+            $('#newCatButton').remove();
+            //new category button
+            var newCatButton = document.createElement("div");
+            newCatButton.id = "newCatButton";
+            newCatButton.className = "catFiltered newCatButton d-flex align-items-center";
+            newCatButton.onclick = function() {
+                openNewCategoryMenu();
+            }
+            
+            if(allCategoriesSelected){
+                var selectCategoryMsg = document.createElement("p");
+                selectCategoryMsg.append("Select category");
+                newCatButton.append(selectCategoryMsg);
+            }else{
                 var cross = document.createElement("img");
                 cross.src = "<?=base_url('public/img/cross.svg')?>"; //turned 45deg with css
-    
                 newCatButton.append(cross);
-                $("#categoriesListWrapper").append(newCatButton);
             }
+            $("#categoriesListWrapper").append(newCatButton);
         }
 
         function openNewCategoryMenu(){
             newCategoryMenuOpened = true;
-            if(!allCategoriesSelected){
-                $('#divNewCat').remove();
-                $('#newCatButton').remove();
-                var divNewCat = document.createElement("div");
-                divNewCat.id = "divNewCat";
-                divNewCat.className = "catFiltered listNotFiltered";
-                divNewCat.append("Select category");
-                categories.forEach(function(category) {
-                    if(!catFiltered.includes(category.name)){
-                        var newCatElement = document.createElement("div");
-                        newCatElement.className = "d-flex align-items-center listNotFilteredElement";
-    
-                        newCatElement.onclick = function() {
-                            addCategory(category.name);
-                        }
-    
-                        var crossDiv = document.createElement("div");
-                        crossDiv.className = "notFilteredCrossDiv";
-    
-                        var cross = document.createElement("img");
-                        cross.src = "<?=base_url('public/img/cross.svg')?>"; //turned 45deg with css
-    
-                        var categoryP = document.createElement("p");
-                        categoryP.append(category.name);
-    
-                        crossDiv.append(cross);
-                        newCatElement.append(crossDiv);
-                        newCatElement.append(categoryP);
-    
-                        divNewCat.append(newCatElement);
+            $('#divNewCat').remove();
+            $('#newCatButton').remove();
+            var divNewCat = document.createElement("div");
+            divNewCat.id = "divNewCat";
+            divNewCat.className = "catFiltered listNotFiltered";
+            divNewCat.append("Select category");
+            categories.forEach(function(category) {
+                if(!catFiltered.includes(category.name) || allCategoriesSelected){
+                    var newCatElement = document.createElement("div");
+                    newCatElement.className = "d-flex align-items-center listNotFilteredElement";
+
+                    newCatElement.onclick = function() {
+                        addCategory(category.name);
                     }
-                });
-    
-                $('#categoriesListWrapper').append(divNewCat);
-            }
+
+                    var crossDiv = document.createElement("div");
+                    crossDiv.className = "notFilteredCrossDiv";
+
+                    var cross = document.createElement("img");
+                    cross.src = "<?=base_url('public/img/cross.svg')?>"; //turned 45deg with css
+
+                    var categoryP = document.createElement("p");
+                    categoryP.append(category.name);
+
+                    crossDiv.append(cross);
+                    newCatElement.append(crossDiv);
+                    newCatElement.append(categoryP);
+
+                    divNewCat.append(newCatElement);
+                }
+            });
+
+            $('#categoriesListWrapper').append(divNewCat);
         }
+
         
 
         //=======MANAGE SELECTED CATEGORIES=======//
@@ -201,6 +206,9 @@
         }
 
         function addCategory(categoryToAdd){
+            if(allCategoriesSelected){
+                catFiltered = [];
+            } 
             catFiltered.push(categoryToAdd);
             updateEverything();
         }
@@ -225,7 +233,12 @@
 
         map.on('click', function(e) {
             newCategoryMenuOpened = false;  
-            setCategoryList();     
+            setCategoryList();
+        });
+
+        map.on("movestart", function () {
+            newCategoryMenuOpened = false;  
+            setCategoryList();
         });
 
         //======="YOU ARE HERE"=======//

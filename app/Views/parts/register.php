@@ -6,18 +6,15 @@
         'novalidate' => 'true',
     ];
 ?>
-     <!-- Modal -->
+    <!-- Modal -->
 <div class="modal fade register" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
         <div class="text-center modal-body form">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             <?php
                 echo form_open('UserController/registerAjax',$formAttributes); 
             ?>
-            <br>
                 <img src="<?php echo base_url('public/img/wiki.svg') ?>" alt="" srcset="">
                 <input 
                     type="text" 
@@ -27,7 +24,6 @@
                     class="input-group-text"
                 >
                 <div class="invalid-feedback" id="usernameRegisterError"></div>
-            <br>
                 <input 
                     type="text" 
                     placeholder="mail" 
@@ -36,7 +32,6 @@
                     class="input-group-text"
                 >
                 <div class="invalid-feedback" id="mailRegisterError"></div>
-            <br>
                 <input 
                     type="text" 
                     placeholder="password" 
@@ -45,7 +40,6 @@
                     class="input-group-text"
                 >
                 <div class="invalid-feedback" id="passwordRegisterError"></div>
-            <br>
                 <input 
                     type="text" 
                     placeholder="repeat password"
@@ -54,11 +48,12 @@
                     class="input-group-text"
                 >
                 <div class="invalid-feedback" id="passwordRRegisterErrror"></div>
-            <br>
-                <button class="custom-btn-1" type="submit">Register</button>
+                <button class="loginMainBtn loginBtn" type="submit">Register</button>
+                <button class="loginSecondaryBtn loginBtn" type="button" data-bs-target="#loginModal" data-bs-toggle="modal" data-bs-dismiss="modal">
+                    Login
+                </button>
             </form>
-            <button class="custom-btn-2" data-bs-target="#loginModal" data-bs-toggle="modal" data-bs-dismiss="modal">Login</button>
         </div>
     </div>
-  </div>
+</div>
 </div>

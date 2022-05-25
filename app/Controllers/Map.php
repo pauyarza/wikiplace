@@ -18,6 +18,7 @@ class Map extends BaseController
         // Load categories to viewData
         $db = \Config\Database::connect();
         $builder = $db->table('category');
+        $builder->orderBy('name', 'ASC');
         $catQuery = $builder->get();
         $this->viewData["categories"] = $catQuery->getResultArray();
     }

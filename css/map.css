@@ -66,11 +66,16 @@ body{
 .newCatButton{
     cursor: pointer;
     padding-left: 5px;
-    background-color: rgba(1, 146, 103, 0.7) !important;
+    background-color: rgba(1, 146, 103, 0.85) !important;
 }
 
 .newCatButton img{
     transform: rotate(45deg);
+}
+
+.newCatButton p{
+    padding-right: 5px;
+    transform: translateY(1.5px);
 }
 
 /*add new category list*/

@@ -42,6 +42,11 @@ body{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    transition-duration: 1s;
+}
+
+.earth:hover {
+    transform: scale(1.3);
 }
 
 
