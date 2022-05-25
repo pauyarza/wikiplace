@@ -27,14 +27,16 @@
 
 <!-- Content -->
 <?= $this->section('content') ?>
-    <div id="categoriesList">
-        <!-- <div class="catFiltered d-flex align-items-center">
-            <img src="<?=base_url('public/img/cross.svg'); ?>" alt="delete">
-            <p>parkour</p>
+    <div id="categoriesListWrapper">
+        <div id="categoriesList">
+            <!-- <div class="catFiltered d-flex align-items-center">
+                <img src="<?=base_url('public/img/cross.svg'); ?>" alt="delete">
+                <p>parkour</p>
+            </div>
+            <div class="catFiltered addCatButton d-flex align-items-center">
+                <img src="<?=base_url('public/img/cross.svg'); ?>" alt="delete">
+            </div> -->
         </div>
-        <div class="catFiltered addCatButton d-flex align-items-center">
-            <img src="<?=base_url('public/img/cross.svg'); ?>" alt="delete">
-        </div> -->
     </div>
     <div id="map"></div>
     <img
@@ -69,15 +71,17 @@
     </script>
 
     <script>
+        var newCategoryMenuOpened = false;
+        var allCategoriesSelected;
         function updateEverything(){//update page with js according to catFiltered[] values (also called at the end of this <script>)
             if(!catFiltered.length){// if no filter
                 //filter all
                 categories.forEach(function(category) {
                     catFiltered.push(category.name);
-
                 });
-                console.log("All categories filtered");
+                allCategoriesSelected = true;
             }
+            else allCategoriesSelected = false;
             setCategoryList();
             populate();
         }
@@ -86,7 +90,7 @@
         function setCategoryList(){
             $("#categoriesList").empty();
             categories.forEach(function(category) {
-                if(catFiltered.includes(category.name)){//if category is selected or there is no selection
+                if(catFiltered.includes(category.name)){
                     var divCat = document.createElement("div");
                     divCat.className = "catFiltered d-flex align-items-center";
     
@@ -95,7 +99,9 @@
                     
                     var crossDiv = document.createElement("div");
                     crossDiv.className = "crossDiv d-flex align-items-center";
-                    crossDiv.onclick = function() {removeCategory(category.name)}
+                    crossDiv.onclick = function() {
+                        removeCategory(category.name)
+                    }
 
                     var categoryP = document.createElement("p");
                     categoryP.append(category.name);
@@ -106,49 +112,96 @@
                     $("#categoriesList").append(divCat);                
                 }
             });
+            
+            $('#divNewCat').remove();
+            $('#newCatButton').remove();
 
-            if(categories.length > catFiltered.length){
+            if(categories.length == catFiltered.length){
+                allCategoriesSelected = true;
+            }
+            else{
+                allCategoriesSelected = false;
+            }
+            console.log(allCategoriesSelected);
+
+            if(!newCategoryMenuOpened && !allCategoriesSelected){
+                closeNewCategoryMenu();
+            }
+
+            else if(newCategoryMenuOpened){
+                openNewCategoryMenu();
+            }
+        }
+
+        function closeNewCategoryMenu(){
+            newCategoryMenuOpened = false;
+            if(!allCategoriesSelected){
+                $('#divNewCat').remove();
+                $('#newCatButton').remove();
                 //new category button
-                var divNewCat = document.createElement("div");
-                divNewCat.id = "divNewCat";
-                divNewCat.className = "catFiltered newCatDiv";
-                divNewCat.onclick = function() {
+                var newCatButton = document.createElement("div");
+                newCatButton.id = "newCatButton";
+                newCatButton.className = "catFiltered newCatButton d-flex align-items-center";
+                newCatButton.onclick = function() {
                     openNewCategoryMenu();
                 }
-
-                var crossDiv = document.createElement("div");
-                crossDiv.className = "crossDiv d-flex align-items-center";
-
+    
                 var cross = document.createElement("img");
                 cross.src = "<?=base_url('public/img/cross.svg')?>"; //turned 45deg with css
-
-                
-                crossDiv.append(cross);
-                divNewCat.append(crossDiv);
-                $("#categoriesList").append(divNewCat);
+    
+                newCatButton.append(cross);
+                $("#categoriesListWrapper").append(newCatButton);
             }
         }
 
         function openNewCategoryMenu(){
-            $("#divNewCat").addClass("newCatDivOpen");
-            $("#divNewCat").empty();
-            categories.forEach(function(category) {
-                var newCatElement = document.createElement("div");
-                newCatElement.className = "newCatElement";
-                var cross = document.createElement("img");
-                cross.src = "<?=base_url('public/img/cross.svg')?>"; //turned 45deg with css
-
-                newCatElement.append(cross);
-                newCatElement.append(category.name);
-
-                $("#divNewCat").append(newCatElement);
-            });
+            newCategoryMenuOpened = true;
+            if(!allCategoriesSelected){
+                $('#divNewCat').remove();
+                $('#newCatButton').remove();
+                var divNewCat = document.createElement("div");
+                divNewCat.id = "divNewCat";
+                divNewCat.className = "catFiltered listNotFiltered";
+                divNewCat.append("Select category");
+                categories.forEach(function(category) {
+                    if(!catFiltered.includes(category.name)){
+                        var newCatElement = document.createElement("div");
+                        newCatElement.className = "d-flex align-items-center listNotFilteredElement";
+    
+                        newCatElement.onclick = function() {
+                            addCategory(category.name);
+                        }
+    
+                        var crossDiv = document.createElement("div");
+                        crossDiv.className = "notFilteredCrossDiv";
+    
+                        var cross = document.createElement("img");
+                        cross.src = "<?=base_url('public/img/cross.svg')?>"; //turned 45deg with css
+    
+                        var categoryP = document.createElement("p");
+                        categoryP.append(category.name);
+    
+                        crossDiv.append(cross);
+                        newCatElement.append(crossDiv);
+                        newCatElement.append(categoryP);
+    
+                        divNewCat.append(newCatElement);
+                    }
+                });
+    
+                $('#categoriesListWrapper').append(divNewCat);
+            }
         }
-
+        
 
         //=======MANAGE SELECTED CATEGORIES=======//
         function removeCategory(categoryToRemove){
             catFiltered.splice(catFiltered.indexOf(categoryToRemove), 1);
+            updateEverything();
+        }
+
+        function addCategory(categoryToAdd){
+            catFiltered.push(categoryToAdd);
             updateEverything();
         }
 
@@ -167,6 +220,12 @@
             layers: [tiles],
             attributionControl: false,
             zoomControl: false,
+        });
+        
+
+        map.on('click', function(e) {
+            newCategoryMenuOpened = false;  
+            setCategoryList();     
         });
 
         //======="YOU ARE HERE"=======//
@@ -252,7 +311,7 @@
             map.removeLayer(markers)
             markers = new L.MarkerClusterGroup();
             spots.forEach(function(spot) {
-                if(catFiltered.includes(spot.name)){//if category is selected or theres no selection
+                if(catFiltered.includes(spot.name)){
                     //set wich icon
                     var icon = new DefaultIcon({iconUrl: '<?=base_url('public/icons')?>/'+spot.name+'.svg'});
                     

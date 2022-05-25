@@ -29,7 +29,7 @@ body{
 }
 
 /*=====CATEGORY LIST======*/
-#categoriesList{
+#categoriesListWrapper{
     position: fixed;
     top: 55px;
     left: 0;
@@ -41,12 +41,11 @@ body{
     background-color: rgba(56, 56, 56,0.7);
     border: 1px solid rgba(181, 181, 181,0.7);;
     border-left: none;
-    border-radius: 0 15px 15px 0;
+    border-radius: 0 23px 23px 0;
     display: block;
     width: max-content;
-    height: 30px;
     margin-bottom: 3px;
-    padding-right: 9px;
+    padding: 7.5px 9px 7.5px 0;
     font-family: 'Josefin Sans', sans-serif;
     color: white;
     font-size: 15px;
@@ -64,22 +63,41 @@ body{
     line-height: 100%;
 }
 
-.newCatDiv{
+.newCatButton{
+    cursor: pointer;
+    padding-left: 5px;
+}
+
+.newCatButton img{
+    transform: rotate(45deg);
+}
+
+/*add new category list*/
+
+.listNotFiltered{
+    padding-left: 5px;
+    background-color: rgba(1, 146, 103, 0.85) !important;
+}
+
+.listNotFilteredElement{
     cursor: pointer;
 }
 
-.newCatDivOpen{
-    height: auto;
-    display: block;
+.notFilteredCrossDiv{
+    padding-right: 9px;
 }
 
-.newCatElement{
-    display: block;
+.listNotFiltered p{
+    transform: translateY(1.5px);
 }
 
-.newCatDiv img{
+.listNotFiltered img{
     transform: rotate(45deg);
 }
+
+
+
+
 
 
 #newSpotButton{
