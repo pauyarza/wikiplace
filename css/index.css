@@ -30,12 +30,12 @@
     max-width: 300px;
 }
 
-
-/*====== EARTH ======*/
 .earth{
     width: 80%;
     max-width: 250px;
     margin-bottom: 30px;
+    display: block;
+    margin: auto;
 }
 
 
