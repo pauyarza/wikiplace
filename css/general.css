@@ -50,10 +50,8 @@ a{
     max-width: 350px;
     margin-right: 30px;
     height: 100%;
-
-    /*opacity: 0;
-    visibility: hidden;*/
 }
+
 .menu .logged-in-menu{
     max-width: 150px;
 }
@@ -70,6 +68,11 @@ a{
     text-decoration: none;
     padding-top: 14px;
 }
+
+.menu-link:hover{
+    color: #FFD365;
+}
+
 
 .menu-bar{
     width: 30px;
@@ -117,6 +120,14 @@ a{
 
 .logo-dropdown{
     width: 80%;
+}
+
+.dropdown-username{
+    font-weight: bold;
+}
+
+#dropdownMenuButton2:hover{
+    color: #FFD365;
 }
 
 /*====== LOGIN & REGISTER FORM ======*/

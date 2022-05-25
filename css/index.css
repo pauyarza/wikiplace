@@ -1,11 +1,3 @@
-@media only screen and (min-width: 400px){
-    .earth{
-        display: block;
-        margin: auto;
-        width: 30%;
-    }
-}
-
 body{
     padding: 0 !important;
 }
@@ -43,6 +35,7 @@ body{
     margin-left: auto;
     margin-right: auto;
     transition-duration: 1s;
+    cursor: pointer;
 }
 
 .earth:hover {

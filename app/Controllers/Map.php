@@ -10,6 +10,7 @@ class Map extends BaseController
         // Load session info to viewData
         $sessionData["is_admin"] = session()->is_admin;
         $sessionData["logged_in"] = session()->logged_in;
+        $sessionData["username"] = session()->username;
         $this->viewData["sessionData"] = $sessionData;
         
         // Prepare database

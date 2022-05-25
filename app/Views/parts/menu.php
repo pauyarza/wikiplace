@@ -32,13 +32,12 @@
         <?php 
         //LOGGED IN USERBOX
         if ($sessionData["logged_in"]) {
-            $sessionData["username"] = session()->username;
         ?>
         <div class="dropdown">
 
             <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="<?php echo base_url('public/img/profile.png') ?>" alt="" width="32" height="32" class="rounded-circle me-2">
-                <strong><?php echo $sessionData["username"] ?></strong>
+                <span class="dropdown-username"><?php echo $sessionData["username"] ?></span>
             </a>
 
 
@@ -51,7 +50,7 @@
                 <li>
                     <hr class="dropdown-divider">
                 </li>
-                <li><a class="menu-link dropdown-item" href="<?php echo base_url('UserController/logout') ?>" >Log Out<i style="margin-left: 7px;" class="fa-solid fa-right-from-bracket"></i></a></li>
+                <li><a class="dropdown-item" href="<?php echo base_url('UserController/logout') ?>" >Log Out<i style="margin-left: 7px;" class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
         </div><?php
 
