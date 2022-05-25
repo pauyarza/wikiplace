@@ -18,7 +18,8 @@
 
 .index .index-logo {
     display: block;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     width: 97%;
     max-width: 450px;
     margin-bottom: 17px;
@@ -31,17 +32,18 @@
 }
 
 .earth{
-    width: 80%;
-    max-width: 250px;
-    margin-bottom: 30px;
+    width: 59%;
+    max-width: 210px;
+    margin-bottom: 38px;
     display: block;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
 /*====== INPUT ======*/
 .search-input{
-    border: 1px solid rgb(31, 31, 31, 0.2);
+    border: 1px solid #e2e2e2;
     border-radius: 4px;
     background-color: #e2e2e2;
 }
@@ -59,7 +61,7 @@
 .input-group .btn {
     color: white;
     background-color: #00C897;
-    border: 1.5px solid #00C897;
+    border: 1px solid #00C897;
 }
 
 /* autocomplete */
