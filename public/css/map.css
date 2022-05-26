@@ -182,12 +182,11 @@ body{
 .spotPopup .likeDiv p{
     margin: 0;
     color: #848484;
-    /* color: #ff003c83; */
     text-align: left;
 }
 
-.likeDiv .liked{
-    color: rgba(255, 0, 60, 0.67)!important;
+.spotPopup .liked p{
+    color: rgba(255, 0, 60, 0.67) !important;
 }
 
 .spotPopup h2{

@@ -3,6 +3,7 @@
 namespace App\Controllers;
 use App\Models\SpotModel;
 use App\Models\SpotImageModel;
+use App\Models\SpotLikeModel;
 
 class SpotController extends BaseController
 {
@@ -123,15 +124,30 @@ class SpotController extends BaseController
         $builder->where('id_spot', $id_spot);
         $spot = $builder->get(1)->getRowArray();
 
+        //check if spot is liked
+        $builder = $this->db->table('spot_like');
+        $builder->select('id_spot_like');
+        $builder->where('id_spot', $id_spot);
+        $builder->where('id_user', session()->id_user);
+        if($builder->countAllResults() == 0){
+            //not liked
+            $likedClass = "";
+            $heartUrl = base_url('img/noLike.png');
+        }
+        else{
+            //liked
+            $likedClass = "liked";
+            $heartUrl = base_url('img/like.png');
+        }
         
-        echo "<input type='hidden' value='".$spot['id_spot']."'>";
         echo "<div class='row topRow d-flex align-items-center'>";
             //name
             echo '<h2 class="col-9">'.$spot['spot_name'].'</h2>';
             //like
             echo "
-                <div class='col-3 likeDiv d-flex align-items-center justify-content-center'>
-                    <img src='".base_url('img/noLike.png')."'></img>
+                <div class='col-3 likeDiv d-flex align-items-center justify-content-center ".$likedClass."'>
+                    <input type='hidden' value='".$spot['id_spot']."'>
+                    <img src='".$heartUrl."'></img>
                     <p>2</p>
                 </div>
             ";
@@ -153,5 +169,38 @@ class SpotController extends BaseController
                 echo '<a class="btn moreButton">More</a>';
             echo "</div>";
         echo "</div>";
+    }
+
+    public function likeSpot(){
+        $spotData['id_spot'] = $_POST["id_spot"];
+        $spotData['id_user'] = session()->id_user;
+
+        $builder = $this->db->table('spot_like');
+        $builder->select('id_spot_like');
+        $builder->where('id_spot', $spotData['id_spot']);
+        $builder->where('id_user', $spotData['id_user']);
+        if($builder->countAllResults()==0){
+            $SpotLikeModel = new SpotLikeModel();
+            if($SpotLikeModel->insert($spotData)){
+                echo "liked";
+            }
+            else{
+                echo "database error";
+            }
+        }
+        else{
+            echo "already liked";
+        }
+    }
+
+    public function unlikeSpot(){
+        $spotData['id_spot'] = $_POST["id_spot"];
+        $spotData['id_user'] = session()->id_user;
+
+        $builder = $this->db->table('spot_like');
+        $builder->where('id_user', $spotData['id_user']);
+        $builder->where('id_spot', $spotData['id_spot']);
+        $builder->delete();
+        echo "unliked";
     }
 }

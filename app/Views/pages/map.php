@@ -13,8 +13,6 @@
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
     <!-- load markercluster script -->
     <script src="<?php echo base_url('js/leaflet.markercluster.js'); ?>"></script>
-    <!-- load custom script -->
-    <script src="<?php echo base_url('js/map.js'); ?>"></script>
     <script>        
         //=======PASS PHP ARRAYS TO JS=======//
         var spots = <?= json_encode($spots); ?>;
@@ -383,9 +381,9 @@
             });
 
             marker.on('click', function(e) {
-                if(confirm("Add new spot here?")){
+                // if(confirm("Add new spot here?")){
 
-                }
+                // }
             });
 
             //add to map
@@ -417,14 +415,68 @@
 
         //like listener
         $(document).on('click', '.likeDiv', function () {
-            $(this).find('img').attr("src","<?= base_url('img/like.png')?>");
-            $(this).find('p').addClass('liked');
+            <?php
+                if($sessionData["logged_in"]){
+                    echo "var logged_in = true;";
+                }
+                else{
+                    echo "var logged_in = false;";
+                }    
+            ?>
+
+            if(!logged_in){
+                $('#registerModal').modal('show');
+            }
+            else{
+                var isLiked = $(this).hasClass('liked');
+                var id_spot = $(this).parent().find('input').val();
+
+                //unlike
+                if(isLiked){
+                    unlikeSpot(id_spot);
+                    $(this).find('img').attr("src","<?= base_url('img/noLike.png')?>");
+                }
+                //like
+                else{
+                    $(this).find('img').attr("src","<?= base_url('img/like.png')?>");
+                    likeSpot(id_spot);
+                }
+
+                $(this).toggleClass("liked");
+            }
         });
 
+
+        function likeSpot(id_spot){
+            $.ajax({
+                type: "POST",
+                url: "spotController/likeSpot",
+                data: { id_spot : id_spot },
+                success: function(response)
+                {
+                    console.log(response);
+                }
+            });
+        }
+
+        function unlikeSpot(id_spot){
+            $.ajax({
+                type: "POST",
+                url: "spotController/unlikeSpot",
+                data: { id_spot : id_spot },
+                success: function(response)
+                {
+                    console.log(response);
+                }
+            });
+        }
+
+        function goMaps(lat,lng){
+            window.open("http://maps.google.com/maps?q="+lat+","+lng);
+        }
+
+
         
-
-
-
         //=======FIRST LOAD=======//
         updateEverything();
     </script>
