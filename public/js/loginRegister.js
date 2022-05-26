@@ -4,7 +4,7 @@ $("#registerForm").submit(function(e) {
 
     var form = $(this);
     var actionUrl = form.attr('action');
-    $("#loginMainBtn").html("<img src='../img/loadingWhite.svg' class='loadingBtnImg'></img>");
+    $("#loginMainBtn").html("<img src='img/loadingWhite.svg' class='loadingBtnImg'></img>");
 
     $.ajax({
         type: "POST",
@@ -88,7 +88,7 @@ $("#loginForm").submit(function (e) {
     
     var form = $(this);
     var actionUrl = form.attr('action');// get action from form (usercontroller/loginAjax)
-    $("#usernameMailLoginBtn").html("<img src='../img/loadingWhite.svg' class='loadingBtnImg'></img>");
+    $("#usernameMailLoginBtn").html("<img src='img/loadingWhite.svg' class='loadingBtnImg'></img>");
     $.ajax({
         type: "POST",
         url: actionUrl,

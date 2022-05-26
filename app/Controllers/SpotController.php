@@ -140,18 +140,18 @@ class SpotController extends BaseController
             if($builder->countAllResults() == 0){
                 //not liked
                 $likedClass = "";
-                $heartUrl = '../img/noLike.png';
+                $heartUrl = 'img/noLike.png';
             }
             else{
                 //liked
                 $likedClass = "liked";
-                $heartUrl = '../img/like.png';
+                $heartUrl = 'img/like.png';
             }
         }
         else{
             //not liked
             $likedClass = "";
-            $heartUrl = '../img/noLike.png';
+            $heartUrl = 'img/noLike.png';
         }
         
         
@@ -161,7 +161,7 @@ class SpotController extends BaseController
             //comments
             echo "
                 <div class='col-2 commentDiv topRightDiv d-flex align-items-center justify-content-center'>
-                    <img src='../img/comment.svg'></img>
+                    <img src='img/comment.svg'></img>
                     <p>4</p>
                 </div>
             ";
@@ -180,13 +180,13 @@ class SpotController extends BaseController
             //image
             echo "<div class='col-7 d-flex aligns-items-center justify-content-center imageDiv'>";
                 if($image) echo '<img class="mainImg" src="data:'.$image['extension'].';base64,'.base64_encode($image['content']).'"/>';
-                else echo '<img class="mainImg" src="../img/placeholder-image.jpg">';
+                else echo '<img class="mainImg" src="img/placeholder-image.jpg">';
             echo "</div>";
             echo "<div class='buttonsDiv col-5 d-flex align-content-between flex-wrap'>";
             //button
                 echo '
                 <button class="btn mapsButton" onclick="goMaps('.$spot['latitude'].','.$spot['longitude'].')">
-                    <img class="mapsImg" src="../img/maps.png">
+                    <img class="mapsImg" src="img/maps.png">
                 </button>';
                 echo '<a class="btn moreButton">More</a>';
             echo "</div>";

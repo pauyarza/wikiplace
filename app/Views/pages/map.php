@@ -434,12 +434,20 @@
                 //unlike
                 if(isLiked){
                     unlikeSpot(id_spot);
-                    $(this).find('img').attr("src","<?= base_url('img/noLike.png')?>");
+                    image = $(this).find('img');
+                    image.fadeOut(100, function () {
+                        image.attr('src', 'img/noLike.png');
+                        image.fadeIn(100);
+                    });
                 }
                 //like
                 else{
                     likeSpot(id_spot);
-                    $(this).find('img').attr("src","<?= base_url('img/like.png')?>");
+                    image = $(this).find('img');
+                    image.fadeOut(100, function () {
+                        image.attr('src', 'img/like.png');
+                        image.fadeIn(100);
+                    });
                 }
 
                 $(this).toggleClass("liked");

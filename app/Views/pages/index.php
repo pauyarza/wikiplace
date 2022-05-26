@@ -16,7 +16,7 @@
             class="earth" 
             src="<?php echo base_url('img/earth.gif'); ?>" 
             alt="earth gif"
-            onclick="location.replace('<?= base_url('map'); ?>')"
+            onclick="location.replace('map')"
         >
         <img class="index-logo" src="<?php echo base_url('img/logo.svg'); ?>" alt="wikiplace.org">
         <?=form_open('map',"id='formCategory'")?>
