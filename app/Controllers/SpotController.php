@@ -12,6 +12,7 @@ class SpotController extends BaseController
         // Load session info to viewData
         $sessionData["is_admin"] = session()->is_admin;
         $sessionData["logged_in"] = session()->logged_in;
+        $sessionData["username"] = session()->username;
         $this->viewData["sessionData"] = $sessionData;
 
         // Prepare database
@@ -118,14 +119,25 @@ class SpotController extends BaseController
 
         //get spot info
         $builder = $this->db->table('spot');
-        $builder->select('latitude,longitude,spot_name,description');
+        $builder->select('id_spot,latitude,longitude,spot_name,description');
         $builder->where('id_spot', $id_spot);
         $spot = $builder->get(1)->getRowArray();
 
-        //name
-        echo '<h2>'.$spot['spot_name'].'</h2>';
+        
+        echo "<input type='hidden' value='".$spot['id_spot']."'>";
+        echo "<div class='row topRow d-flex align-items-center'>";
+            //name
+            echo '<h2 class="col-9">'.$spot['spot_name'].'</h2>';
+            //like
+            echo "
+                <div class='col-3 likeDiv d-flex align-items-center justify-content-center'>
+                    <img src='".base_url('public/img/noLike.png')."'></img>
+                    <p>2</p>
+                </div>
+            ";
+        echo "</div>";
         //description
-        if($spot['description']) echo '<p>'.$spot['description'].'</p>';
+        if($spot['description']) echo '<p class="description">'.$spot['description'].'</p>';
         echo "<div class='row bottomRow'>";
             //image
             echo "<div class='col-7 d-flex aligns-items-center justify-content-center imageDiv'>";

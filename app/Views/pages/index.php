@@ -14,11 +14,11 @@
     <div class="container index-box align-self-center">
         <img 
             class="earth" 
-            src="<?php echo base_url('public/img/earth.gif'); ?>" 
+            src="<?php echo base_url('img/earth.gif'); ?>" 
             alt="earth gif"
             onclick="location.replace('<?= base_url('map'); ?>')"
         >
-        <img class="index-logo" src="<?php echo base_url('public/img/logo.svg'); ?>" alt="wikiplace.org">
+        <img class="index-logo" src="<?php echo base_url('img/logo.svg'); ?>" alt="wikiplace.org">
         <?=form_open('map',"id='formCategory'")?>
             <div class="input-group">
                 <input 

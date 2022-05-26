@@ -24,7 +24,7 @@
             <label for="imageUpload"></label>
         </div>
         <div class="avatar-preview">
-            <div id="imagePreview" style="background-image: url('<?php echo base_url('public/img/profile.png'); ?>');">
+            <div id="imagePreview" style="background-image: url('<?php echo base_url('img/profile.png'); ?>');">
             </div>
         </div>
     </div>

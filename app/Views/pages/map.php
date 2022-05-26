@@ -30,18 +30,18 @@
     <div id="categoriesListWrapper">
         <div id="categoriesList">
             <!-- <div class="catFiltered d-flex align-items-center">
-                <img src="<?=base_url('public/img/cross.svg'); ?>" alt="delete">
+                <img src="<?=base_url('img/cross.svg'); ?>" alt="delete">
                 <p>parkour</p>
             </div>
             <div class="catFiltered addCatButton d-flex align-items-center">
-                <img src="<?=base_url('public/img/cross.svg'); ?>" alt="delete">
+                <img src="<?=base_url('img/cross.svg'); ?>" alt="delete">
             </div> -->
         </div>
     </div>
     <div id="map"></div>
     <img
         type="image"
-        src="<?=base_url('public/img/current.svg'); ?>"
+        src="<?=base_url('img/current.svg'); ?>"
         onclick="setMapToUserLocation()"
         id="userLocationButton"
         class="userLocationButton"
@@ -50,7 +50,7 @@
     </img>
     <img
         type="image"
-        src="<?= base_url('public/img/newButton.svg'); ?>"
+        src="<?= base_url('img/newButton.svg'); ?>"
         onclick="redirectToSpotForm()"
         id="newSpotButton"
         class="newSpotButton"
@@ -104,7 +104,7 @@
                         divCat.className = "catFiltered d-flex align-items-center";
         
                         var cross = document.createElement("img");
-                        cross.src = "<?=base_url('public/img/cross.svg')?>";
+                        cross.src = "<?=base_url('img/cross.svg')?>";
                         
                         var crossDiv = document.createElement("div");
                         crossDiv.className = "crossDiv d-flex align-items-center";
@@ -125,8 +125,6 @@
             
             $('#divNewCat').remove();
             $('#newCatButton').remove();
-
-            console.log(newCategoryMenuOpened,allCategoriesSelected);
 
             if(!newCategoryMenuOpened){
                 closeNewCategoryMenu();
@@ -154,7 +152,7 @@
                 newCatButton.append(selectCategoryMsg);
             }else{
                 var cross = document.createElement("img");
-                cross.src = "<?=base_url('public/img/cross.svg')?>"; //turned 45deg with css
+                cross.src = "<?=base_url('img/cross.svg')?>"; //turned 45deg with css
                 newCatButton.append(cross);
             }
             $("#categoriesListWrapper").append(newCatButton);
@@ -181,7 +179,7 @@
                     crossDiv.className = "notFilteredCrossDiv";
 
                     var cross = document.createElement("img");
-                    cross.src = "<?=base_url('public/img/cross.svg')?>"; //turned 45deg with css
+                    cross.src = "<?=base_url('img/cross.svg')?>"; //turned 45deg with css
 
                     var categoryP = document.createElement("p");
                     categoryP.append(category.name);
@@ -246,7 +244,7 @@
         var markerUserLocation;
         var circleUserLocation;
         var iconHere = L.icon({
-            iconUrl: '<?=base_url('public/icons/youarehere.svg')?>',
+            iconUrl: '<?=base_url('icons/youarehere.svg')?>',
             
             iconSize:     [16, 16], // size of the icon
             iconAnchor:   [8, 8], // point of the icon which will correspond to marker's location
@@ -305,12 +303,14 @@
         map.locate({watch: true});
 
         //=======GENEREATE MARKERS=======//
-        var markers = new L.MarkerClusterGroup();
+        var markers = new L.markerClusterGroup({
+            showCoverageOnHover: false,        
+        });
 
         //default icon
         var DefaultIcon = L.Icon.extend({
             options: {
-                shadowUrl: '<?=base_url('public/icons/marker-shadow.png')?>',
+                shadowUrl: '<?=base_url('icons/marker-shadow.png')?>',
                 iconSize:     [38, 38], // size of the icon
                 shadowSize:   [60, 80], // size of the shadow
                 iconAnchor:   [19, 42], // point of the icon which will correspond to marker's location
@@ -326,7 +326,7 @@
             spots.forEach(function(spot) {
                 if(catFiltered.includes(spot.name)){
                     //set wich icon
-                    var icon = new DefaultIcon({iconUrl: '<?=base_url('public/icons')?>/'+spot.name+'.svg'});
+                    var icon = new DefaultIcon({iconUrl: '<?=base_url('icons')?>/'+spot.name+'.svg'});
                     
                     //create marker
                     var marker = new L.Marker(
@@ -361,8 +361,8 @@
 
             //set icon
             var iconNew = L.icon({
-                iconUrl: '<?=base_url('public/icons/new.svg')?>',
-                shadowUrl: '<?=base_url('public/icons/marker-shadow.png')?>',
+                iconUrl: '<?=base_url('icons/new.svg')?>',
+                shadowUrl: '<?=base_url('icons/marker-shadow.png')?>',
                 
                 iconSize:     [44, 44], // size of the icon
                 shadowSize:   [70, 90], // size of the shadow
@@ -401,7 +401,7 @@
         //=======LOAD POPUP DATA=======//
         function loadSpotData(marker,id_spot){
             marker.unbindPopup().bindPopup(
-                "<img class='loadingGif' src='<?= base_url('public/img/loading.gif')?>'></img>",
+                "<img class='loadingGif' src='<?= base_url('img/loadingBlack.svg')?>'></img>",
                 {'className' : 'spotPopup'}
             );
             marker.openPopup();
@@ -415,6 +415,17 @@
             });
         }
 
+        //like listener
+        $(document).on('click', '.likeDiv', function () {
+            $(this).find('img').attr("src","<?= base_url('img/like.png')?>");
+            $(this).find('p').addClass('liked');
+        });
+
+        
+
+
+
+        //=======FIRST LOAD=======//
         updateEverything();
     </script>
 <?= $this->endSection('content') ?>

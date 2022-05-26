@@ -4,6 +4,7 @@ $("#registerForm").submit(function(e) {
 
     var form = $(this);
     var actionUrl = form.attr('action');
+    $("#loginMainBtn").html("<img src='"+loadingUrl+"' class='loadingBtnImg'></img>");
 
     $.ajax({
         type: "POST",
@@ -18,6 +19,7 @@ $("#registerForm").submit(function(e) {
             }
             //input incorrect
             else {
+                $("#loginMainBtn").html("Register");
                 updateRegisterFormErrors(response);
             }
         }
@@ -86,7 +88,7 @@ $("#loginForm").submit(function (e) {
     
     var form = $(this);
     var actionUrl = form.attr('action');// get action from form (usercontroller/loginAjax)
-    
+    $("#usernameMailLoginBtn").html("<img src='"+loadingUrl+"' class='loadingBtnImg'></img>");
     $.ajax({
         type: "POST",
         url: actionUrl,
@@ -98,6 +100,7 @@ $("#loginForm").submit(function (e) {
                 location.reload();
             }
             else{
+                $("#usernameMailLoginBtn").html("Login");
                 updateLoginFormErrors(response);
             }
         }

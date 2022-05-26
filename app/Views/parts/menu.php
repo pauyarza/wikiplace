@@ -28,14 +28,14 @@
         <div class="dropdown">
 
             <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="<?php echo base_url('public/img/profile.png') ?>" alt="" width="32" height="32" class="rounded-circle me-2">
+                <img src="<?php echo base_url('img/profile.png') ?>" alt="" width="32" height="32" class="rounded-circle me-2">
                 <span class="dropdown-username"><?php echo $sessionData["username"] ?></span>
             </a>
 
 
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
             
-                <li><a class="dropdown-item" href="<?=base_url('Home/index') ?>"><img class="logo-dropdown" src="<?php echo base_url('public/img/logo2.svg') ?>"></a></li>
+                <li><a class="dropdown-item" href="<?=base_url('Home/index') ?>"><img class="logo-dropdown" src="<?php echo base_url('img/logo2.svg') ?>"></a></li>
                 <?php 
                     if ($sessionData["is_admin"]) {
                         ?><li><a class="dropdown-item" href="<?=base_url('admin')?>">Admin 🔑</a></li><?php

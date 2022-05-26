@@ -6,6 +6,9 @@
         'novalidate' => 'true',
     ];
 ?>
+<script>
+    var loadingUrl = "<?=base_url('img/loadingWhite.svg')?>";
+</script>
     <!-- Modal -->
 <div class="modal fade register" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered">
@@ -15,7 +18,7 @@
             <?php
                 echo form_open('UserController/registerAjax',$formAttributes); 
             ?>
-                <img src="<?php echo base_url('public/img/wiki.svg') ?>" alt="" srcset="">
+                <img src="<?php echo base_url('img/wiki.svg') ?>" class="logoLogin">
                 <input 
                     type="text" 
                     placeholder="username" 
@@ -33,7 +36,7 @@
                 >
                 <div class="invalid-feedback" id="mailRegisterError"></div>
                 <input 
-                    type="text" 
+                    type="password" 
                     placeholder="password" 
                     name="password" 
                     id="passwordRegister"
@@ -41,14 +44,14 @@
                 >
                 <div class="invalid-feedback" id="passwordRegisterError"></div>
                 <input 
-                    type="text" 
+                    type="password" 
                     placeholder="repeat password"
                     name="passwordR" 
                     id="passwordRRegister"
                     class="input-group-text"
                 >
                 <div class="invalid-feedback" id="passwordRRegisterErrror"></div>
-                <button class="loginMainBtn loginBtn" type="submit">Register</button>
+                <button id="loginMainBtn" class="loginMainBtn loginBtn" type="submit">Register</button>
                 <button class="loginSecondaryBtn loginBtn" type="button" data-bs-target="#loginModal" data-bs-toggle="modal" data-bs-dismiss="modal">
                     Login
                 </button>
