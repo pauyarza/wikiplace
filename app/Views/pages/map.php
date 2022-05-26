@@ -413,7 +413,7 @@
             });
         }
 
-        //like listener
+        //=======LIKE=======//
         $(document).on('click', '.likeDiv', function () {
             <?php
                 if($sessionData["logged_in"]){
@@ -421,7 +421,7 @@
                 }
                 else{
                     echo "var logged_in = false;";
-                }    
+                }
             ?>
 
             if(!logged_in){
@@ -438,8 +438,8 @@
                 }
                 //like
                 else{
-                    $(this).find('img').attr("src","<?= base_url('img/like.png')?>");
                     likeSpot(id_spot);
+                    $(this).find('img').attr("src","<?= base_url('img/like.png')?>");
                 }
 
                 $(this).toggleClass("liked");
@@ -454,7 +454,7 @@
                 data: { id_spot : id_spot },
                 success: function(response)
                 {
-                    console.log(response);
+                    $(".totalLikes").html(response);
                 }
             });
         }
@@ -466,7 +466,7 @@
                 data: { id_spot : id_spot },
                 success: function(response)
                 {
-                    console.log(response);
+                    $(".totalLikes").html(response);
                 }
             });
         }

@@ -6,9 +6,6 @@
         'novalidate' => 'true',
     ];
 ?> 
-<script>
-    var loadingUrl = "<?=base_url('img/loadingWhite.svg')?>";
-</script>
 
 <!-- Modal -->
 <div class="modal fade login" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">

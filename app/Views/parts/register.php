@@ -6,10 +6,7 @@
         'novalidate' => 'true',
     ];
 ?>
-<script>
-    var loadingUrl = "<?=base_url('img/loadingWhite.svg')?>";
-</script>
-    <!-- Modal -->
+<!-- Modal -->
 <div class="modal fade register" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">

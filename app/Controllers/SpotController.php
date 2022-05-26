@@ -124,31 +124,53 @@ class SpotController extends BaseController
         $builder->where('id_spot', $id_spot);
         $spot = $builder->get(1)->getRowArray();
 
-        //check if spot is liked
+        //count spot likes
         $builder = $this->db->table('spot_like');
         $builder->select('id_spot_like');
         $builder->where('id_spot', $id_spot);
-        $builder->where('id_user', session()->id_user);
-        if($builder->countAllResults() == 0){
-            //not liked
-            $likedClass = "";
-            $heartUrl = base_url('img/noLike.png');
+        $spotLikes = $builder->countAllResults();
+
+
+        //check if spot is liked
+        if(session()->logged_in){
+            $builder = $this->db->table('spot_like');
+            $builder->select('id_spot_like');
+            $builder->where('id_spot', $id_spot);
+            $builder->where('id_user', session()->id_user);
+            if($builder->countAllResults() == 0){
+                //not liked
+                $likedClass = "";
+                $heartUrl = '../img/noLike.png';
+            }
+            else{
+                //liked
+                $likedClass = "liked";
+                $heartUrl = '../img/like.png';
+            }
         }
         else{
-            //liked
-            $likedClass = "liked";
-            $heartUrl = base_url('img/like.png');
+            //not liked
+            $likedClass = "";
+            $heartUrl = '../img/noLike.png';
         }
+        
         
         echo "<div class='row topRow d-flex align-items-center'>";
             //name
-            echo '<h2 class="col-9">'.$spot['spot_name'].'</h2>';
-            //like
+            echo '<h2 class="col-8">'.$spot['spot_name'].'</h2>';
+            //comments
             echo "
-                <div class='col-3 likeDiv d-flex align-items-center justify-content-center ".$likedClass."'>
+                <div class='col-2 commentDiv topRightDiv d-flex align-items-center justify-content-center'>
+                    <img src='../img/comment.svg'></img>
+                    <p>4</p>
+                </div>
+            ";
+            //likes
+            echo "
+                <div class='col-2 likeDiv topRightDiv d-flex align-items-center justify-content-center ".$likedClass."'>
                     <input type='hidden' value='".$spot['id_spot']."'>
-                    <img src='".$heartUrl."'></img>
-                    <p>2</p>
+                    <img src='$heartUrl' class=''></img>
+                    <p class='totalLikes'>$spotLikes</p>
                 </div>
             ";
         echo "</div>";
@@ -158,13 +180,13 @@ class SpotController extends BaseController
             //image
             echo "<div class='col-7 d-flex aligns-items-center justify-content-center imageDiv'>";
                 if($image) echo '<img class="mainImg" src="data:'.$image['extension'].';base64,'.base64_encode($image['content']).'"/>';
-                else echo '<img class="mainImg" src="'.base_url('img/placeholder-image.jpg').'">';
+                else echo '<img class="mainImg" src="../img/placeholder-image.jpg">';
             echo "</div>";
             echo "<div class='buttonsDiv col-5 d-flex align-content-between flex-wrap'>";
             //button
                 echo '
                 <button class="btn mapsButton" onclick="goMaps('.$spot['latitude'].','.$spot['longitude'].')">
-                    <img class="mapsImg" src="'.base_url('img/maps.png').'">
+                    <img class="mapsImg" src="../img/maps.png">
                 </button>';
                 echo '<a class="btn moreButton">More</a>';
             echo "</div>";
@@ -182,7 +204,13 @@ class SpotController extends BaseController
         if($builder->countAllResults()==0){
             $SpotLikeModel = new SpotLikeModel();
             if($SpotLikeModel->insert($spotData)){
-                echo "liked";
+
+                //count spot likes
+                $builder = $this->db->table('spot_like');
+                $builder->select('id_spot_like');
+                $builder->where('id_spot', $spotData['id_spot']);
+                $spotLikes = $builder->countAllResults();
+                echo $spotLikes;
             }
             else{
                 echo "database error";
@@ -201,6 +229,12 @@ class SpotController extends BaseController
         $builder->where('id_user', $spotData['id_user']);
         $builder->where('id_spot', $spotData['id_spot']);
         $builder->delete();
-        echo "unliked";
+
+        //count spot likes
+        $builder = $this->db->table('spot_like');
+        $builder->select('id_spot_like');
+        $builder->where('id_spot', $spotData['id_spot']);
+        $spotLikes = $builder->countAllResults();
+        echo $spotLikes;
     }
 }
