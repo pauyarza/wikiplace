@@ -131,7 +131,7 @@ class SpotController extends BaseController
             //like
             echo "
                 <div class='col-3 likeDiv d-flex align-items-center justify-content-center'>
-                    <img src='".base_url('public/img/noLike.png')."'></img>
+                    <img src='".base_url('img/noLike.png')."'></img>
                     <p>2</p>
                 </div>
             ";
@@ -142,13 +142,13 @@ class SpotController extends BaseController
             //image
             echo "<div class='col-7 d-flex aligns-items-center justify-content-center imageDiv'>";
                 if($image) echo '<img class="mainImg" src="data:'.$image['extension'].';base64,'.base64_encode($image['content']).'"/>';
-                else echo '<img class="mainImg" src="'.base_url('public/img/placeholder-image.jpg').'">';
+                else echo '<img class="mainImg" src="'.base_url('img/placeholder-image.jpg').'">';
             echo "</div>";
             echo "<div class='buttonsDiv col-5 d-flex align-content-between flex-wrap'>";
             //button
                 echo '
                 <button class="btn mapsButton" onclick="goMaps('.$spot['latitude'].','.$spot['longitude'].')">
-                    <img class="mapsImg" src="'.base_url('public/img/maps.png').'">
+                    <img class="mapsImg" src="'.base_url('img/maps.png').'">
                 </button>';
                 echo '<a class="btn moreButton">More</a>';
             echo "</div>";
