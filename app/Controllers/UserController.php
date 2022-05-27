@@ -15,15 +15,19 @@ class UserController extends BaseController
         $sessionData["is_admin"] = session()->is_admin;
         $sessionData["logged_in"] = session()->logged_in;
         $sessionData["username"] = session()->username;
-        $sessionData["mail"] = session()->mail;
+        $sessionData["mail"] = session()->mail;//only here
         $sessionData["profile_pic_src"] = session()->profile_pic_src;
+        $sessionData["welcomeMessage"] = session()->welcomeMessage;
         $this->viewData["sessionData"] = $sessionData;
+        session()->set('welcomeMessage', false);
 
         $this->db = \Config\Database::connect();
 
         $builder = $this->db->table('user');
         $userQuery = $builder->get();
         $this->viewData["users"] = $userQuery->getResultArray();
+
+
     }
     
     //==========REGISTER==========//
@@ -67,6 +71,7 @@ class UserController extends BaseController
                 'username'  => $userData["username"],
                 'mail'     => $userData["mail"],
                 'logged_in' => true,
+                'welcomeMessage' => "Welcome to wikiplace ".$userData["username"]."!",
             ];
             session()->set($sessionData);
             echo "registerCorrect";
@@ -132,6 +137,7 @@ class UserController extends BaseController
                     'mail'     => $userData["mail"],
                     'logged_in' => true,
                     'is_admin' => $userData["is_admin"],
+                    'welcomeMessage' => "Welcome back ".$userData['username']."!",
                 ];
                 //add profile pic if user has one
                 if($userData['profile_pic_extension']){

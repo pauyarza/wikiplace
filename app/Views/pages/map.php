@@ -468,6 +468,7 @@
                 data: { id_spot : id_spot },
                 success: function(response)
                 {
+                    console.log(response);
                     $(".totalLikes").html(response);
                 }
             });
@@ -480,6 +481,7 @@
                 data: { id_spot : id_spot },
                 success: function(response)
                 {
+                    console.log(response);
                     $(".totalLikes").html(response);
                 }
             });
