@@ -19,6 +19,12 @@
         var categories = <?= json_encode($categories); ?>;
         var catFiltered = <?= json_encode($catFiltered); ?>;
         if(!catFiltered) catFiltered = [];
+
+        $('#user_button').click(function() {
+            $('#user_options').toggle();
+            $(this).toggleClass('active');
+            return false;
+        })
         
     </script>
 <?= $this->endSection('head') ?>
