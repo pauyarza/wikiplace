@@ -57,6 +57,8 @@ class UserController extends BaseController
         }
         //data correct
         else{
+            //hash password
+            $userData['password']=password_hash($userData['password'], PASSWORD_DEFAULT);
             //create new user
             $UserModel = new UserModel();
             $UserModel->insert($userData);
@@ -115,13 +117,13 @@ class UserController extends BaseController
             else{
                 $builder->where('username', $loginData['usernameMail']);
             }
-            $builder->where('password', $loginData['password']);
 
             //run query
-            $result = $builder->get();
+            $result = $builder->get(1);
             $userData = $result->getRowArray();
-            
-            if(!$userData){//no result so user not found
+
+            //no result so user not found or incorrect password
+            if(!$userData || !password_verify($userData["password"], $loginData['password'])){
                 $userData["customError"] = "Incorrect username or password.";
             }
             else{//user found               
