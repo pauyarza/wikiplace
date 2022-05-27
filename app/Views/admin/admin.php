@@ -30,7 +30,7 @@ if(!isset($cat_errors)){
     if (message) alert(message);
 </script>
     <div class="container admin">
-        <h1>Manage Wikiplace</h1>
+        <h1 style="color:white">Manage Wikiplace</h1>
         <div class="row">
             <div class="col col-md-4 categories">
                 <h2>Categories</h2>

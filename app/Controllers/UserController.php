@@ -149,6 +149,13 @@ class UserController extends BaseController
     }
 
     public function displayProfile(){
+        $builder = $this->db->table('user');
+        $builder->select('description');
+        $builder->where('id_user', session()->id_user);
+        $user = $builder->get(1)->getRowArray();
+
+        $this->viewData['description'] = $user['description'];
+
         return view("pages/profile", $this->viewData); 
           
     }

@@ -1,5 +1,5 @@
 function checkMenu(){
-    var x = window.matchMedia("only screen and (min-width: 801px)");
+    var x = window.matchMedia("only screen and (min-width: 1279px)");
 
     if (x.matches) { // If media query matches
         $("#menu").removeClass("d-none");
