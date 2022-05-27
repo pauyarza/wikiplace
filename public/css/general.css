@@ -113,6 +113,7 @@ a{
   
 
 /*====== USERBOX ======*/
+
 .dropdown {
     position: absolute;
     top: 10px;
@@ -127,6 +128,7 @@ a{
     background-size: cover;
     background-position: center; 
     background-repeat: no-repeat;
+    margin-right: 5px;
 }
 .dropdown-menu {
     color: white;

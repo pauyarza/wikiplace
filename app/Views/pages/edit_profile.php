@@ -68,12 +68,10 @@
                     name="description" 
                     placeholder="Describe yourself here..."
                     class="input-group-text profile-input-group"
-                >
-                    <?=$description?>                    
-                </textarea>
+                ><?=$description?></textarea>
                 <div class="invalid-feedback" id="passwordLoginError"></div>
                 <button 
-                    class="custom-btn-1" 
+                    class="profile-btn profile-btn-1" 
                     type="submit">
                         Save changes
                 </button>
