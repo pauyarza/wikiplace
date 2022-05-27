@@ -110,9 +110,9 @@ body{
     z-index: 15;
     position: fixed;
     right: 0;
-    bottom: 0;
-    width: 65px; 
-    margin-right: 10px;
+    bottom: 55px;
+    width: 55px; 
+    margin-right: 5px;
     cursor: pointer;
 }
 
@@ -120,11 +120,11 @@ body{
     cursor: pointer;
     z-index: 15;
     position: fixed;
-    left: 0;
+    right: 0;
     bottom: 0;
     width:45px; 
     margin-bottom: 10px; 
-    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .bounce {

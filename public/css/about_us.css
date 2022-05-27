@@ -11,7 +11,8 @@
   
   .aboutp {
     font-family: 'Josefin Sans', sans-serif;
-    padding: 0;
+    padding-left: 30px;
+    padding-right: 30px;
     text-align: center;
     color: white;
   }
