@@ -27,7 +27,7 @@ a{
 
 /*====== MEDIA QUERY ======*/
 
-@media only screen and (min-width: 1279px){
+@media only screen and (min-width: 1070px){
     .menu-bar{
         display: none;
     }
