@@ -94,8 +94,8 @@ $("#loginForm").submit(function (e) {
         url: actionUrl,
         data: form.serialize(),
         success: function (response) {
-            response = JSON.parse(response);
             console.log(response);
+            response = JSON.parse(response);
             if (response.found) {
                 location.reload();
             }
@@ -103,6 +103,9 @@ $("#loginForm").submit(function (e) {
                 $("#usernameMailLoginBtn").html("Login");
                 updateLoginFormErrors(response);
             }
+        },
+        error: function(jqxhr, status, exception) {
+            alert('Exception:', exception);
         }
     });
 });

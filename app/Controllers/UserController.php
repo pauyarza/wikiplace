@@ -16,10 +16,7 @@ class UserController extends BaseController
         $sessionData["logged_in"] = session()->logged_in;
         $sessionData["username"] = session()->username;
         $sessionData["mail"] = session()->mail;
-        if(session()->profile_pic_extension){
-            $sessionData["profile_pic_src"] = 'data:'.session()->profile_pic_extension.';base64,'.base64_encode(session()->profile_pic);
-        }
-        else $sessionData["profile_pic_src"] = base_url('img/profile.png');
+        $sessionData["profile_pic_src"] = session()->profile_pic_src;
         $this->viewData["sessionData"] = $sessionData;
 
         $this->db = \Config\Database::connect();
@@ -124,10 +121,10 @@ class UserController extends BaseController
 
             //no result so user not found or incorrect password
             if(!$userData || !password_verify($loginData["password"], $userData['password'])){
-                $userData = [];
-                $userData["customError"] = "Incorrect username or password.";
+                $return["customError"] = "Incorrect username or password.";
             }
-            else{//user found               
+            else{//user found
+                //prepare image        
                 //create session
                 $sessionData = [
                     'id_user'  => $userData["id_user"],
@@ -136,11 +133,17 @@ class UserController extends BaseController
                     'logged_in' => true,
                     'is_admin' => $userData["is_admin"],
                 ];
+                //add profile pic if user has one
+                if($userData['profile_pic_extension']){
+                    $sessionData['profile_pic_src'] = 'data:'.$userData["profile_pic_extension"].';base64,'.base64_encode($userData["profile_pic"]);
+                }
+                else{
+                    $sessionData['profile_pic_src'] = base_url('img/profile.png');//default img
+                }
                 session()->set($sessionData);
-                $userData["found"] = true;
+                $return["found"] = true;
             }
-
-            echo json_encode($userData);
+            echo json_encode($return);
         }
     }
 
@@ -174,7 +177,7 @@ class UserController extends BaseController
             return view("pages/edit_profile", $this->viewData); 
         }
         else{
-            $this->viewData["goTo"] = './home';
+            $this->viewData["goTo"] = '../home';
             return view("pages/redirecting", $this->viewData);
         }
 

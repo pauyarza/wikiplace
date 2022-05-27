@@ -33,11 +33,6 @@
                     style="background-image: url('<?=$sessionData['profile_pic_src']?>');"
                 >
                 </div>
-                    <!-- <img 
-                        src="<?=$sessionData['profile_pic_src']?>"
-                        alt="" 
-                        class="profile_pic"
-                    > -->
                 <span class="dropdown-username"><?php echo $sessionData["username"] ?></span>
             </a>
 
