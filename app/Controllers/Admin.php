@@ -17,9 +17,9 @@ class Admin extends BaseController
         $sessionData["logged_in"] = session()->logged_in;
         $sessionData["username"] = session()->username;
         $sessionData["profile_pic_src"] = session()->profile_pic_src;
-        $sessionData["welcomeMessage"] = session()->welcomeMessage;
+        $sessionData["welcome_message"] = session()->welcome_message;
         $this->viewData["sessionData"] = $sessionData;
-        session()->set('welcomeMessage', false);
+        session()->set('welcome_message', false);
 
         // Check if user is admin
         if(!session()->is_admin){

@@ -26,22 +26,18 @@
     ?>
 </body>
         
-<?php if($sessionData["welcomeMessage"]){ ?>
+<?php if($sessionData["welcome_message"]){ ?>
     <script>
         const Toast = Swal.mixin({
             toast: true,
             position: 'top',
             showConfirmButton: false,
-            timer: 3000,
+            timer: 4000,
             timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer)
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
-            }
         })
         Toast.fire({
             icon: 'success',
-            title: '<?=$sessionData["welcomeMessage"]?>'
+            title: '<?=$sessionData["welcome_message"]?>'
         })
     </script>
 <?php } ?>
