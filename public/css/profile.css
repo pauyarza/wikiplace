@@ -1,21 +1,25 @@
-body{
-  background-color: #D4D4D4;
+body {
+    background-color: #D4D4D4;
 }
 
-.menu-link, .dropdown-username{
-  color: black !important;
-}
-.one, .two, .three{
-  background-color: black !important;
+.menu-link,
+.dropdown-username {
+    color: black !important;
 }
 
-.profile-box{
+.one,
+.two,
+.three {
+    background-color: black !important;
+}
+
+.profile-box {
     font-family: 'Josefin Sans', sans-serif !important;
     margin-top: 55px;
-    text-align:center
+    text-align: center
 }
 
-.profile-input-group{
+.profile-input-group {
     background-color: #D4D4D4 !important;
     outline: none;
     border-top: 6px solid #00C897;
@@ -25,17 +29,20 @@ body{
     position: relative;
     max-width: 205px;
     margin: 1px auto;
-  }
-  .avatar-upload .avatar-edit {
+}
+
+.avatar-upload .avatar-edit {
     position: absolute;
     right: 12px;
     z-index: 1;
     top: 10px;
-  }
-  .avatar-upload .avatar-edit input {
+}
+
+.avatar-upload .avatar-edit input {
     display: none;
-  }
-  .avatar-upload .avatar-edit input + label {
+}
+
+.avatar-upload .avatar-edit input+label {
     display: inline-block;
     width: 34px;
     height: 34px;
@@ -47,12 +54,14 @@ body{
     cursor: pointer;
     font-weight: normal;
     transition: all 0.2s ease-in-out;
-  }
-  .avatar-upload .avatar-edit input + label:hover {
+}
+
+.avatar-upload .avatar-edit input+label:hover {
     background: #f1f1f1;
     border-color: #d6d6d6;
-  }
-  .avatar-upload .avatar-edit input + label:after {
+}
+
+.avatar-upload .avatar-edit input+label:after {
     content: "\f040";
     font-family: 'FontAwesome';
     color: #757575;
@@ -62,20 +71,50 @@ body{
     right: 0;
     text-align: center;
     margin: auto;
-  }
-  .avatar-upload .avatar-preview {
+}
+
+.avatar-upload .avatar-preview {
     width: 192px;
     height: 192px;
     position: relative;
     border-radius: 100%;
     border: 6px solid #F8F8F8;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
-  }
-  .avatar-upload .avatar-preview > div {
+}
+
+.avatar-upload .avatar-preview>div {
     width: 100%;
     height: 100%;
     border-radius: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-  }
+}
+
+.profile-btn {
+    font-family: 'Bree Serif', serif;
+    padding: 3px 0px 5px 0px;
+    width: 100%;
+    max-width: 180px;
+    border-radius: 25px;
+    transition: all 0.5s;
+    border: 2px solid #019267;
+    max-height: 36px;
+}
+
+.profile-btn-1 {
+    margin-top: 60px;
+    color: #E8F0F2;
+    background-color: #019267;
+}
+
+.profile-btn-2 {
+    margin-top: 20px;
+    color: #019267;
+    background-color: #FFD365;
+}
+
+.profile-btn-2:active {
+    background-color: #019267;
+    color: white;
+}

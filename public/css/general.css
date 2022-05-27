@@ -50,7 +50,6 @@ a{
     padding: 0;
     list-style: none;
     display: flex;
-    /* justify-content: space-around; */
     width: 100%;
     max-width: 350px;
     margin-right: 30px;
@@ -114,11 +113,20 @@ a{
   
 
 /*====== USERBOX ======*/
-
 .dropdown {
     position: absolute;
     top: 10px;
     right: 10px;
+}
+
+.profile_pic{
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    display:flex;
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
 }
 .dropdown-menu {
     color: white;
@@ -135,6 +143,8 @@ a{
 #dropdownMenuButton2:hover{
     color: #FFD365;
 }
+
+
 
 /*====== LOGIN & REGISTER FORM ======*/
 

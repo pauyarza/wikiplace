@@ -72,6 +72,7 @@
         <input
             type="file" name="images[]"
             multiple
+            accept=".png, .jpg, .jpeg"
             class="form-control <?php if(isset($errors["images"])) echo "is-invalid"?>"
         >
         <div class="invalid-feedback">

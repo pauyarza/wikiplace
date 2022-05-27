@@ -14,6 +14,10 @@ class SpotController extends BaseController
         $sessionData["is_admin"] = session()->is_admin;
         $sessionData["logged_in"] = session()->logged_in;
         $sessionData["username"] = session()->username;
+        if(session()->profile_pic_extension){
+            $sessionData["profile_pic_src"] = 'data:'.session()->profile_pic_extension.';base64,'.base64_encode(session()->profile_pic);
+        }
+        else $sessionData["profile_pic_src"] = base_url('img/profile.png');
         $this->viewData["sessionData"] = $sessionData;
 
         // Prepare database
@@ -197,6 +201,12 @@ class SpotController extends BaseController
         $spotData['id_spot'] = $_POST["id_spot"];
         $spotData['id_user'] = session()->id_user;
 
+        //count spot likes
+        $builder = $this->db->table('spot_like');
+        $builder->select('id_spot_like');
+        $builder->where('id_spot', $spotData['id_spot']);
+        $spotLikes = $builder->countAllResults();
+
         $builder = $this->db->table('spot_like');
         $builder->select('id_spot_like');
         $builder->where('id_spot', $spotData['id_spot']);
@@ -204,12 +214,6 @@ class SpotController extends BaseController
         if($builder->countAllResults()==0){
             $SpotLikeModel = new SpotLikeModel();
             if($SpotLikeModel->insert($spotData)){
-
-                //count spot likes
-                $builder = $this->db->table('spot_like');
-                $builder->select('id_spot_like');
-                $builder->where('id_spot', $spotData['id_spot']);
-                $spotLikes = $builder->countAllResults();
                 echo $spotLikes;
             }
             else{
@@ -217,7 +221,7 @@ class SpotController extends BaseController
             }
         }
         else{
-            echo "already liked";
+            echo $spotLikes;
         }
     }
 

@@ -16,6 +16,10 @@ class UserController extends BaseController
         $sessionData["logged_in"] = session()->logged_in;
         $sessionData["username"] = session()->username;
         $sessionData["mail"] = session()->mail;
+        if(session()->profile_pic_extension){
+            $sessionData["profile_pic_src"] = 'data:'.session()->profile_pic_extension.';base64,'.base64_encode(session()->profile_pic);
+        }
+        else $sessionData["profile_pic_src"] = base_url('img/profile.png');
         $this->viewData["sessionData"] = $sessionData;
 
         $this->db = \Config\Database::connect();
@@ -156,7 +160,7 @@ class UserController extends BaseController
 
         $this->viewData['description'] = $user['description'];
 
-        return view("pages/editprofile", $this->viewData); 
+        return view("pages/edit_profile", $this->viewData); 
           
     }
 
@@ -182,8 +186,30 @@ class UserController extends BaseController
             // $builder = $this->db->table('user');
             // $this->viewData["message"] = "User updated successfully.";
             // return view("pages/editprofile", $this->viewData);
-            echo "yes babay";
             session()->set('username', $username);
+        }
+    }
+
+    public function updateProfilePic(){
+        if ( 0 < $_FILES['avatar']['error'] ) {
+            echo 'Error: ' . $_FILES['file']['error'] . '<br>';
+        }
+        else {
+            //get image data
+            $extension = $_FILES['avatar']['type'];
+            $tmpName = $_FILES["avatar"]["tmp_name"];
+            $content = file_get_contents($tmpName);
+            
+            //upload to ddbb
+            $builder = $this->db->table('user');
+            $builder->set('profile_pic', $content);
+            $builder->set('profile_pic_extension', $extension);
+            $builder->where('id_user',session()->id_user);
+            if($builder->update()){
+                session()->set('profile_pic', $content);
+                session()->set('profile_pic_extension', $extension);
+                echo "ok";
+            }
         }
     }
 }

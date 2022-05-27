@@ -28,7 +28,16 @@
         <div class="dropdown">
 
             <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="<?php echo base_url('img/profile.png') ?>" alt="" width="32" height="32" class="rounded-circle me-2">
+                <div 
+                    class="profile_pic"
+                    style="background-image: url('<?=$sessionData['profile_pic_src']?>');"
+                >
+                </div>
+                    <!-- <img 
+                        src="<?=$sessionData['profile_pic_src']?>"
+                        alt="" 
+                        class="profile_pic"
+                    > -->
                 <span class="dropdown-username"><?php echo $sessionData["username"] ?></span>
             </a>
 
