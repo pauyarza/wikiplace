@@ -1,34 +1,25 @@
-body {
-    background-color: #D4D4D4;
-}
-
-.menu-link,
-.dropdown-username {
-    color: black !important;
-}
-
-.one,
-.two,
-.three {
-    background-color: black !important;
-}
 
 .profile-box {
     font-family: 'Josefin Sans', sans-serif !important;
     margin-top: 55px;
     text-align: center
 }
+.profile-box h3{
+    color: white;
+}
 
 .profile-input-group {
-    background-color: #D4D4D4 !important;
+    background-color: #d4d4d442 !important;
     outline: none;
     border-top: 6px solid #00C897;
+    color: white;
+    margin-bottom: 30px;
 }
 
 .avatar-upload {
     position: relative;
     max-width: 205px;
-    margin: 1px auto;
+    margin: 35px auto;
 }
 
 .avatar-upload .avatar-edit {
@@ -103,7 +94,7 @@ body {
 }
 
 .profile-btn-1 {
-    margin-top: 60px;
+    margin-top: 20px;
     color: #E8F0F2;
     background-color: #019267;
 }

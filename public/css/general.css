@@ -26,7 +26,7 @@ a{
 
 /*====== MEDIA QUERY ======*/
 
-@media only screen and (min-width: 400px){
+@media only screen and (min-width: 1070px){
     .menu-bar{
         display: none;
     }
@@ -112,6 +112,7 @@ a{
   
 
 /*====== USERBOX ======*/
+
 .dropdown {
     position: absolute;
     top: 10px;
@@ -126,6 +127,7 @@ a{
     background-size: cover;
     background-position: center; 
     background-repeat: no-repeat;
+    margin-right: 5px;
 }
 .dropdown-menu {
     color: white;

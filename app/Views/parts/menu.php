@@ -50,7 +50,7 @@
                         ?><li><a class="dropdown-item" href="<?=base_url('admin')?>">Admin 🔑</a></li><?php
                     }
                 ?>
-                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="<?=base_url('Usercontroller/displayProfile')?>">Profile</a></li>
                 <li><a class="dropdown-item" href="<?=base_url('Usercontroller/displayEditProfile')?>">Edit profile</a></li>
                 <li><a class="dropdown-item" href="#">My collections</a></li>
                 <li>
