@@ -126,3 +126,178 @@ CRITICAL - 2022-05-27 06:29:43 --> Trying to access array offset on value of typ
 #12 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #13 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #14 {main}
+CRITICAL - 2022-05-27 07:51:15 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\wikiplace\app\Views\parts\menu.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 15)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(424): CodeIgniter\View\View->render('parts/menu', NULL, true)
+#4 C:\xampp\htdocs\wikiplace\app\Views\layout.php(19): CodeIgniter\View\View->include('parts/menu', NULL)
+#5 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#8 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/redirecti...', Array, true)
+#9 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(150): view('pages/redirecti...', Array)
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->logOut()
+#11 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#12 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2022-05-27 07:51:16 --> Invalid file: home.php
+#0 C:\xampp\htdocs\wikiplace\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('home.php')
+#1 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('home', Array, true)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(176): view('home', Array)
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->displayEditProfile()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-27 07:51:53 --> Undefined variable $categories
+#0 C:\xampp\htdocs\wikiplace\app\Views\pages\index.php(53): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 53)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/index', Array, true)
+#4 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(176): view('pages/index', Array)
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->displayEditProfile()
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-27 07:54:56 --> Undefined array key "password"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(126): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 126)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-27 07:55:49 --> Undefined array key "password"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(125): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 125)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-27 07:57:28 --> Undefined array key "password"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(126): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 126)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-27 07:57:33 --> Undefined array key "password"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(126): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 126)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-27 07:59:40 --> Undefined variable $sessionData
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(142): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 142)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-27 08:01:24 --> Undefined array key "password"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(129): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 129)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-27 08:01:26 --> Undefined array key "password"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(129): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 129)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-27 08:01:42 --> Undefined array key "password"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(129): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 129)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-27 08:01:52 --> Undefined array key "password"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(129): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 129)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-27 08:01:56 --> Undefined array key "password"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(129): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 129)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-27 08:02:00 --> Undefined array key "password"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(129): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 129)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-27 08:02:00 --> Undefined array key "password"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(129): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 129)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-27 08:02:00 --> Undefined array key "password"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(129): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 129)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->loginAjax()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-27 08:04:23 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\wikiplace\app\Views\parts\menu.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 15)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(424): CodeIgniter\View\View->render('parts/menu', NULL, true)
+#4 C:\xampp\htdocs\wikiplace\app\Views\layout.php(19): CodeIgniter\View\View->include('parts/menu', NULL)
+#5 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#8 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/redirecti...', Array, true)
+#9 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(158): view('pages/redirecti...', Array)
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->logOut()
+#11 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#12 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2022-05-27 08:09:03 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\wikiplace\app\Views\parts\menu.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 15)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(424): CodeIgniter\View\View->render('parts/menu', NULL, true)
+#4 C:\xampp\htdocs\wikiplace\app\Views\layout.php(19): CodeIgniter\View\View->include('parts/menu', NULL)
+#5 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#8 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/redirecti...', Array, true)
+#9 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(151): view('pages/redirecti...', Array)
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->logOut()
+#11 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#12 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2022-05-27 08:09:15 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\wikiplace\app\Views\parts\menu.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 15)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(424): CodeIgniter\View\View->render('parts/menu', NULL, true)
+#4 C:\xampp\htdocs\wikiplace\app\Views\layout.php(19): CodeIgniter\View\View->include('parts/menu', NULL)
+#5 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#8 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/redirecti...', Array, true)
+#9 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(151): view('pages/redirecti...', Array)
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->logOut()
+#11 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#12 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}

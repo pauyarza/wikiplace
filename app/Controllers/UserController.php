@@ -123,7 +123,8 @@ class UserController extends BaseController
             $userData = $result->getRowArray();
 
             //no result so user not found or incorrect password
-            if(!$userData || !password_verify($userData["password"], $loginData['password'])){
+            if(!$userData || !password_verify($loginData["password"], $userData['password'])){
+                $userData = [];
                 $userData["customError"] = "Incorrect username or password.";
             }
             else{//user found               
@@ -161,15 +162,22 @@ class UserController extends BaseController
         return view("pages/profile", $this->viewData); 
           
     }
-    public function displayEditProfile(){ 
-        $builder = $this->db->table('user');
-        $builder->select('description');
-        $builder->where('id_user', session()->id_user);
-        $user = $builder->get(1)->getRowArray();
+    public function displayEditProfile(){
+        if(session()->logged_in){
+            $builder = $this->db->table('user');
+            $builder->select('description');
+            $builder->where('id_user', session()->id_user);
+            $user = $builder->get(1)->getRowArray();
+    
+            $this->viewData['description'] = $user['description'];
+    
+            return view("pages/edit_profile", $this->viewData); 
+        }
+        else{
+            $this->viewData["goTo"] = './home';
+            return view("pages/redirecting", $this->viewData);
+        }
 
-        $this->viewData['description'] = $user['description'];
-
-        return view("pages/edit_profile", $this->viewData); 
           
     }
 
