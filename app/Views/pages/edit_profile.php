@@ -18,9 +18,8 @@
     ];
 ?>
 <script>
-    var errorsTrue = '<?php if(isset($errors)) echo 1;?>';
-    console.log(errorsTrue);
-    if (errorsTrue == ''){
+    var updateCorrect = <?php if(isset($updateCorrect)) echo "true"; else echo "false";?>;
+    if (updateCorrect){
         const Toast = Swal.mixin({
             toast: true,
             position: 'top',

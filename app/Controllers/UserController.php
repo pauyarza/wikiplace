@@ -37,7 +37,7 @@ class UserController extends BaseController
         $userData = $_POST;
         $validation->reset();
         $validation->setRules([
-            'username' => 'required|is_unique[user.username]|alpha_dash|max_length[50]',
+            'username' => 'required|is_unique[user.username]|alpha_dash|min_length[3]|max_length[50]',
             'mail' => 'required|valid_email|min_length[4]|is_unique[user.mail]|max_length[255]',
             'password' => 'required|min_length[6]|max_length[255]',
             'passwordR' => ['label' => 'repeat password', 'rules' => 'required|matches[password]'],
@@ -193,39 +193,52 @@ class UserController extends BaseController
 
 
     public function editProfile(){
-        $validation =  \Config\Services::validation();
-        $userData["username"] = $_POST['username'];
-        $userData["description"] = $_POST['description'];
+        if(session()->logged_in){
+            $validation =  \Config\Services::validation();
 
-        if($userData["username"] != session()->username){//prevent username validation when no change
-            $validation->setRule('username', 'username', 'required|is_unique[user.username]|alpha_dash|max_length[50]');
-        }
-        $validation->setRule('description', 'description', 'max_length[600]');
+            if(!isset($_POST['username'])){
+                $this->viewData["goTo"] = base_url('UserController/displayEditProfile');
+                return view("pages/redirecting", $this->viewData);
+            }
 
-        //data incorrect
-        if(!$validation->run($userData)){
-            $errors = $validation->getErrors();
-            $this->viewData['errors'] = $errors;
+            $userData["username"] = $_POST['username'];
+            $userData["description"] = $_POST['description'];
+
+            if($userData["username"] != session()->username){//prevent username validation when no change
+                $validation->setRule('username', 'username', 'required|is_unique[user.username]|alpha_dash|min_length[3]|max_length[50]');
+            }
+            $validation->setRule('description', 'description', 'max_length[600]');
+
+            //data incorrect
+            if(!$validation->run($userData)){
+                $errors = $validation->getErrors();
+                $this->viewData['errors'] = $errors;
+            }
+            else{
+                $builder = $this->db->table('user');
+        
+                if($userData["username"]){
+                    $builder->set('username', $userData["username"]);
+                }
+                if($userData["description"]){
+                    $builder->set('description', $userData["description"]);
+                } 
+                $builder->where('id_user',session()->id_user);
+        
+                if($builder->update()){
+                    session()->set('username', $userData["username"]);
+                }
+
+                $this->viewData['updateCorrect'] = true;
+            }
+            $this->viewData['description'] = $userData['description'];
+            $this->viewData["sessionData"]["username"] = $userData["username"];
+            return view("pages/edit_profile", $this->viewData);
         }
         else{
-            $builder = $this->db->table('user');
-    
-            if($userData["username"]){
-                $builder->set('username', $userData["username"]);
-            }
-            if($userData["description"]){
-                $builder->set('description', $userData["description"]);
-            } 
-            $builder->where('id_user',session()->id_user);
-    
-            if($builder->update()){
-                session()->set('username', $userData["username"]);
-            }
-            
+            $this->viewData["goTo"] = '../home';
+            return view("pages/redirecting", $this->viewData);
         }
-        $this->viewData['description'] = $userData['description'];
-        $sessionData["username"] = $userData['username'];
-        return view("pages/edit_profile", $this->viewData);
     }
 
     public function updateProfilePic(){
