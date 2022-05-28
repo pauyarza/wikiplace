@@ -29,12 +29,29 @@ class Map extends BaseController
 
     public function index()
     {
+
+        //save prefiltered categories
         $catFiltered = [];
+        $catFound = false;
         if(isset($_POST['category_name'])){
+            $category_name = $_POST['category_name'];
+        }
+        else if(isset($_GET['category_name'])){
+            $category_name = $_GET['category_name'];
+        }
+
+        if(isset($category_name)){
             foreach($this->viewData["categories"] as $category){
-                if(strpos($category['name'], $_POST['category_name']) !== false){
+                if(strpos($category['name'], $category_name) !== false){
                     $catFiltered[] = $category['name'];
+                    $catFound = true;
                 }
+            }
+            //filtered cat doesn't exist
+            if(!$catFound){
+                $this->viewData["error"] = "This category doesn't exist, yet!";
+                $this->viewData["categoryTry"] = $category_name;
+                return view("pages/index", $this->viewData);
             }
         }
         $this->viewData["catFiltered"] = $catFiltered;
@@ -46,5 +63,9 @@ class Map extends BaseController
         
         $this->viewData["spots"] = $spots;
         return view("pages/map", $this->viewData);
+    }
+
+    public function filter(){
+        $this->index();
     }
 }

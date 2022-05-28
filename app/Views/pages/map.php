@@ -32,15 +32,7 @@
 <!-- Content -->
 <?= $this->section('content') ?>
     <div id="categoriesListWrapper">
-        <div id="categoriesList">
-            <!-- <div class="catFiltered d-flex align-items-center">
-                <img src="<?=base_url('img/cross.svg'); ?>" alt="delete">
-                <p>parkour</p>
-            </div>
-            <div class="catFiltered addCatButton d-flex align-items-center">
-                <img src="<?=base_url('img/cross.svg'); ?>" alt="delete">
-            </div> -->
-        </div>
+        <div id="categoriesList"></div>
     </div>
     <div id="map"></div>
     <img
@@ -217,22 +209,31 @@
 
 
         //=======GENERATE MAP=======//
-        var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19
-            }),
 
-            latlng = new L.LatLng(41.548630, 2.107440);
+        var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19
+        }),
+
+        latlng = new L.LatLng(30.75, -37.96);
         var map = new L.Map('map', {
             setView: true,
             enableHighAccuracy: true,
             center: latlng,
-            zoom: 15,
+            zoom: 3,
             layers: [tiles],
             attributionControl: false,
             zoomControl: false,
         });
-        
 
+        //move map to location by IP
+        $.getJSON('https://geolocation-db.com/json/').done(function(location){
+            latlng = new L.LatLng(location.latitude, location.longitude);
+            map.flyTo(latlng, 8, {
+                    animate: true,
+                    duration: 0.5
+            });
+        });
+        
         map.on('click', function(e) {
             newCategoryMenuOpened = false;  
             setCategoryList();
@@ -288,18 +289,20 @@
                 markerUserLocation.openTooltip();
                 setTimeout(function(){//close tooltip after x seconds
                     markerUserLocation.closeTooltip();
-                }, 3000);
+                }, 4000);
             }
 
         }
 
         function setMapToUserLocation(){
             markerUserLocation.openTooltip();
-            map.setView(userLocation, map.getZoom(), {
-                "animate": true,
-                "pan": {
-                    "duration": 1
-                }
+            setTimeout(function(){//close tooltip after x seconds
+                markerUserLocation.closeTooltip();
+            }, 4000);
+
+            map.flyTo(userLocation, 14, {
+                    animate: true,
+                    duration: 1.5
             });
         }
 
@@ -387,9 +390,21 @@
             });
 
             marker.on('click', function(e) {
-                // if(confirm("Add new spot here?")){
-
-                // }
+                Swal.fire({
+                    heightAuto: false,
+                    title: 'Add new spot?',
+                    icon: 'question',
+                    showCancelButton: true,
+                    cancelButtonText: 'No',
+                    cancelButtonColor: '#DC3545',
+                    confirmButtonText: 'Yes!',
+                    confirmButtonColor: '#00C09A',
+                    reverseButtons: true
+                }).then((result) => {
+                if (result.isConfirmed){
+                        redirectToSpotForm();
+                    }
+                })
             });
 
             //add to map

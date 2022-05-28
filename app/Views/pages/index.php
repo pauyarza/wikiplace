@@ -19,15 +19,16 @@
         >
         <img class="index-logo" src="<?php echo base_url('img/logo.svg'); ?>" alt="wikiplace.org">
         <?=form_open('map',"id='formCategory'")?>
-            <div class="input-group">
+            <div class="input-group <?php if(isset($error)) echo "is-invalid"?>">
                 <input 
                     name="category_name"
                     id="searchCategory"
                     type="text" 
-                    class="form-control search-input" 
+                    class="form-control search-input <?php if(isset($error)) echo "is-invalid"?>" 
                     placeholder="Search a category" 
                     aria-describedby="button-addon2"
                     autocomplete="off"
+                    value="<?php if(isset($categoryTry)) echo $categoryTry?>"
                 >
                 <button class="btn btn-outline-secondary" type="submit" id="button-addon2">
                     <i class="fas fa-search"></i>
@@ -36,6 +37,9 @@
             <div class="d-flex" id="autocompleteWrap" style="display: none !important;">                
                 <div id='catAutcomplete' class="flex-fill"></div>
                 <div id=autocompleteFiller></div>
+            </div>
+            <div class="invalid-feedback">
+                <?php if(isset($error)) echo $error?>
             </div>
         </form>
         <!--Typer-->
@@ -90,10 +94,9 @@
         return str.replace(strRegExp, '<b>'+substr+'</b>');
     }
 
-    //submit form when category clicked
-    $(document).on('click', '.category', function () {
-        $("#searchCategory").val(this.value);
-        $("#formCategory").submit();
+    //on category click
+    $(document).on('mousedown', '.category', function () {
+        location.replace('<?= base_url('Map?category_name=')?>'+this.value);
     });
 
     //on input focus out
