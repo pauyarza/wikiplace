@@ -95,16 +95,21 @@ body{
 }
 
 
-
+@keyframes newSpote {
+    from {bottom: 95px;}
+    to {bottom: 60px;}
+  }
 
 #newSpotButton{
     z-index: 15;
     position: fixed;
     right: 0;
-    bottom: 55px;
-    width: 55px; 
-    margin-right: 5px;
+    bottom: 60px;
+    width: 50px; 
+    margin-right: 8px;
     cursor: pointer;
+    animation-name: newSpote;
+    animation-duration: 0.5s;
 }
 
 #userLocationButton{

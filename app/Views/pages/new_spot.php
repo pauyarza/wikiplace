@@ -17,7 +17,7 @@
 <!-- Content -->
 <?= $this->section('content') ?>
 <div class="container">
-    <h1>New spot</h1>
+    <h1 class="h1-newspot">New spot</h1>
     <?php
     $formAttributes = [
         'class'  => 'new-spot-form',
@@ -103,7 +103,7 @@
             }
         </script>
         <br>
-        <button type="submit" class="btn btn-success send">Enviar</button>
+        <button type="submit" class="btn btn-success send">Send petition</button>
     </form>
 
     <script>

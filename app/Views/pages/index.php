@@ -9,7 +9,6 @@
 
 <!-- Content -->
 <?= $this->section('content') ?>
-
 <div class="index d-flex"> 
     <div class="container index-box align-self-center">
         <img 
