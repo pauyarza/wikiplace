@@ -44,7 +44,7 @@
 
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
             
-                <li><a class="dropdown-item" href="<?=base_url('Home/index') ?>"><img class="logo-dropdown" src="<?php echo base_url('img/logo2.svg') ?>"></a></li>
+                <li><a class="dropdown-item" href="<?=base_url('Home') ?>"><img class="logo-dropdown" src="<?php echo base_url('img/logo2.svg') ?>"></a></li>
                 <?php 
                     if ($sessionData["is_admin"]) {
                         ?><li><a class="dropdown-item" href="<?=base_url('admin')?>">Admin 🔑</a></li><?php

@@ -1,0 +1,102 @@
+CRITICAL - 2022-05-28 04:36:51 --> Call to undefined function form_open()
+#0 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(424): CodeIgniter\View\View->render('parts/login', NULL, true)
+#3 C:\xampp\htdocs\wikiplace\app\Views\layout.php(22): CodeIgniter\View\View->include('parts/login')
+#4 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#6 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#7 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/redirecti...', Array, true)
+#8 C:\xampp\htdocs\wikiplace\app\Controllers\Admin.php(27): view('pages/redirecti...', Array)
+#9 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(809): App\Controllers\Admin->__construct()
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#11 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2022-05-28 05:00:52 --> Undefined variable $updateCorrect
+#0 C:\xampp\htdocs\wikiplace\app\Views\pages\edit_profile.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 22)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/edit_prof...', Array, true)
+#4 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(184): view('pages/edit_prof...', Array)
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->displayEditProfile()
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-28 05:01:28 --> Invalid file: pages/editprofile.php
+#0 C:\xampp\htdocs\wikiplace\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/editprofi...')
+#1 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/editprofi...', Array, true)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(209): view('pages/editprofi...', Array)
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->editProfile()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-28 05:02:03 --> Undefined variable $description
+#0 C:\xampp\htdocs\wikiplace\app\Views\pages\edit_profile.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 72)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/edit_prof...', Array, true)
+#4 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(228): view('pages/edit_prof...', Array)
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->editProfile()
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-28 05:02:07 --> Undefined variable $description
+#0 C:\xampp\htdocs\wikiplace\app\Views\pages\edit_profile.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 72)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/edit_prof...', Array, true)
+#4 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(228): view('pages/edit_prof...', Array)
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->editProfile()
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-28 05:18:44 --> Undefined array key "errors"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(227): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 227)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->editProfile()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-28 05:19:19 --> Undefined array key "errors"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(227): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 227)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->editProfile()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-28 05:19:52 --> Array to string conversion
+#0 C:\xampp\htdocs\wikiplace\app\Views\pages\edit_profile.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 21)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/edit_prof...', Array, true)
+#4 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(229): view('pages/edit_prof...', Array)
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->editProfile()
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-28 05:31:05 --> Undefined property: App\Controllers\UserController::$validation
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(200): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 200)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->editProfile()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-28 05:31:19 --> Call to undefined method CodeIgniter\Validation\Validation::set_rules()
+#0 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->editProfile()
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-28 05:42:29 --> Undefined array key "username"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(197): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 197)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->editProfile()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

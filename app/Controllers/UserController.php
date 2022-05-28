@@ -193,28 +193,39 @@ class UserController extends BaseController
 
 
     public function editProfile(){
-        $username = $_POST['username'];
-        $description = $_POST['description'];
+        $validation =  \Config\Services::validation();
+        $userData["username"] = $_POST['username'];
+        $userData["description"] = $_POST['description'];
 
-        print_r($_POST);
-
-        $builder = $this->db->table('user');
-
-        if($username){
-            $builder->set('username', $username);
+        if($userData["username"] != session()->username){//prevent username validation when no change
+            $validation->setRule('username', 'username', 'required|is_unique[user.username]|alpha_dash|max_length[50]');
         }
-        if($description){
-            $builder->set('description', $description);
-        } 
-        $builder->where('id_user',session()->id_user);
+        $validation->setRule('description', 'description', 'max_length[600]');
 
-        if($builder->update()){
-            //load categories again
-            // $builder = $this->db->table('user');
-            // $this->viewData["message"] = "User updated successfully.";
-            // return view("pages/editprofile", $this->viewData);
-            session()->set('username', $username);
+        //data incorrect
+        if(!$validation->run($userData)){
+            $errors = $validation->getErrors();
+            $this->viewData['errors'] = $errors;
         }
+        else{
+            $builder = $this->db->table('user');
+    
+            if($userData["username"]){
+                $builder->set('username', $userData["username"]);
+            }
+            if($userData["description"]){
+                $builder->set('description', $userData["description"]);
+            } 
+            $builder->where('id_user',session()->id_user);
+    
+            if($builder->update()){
+                session()->set('username', $userData["username"]);
+            }
+            
+        }
+        $this->viewData['description'] = $userData['description'];
+        $sessionData["username"] = $userData['username'];
+        return view("pages/edit_profile", $this->viewData);
     }
 
     public function updateProfilePic(){

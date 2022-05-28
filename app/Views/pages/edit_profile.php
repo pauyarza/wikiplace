@@ -18,8 +18,23 @@
     ];
 ?>
 <script>
-    var message = '<?php if(isset($message)) echo $message?>';
-    if (message) alert(message);
+    var errorsTrue = '<?php if(isset($errors)) echo 1;?>';
+    console.log(errorsTrue);
+    if (errorsTrue == ''){
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top',
+            showConfirmButton: false,
+            showCloseButton: true,
+            timer: 3000,
+            timerProgressBar: true,
+        })
+        Toast.fire({
+            icon: 'success',
+            title: 'User updated successfully'
+        })
+    };
+    
 </script>
 <div class="container profile-box">
     <div class="avatar-upload">
@@ -48,36 +63,41 @@
         readURL(this);
     });
     </script>
-
+    
     <h3><?=$sessionData["username"]?></h3>
     <h5 style="color:grey;"><?=$sessionData["mail"]?></h5>
     <div class="text-center modal-body form">
-            <?php  
-                echo form_open('UserController/editProfile'); 
-            ?> 
-                <input 
-                    type="text" 
-                    id="usernameedit"
-                    name="username"
-                    class="input-group-text profile-input-group"
-                    value="<?=$sessionData["username"]?>"
-                >
-                <div class="invalid-feedback" id="usernameMailLoginError"></div>                  
-                <textarea 
-                    id="descriptionedit" 
-                    name="description" 
-                    placeholder="Describe yourself here..."
-                    class="input-group-text profile-input-group"
-                ><?=$description?></textarea>
-                <div class="invalid-feedback" id="passwordLoginError"></div>
-                <button 
-                    class="profile-btn profile-btn-1" 
-                    type="submit">
-                        Save changes
-                </button>
-            </form>
-        </div>
-    
+        <?php  
+            echo form_open('UserController/editProfile'); 
+        ?> 
+            <input 
+                type="text" 
+                id="usernameedit"
+                name="username"
+                class="input-group-text profile-input-group <?php if(isset($errors["username"])) echo "is-invalid"?>"
+                value="<?=$sessionData["username"]?>"
+            >
+            <div class="invalid-feedback">
+                <?php if(isset($errors["username"])) echo $errors["username"]?>
+            </div>
+            <div class="invalid-feedback" id="usernameMailLoginError"></div>                  
+            <textarea 
+                id="descriptionedit" 
+                name="description" 
+                placeholder="Describe yourself here..."
+                class="input-group-text profile-input-group <?php if(isset($errors["description"])) echo "is-invalid"?>"
+            ><?=$description?></textarea>
+            <div class="invalid-feedback">
+                <?php if(isset($errors["description"])) echo $errors["description"]?>
+            </div>
+            <div class="invalid-feedback" id="passwordLoginError"></div>
+            <button 
+                class="profile-btn profile-btn-1" 
+                type="submit">
+                    Save changes
+            </button>
+        </form>
+    </div>
 </div>
 
 <!--Edit profile script--><script src="<?php echo base_url('js/editProfile.js'); ?>"></script>

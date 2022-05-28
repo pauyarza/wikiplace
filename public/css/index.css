@@ -38,7 +38,7 @@ body{
     cursor: pointer;
 }
 
-.earth:hover {
+.earth:hover, .earth:active {
     transform: scale(1.3);
 }
 
