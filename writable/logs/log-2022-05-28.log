@@ -100,3 +100,87 @@ CRITICAL - 2022-05-28 05:42:29 --> Undefined array key "username"
 #3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #5 {main}
+CRITICAL - 2022-05-28 08:30:31 --> syntax error, unexpected 'base_url' (T_STRING), expecting ',' or ';'
+#0 C:\wamp64\www\wikiplace\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('spotController/...')
+#1 C:\wamp64\www\wikiplace\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('spotController/...')
+#2 C:\wamp64\www\wikiplace\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\wamp64\www\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-28 08:30:38 --> syntax error, unexpected 'base_url' (T_STRING), expecting ',' or ';'
+#0 C:\wamp64\www\wikiplace\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('spotController/...')
+#1 C:\wamp64\www\wikiplace\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('spotController/...')
+#2 C:\wamp64\www\wikiplace\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\wamp64\www\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-28 08:30:53 --> syntax error, unexpected 'base_url' (T_STRING), expecting ',' or ';'
+#0 C:\wamp64\www\wikiplace\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('spotController/...')
+#1 C:\wamp64\www\wikiplace\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('spotController/...')
+#2 C:\wamp64\www\wikiplace\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\wamp64\www\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-28 08:31:18 --> syntax error, unexpected 'base_url' (T_STRING), expecting ',' or ';'
+#0 C:\wamp64\www\wikiplace\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('spotController/...')
+#1 C:\wamp64\www\wikiplace\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('spotController/...')
+#2 C:\wamp64\www\wikiplace\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\wamp64\www\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-28 08:31:21 --> syntax error, unexpected 'base_url' (T_STRING), expecting ',' or ';'
+#0 C:\wamp64\www\wikiplace\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('spotController/...')
+#1 C:\wamp64\www\wikiplace\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('spotController/...')
+#2 C:\wamp64\www\wikiplace\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\wamp64\www\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-28 08:32:30 --> syntax error, unexpected 'base_url' (T_STRING), expecting ',' or ';'
+#0 C:\wamp64\www\wikiplace\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('spotController/...')
+#1 C:\wamp64\www\wikiplace\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('spotController/...')
+#2 C:\wamp64\www\wikiplace\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\wamp64\www\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-28 08:32:52 --> syntax error, unexpected '$base_url' (T_VARIABLE), expecting ',' or ';'
+#0 C:\wamp64\www\wikiplace\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('spotController/...')
+#1 C:\wamp64\www\wikiplace\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('spotController/...')
+#2 C:\wamp64\www\wikiplace\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\wamp64\www\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-28 08:33:31 --> syntax error, unexpected '$base_url' (T_VARIABLE), expecting ',' or ';'
+#0 C:\wamp64\www\wikiplace\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('spotController/...')
+#1 C:\wamp64\www\wikiplace\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('spotController/...')
+#2 C:\wamp64\www\wikiplace\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\wamp64\www\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-28 08:34:00 --> syntax error, unexpected 'base_url' (T_STRING), expecting ',' or ';'
+#0 C:\wamp64\www\wikiplace\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('spotController/...')
+#1 C:\wamp64\www\wikiplace\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('spotController/...')
+#2 C:\wamp64\www\wikiplace\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\wamp64\www\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-28 08:34:59 --> syntax error, unexpected 'base_url' (T_STRING), expecting ',' or ';'
+#0 C:\wamp64\www\wikiplace\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('spotController/...')
+#1 C:\wamp64\www\wikiplace\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('spotController/...')
+#2 C:\wamp64\www\wikiplace\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\wamp64\www\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-28 08:35:00 --> syntax error, unexpected 'base_url' (T_STRING), expecting ',' or ';'
+#0 C:\wamp64\www\wikiplace\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('spotController/...')
+#1 C:\wamp64\www\wikiplace\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('spotController/...')
+#2 C:\wamp64\www\wikiplace\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\wamp64\www\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-28 09:11:54 --> syntax error, unexpected 'return' (T_RETURN), expecting ',' or ';'
+#0 C:\wamp64\www\wikiplace\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('spotController/...')
+#1 C:\wamp64\www\wikiplace\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('spotController/...')
+#2 C:\wamp64\www\wikiplace\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\wamp64\www\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

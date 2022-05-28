@@ -191,7 +191,7 @@ class SpotController extends BaseController
                 <button class="btn mapsButton" onclick="goMaps('.$spot['latitude'].','.$spot['longitude'].')">
                     <img class="mapsImg" src="img/maps.png">
                 </button>';
-                echo '<a class="btn moreButton">More</a>';
+                echo '<a class="btn moreButton" href="" >More</a>';
             echo "</div>";
         echo "</div>";
     }

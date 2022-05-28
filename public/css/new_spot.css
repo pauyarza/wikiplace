@@ -1,10 +1,12 @@
-.new-spot-form{
+.new-spot-form {
     max-width: 500px;
     color: white;
     font-family: 'Josefin Sans', sans-serif;
 }
 
-.new-spot-form input, .new-spot-form textarea, .new-spot-form select{
+.new-spot-form input,
+.new-spot-form textarea,
+.new-spot-form select {
     width: 100%;
     border: none;
     outline: none;
@@ -17,11 +19,11 @@
     margin-bottom: 20px;
 }
 
-.new-spot-form label{
+.new-spot-form label {
     padding-top: 10px;
 }
 
-.new-spot-form .send{
+.new-spot-form .send {
     font-family: 'Bree Serif', serif;
     padding: 3px 0px 5px 0px;
     width: 100%;
@@ -34,9 +36,9 @@
     max-height: 36px;
 }
 
-.h1-newspot{
+.h1-newspot {
     font-family: 'Bree Serif', serif;
-    color: #00C09A;
+    color: #ffe449;
     margin-top: 25px;
     margin-bottom: 25px;
 }
