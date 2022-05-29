@@ -5,6 +5,7 @@ use App\Models\SpotModel;
 use App\Models\SpotImageModel;
 use App\Models\SpotLikeModel;
 use App\Models\SpotFavModel;
+use App\Models\SpotReportModel;
 
 class SpotController extends BaseController
 {
@@ -250,7 +251,7 @@ class SpotController extends BaseController
         $builder->where('id_spot', $spotData['id_spot']);
         $builder->where('id_user', $spotData['id_user']);
 
-        if($builder->countAllResults()==0){//if fav doesn't exists
+        if($builder->countAllResults()==0){//if fav doesn't exist
             $SpotFavModel = new SpotFavModel();
             if($SpotFavModel->insert($spotData)){
                 echo "ok";
@@ -278,7 +279,30 @@ class SpotController extends BaseController
         else{
             echo "database error";
         }
+    }
 
+    public function reportSpot(){//ajax
+        $reportData['id_spot'] = $_POST["id_spot"];
+        $reportData['report_message'] = $_POST["report_message"];
+        $reportData['id_user'] = session()->id_user;
+
+        $builder = $this->db->table('spot_report');
+        $builder->select('id_spot_report');
+        $builder->where('id_spot', $reportData['id_spot']);
+        $builder->where('id_user', $reportData['id_user']);
+
+        if($builder->countAllResults()==0){//if report doesn't exist
+            $SpotReportModel = new SpotReportModel();
+            if($SpotReportModel->insert($reportData)){
+                echo "ok";
+            }
+            else{
+                echo "database error";
+            }
+        }
+        else{
+            echo "Spot already reported.";
+        }
     }
 
     public function displaySpot($id_spot){
@@ -300,6 +324,4 @@ class SpotController extends BaseController
         $this->viewData["spot"] = $spot;
         return view("pages/spot", $this->viewData);
     }
-
-
 }

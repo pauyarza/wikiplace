@@ -34,12 +34,21 @@ class Admin extends BaseController
         $builder = $this->db->table('category');
         $catQuery = $builder->get();
         $this->viewData["categories"] = $catQuery->getResultArray();
+
+        // Load unresolved reports to viewData
+        $builder = $this->db->table('spot_report');
+        $builder->where('solved', 0);
+        $catQuery = $builder->get();
+        $this->viewData["spot_reports"] = $catQuery->getResultArray();
     }
 
     public function index()
     {
         return view("admin/admin", $this->viewData);
     }
+
+    //========= SPOTS =========//
+    
 
     //========= CATEGORIES =========//
     public function newCategory(){

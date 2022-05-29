@@ -1,13 +1,64 @@
-.admin h2{
-    padding-bottom: 20px;
+.admin{
+    margin-top: 20px;
 }
 
-.categories{
+.admin h1{
+    color: rgb(241, 241, 241);
+}
+
+.admin h2{
+    padding-bottom: 20px;
+    font-weight: 510;
+}
+
+.adminBox{
     background-color: rgb(241, 241, 241);
     border-radius: 24px;
     padding: 20px 30px 40px 30px;
-    margin-top: 20px;
+    margin: 10px;
 }
+
+@media (max-width: 768px) {
+    .adminBox{
+        margin: 10px 0;
+    }
+}
+
+/*====REPORTS====*/
+
+.reporter{
+    word-wrap: break-word;
+    color: rgb(33, 37, 41);
+}
+
+.reportDiv{
+    margin:  0 0 15px 0;
+}
+
+.reportMsg{
+    margin-bottom: 20px;
+}
+
+.reportMsg p{
+    margin: 8px 0 0 0 ;
+}
+
+
+.actions{
+    width: 174px;
+}
+
+@media (max-width: 768px) {
+    .actions{
+        width: 100%;
+    }
+
+    .reportDiv{
+        margin:  0 0 60px 0;
+    }
+}
+
+/*====CATEGORIES====*/
 
 .admin ul{
     margin-top: 20px;

@@ -5,7 +5,7 @@ function goMaps(lat,lng){
 function likeSpot(id_spot){
     $.ajax({
         type: "POST",
-        url: "spotController/likeSpot",
+        url: base_url+"/spotController/likeSpot",
         data: { id_spot : id_spot },
         success: function(response)
         {
@@ -17,7 +17,7 @@ function likeSpot(id_spot){
 function unlikeSpot(id_spot){
     $.ajax({
         type: "POST",
-        url: "spotController/unlikeSpot",
+        url: base_url+"/spotController/unlikeSpot",
         data: { id_spot : id_spot },
         success: function(response)
         {
@@ -29,7 +29,7 @@ function unlikeSpot(id_spot){
 function favSpot(id_spot){
     $.ajax({
         type: "POST",
-        url: "spotController/favSpot",
+        url: base_url+"/spotController/favSpot",
         data: { id_spot : id_spot },
         success: function(response)
         {
@@ -46,7 +46,7 @@ function favSpot(id_spot){
 function unfavSpot(id_spot){
     $.ajax({
         type: "POST",
-        url: "spotController/unfavSpot",
+        url: base_url+"/spotController/unfavSpot",
         data: { id_spot : id_spot },
         success: function(response)
         {
@@ -58,4 +58,46 @@ function unfavSpot(id_spot){
             }
         }
     });
+}
+
+function reportSpot(id_spot){
+    Swal.fire({
+        title: 'Report spot',
+        input: 'textarea',
+        inputLabel: 'Report reason:',
+        inputPlaceholder: 'Type your report reason here...',
+        inputAttributes: {'aria-label': 'Type your reason here'},
+        confirmButtonColor: '#00C09A',
+        showCancelButton: true,
+        reverseButtons: true,
+        heightAuto: false,
+    }).then(function (alert) {
+        message = alert.value;
+        $.ajax({
+            type: "POST",
+            url: base_url+"/spotController/reportSpot",
+            data: {
+                id_spot: id_spot,
+                report_message: message
+            },
+            cache: false,
+            success: function(response) {
+                if(response == "ok"){
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Thank you!',
+                        text: 'We will take care of it 😉',
+                        heightAuto: false,
+                    })
+                }
+                else{
+                    Swal.fire({
+                        icon: 'error',
+                        text: response,
+                        heightAuto: false,
+                    })
+                }
+            }
+        });
+    },)
 }

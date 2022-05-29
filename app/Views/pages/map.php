@@ -391,7 +391,6 @@
                     icon: 'question',
                     showCancelButton: true,
                     cancelButtonText: 'No',
-                    cancelButtonColor: '#DC3545',
                     confirmButtonText: 'Yes!',
                     confirmButtonColor: '#00C09A',
                     reverseButtons: true
