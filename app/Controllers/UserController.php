@@ -257,9 +257,11 @@ class UserController extends BaseController
             $builder->set('profile_pic_extension', $extension);
             $builder->where('id_user',session()->id_user);
             if($builder->update()){
-                session()->set('profile_pic', $content);
-                session()->set('profile_pic_extension', $extension);
+                session()->set('profile_pic_src', 'data:'.$extension.';base64,'.base64_encode($content));
                 echo "ok";
+            }
+            else{
+                echo "error";
             }
         }
     }
