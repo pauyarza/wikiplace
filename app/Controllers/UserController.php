@@ -130,7 +130,6 @@ class UserController extends BaseController
                 $return["customError"] = "Incorrect username or password.";
             }
             else{//user found
-                //prepare image        
                 //create session
                 $sessionData = [
                     'id_user'  => $userData["id_user"],
@@ -161,13 +160,23 @@ class UserController extends BaseController
         return view("pages/redirecting", $this->viewData);
     }
 
-    public function displayProfile(){
+    public function displayProfile($username){
         $builder = $this->db->table('user');
-        $builder->select('description');
-        $builder->where('id_user', session()->id_user);
+        $builder->select('username,description,profile_pic,profile_pic_extension');
+        $builder->where('username', $username);
         $user = $builder->get(1)->getRowArray();
 
-        $this->viewData['description'] = $user['description'];
+        //check if it's owner
+        if($user['username'] == session()->username){
+            $this->viewData['is_owner'] = true;
+        }
+        else{
+            $this->viewData['is_owner'] = false;
+        }
+
+        $this->viewData['user']['username'] = $user['username'];
+        $this->viewData['user']['description'] = $user['description'];
+        $this->viewData['user']['profile_pic_src'] = 'data:'.$user['profile_pic_extension'].';base64,'.base64_encode($user['profile_pic']);
 
         return view("pages/profile", $this->viewData); 
           

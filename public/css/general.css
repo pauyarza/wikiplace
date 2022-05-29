@@ -123,7 +123,6 @@ a{
     height: 32px;
     width: 32px;
     border-radius: 50%;
-    display:flex;
     background-size: cover;
     background-position: center; 
     background-repeat: no-repeat;

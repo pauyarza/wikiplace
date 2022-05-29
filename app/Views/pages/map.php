@@ -2,17 +2,12 @@
 
 <!-- Unique head -->
 <?= $this->section('head') ?>
-    <!--CSS leaflet-->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
-    <!--CSS MarkerCluster-->
-    <link rel="stylesheet" type="text/css" href="<?= base_url('css/MarkerCluster.css'); ?>">
-    <!--Map CSS-->
-    <link rel="stylesheet" type="text/css" href="<?= base_url('css/map.css'); ?>" />
+    <!--CSS leaflet--><link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
+    <!--CSS MarkerCluster--><link rel="stylesheet" type="text/css" href="<?= base_url('css/MarkerCluster.css'); ?>">
+    <!--Map CSS--><link rel="stylesheet" type="text/css" href="<?= base_url('css/map.css'); ?>" />
+    <!-- load leaflet script --><script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+    <!-- load markercluster script --><script src="<?php echo base_url('js/leaflet.markercluster.js'); ?>"></script>
     <title>Wikiplace | Map 🗺️</title>
-    <!-- load leaflet script -->
-    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
-    <!-- load markercluster script -->
-    <script src="<?php echo base_url('js/leaflet.markercluster.js'); ?>"></script>
     <script>        
         //=======PASS PHP ARRAYS TO JS=======//
         var spots = <?= json_encode($spots); ?>;
@@ -457,7 +452,7 @@
                     unlikeSpot(id_spot);
                     image = $(this).find('img');
                     image.fadeOut(100, function () {
-                        image.attr('src', 'img/noLike.png');
+                        image.attr('src', 'img/noLikeGrey.png');
                         image.fadeIn(100);
                     });
                 }
@@ -501,11 +496,6 @@
                 }
             });
         }
-
-        function goMaps(lat,lng){
-            window.open("http://maps.google.com/maps?q="+lat+","+lng);
-        }
-
 
         
         //=======FIRST LOAD=======//

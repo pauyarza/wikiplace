@@ -143,7 +143,7 @@ class SpotController extends BaseController
             if($builder->countAllResults() == 0){
                 //not liked
                 $likedClass = "";
-                $heartUrl = 'img/noLike.png';
+                $heartUrl = 'img/noLikeGrey.png';
             }
             else{
                 //liked
@@ -154,7 +154,7 @@ class SpotController extends BaseController
         else{
             //not liked
             $likedClass = "";
-            $heartUrl = 'img/noLike.png';
+            $heartUrl = 'img/noLikeGrey.png';
         }
         
         
@@ -186,12 +186,12 @@ class SpotController extends BaseController
                 else echo '<img class="mainImg" src="img/placeholder-image.jpg">';
             echo "</div>";
             echo "<div class='buttonsDiv col-5 d-flex align-content-between flex-wrap'>";
-            //button
+            //buttons
                 echo '
                 <button class="btn mapsButton" onclick="goMaps('.$spot['latitude'].','.$spot['longitude'].')">
                     <img class="mapsImg" src="img/maps.png">
                 </button>';
-                echo '<a class="btn moreButton" href="" >More</a>';
+                echo '<a class="btn moreButton" href="'.base_url('SpotController/displaySpot').'/'.$spot['id_spot'].'" >More</a>';
             echo "</div>";
         echo "</div>";
     }
@@ -237,5 +237,25 @@ class SpotController extends BaseController
         $builder->where('id_spot', $spotData['id_spot']);
         $spotLikes = $builder->countAllResults();
         echo $spotLikes;
+    }
+
+    public function displaySpot($id_spot){
+        //get spot
+        $builder = $this->db->table('spot');
+        $builder->select('id_spot,id_user,id_category,latitude,longitude,spot_name,description');
+        $builder->where('id_spot', $id_spot);
+        $spot = $builder->get(1)->getRowArray();
+
+        //get images
+        $builder = $this->db->table('spot_image');
+        $builder->select('content, extension');
+        $builder->where('id_spot', $id_spot);
+        $images = $builder->get()->getResultArray();
+        foreach($images as $image){
+            $spot['images_src'][] = 'data:'.$image['extension'].';base64,'.base64_encode($image['content']);
+        }
+
+        $this->viewData["spot"] = $spot;
+        return view("pages/spot", $this->viewData);
     }
 }

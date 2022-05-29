@@ -33,11 +33,6 @@
                     style="background-image: url('<?=$sessionData['profile_pic_src']?>');"
                 >
                 </div>
-                    <!-- <img 
-                        src="<?=$sessionData['profile_pic_src']?>"
-                        alt="" 
-                        class="profile_pic"
-                    > -->
                 <span class="dropdown-username"><?php echo $sessionData["username"] ?></span>
             </a>
 
@@ -50,7 +45,10 @@
                         ?><li><a class="dropdown-item" href="<?=base_url('admin')?>">Admin 🔑</a></li><?php
                     }
                 ?>
-                <li><a class="dropdown-item" href="<?=base_url('UserController/displayProfile')?>">Profile</a></li>
+                <li><a 
+                    class="dropdown-item"
+                    href="<?=base_url('UserController/displayProfile').'/'.$sessionData["username"]?>"
+                >Profile</a></li>
                 <li><a class="dropdown-item" href="<?=base_url('UserController/displayEditProfile')?>">Edit profile</a></li>
                 <li><a class="dropdown-item" href="#">My collections</a></li>
                 <li>

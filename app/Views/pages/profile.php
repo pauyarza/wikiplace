@@ -17,29 +17,25 @@
         'id' => 'formUpdateAvatar',
     ];
 ?>
-<script>
-    var message = '<?php if(isset($message)) echo $message?>';
-    if (message) alert(message);
-</script>
 <div class="container profile-box">
     <div class="avatar-upload">
-        <?= form_open_multipart('userController/updateProfilePic', $avatarFormAttributes) ?>
-        </form>
         <div class="avatar-preview">
-            <div id="imagePreview" style="background-image: url('<?=$sessionData['profile_pic_src']?>');">
+            <div id="imagePreview" style="background-image: url('<?=$user['profile_pic_src']?>');">
             </div>
         </div>
     </div>
     <div class="container">
-    <h3><?=$sessionData["username"]?></h3>
-    <h5 style="color:grey;"><?=$sessionData["mail"]?></h5>
-    <hr class="hr-profile">
-    <p style="color:white"><?=$description?></p></div>
+        <h3><?=$user["username"]?></h3>
+        <h5 style="color:grey;"><?=$user["username"]?></h5>
+        <hr class="hr-profile">
+        <p style="color:white"><?=$user['description']?></p>
+    </div>
 
     <button 
         class="profile-btn profile-btn-3" 
-        type="submit">
-            My collections
+        type="submit"
+    >
+        Collections
     </button>
     
 </div>

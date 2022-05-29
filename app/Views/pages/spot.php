@@ -1,35 +1,69 @@
+<?= $this->extend('layout') ?>
+
+<!-- Unique head -->
+<?= $this->section('head') ?>
+    <title>Wikiplace | Spot: <?=$spot['spot_name']?></title>
+    <!--Spot CSS--><link rel="stylesheet" type="text/css" href="<?= base_url('css/spot.css'); ?>" />
+<?= $this->endSection('head') ?>
+
+<!-- Content -->
+<?= $this->section('content') ?>
 <div class="container">
-  <h3 class="text-center text-uppercase">
-    Custom Bootstrap Carousel
-  </h3>
-  <div class="row">
-    <div class="col-lg-10 col-md-8 col-sm-12 mx-auto my-5">
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="https://images.unsplash.com/photo-1561877202-53d0e24be55d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" class="d-block w-100" alt="...">
+    <div class="spotContainer">
+        <?php if(isset($spot['images_src'])){ //print carousel if images exist?>
+        <!-- crousel -->
+        <div id="carouselUserIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <?php 
+                    if(count($spot['images_src']) > 1){ //print indicators if multiple images
+                        for($i = 0; $i<count($spot['images_src']); $i++){
+                            if($i==0){
+                                echo '<button type="button" data-bs-target="#carouselUserIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>';
+                            }
+                            else{
+                                echo '<button type="button" data-bs-target="#carouselUserIndicators" data-bs-slide-to="'.$i.'" aria-label="Slide '.$i.'"></button>';
+                            }
+                        }
+                    }
+                ?>
+            </div>
+            <div class="carousel-inner">
+                <?php
+                    $active = ' active';
+                    foreach($spot['images_src'] as $image_src){
+                        echo "<div class='carousel-item ".$active."' style=\"background-image: url('".$image_src."')\"></div>";
+                        $active = '';
+                    }
+                ?>
+            </div>
+            <?php if(count($spot['images_src']) > 1){ //print arrows if multiple images ?>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselUserIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselUserIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            <?php } ?>
+        </div>
+        <?php } ?>
+        <!-- interact buttons -->
+        <div class="d-flex justify-content-between interactButtons">
+            <button class="btn mapsButton" onclick="goMaps()">
+                <img class="mapsImg" src="<?=base_url('img/maps.png');?>">
+            </button>
+            <div>
+                <img 
+                    src="<?=base_url('img/noFav.svg');?>"
+                    class="favButton"
+                >
+                <img 
+                    class="likeButton"
+                    src="<?=base_url('img/noLikeWhite.png');?>"
+                >
+            </div>
+        </div>
     </div>
-    <div class="carousel-item">
-      <img src="https://images.unsplash.com/photo-1561622245-4d9cd72441a8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="https://images.unsplash.com/photo-1508724735996-b41f69dfe2a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1156&q=80" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
 </div>
-    </div>
-  </div>
-</div>
+<?= $this->endSection('content') ?>
