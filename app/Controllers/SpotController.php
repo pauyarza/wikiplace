@@ -4,6 +4,7 @@ namespace App\Controllers;
 use App\Models\SpotModel;
 use App\Models\SpotImageModel;
 use App\Models\SpotLikeModel;
+use App\Models\SpotFavModel;
 
 class SpotController extends BaseController
 {
@@ -196,7 +197,7 @@ class SpotController extends BaseController
         echo "</div>";
     }
 
-    public function likeSpot(){
+    public function likeSpot(){//ajax
         $spotData['id_spot'] = $_POST["id_spot"];
         $spotData['id_user'] = session()->id_user;
 
@@ -206,7 +207,7 @@ class SpotController extends BaseController
         $builder->where('id_spot', $spotData['id_spot']);
         $builder->where('id_user', $spotData['id_user']);
 
-        if($builder->countAllResults()==0){
+        if($builder->countAllResults()==0){//if like doesn't exist
             $SpotLikeModel = new SpotLikeModel();
             if($SpotLikeModel->insert($spotData)){
                 //count spot likes
@@ -222,7 +223,7 @@ class SpotController extends BaseController
         }
     }
 
-    public function unlikeSpot(){
+    public function unlikeSpot(){//ajax
         $spotData['id_spot'] = $_POST["id_spot"];
         $spotData['id_user'] = session()->id_user;
 
@@ -237,6 +238,47 @@ class SpotController extends BaseController
         $builder->where('id_spot', $spotData['id_spot']);
         $spotLikes = $builder->countAllResults();
         echo $spotLikes;
+    }
+
+    public function favSpot(){//ajax
+        $spotData['id_spot'] = $_POST["id_spot"];
+        $spotData['id_user'] = session()->id_user;
+
+
+        $builder = $this->db->table('spot_fav');
+        $builder->select('id_spot_fav');
+        $builder->where('id_spot', $spotData['id_spot']);
+        $builder->where('id_user', $spotData['id_user']);
+
+        if($builder->countAllResults()==0){//if fav doesn't exists
+            $SpotFavModel = new SpotFavModel();
+            if($SpotFavModel->insert($spotData)){
+                echo "ok";
+            }
+            else{
+                echo "database error";
+            }
+        }
+        else{
+            echo "Already favourite";
+        }
+    }
+
+    public function unfavSpot(){//ajax
+        $spotData['id_spot'] = $_POST["id_spot"];
+        $spotData['id_user'] = session()->id_user;
+
+        $builder = $this->db->table('spot_fav');
+        $builder->where('id_user', $spotData['id_user']);
+        $builder->where('id_spot', $spotData['id_spot']);
+        
+        if($builder->delete()){
+            echo "ok";
+        }
+        else{
+            echo "database error";
+        }
+
     }
 
     public function displaySpot($id_spot){
@@ -258,4 +300,6 @@ class SpotController extends BaseController
         $this->viewData["spot"] = $spot;
         return view("pages/spot", $this->viewData);
     }
+
+
 }

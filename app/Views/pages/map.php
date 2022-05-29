@@ -469,34 +469,6 @@
                 $(this).toggleClass("liked");
             }
         });
-
-
-        function likeSpot(id_spot){
-            $.ajax({
-                type: "POST",
-                url: "spotController/likeSpot",
-                data: { id_spot : id_spot },
-                success: function(response)
-                {
-                    console.log(response);
-                    $(".totalLikes").html(response);
-                }
-            });
-        }
-
-        function unlikeSpot(id_spot){
-            $.ajax({
-                type: "POST",
-                url: "spotController/unlikeSpot",
-                data: { id_spot : id_spot },
-                success: function(response)
-                {
-                    console.log(response);
-                    $(".totalLikes").html(response);
-                }
-            });
-        }
-
         
         //=======FIRST LOAD=======//
         updateEverything();
