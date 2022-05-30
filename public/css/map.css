@@ -7,10 +7,16 @@ body{
     background-color: rgba(255, 255, 255, 0.5) ;
 }
 .menu-link, .dropdown-username{
-    color: black !important;
+    color: #343A40 !important;
 }
 .one, .two, .three{
-    background-color: black !important;
+    background-color: #343A40 !important;
+}
+.dropdown-username{
+    color: #343A40;
+}
+#dropdownMenuButton2{
+    color: #343A40;
 }
 
 #map {
