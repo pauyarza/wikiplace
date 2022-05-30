@@ -43,7 +43,7 @@
             </div>
         </form>
         <!--Typer-->
-        <h2 class="typer"><span class="ityped"></span></h2>
+        <h2 class="typer" translate="no"><span class="ityped"></span></h2>
         <!-- Typer script --><script src="https://unpkg.com/ityped@0.0.10"></script>
     </div>
 </div>

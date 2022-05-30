@@ -2,7 +2,6 @@
 
 namespace App\Controllers;
 use App\Models\UserModel;
-use CodeIgniter\Router\RouteCollection;
 
 class UserController extends BaseController
 {
@@ -39,7 +38,7 @@ class UserController extends BaseController
         $validation->setRules([
             'username' => 'required|is_unique[user.username]|alpha_dash|min_length[3]|max_length[50]',
             'mail' => 'required|valid_email|min_length[4]|is_unique[user.mail]|max_length[255]',
-            'password' => 'required|min_length[6]|max_length[255]',
+            'password' => 'required|min_length[8]|max_length[255]',
             'passwordR' => ['label' => 'repeat password', 'rules' => 'required|matches[password]'],
         ],
         [// Errors
@@ -176,7 +175,12 @@ class UserController extends BaseController
 
         $this->viewData['user']['username'] = $user['username'];
         $this->viewData['user']['description'] = $user['description'];
-        $this->viewData['user']['profile_pic_src'] = 'data:'.$user['profile_pic_extension'].';base64,'.base64_encode($user['profile_pic']);
+        if($user['profile_pic_extension']){
+            $this->viewData['user']['profile_pic_src'] = 'data:'.$user['profile_pic_extension'].';base64,'.base64_encode($user['profile_pic']);
+        }
+        else{
+            $this->viewData['user']['profile_pic_src'] = base_url('img/profile.png');//default img
+        }
 
         return view("pages/profile", $this->viewData); 
           
@@ -195,9 +199,7 @@ class UserController extends BaseController
         else{
             $this->viewData["goTo"] = '../home';
             return view("pages/redirecting", $this->viewData);
-        }
-
-          
+        }          
     }
 
 

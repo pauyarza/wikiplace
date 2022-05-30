@@ -33,11 +33,11 @@
                     name="spot_name" 
                     type="text" 
                     id="inputName"
-                    class="form-control <?php if(isset($errors["name"])) echo "is-invalid"?>"
-                    value="<?= $lastTry['name'] ?? ''?>"
+                    class="form-control <?php if(isset($errors["spot_name"])) echo "is-invalid"?>"
+                    value="<?= $lastTry['spot_name'] ?? ''?>"
                 >
                 <div class="invalid-feedback">
-                    <?php if(isset($errors["name"])) echo $errors["name"]?>
+                    <?php if(isset($errors["spot_name"])) echo $errors["spot_name"]?>
                 </div>
             </div>
             <div class="col-12 col-md-6">

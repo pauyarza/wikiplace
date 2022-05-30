@@ -24,6 +24,10 @@
     }
 }
 
+i{
+    padding: 2px 0;
+}
+
 /*====REPORTS====*/
 
 .reporter{
@@ -32,20 +36,21 @@
 }
 
 .reportDiv{
-    margin:  0 0 15px 0;
+    margin:  0 0 26px 0;
 }
 
-.reportMsg{
-    margin-bottom: 20px;
+.reportMsg a{
+    font-weight: bold;
 }
 
 .reportMsg p{
-    margin: 0 ;
+    margin: 7px 0 0 0 ;
 }
 
 
 .actions{
     width: 174px;
+    height: 25px;
 }
 
 @media (max-width: 768px) {

@@ -11,7 +11,6 @@ class Admin extends BaseController
 
     public function __construct()
     {
-        
         // Load session info to viewData
         $sessionData["is_admin"] = session()->is_admin;
         $sessionData["logged_in"] = session()->logged_in;
@@ -37,9 +36,23 @@ class Admin extends BaseController
 
         // Load unresolved reports to viewData
         $builder = $this->db->table('spot_report');
-        $builder->select('spot_report.id_spot_report,user.username,spot_report.id_spot,spot_report.report_message');
-        $builder->join('user', 'user.id_user = spot_report.id_user');
-        $builder->where('solved', 0);
+        $builder->select('
+            spot_report.id_spot_report,
+            spot_report.id_spot,
+            spot_report.report_message,
+
+            reported.id_user AS id_reported,
+            reported.username AS username_reported,
+
+            reporter.id_user AS id_spot_creator,
+            reporter.username AS username_reporter,
+            
+        ');
+
+        $builder->join('spot', 'spot.id_spot = spot_report.id_spot');//join spot table for knowing post creator id
+        $builder->join('user reported', 'reported.id_user = spot.id_user','left');//join user table for knowing reported spot owner name
+        $builder->join('user reporter', 'reporter.id_user = spot_report.id_user','left');//join user table for knowing report creator name
+    
         $catQuery = $builder->get();
 
         $this->viewData["spotReports"] = $catQuery->getResultArray();
@@ -50,8 +63,37 @@ class Admin extends BaseController
         return view("admin/admin", $this->viewData);
     }
 
-    //========= SPOTS =========//
-    
+    //========= MULTIPLE =========//
+    public function deleteSpotBanUser(){
+        if(session()->is_admin){
+            $id_spot = $_POST["id_spot"];
+            $id_user = $_POST["id_user"];
+
+            //delete user if exists
+            if($id_user){
+                $userBuilder = $this->db->table('user');
+                $userBuilder->where('id_user', $id_user);
+                if($userBuilder->delete()){
+                    $userDeleted = true;
+                }
+            }
+
+            $spotBuilder = $this->db->table('spot');
+            $spotBuilder->where('id_spot', $id_spot);
+            
+            //delete spot
+            if($spotBuilder->delete()){
+                echo "ok";
+            }
+            else{
+                echo "database error";
+            }
+        }
+        else{
+            echo "You are not an admin.";
+        }
+    }
+
 
     //========= CATEGORIES =========//
     public function newCategory(){

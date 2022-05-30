@@ -29,6 +29,10 @@ class Map extends BaseController
 
     public function index()
     {
+        if(isset($_GET['id_selected_spot'])){
+            $selectedSpot = $_GET;
+            $this->viewData["selectedSpot"] = $selectedSpot;
+        }
 
         //save prefiltered categories
         $catFiltered = [];

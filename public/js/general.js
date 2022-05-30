@@ -88,6 +88,7 @@ function reportSpot(id_spot){
                         title: 'Thank you!',
                         text: 'We will take care of it 😉',
                         heightAuto: false,
+                        confirmButtonColor: '#00C09A',
                     })
                 }
                 else{
@@ -102,7 +103,7 @@ function reportSpot(id_spot){
     },)
 }
 
-function deleteSpot(id_spot){//check it it's owner or admin in the controller
+function deleteSpot(id_spot){//check if it's owner or admin at the controller
     Swal.fire({
         heightAuto: false,
         title: 'Delete spot?',
@@ -122,7 +123,42 @@ function deleteSpot(id_spot){//check it it's owner or admin in the controller
                 {
                     if(response == 'ok'){
                         console.log("Spot deleted successfully");
-                        $(".spot"+id_spot).remove();//delete reports from this spot
+                        $(".spot"+id_spot).hide('slow', function(){ $target.remove(); });//delete reports from this spot
+                    }
+                    else{
+                        console.log(response);
+                    }
+                }
+            });
+        }
+    })
+}
+
+function deleteSpotBanUser(id_spot,id_user){//check if it's admin at the controller
+    Swal.fire({
+        heightAuto: false,
+        title: 'Delete spot and ban user?',
+        icon: 'question',
+        showCancelButton: true,
+        cancelButtonText: 'No',
+        confirmButtonText: 'Yes',
+        confirmButtonColor: '#DC3545',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed){
+            if(!id_user) id_user = null;
+            $.ajax({
+                type: "POST",
+                url: base_url+"/admin/deleteSpotBanUser",
+                data: {
+                    id_spot: id_spot,
+                    id_user: id_user
+                },
+                success: function(response)
+                {
+                    if(response == 'ok'){
+                        $(".spot"+id_spot).hide('slow', function(){ $target.remove(); });//delete reports from this spot
+                        console.log("spot deleted successfully");
                     }
                     else{
                         console.log(response);

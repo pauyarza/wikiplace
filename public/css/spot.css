@@ -1,13 +1,15 @@
-.spotContainer{
-    margin: 25px 20px 0 20px;
+.spotContainer {
+    padding: 25px 15px 0 15px;
+    max-width: 900px;
 }
 
 /*=====CAROUSEL=====*/
-.carousel{
+.carousel {
     border: 1px solid white;
     border-radius: 15px;
     overflow: hidden;
 }
+
 .carousel-item {
     height: 300px;
     background-size: contain;
@@ -26,85 +28,111 @@
 
 /*=====INTERACT BUTTONS=====*/
 
-.interactButtons{
+.interactButtons {
     margin-top: 14px;
 }
 
-.likeButton, .favButton{
+.likeButton,
+.favButton {
     height: 27px;
     padding-right: 10px;
 }
 
-.mapsButton{ 
+.mapsButton {
     height: 43px;
     background-color: #E8E8E8;
     border-radius: 100px;
     width: 59px;
 }
 
-.mapsImg{
+.mapsImg {
     height: 100%;
 }
 
 /*=====INFO SPOT=====*/
 
-.info-spot{
+.info-spot {
     margin-top: 30px;
 }
-h1{
+
+.spotContainer h1 {
     font-family: 'Bree Serif', serif;
     color: #00C897;
 }
-.author-spot{
+
+.spotContainer h2 {
+    font-family: 'Bree Serif', serif;
+    color: #88d7c3;
+    font-size: 29px;
+}
+
+.author-spot {
     font-family: 'Bree Serif', serif;
     color: #FFD365;
 }
-.description-spot{
+
+.author-spot:hover {
+    color: #d2ad4f;
+}
+
+.description-spot {
     color: white;
     margin-top: 25px;
     text-align: justify;
 }
-.hr-spot{
+
+.hr-spot {
     border: 1px solid white;
 }
-.coments-spot{
+
+.comments-spot {
     margin-top: 50px;
     padding: 0 !important;
 }
-.coments-spot p{
+
+.comments-spot p {
     text-align: justify;
     font-size: 15px;
     color: white;
+    margin-bottom: 6px;
 }
-.button-coment-spot{
-    width: 15px;   
+
+.button-comment-spot {
+    width: 15px;
     margin-bottom: 25px;
     margin-left: 5px;
 }
 
-.coment-flag{
+.comment-flag {
     margin-left: 15px;
 }
 
-.input-new-coment-spot{
+.input-new-comment-spot {
     border: none;
     outline: none;
-    padding: 20px 0 0 3px;
+    margin: 20px 0 0 3px;
+    padding: 10px 20px;
     width: 100%;
     border-bottom: 6px solid #00C897;
-    background-color: #003c5a;
-    color: #00C897;
-    font-family: 'Josefin Sans', sans-serif;
+    background-color: #00c8960f;
+    color: #88d7c3;
+    border-radius: 15px;
+    resize: none;
 }
-.add-coment-btn{
+
+.add-comment-btn {
     font-family: 'Bree Serif', serif;
-    padding: 3px 0px 5px 0px;
-    width: 70px;
+    padding: 4px 12px 6px;
     border-radius: 25px;
     border: none;
-    font-size:  13px;
+    font-size: 14px;
     color: white;
     background-color: #00C897;
     margin-top: 20px;
-    margin-bottom: 20px;
+    width: 85px;
+    height: 31px;
+}
+
+.add-comment-btn img{
+    height: 24px;
 }

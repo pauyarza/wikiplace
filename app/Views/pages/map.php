@@ -64,6 +64,9 @@
     <script>
         var newCategoryMenuOpened = false;
         var allCategoriesSelected;
+        var selectedSpotId = '<?php if(isset($selectedSpot)) echo $selectedSpot['id_selected_spot']?>';
+        var selectedMarker = null;
+
         function updateEverything(){//update page with js according to catFiltered[] values (also called at the end of this <script>)
             if(!catFiltered.length){// if no filter
                 //filter all
@@ -220,15 +223,25 @@
             zoomControl: false,
         });
 
-        //move map to location by IP
-        $.getJSON('https://geolocation-db.com/json/').done(function(location){
-            latlng = new L.LatLng(location.latitude, location.longitude);
-            map.flyTo(latlng, 8, {
+        //default spawn
+        if(!selectedSpotId){
+            //move map to location by IP
+            $.getJSON('https://geolocation-db.com/json/').done(function(location){
+                latlng = new L.LatLng(location.latitude, location.longitude);
+                map.flyTo(latlng, 8, {
                     animate: true,
                     duration: 0.5
+                });
             });
-        });
-        
+        }
+        else{
+            var selectedSpotLat = '<?php if(isset($selectedSpot)) echo $selectedSpot['latitude']?>';
+            var selectedSpotLng = '<?php if(isset($selectedSpot)) echo $selectedSpot['longitude']?>';
+            map.flyTo([selectedSpotLat,selectedSpotLng], 15, {
+                animate: true,
+                duration: 0.5
+            });
+        }
         map.on('click', function(e) {
             newCategoryMenuOpened = false;  
             setCategoryList();
@@ -238,6 +251,7 @@
             newCategoryMenuOpened = false;  
             setCategoryList();
         });
+        
 
         //======="YOU ARE HERE"=======//
         var userLocation = null;
@@ -340,8 +354,22 @@
                     //push maker
                     markersList.push(marker);
                     markers.addLayer(marker);
+
+                    //open spot if selected
+                    if(selectedSpotId){
+                        selectedMarker = marker;
+                    }
                 }
             });
+
+            if(selectedMarker){//open selected marker
+                $(document).ready(function() {//wait for map to load
+                    setTimeout(function(){
+                        loadSpotData(selectedMarker,selectedSpotId);
+                    },300);
+                });
+            }
+
             map.addLayer(markers);
         }
 
@@ -358,7 +386,7 @@
             //delete past marker
             if (marker) map.removeLayer(marker);
 
-            //save coords to local storage
+            //save selected coords to local storage
             saveLatLng(e.latlng);
 
             //set icon
@@ -413,6 +441,7 @@
 
         //=======LOAD POPUP DATA=======//
         function loadSpotData(marker,id_spot){
+            console.log("loadSpotData");
             marker.unbindPopup().bindPopup(
                 "<img class='loadingGif' src='<?= base_url('img/loadingBlack.svg')?>'></img>",
                 {'className' : 'spotPopup'}

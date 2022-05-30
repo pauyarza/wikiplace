@@ -108,8 +108,8 @@ class SpotController extends BaseController
                 $SpotImageModel->insert($image);
             }
 
-            $this->viewData["message"] = "Spot added successfully.";
-            $this->viewData["goTo"] = base_url("map");
+            //load map with spot selected
+            $this->viewData["goTo"] = base_url("map").'/?id_selected_spot='.$id_spot.'&latitude='.$spotData['latitude'].'&longitude='.$spotData['longitude'];
             return view("pages/redirecting", $this->viewData);
         }
     }
@@ -305,26 +305,6 @@ class SpotController extends BaseController
         }
     }
 
-    public function displaySpot($id_spot){
-        //get spot
-        $builder = $this->db->table('spot');
-        $builder->select('id_spot,id_user,id_category,latitude,longitude,spot_name,description');
-        $builder->where('id_spot', $id_spot);
-        $spot = $builder->get(1)->getRowArray();
-
-        //get images
-        $builder = $this->db->table('spot_image');
-        $builder->select('content, extension');
-        $builder->where('id_spot', $id_spot);
-        $images = $builder->get()->getResultArray();
-        foreach($images as $image){
-            $spot['images_src'][] = 'data:'.$image['extension'].';base64,'.base64_encode($image['content']);
-        }
-
-        $this->viewData["spot"] = $spot;
-        return view("pages/spot", $this->viewData);
-    }
-
     public function deleteSpot(){//ajax
         $id_spot = $_POST["id_spot"];
 
@@ -350,5 +330,35 @@ class SpotController extends BaseController
             echo "You are not the owner!";
         }
 
+    }
+    
+    public function displaySpot($id_spot){
+        //get spot
+        $builder = $this->db->table('spot');
+        $builder->select('
+            spot.id_spot,
+            spot.id_user,
+            spot.id_category,
+            spot.latitude,
+            spot.longitude,
+            spot.spot_name,
+            spot.description,
+            author.username AS author_username,
+        ');
+        $builder->where('id_spot', $id_spot);
+        $builder->join('user author', 'author.id_user = spot.id_user','left');//join user table for knowing author name
+        $spot = $builder->get(1)->getRowArray();
+
+        //get images
+        $builder = $this->db->table('spot_image');
+        $builder->select('content, extension');
+        $builder->where('id_spot', $id_spot);
+        $images = $builder->get()->getResultArray();
+        foreach($images as $image){
+            $spot['images_src'][] = 'data:'.$image['extension'].';base64,'.base64_encode($image['content']);
+        }
+
+        $this->viewData["spot"] = $spot;
+        return view("pages/spot", $this->viewData);
     }
 }

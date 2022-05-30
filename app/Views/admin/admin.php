@@ -36,21 +36,43 @@ if(!isset($cat_errors)){
             <div class="col-12 col-lg-7">
                 <div class="adminBox">
                     <h2>Post reports</h2>
-                    <?php foreach($spotReports as $spotReport){?>
+                    <?php 
+                    if(!count($spotReports)) echo "No reports found...";
+                    foreach($spotReports as $spotReport){?>
                         <div 
                             class="reportDiv row d-flex align-items-top spot<?=$spotReport['id_spot']?>"
                         >
                             <div class="col reportMsg">
+                                <!-- reporter -->
                                 <a 
-                                    href="<?=base_url('UserController/displayProfile/'.$spotReport['username'])?>"
+                                    href="<?=base_url('UserController/displayProfile/'.$spotReport['username_reporter'])?>"
                                     target="_blank"
                                     class="reporter"
                                 >
-                                    <b>Reporter:</b> <i class="fa-solid fa-user"></i> <?=$spotReport['username']?>
+                                    <i class="fa-solid fa-user"></i>
+                                    <?php 
+                                        if($spotReport['username_reporter']) echo $spotReport['username_reporter'];
+                                        else echo "{ banned }";
+                                    ?>
                                 </a>
+                                reported
+                                <!-- reported -->
+                                <a 
+                                    href="<?=base_url('UserController/displayProfile/'.$spotReport['username_reported'])?>"
+                                    target="_blank"
+                                    class="reporter"
+                                >
+                                    <i class="fa-solid fa-user"></i> 
+                                    <?php 
+                                        if($spotReport['username_reported']) echo $spotReport['username_reported'];
+                                        else echo "{ banned }"
+                                    ?>
+                                </a>
+                                <!-- report message -->
                                 <p><?=$spotReport['report_message']?></p>
                             </div>
                             <div class="actions col-12">
+                                <!-- display spot button -->
                                 <a 
                                     href="<?=base_url('SpotController/displaySpot/'.$spotReport['id_spot'])?>"
                                     target="_blank"
@@ -59,6 +81,7 @@ if(!isset($cat_errors)){
                                 >
                                     <i class="fa-solid fa-eye"></i>
                                 </a>
+                                <!-- delete spot button -->
                                 <a 
                                     onclick="deleteSpot(<?=$spotReport['id_spot']?>)"
                                     class="btn btn-sm btn-warning" 
@@ -66,7 +89,9 @@ if(!isset($cat_errors)){
                                 >
                                     <i class="fa-solid fa-circle-minus"></i>
                                 </a>
+                                <!-- delete spot ban user button -->
                                 <a 
+                                    onclick="deleteSpotBanUser(<?=$spotReport['id_spot']?>,<?=$spotReport['id_reported']?>)"
                                     class="btn btn-sm btn-danger" 
                                     title="Delete spot and ban user"
                                 >
