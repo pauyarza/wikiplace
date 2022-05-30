@@ -60,7 +60,6 @@ h1{
     color: #FFD365;
 }
 .description-spot{
-    font-family: 'Josefin Sans', sans-serif;
     color: white;
     margin-top: 25px;
     text-align: justify;
@@ -74,9 +73,8 @@ h1{
 }
 .coments-spot p{
     text-align: justify;
-    font-size: 13px;
+    font-size: 15px;
     color: white;
-    font-family: 'Josefin Sans', sans-serif;
 }
 .button-coment-spot{
     width: 15px;   

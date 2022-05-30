@@ -55,7 +55,7 @@
             </button>
             <div>
                 <img 
-                    src="<?=base_url('img/flag.svg');?>"
+                    src="<?=base_url('img/flag.png');?>"
                     class="favButton"
                 >
                 <img 
@@ -80,7 +80,7 @@
                 <div class="d-flex justify-content-start">
                     <!--Aqui aniria el nom d'user que ha fet el coment-->
                     <img class="button-coment-spot " src="<?=base_url('img/noLikeWhite.png');?>">
-                    <img class="button-coment-spot coment-flag" src="<?=base_url('img/flag.svg');?>">
+                    <img class="button-coment-spot coment-flag" src="<?=base_url('img/flag.png');?>">
 
                 </div>
             </div>
