@@ -31,12 +31,20 @@
         <p style="color:white"><?=$user['description']?></p>
     </div>
 
-    <button 
-        class="profile-btn profile-btn-3" 
-        type="submit"
-    >
-        Collections
-    </button>
+    <div class="d-flex justify-content-center">
+        <button 
+            class="profile-btn" 
+            type="submit"
+        >
+            My Spots
+        </button>
+        <button 
+            class="profile-btn" 
+            type="submit"
+        >
+            Saved Spots
+        </button>
+    </div>
     
 </div>
 

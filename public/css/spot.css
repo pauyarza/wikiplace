@@ -32,6 +32,7 @@
 
 .likeButton, .favButton{
     height: 27px;
+    padding-right: 10px;
 }
 
 .mapsButton{ 
@@ -81,6 +82,10 @@ h1{
     width: 15px;   
     margin-bottom: 25px;
     margin-left: 5px;
+}
+
+.coment-flag{
+    margin-left: 15px;
 }
 
 .input-new-coment-spot{

@@ -92,35 +92,16 @@
     font-family: 'Bree Serif', serif;
     padding: 3px 0px 5px 0px;
     width: 100%;
-    max-width: 180px;
-    border-radius: 25px;
+    max-width: 130px;
     transition: all 0.5s;
-    border: 2px solid #019267;
-    max-height: 36px;
-}
-
-.profile-btn-1 {
-    margin-top: 20px;
-    color: #E8F0F2;
-    background-color: #019267;
-}
-
-.profile-btn-2 {
-    margin-top: 20px;
-    color: #019267;
-    background-color: #FFD365;
-}
-
-.profile-btn-3 {
-    margin-top: 20px;
-    color: black;
-    background-color: #FFD365;
+    color: #00C897;
     border: none;
-}
-
-.profile-btn-2:active {
-    background-color: #019267;
-    color: white;
+    border-bottom: 5px solid #00C897;
+    background-color: #003C5A;
+    max-height: 36px;
+    margin-top: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .hr-profile{
