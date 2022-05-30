@@ -36,50 +36,48 @@ if(!isset($cat_errors)){
             <div class="col-12 col-lg-7">
                 <div class="adminBox">
                     <h2>Post reports</h2>
-                    <div class="reportDiv row d-flex align-items-center">
-                        <div class="col reportMsg">
-                            <a href="" class="reporter">
-                                <b>Reporter:</b> <i class="fa-solid fa-user"></i> xapase
-                            </a>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae adipisci iure necessitatibus rerum. Maiores ipsam aut veniam obcaecati esse voluptatem? Beatae omnis consectetur ipsum maiores. Odio nobis amet accusantium quisquam.</p>
+                    <?php foreach($spotReports as $spotReport){?>
+                        <div 
+                            class="reportDiv row d-flex align-items-top spot<?=$spotReport['id_spot']?>"
+                        >
+                            <div class="col reportMsg">
+                                <a 
+                                    href="<?=base_url('UserController/displayProfile/'.$spotReport['username'])?>"
+                                    target="_blank"
+                                    class="reporter"
+                                >
+                                    <b>Reporter:</b> <i class="fa-solid fa-user"></i> <?=$spotReport['username']?>
+                                </a>
+                                <p><?=$spotReport['report_message']?></p>
+                            </div>
+                            <div class="actions col-12">
+                                <a 
+                                    href="<?=base_url('SpotController/displaySpot/'.$spotReport['id_spot'])?>"
+                                    target="_blank"
+                                    class="btn btn-sm btn-success" 
+                                    title="See spot"
+                                >
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+                                <a 
+                                    onclick="deleteSpot(<?=$spotReport['id_spot']?>)"
+                                    class="btn btn-sm btn-warning" 
+                                    title="Delete spot"
+                                >
+                                    <i class="fa-solid fa-circle-minus"></i>
+                                </a>
+                                <a 
+                                    class="btn btn-sm btn-danger" 
+                                    title="Delete spot and ban user"
+                                >
+                                    <i class="fa-solid fa-user-slash"></i>
+                                </a>
+                                <a class="btn btn-sm btn-secondary" title="Discard report">
+                                    <i class="fa-solid fa-delete-left"></i>
+                                </a>
+                            </div>
                         </div>
-                        <div class="actions col-12">
-                            <button class="btn btn-sm btn-success"><i class="fa-solid fa-eye"></i></button>
-                            <button class="btn btn-sm btn-warning"><i class="fa-solid fa-circle-minus"></i></button>
-                            <button class="btn btn-sm btn-danger"><i class="fa-solid fa-user-slash"></i></button>
-                            <button class="btn btn-sm btn-secondary"><i class="fa-solid fa-delete-left"></i></button>
-
-                        </div>
-                    </div>
-                    <div class="reportDiv row d-flex align-items-center">
-                        <div class="col reportMsg">
-                            <a href="" class="reporter">
-                                <b>Reporter:</b> <i class="fa-solid fa-user"></i> yarzapau
-                            </a>
-                            <p>Repudiandae adipisci iure necessitatibus rerum. Maiores ipsam aut veniam obcaecati esse voluptatem?</p>
-                        </div>
-                        <div class="actions col-12">
-                            <button class="btn btn-sm btn-success"><i class="fa-solid fa-eye"></i></button>
-                            <button class="btn btn-sm btn-warning"><i class="fa-solid fa-circle-minus"></i></button>
-                            <button class="btn btn-sm btn-danger"><i class="fa-solid fa-user-slash"></i></button>
-                            <button class="btn btn-sm btn-secondary"><i class="fa-solid fa-delete-left"></i></button>
-
-                        </div>
-                    </div>
-                    <div class="reportDiv row d-flex align-items-center">
-                        <div class="col reportMsg">
-                            <a href="" class="reporter">
-                                <b>Reporter:</b> <i class="fa-solid fa-user"></i> xapase
-                            </a>
-                            <p>oopsie</p>
-                        </div>
-                        <div class="actions col-12">
-                            <button class="btn btn-sm btn-success"><i class="fa-solid fa-eye"></i></button>
-                            <button class="btn btn-sm btn-warning"><i class="fa-solid fa-circle-minus"></i></button>
-                            <button class="btn btn-sm btn-danger"><i class="fa-solid fa-user-slash"></i></button>
-                            <button class="btn btn-sm btn-secondary"><i class="fa-solid fa-delete-left"></i></button>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </div>
             </div>
             

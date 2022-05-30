@@ -37,9 +37,12 @@ class Admin extends BaseController
 
         // Load unresolved reports to viewData
         $builder = $this->db->table('spot_report');
+        $builder->select('spot_report.id_spot_report,user.username,spot_report.id_spot,spot_report.report_message');
+        $builder->join('user', 'user.id_user = spot_report.id_user');
         $builder->where('solved', 0);
         $catQuery = $builder->get();
-        $this->viewData["spot_reports"] = $catQuery->getResultArray();
+
+        $this->viewData["spotReports"] = $catQuery->getResultArray();
     }
 
     public function index()

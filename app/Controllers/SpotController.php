@@ -324,4 +324,31 @@ class SpotController extends BaseController
         $this->viewData["spot"] = $spot;
         return view("pages/spot", $this->viewData);
     }
+
+    public function deleteSpot(){//ajax
+        $id_spot = $_POST["id_spot"];
+
+        //get id_user spot creator
+        $builder = $this->db->table('spot');
+        $builder->select('id_user');
+        $builder->where('id_spot', $id_spot);
+        $spot = $builder->get(1)->getRowArray();
+
+        //if it's owner or admin
+        if($spot['id_user'] == session()->id_user || session()->is_admin == 1){
+            $builder = $this->db->table('spot');
+            $builder->where('id_spot', $id_spot);
+            //delete spot
+            if($builder->delete()){
+                echo "ok";
+            }
+            else{
+                echo "database error";
+            }
+        }
+        else{
+            echo "You are not the owner!";
+        }
+
+    }
 }

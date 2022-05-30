@@ -101,3 +101,34 @@ function reportSpot(id_spot){
         });
     },)
 }
+
+function deleteSpot(id_spot){//check it it's owner or admin in the controller
+    Swal.fire({
+        heightAuto: false,
+        title: 'Delete spot?',
+        icon: 'question',
+        showCancelButton: true,
+        cancelButtonText: 'No',
+        confirmButtonText: 'Yes',
+        confirmButtonColor: '#DC3545',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed){
+            $.ajax({
+                type: "POST",
+                url: base_url+"/spotController/deleteSpot",
+                data: { id_spot : id_spot },
+                success: function(response)
+                {
+                    if(response == 'ok'){
+                        console.log("Spot deleted successfully");
+                        $(".spot"+id_spot).remove();//delete reports from this spot
+                    }
+                    else{
+                        console.log(response);
+                    }
+                }
+            });
+        }
+    })
+}
