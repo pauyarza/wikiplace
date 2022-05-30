@@ -32,6 +32,7 @@
 
 .likeButton, .favButton{
     height: 27px;
+    padding-right: 10px;
 }
 
 .mapsButton{ 
@@ -43,4 +44,67 @@
 
 .mapsImg{
     height: 100%;
+}
+
+/*=====INFO SPOT=====*/
+
+.info-spot{
+    margin-top: 30px;
+}
+h1{
+    font-family: 'Bree Serif', serif;
+    color: #00C897;
+}
+.author-spot{
+    font-family: 'Bree Serif', serif;
+    color: #FFD365;
+}
+.description-spot{
+    color: white;
+    margin-top: 25px;
+    text-align: justify;
+}
+.hr-spot{
+    border: 1px solid white;
+}
+.coments-spot{
+    margin-top: 50px;
+    padding: 0 !important;
+}
+.coments-spot p{
+    text-align: justify;
+    font-size: 15px;
+    color: white;
+}
+.button-coment-spot{
+    width: 15px;   
+    margin-bottom: 25px;
+    margin-left: 5px;
+}
+
+.coment-flag{
+    margin-left: 15px;
+}
+
+.input-new-coment-spot{
+    border: none;
+    outline: none;
+    padding: 20px 0 0 3px;
+    width: 100%;
+    border-bottom: 6px solid #00C897;
+    background-color: #003c5a;
+    color: #00C897;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.add-coment-btn{
+    font-family: 'Bree Serif', serif;
+    padding: 3px 0px 5px 0px;
+    width: 70px;
+    border-radius: 25px;
+    border: none;
+    font-size:  13px;
+    color: white;
+    background-color: #00C897;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

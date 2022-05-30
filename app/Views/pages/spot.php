@@ -55,6 +55,10 @@
             </button>
             <div>
                 <img 
+                    src="<?=base_url('img/flag.png');?>"
+                    class="favButton"
+                >
+                <img 
                     src="<?=base_url('img/noFav.svg');?>"
                     class="favButton"
                 >
@@ -63,6 +67,35 @@
                     src="<?=base_url('img/noLikeWhite.png');?>"
                 >
             </div>
+        </div>
+        
+        <div class="container info-spot">
+            <h1><?=$spot['spot_name']?></h1>
+            <p class="author-spot">by @<?=session()->username?></p>
+            <p class="description-spot"><?=$spot['description']?></p>
+            <hr class="hr-spot">
+
+            <div class="coments-spot">
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+                <div class="d-flex justify-content-start">
+                    <!--Aqui aniria el nom d'user que ha fet el coment-->
+                    <img class="button-coment-spot " src="<?=base_url('img/noLikeWhite.png');?>">
+                    <img class="button-coment-spot coment-flag" src="<?=base_url('img/flag.png');?>">
+
+                </div>
+            </div>
+
+            <div class="add-coment-spot">
+            <input 
+                    type="text" 
+                    placeholder="new coment"
+                    id="newComentSpot"
+                    class="input-new-coment-spot"
+                >
+            </div>
+            <button class="add-coment-btn" type="button">
+                    Add
+            </button>
         </div>
     </div>
 </div>

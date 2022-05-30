@@ -1,6 +1,6 @@
 /*====== ABOUT ======*/
 .abouth1 {
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Bree Serif', serif;
     margin-top: 52px;
     margin-bottom: 30px;
     padding: 0;
@@ -28,6 +28,7 @@
   }
   .aboutp2{
     margin-top: 25px;
-    padding: 0 15px;
+    padding: 0 10px;
+    text-align: justify;
     color: white;
   }
