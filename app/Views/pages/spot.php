@@ -49,19 +49,22 @@
     <?php } ?>
     <!-- interact buttons -->
     <div class="d-flex justify-content-between interactButtons">
-        <button class="btn mapsButton" onclick="goMaps()">
+        <button class="btn mapsButton" onclick="goMaps(<?=$spot['latitude'].','.$spot['longitude']?>)">
             <img class="mapsImg" src="<?=base_url('img/maps.png');?>">
         </button>
         <div>
-            <!-- flag -->
+            <!-- report -->
             <img 
                 src="<?=base_url('img/flag.png');?>"
-                class="favButton"
+                class="reportButton"
+                onclick="reportSpot(<?=$spot['id_spot']?>)"
             >
             <!-- fav -->
             <img 
                 src="<?=base_url('img/noFav.svg');?>"
                 class="favButton"
+                id="favButton"
+                onclick="triggerFav(<?=$spot['id_spot']?>)"
             >
             <!-- like -->
             <?php if($spot["is_liked"]){?>
@@ -81,7 +84,7 @@
                     onclick="likeSpotDisplaySpot(<?=$spot['id_spot']?>)"
                 >
             <?php } ?>
-            <p class="totalLikes">x</p>
+            <p class="totalLikes"><?=$spot["likes_count"]?></p>
         </div>
     </div>
     
@@ -137,7 +140,7 @@
                     ><i class="fa-solid fa-user"></i> <?=$comment['commenter']?></a>
                     <p><?=$comment['comment']?></p>
                     <div class="d-flex justify-content-start">
-                        <img class="button-comment-spot " src="<?=base_url('img/noLikeWhite.png');?>">
+                        <img class="button-comment-spot commentLike" src="<?=base_url('img/noLikeWhite.png');?>">
                         <img class="button-comment-spot comment-flag" src="<?=base_url('img/flag.png');?>">
                     </div>
                 </div>

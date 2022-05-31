@@ -34,7 +34,14 @@ function favSpot(id_spot){
         success: function(response)
         {
             if(response == 'ok'){
-                console.log("spot fav successfully");
+                Swal.mixin({
+                    toast: true,
+                    position: "bottom",
+                    showConfirmButton: false,
+                    timer: 1200,
+                }).fire({
+                    title: "Spot saved!"
+                })
             }
             else{
                 console.log(response);
@@ -51,7 +58,14 @@ function unfavSpot(id_spot){
         success: function(response)
         {
             if(response == 'ok'){
-                console.log("spot unfaved successfully");
+                Swal.mixin({
+                    toast: true,
+                    position: "bottom",
+                    showConfirmButton: false,
+                    timer: 1200,
+                }).fire({
+                    title: "Spot unsaved."
+                })
             }
             else{
                 console.log(response);

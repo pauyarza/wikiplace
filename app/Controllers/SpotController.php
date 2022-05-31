@@ -377,6 +377,7 @@ class SpotController extends BaseController
         $spot['comments'] = $builder->get()->getResultArray();
 
 
+        //get if has like
         if(session()->logged_in){
             $builder = $this->db->table('spot_like');
             $builder->select('id_spot_like');
@@ -396,10 +397,36 @@ class SpotController extends BaseController
             $spot["is_liked"] = false;
         }
 
+        //count spot likes
+        $builder = $this->db->table('spot_like');
+        $builder->select('id_spot_like');
+        $builder->where('id_spot', $id_spot);
+        $spot["likes_count"] = $builder->countAllResults();
+
+        //get if is saved
+        if(session()->logged_in){
+            $builder = $this->db->table('spot_fav');
+            $builder->select('id_spot_like');
+            $builder->where('id_spot', $id_spot);
+            $builder->where('id_user', session()->id_user);
+            if($builder->countAllResults() == 0){
+                //not liked
+                $spot["is_saved"] = false;
+            }
+            else{
+                //liked
+                $spot["is_saved"] = true;
+            }
+        }
+        else{
+            //not liked
+            $spot["is_saved"] = false;
+        }
+
         //save spot to view data
         $this->viewData["spot"] = $spot;
         
-        //check if display comment
+        //check if display comment toast
         if(isset($_GET["commentAdded"])){
             $this->viewData["commentAdded"] = true;
         }

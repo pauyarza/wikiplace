@@ -17,31 +17,52 @@ $("#commentForm").submit(function(e) {
             else{
                 $("#feedbackComment").text(response);
                 $("#newcommentSpot").addClass("is-invalid");
+                $("#sendCommentBtn").html("Comment");
             }
-
-            $("#sendCommentBtn").html("Comment");
         }
     });
 });
 
 function likeSpotDisplaySpot(id_spot){
     image = $("#likeImg");
-    //like
-    if($(".likeButton").hasClass("liked")){
-        likeSpot(id_spot);
-        image.fadeOut(100, function () {
-            image.attr('src', base_url+'/img/like.png');
-            image.fadeIn(100);
-        });
-    }
     //unlike
-    else{
+    if($(".likeButton").hasClass("liked")){
         unlikeSpot(id_spot);
         image.fadeOut(100, function () {
             image.attr('src', base_url+'/img/noLikeWhite.png');
             image.fadeIn(100);
         });
     }
+    //like
+    else{
+        likeSpot(id_spot);
+        image.fadeOut(100, function () {
+            image.attr('src', base_url+'/img/like.png');
+            image.fadeIn(100);
+        });
+    }
 
     $(".likeButton").toggleClass("liked");
+}
+
+function triggerFav(id_spot){
+    image = $("#favButton");
+    image.attr('src', base_url+'/img/loadingWhite.svg');
+    if($(".favButton").hasClass("faved")){
+        unfavSpot(id_spot);
+        image.fadeOut(100, function () {
+            image.attr('src', base_url+'/img/noFav.svg');
+            image.fadeIn(100);
+        });
+    }
+    //like
+    else{
+        favSpot(id_spot);
+        image.fadeOut(100, function () {
+            image.attr('src', base_url+'/img/fav.svg');
+            image.fadeIn(100);
+        });
+    }
+
+    $(".favButton").toggleClass("faved");
 }
