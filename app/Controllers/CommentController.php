@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\CommentModel;
 
 class CommentController extends BaseController
 {
@@ -19,8 +20,30 @@ class CommentController extends BaseController
 
     public function addComment()
     {
-        $spotData['id_spot'] = $_POST["id_spot"];
-        $spotData['comment'] = $_POST["comment"];
-        print_r($spotData);
+        $commentData["comment"] = $_POST["comment"];
+        $commentData["id_spot"] = $_POST["id_spot"];
+        $commentData["id_user"] = session()->id_user;
+
+        $validation =  \Config\Services::validation();
+
+        $validation->setRules([
+            'comment' => 'required|max_length[1500]'
+        ]); 
+        
+        //valide comment
+        if(!$validation->run($commentData)){
+            $error = $validation->getErrors();
+            echo $error["comment"];
+        }
+        else{//comment correct
+            //create new model
+            $CommentModel = new CommentModel();
+            if($CommentModel->insert($commentData)){
+                echo "ok";
+            }
+            else{
+                echo "database error";
+            }
+        }
     }
 }

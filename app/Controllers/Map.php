@@ -60,6 +60,7 @@ class Map extends BaseController
         }
         $this->viewData["catFiltered"] = $catFiltered;
         
+        //get spots
         $builder = $this->db->table('spot');
         $builder->select('category.name, spot.id_spot, spot.latitude, spot.longitude');
         $builder->join('category', 'category.id_category = spot.id_category');
@@ -67,9 +68,5 @@ class Map extends BaseController
         
         $this->viewData["spots"] = $spots;
         return view("pages/map", $this->viewData);
-    }
-
-    public function filter(){
-        $this->index();
     }
 }

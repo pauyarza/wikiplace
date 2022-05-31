@@ -53,24 +53,41 @@
             <img class="mapsImg" src="<?=base_url('img/maps.png');?>">
         </button>
         <div>
+            <!-- flag -->
             <img 
                 src="<?=base_url('img/flag.png');?>"
                 class="favButton"
             >
+            <!-- fav -->
             <img 
                 src="<?=base_url('img/noFav.svg');?>"
                 class="favButton"
             >
-            <img 
-                class="likeButton"
-                src="<?=base_url('img/noLikeWhite.png');?>"
-            >
+            <!-- like -->
+            <?php if($spot["is_liked"]){?>
+                <img 
+                    id="likeImg"
+                    class="likeButton liked"
+                    src="<?=base_url('img/like.png');?>"
+                    onclick="likeSpotDisplaySpot(<?=$spot['id_spot']?>)"
+                >
+            <?php 
+            }else{
+            ?>
+                <img 
+                    id="likeImg"
+                    class="likeButton"
+                    src="<?=base_url('img/noLikeWhite.png');?>"
+                    onclick="likeSpotDisplaySpot(<?=$spot['id_spot']?>)"
+                >
+            <?php } ?>
+            <p class="totalLikes">x</p>
         </div>
     </div>
     
     <div class="info-spot">
         <h1><?=$spot['spot_name']?></h1>
-        <!-- post author -->
+        <!-- spot author -->
         <?php 
             if($spot['author_username']){
                 echo '
@@ -91,28 +108,42 @@
 
         <div class="comments-spot">
             <h2>Comments</h2>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-            <div class="d-flex justify-content-start">
-                <!--Aqui aniria el nom d'user que ha fet el comment-->
-                <img class="button-comment-spot " src="<?=base_url('img/noLikeWhite.png');?>">
-                <img class="button-comment-spot comment-flag" src="<?=base_url('img/flag.png');?>">
-
-            </div>
+            <?=form_open('CommentController/addComment','class="add-comment-spot" id="commentForm"');?>
+                <textarea 
+                    type="text" 
+                    placeholder="Add a new comment..."
+                    id="newcommentSpot"
+                    class="input-new-comment-spot form-control"
+                    name="comment"
+                ></textarea>
+                <div class="invalid-feedback" id="feedbackComment"></div>
+                <input type="hidden" name="id_spot" value="<?=$spot['id_spot']?>">
+                <?php 
+                    if($sessionData["logged_in"])
+                        echo '<button class="add-comment-btn" type="submit" id="sendCommentBtn">Comment</button>';
+                    else
+                        echo '<button class="add-comment-btn" type="button" onclick="$(\'#registerModal\').modal(\'show\');" id="sendCommentBtn">Comment</button>';
+                ?>
+            </form>
+            <?php 
+                //print comments
+                foreach($spot['comments'] as $comment){
+            ?>
+                <div class="comment">
+                    <a 
+                        class="commenter" 
+                        href="<?=base_url("UserController/displayProfile/")."/".$comment['commenter']?>"
+                        target="_blank"
+                    ><i class="fa-solid fa-user"></i> <?=$comment['commenter']?></a>
+                    <p><?=$comment['comment']?></p>
+                    <div class="d-flex justify-content-start">
+                        <img class="button-comment-spot " src="<?=base_url('img/noLikeWhite.png');?>">
+                        <img class="button-comment-spot comment-flag" src="<?=base_url('img/flag.png');?>">
+                    </div>
+                </div>
+            <?php } ?>
         </div>
 
-        <?=form_open('CommentController/addComment','class="add-comment-spot" id="commentForm"');?>
-            <textarea 
-                type="text" 
-                placeholder="Add a new comment..."
-                id="newcommentSpot"
-                class="input-new-comment-spot"
-                name="comment"
-            ></textarea>
-            <input type="hidden" name="id_post" value="<?=$spot['id_spot']?>">
-            <button class="add-comment-btn" type="submit" id="sendCommentBtn">
-                Comment
-            </button>
-        </form>
         <script>
             //make text area auto resize
             $("textarea").each(function () {
@@ -121,6 +152,18 @@
                 this.style.height = "auto";
                 this.style.height = (this.scrollHeight) + "px";
             });
+
+            //display comment if necessary
+            <?php if($commentAdded){ ?>
+                Swal.mixin({
+                    toast: true,
+                    position: "bottom",
+                    showConfirmButton: false,
+                    timer: 1200,
+                }).fire({
+                    title: "Comment added"
+                })
+            <?php }?>
         </script>
     </div>
 </div>

@@ -185,7 +185,7 @@ class UserController extends BaseController
         return view("pages/profile", $this->viewData); 
           
     }
-    public function displayEditProfile(){
+    public function displayEditProfile(){//load view
         if(session()->logged_in){
             $builder = $this->db->table('user');
             $builder->select('description');
@@ -203,7 +203,7 @@ class UserController extends BaseController
     }
 
 
-    public function editProfile(){
+    public function editProfile(){//backend 
         if(session()->logged_in){
             $validation =  \Config\Services::validation();
 

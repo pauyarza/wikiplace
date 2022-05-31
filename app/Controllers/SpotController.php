@@ -135,6 +135,11 @@ class SpotController extends BaseController
         $builder->where('id_spot', $id_spot);
         $spotLikes = $builder->countAllResults();
 
+        //count spot comments
+        $builder = $this->db->table('comment');
+        $builder->select('id_comment');
+        $builder->where('id_spot', $id_spot);
+        $spotComments = $builder->countAllResults();
 
         //check if spot is liked
         if(session()->logged_in){
@@ -165,9 +170,9 @@ class SpotController extends BaseController
             echo '<h2 class="col-8">'.$spot['spot_name'].'</h2>';
             //comments
             echo "
-                <div class='col-2 commentDiv topRightDiv d-flex align-items-center justify-content-center'>
+                <div onclick='location.replace(\"".base_url('SpotController/displaySpot').'/'.$spot['id_spot']."\")' class='col-2 commentDiv topRightDiv d-flex align-items-center justify-content-center'>
                     <img src='img/comment.svg'></img>
-                    <p>4</p>
+                    <p>".$spotComments."</p>
                 </div>
             ";
             //likes
@@ -357,8 +362,51 @@ class SpotController extends BaseController
         foreach($images as $image){
             $spot['images_src'][] = 'data:'.$image['extension'].';base64,'.base64_encode($image['content']);
         }
+        
+        //get comments
+        $builder = $this->db->table('comment');
+        $builder->select('
+            comment.id_comment, 
+            comment.comment,
+            commenter.username AS commenter    
+        ');
+        $builder->where('comment.id_spot', $id_spot);
+        $builder->orderBy('comment', 'DESC');
+        $builder->join('user commenter', 'commenter.id_user = comment.id_user','left');
+    
+        $spot['comments'] = $builder->get()->getResultArray();
 
+
+        if(session()->logged_in){
+            $builder = $this->db->table('spot_like');
+            $builder->select('id_spot_like');
+            $builder->where('id_spot', $id_spot);
+            $builder->where('id_user', session()->id_user);
+            if($builder->countAllResults() == 0){
+                //not liked
+                $spot["is_liked"] = false;
+            }
+            else{
+                //liked
+                $spot["is_liked"] = true;
+            }
+        }
+        else{
+            //not liked
+            $spot["is_liked"] = false;
+        }
+
+        //save spot to view data
         $this->viewData["spot"] = $spot;
+        
+        //check if display comment
+        if(isset($_GET["commentAdded"])){
+            $this->viewData["commentAdded"] = true;
+        }
+        else{
+            $this->viewData["commentAdded"] = false;
+        }
+
         return view("pages/spot", $this->viewData);
     }
 }
