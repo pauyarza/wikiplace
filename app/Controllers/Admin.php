@@ -34,7 +34,7 @@ class Admin extends BaseController
         $catQuery = $builder->get();
         $this->viewData["categories"] = $catQuery->getResultArray();
 
-        // Load unresolved reports to viewData
+        // Load spots reports to viewData
         $builder = $this->db->table('spot_report');
         $builder->select('
             spot_report.id_spot_report,
@@ -52,10 +52,28 @@ class Admin extends BaseController
         $builder->join('spot', 'spot.id_spot = spot_report.id_spot');//join spot table for knowing post creator id
         $builder->join('user reported', 'reported.id_user = spot.id_user','left');//join user table for knowing reported spot owner name
         $builder->join('user reporter', 'reporter.id_user = spot_report.id_user','left');//join user table for knowing report creator name
-    
-        $catQuery = $builder->get();
 
-        $this->viewData["spotReports"] = $catQuery->getResultArray();
+        $this->viewData["spotReports"] = $builder->get()->getResultArray();
+
+        // Load comments reports to viewData
+        $builder = $this->db->table('comment_report');
+        $builder->select('
+            comment_report.id_comment_report,
+            comment_report.id_comment,
+            comment_report.report_message,
+
+            reported.id_user AS id_reported,
+            reported.username AS username_reported,
+
+            reporter.id_user AS id_comment_creator,
+            reporter.username AS username_reporter,
+            
+        ');
+        $builder->join('comment', 'comment.id_comment = comment_report.id_comment');//join comment table for knowing comment creator id
+        $builder->join('user reported', 'reported.id_user = comment.id_user','left');//join user table for knowing reported comment owner name
+        $builder->join('user reporter', 'reporter.id_user = comment_report.id_user','left');//join user table for knowing report creator name
+
+        $this->viewData["commentReports"] = $builder->get()->getResultArray();
     }
 
     public function index()
@@ -165,6 +183,17 @@ class Admin extends BaseController
             $this->viewData["categories"] = $catQuery->getResultArray();
             $this->viewData["message"] = "Category updated successfully.";
             return view("admin/admin", $this->viewData);
+        }
+    }
+
+    public function deleteSpotReport(){
+        $reportData['id_spot_report'] = $_POST['id_spot_report'];
+
+        $builder = $this->db->table('spot_report');
+        $builder->where('id_spot_report', $reportData['id_spot_report']);
+        
+        if($builder->delete()){
+            echo "ok";
         }
     }
 }

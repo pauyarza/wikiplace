@@ -15,6 +15,7 @@ class UserController extends BaseController
         $sessionData["logged_in"] = session()->logged_in;
         $sessionData["username"] = session()->username;
         $sessionData["mail"] = session()->mail;//only here
+        $sessionData["id_user"] = session()->id_user;//only here
         $sessionData["profile_pic_src"] = session()->profile_pic_src;
         $sessionData["welcome_message"] = session()->welcome_message;
         $this->viewData["sessionData"] = $sessionData;
@@ -62,11 +63,11 @@ class UserController extends BaseController
             //create new user
             $UserModel = new UserModel();
             $UserModel->insert($userData);
-            $user_id = $UserModel->getInsertID();
+            $id_user = $UserModel->getInsertID();
 
             //create session
             $sessionData = [
-                'id_user' => $user_id,
+                'id_user' => $id_user,
                 'username'  => $userData["username"],
                 'mail'     => $userData["mail"],
                 'logged_in' => true,
@@ -161,7 +162,7 @@ class UserController extends BaseController
 
     public function displayProfile($username){
         $builder = $this->db->table('user');
-        $builder->select('username,description,profile_pic,profile_pic_extension');
+        $builder->select('username,description,profile_pic,profile_pic_extension,id_user');
         $builder->where('username', $username);
         $user = $builder->get(1)->getRowArray();
 
@@ -175,6 +176,7 @@ class UserController extends BaseController
 
         $this->viewData['user']['username'] = $user['username'];
         $this->viewData['user']['description'] = $user['description'];
+        $this->viewData['user']['id_user'] = $user['id_user'];
         if($user['profile_pic_extension']){
             $this->viewData['user']['profile_pic_src'] = 'data:'.$user['profile_pic_extension'].';base64,'.base64_encode($user['profile_pic']);
         }
@@ -241,9 +243,9 @@ class UserController extends BaseController
                 }
 
                 $this->viewData['updateCorrect'] = true;
+                $this->viewData["sessionData"]["username"] = $userData["username"];
             }
             $this->viewData['description'] = $userData['description'];
-            $this->viewData["sessionData"]["username"] = $userData["username"];
             return view("pages/edit_profile", $this->viewData);
         }
         else{

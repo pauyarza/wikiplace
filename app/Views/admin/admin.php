@@ -32,15 +32,15 @@ if(!isset($cat_errors)){
     <div class="container admin">
         <h1>Manage Wikiplace</h1>
         <div class="row">
-            <!--------POST REPORTS-------->
             <div class="col-12 col-lg-7">
+                <!--------SPOT REPORTS-------->
                 <div class="adminBox">
-                    <h2>Post reports</h2>
+                    <h2>Spots reports</h2>
                     <?php 
                     if(!count($spotReports)) echo "No reports found...";
                     foreach($spotReports as $spotReport){?>
                         <div 
-                            class="reportDiv row d-flex align-items-top spot<?=$spotReport['id_spot']?>"
+                            class="reportDiv row d-flex align-items-top spot<?=$spotReport['id_spot']?> spot_report<?=$spotReport['id_spot_report']?>"
                         >
                             <div class="col reportMsg">
                                 <!-- reporter -->
@@ -97,7 +97,87 @@ if(!isset($cat_errors)){
                                 >
                                     <i class="fa-solid fa-user-slash"></i>
                                 </a>
-                                <a class="btn btn-sm btn-secondary" title="Discard report">
+                                <a 
+                                    onclick="deleteSpotReport(<?=$spotReport['id_spot_report']?>)"
+                                    class="btn btn-sm btn-secondary" 
+                                    title="Discard report"
+                                >
+                                    <i class="fa-solid fa-delete-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+
+                <!--------COMMENTS REPORTS-------->
+                <div class="adminBox">
+                    <h2>Comments reports</h2>
+                    <?php 
+                    if(!count($commentReports)) echo "No reports found...";
+                    foreach($commentReports as $commentReport){?>
+                        <div 
+                            class="reportDiv row d-flex align-items-top comment<?=$commentReport['id_comment']?> comment_report<?=$commentReport['id_comment_report']?>"
+                        >
+                            <div class="col reportMsg">
+                                <!-- reporter -->
+                                <a 
+                                    href="<?=base_url('UserController/displayProfile/'.$commentReport['username_reporter'])?>"
+                                    target="_blank"
+                                    class="reporter"
+                                >
+                                    <i class="fa-solid fa-user"></i>
+                                    <?php 
+                                        if($commentReport['username_reporter']) echo $commentReport['username_reporter'];
+                                        else echo "{ banned }";
+                                    ?>
+                                </a>
+                                reported
+                                <!-- reported -->
+                                <a 
+                                    href="<?=base_url('UserController/displayProfile/'.$commentReport['username_reported'])?>"
+                                    target="_blank"
+                                    class="reporter"
+                                >
+                                    <i class="fa-solid fa-user"></i> 
+                                    <?php 
+                                        if($commentReport['username_reported']) echo $commentReport['username_reported'];
+                                        else echo "{ banned }"
+                                    ?>
+                                </a>
+                                <!-- report message -->
+                                <p><?=$commentReport['report_message']?></p>
+                            </div>
+                            <div class="actions col-12">
+                                <!-- display comment button -->
+                                <a 
+                                    href="<?=base_url('CommentController/displayComment/'.$commentReport['id_comment'])?>"
+                                    target="_blank"
+                                    class="btn btn-sm btn-success" 
+                                    title="See comment"
+                                >
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+                                <!-- delete comment button -->
+                                <a 
+                                    onclick="deleteComment(<?=$commentReport['id_comment']?>)"
+                                    class="btn btn-sm btn-warning" 
+                                    title="Delete comment"
+                                >
+                                    <i class="fa-solid fa-circle-minus"></i>
+                                </a>
+                                <!-- delete comment ban user button -->
+                                <a 
+                                    onclick="deleteCommentBanUser(<?=$commentReport['id_comment']?>,<?=$commentReport['id_reported']?>)"
+                                    class="btn btn-sm btn-danger" 
+                                    title="Delete comment and ban user"
+                                >
+                                    <i class="fa-solid fa-user-slash"></i>
+                                </a>
+                                <a 
+                                    onclick="deleteCommentReport(<?=$commentReport['id_comment_report']?>)"
+                                    class="btn btn-sm btn-secondary" 
+                                    title="Discard report"
+                                >
                                     <i class="fa-solid fa-delete-left"></i>
                                 </a>
                             </div>
@@ -106,6 +186,9 @@ if(!isset($cat_errors)){
                 </div>
             </div>
             
+
+            
+
             <!--------CATEGORIES-------->
             <div class="col col-lg-5">
                 <div class="adminBox">
@@ -145,6 +228,7 @@ if(!isset($cat_errors)){
                     </ul>
                 </div>
             </div>
+            
         </div>
     </div>
     

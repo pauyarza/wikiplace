@@ -25,8 +25,10 @@
         </div>
     </div>
     <div class="container">
+        <?php if($user["id_user"] == $sessionData["id_user"]) {?>
+            <a class="btn editProfileBtn" href="<?=base_url('UserController/displayEditProfile')?>">Edit</a>
+        <?php } ?>
         <h3><?=$user["username"]?></h3>
-        <h5 style="color:grey;"><?=$user["username"]?></h5>
         <hr class="hr-profile">
         <p style="color:white"><?=$user['description']?></p>
     </div>
@@ -36,13 +38,13 @@
             class="profile-btn" 
             type="submit"
         >
-            My Spots
+            Created spots
         </button>
         <button 
             class="profile-btn" 
             type="submit"
         >
-            Saved Spots
+            Saved spots
         </button>
     </div>
     

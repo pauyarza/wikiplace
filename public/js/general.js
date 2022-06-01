@@ -75,46 +75,117 @@ function unfavSpot(id_spot){
 }
 
 function reportSpot(id_spot){
-    Swal.fire({
-        title: 'Report spot',
-        input: 'textarea',
-        inputLabel: 'Report reason:',
-        inputPlaceholder: 'Type your report reason here...',
-        inputAttributes: {'aria-label': 'Type your reason here'},
-        confirmButtonColor: '#00C09A',
-        showCancelButton: true,
-        reverseButtons: true,
-        heightAuto: false,
-    }).then(function (alert) {
-        message = alert.value;
+    if(!logged_in){
+        $('#registerModal').modal('show');
+    }
+    else{
+        Swal.fire({
+            title: 'Report spot',
+            input: 'textarea',
+            inputLabel: 'Report reason:',
+            inputPlaceholder: 'Type your report reason here...',
+            inputAttributes: {'aria-label': 'Type your reason here'},
+            confirmButtonColor: '#00C09A',
+            showCancelButton: true,
+            reverseButtons: true,
+            heightAuto: false,
+        }).then(function (alert) {
+            message = alert.value;
+            $.ajax({
+                type: "POST",
+                url: base_url+"/spotController/reportSpot",
+                data: {
+                    id_spot: id_spot,
+                    report_message: message
+                },
+                cache: false,
+                success: function(response) {
+                    if(response == "ok"){
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Thank you!',
+                            text: 'We will take care of it 😉',
+                            heightAuto: false,
+                            confirmButtonColor: '#00C09A',
+                        })
+                    }
+                    else{
+                        Swal.fire({
+                            icon: 'error',
+                            text: response,
+                            heightAuto: false,
+                        })
+                    }
+                }
+            });
+        },)
+    }
+}
+
+function reportComment(id_comment){
+    if(!logged_in){
+        $('#registerModal').modal('show');
+    }
+    else{
+        Swal.fire({
+            title: 'Report comment',
+            input: 'textarea',
+            inputLabel: 'Report reason:',
+            inputPlaceholder: 'Type your report reason here...',
+            inputAttributes: {'aria-label': 'Type your reason here'},
+            confirmButtonColor: '#00C09A',
+            showCancelButton: true,
+            reverseButtons: true,
+            heightAuto: false,
+        }).then(function (alert) {
+            message = alert.value;
+            $.ajax({
+                type: "POST",
+                url: base_url+"/CommentController/reportComment",
+                data: {
+                    id_comment: id_comment,
+                    report_message: message
+                },
+                cache: false,
+                success: function(response) {
+                    if(response == "ok"){
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Thank you!',
+                            text: 'We will take care of it 😉',
+                            heightAuto: false,
+                            confirmButtonColor: '#00C09A',
+                        })
+                    }
+                    else{
+                        Swal.fire({
+                            icon: 'error',
+                            text: response,
+                            heightAuto: false,
+                        })
+                    }
+                }
+            });
+        },)
+    }
+}
+
+function likeComment(id_comment){
+    if(!logged_in){
+        $('#registerModal').modal('show');
+    }
+    else{
         $.ajax({
             type: "POST",
-            url: base_url+"/spotController/reportSpot",
-            data: {
-                id_spot: id_spot,
-                report_message: message
-            },
-            cache: false,
-            success: function(response) {
-                if(response == "ok"){
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Thank you!',
-                        text: 'We will take care of it 😉',
-                        heightAuto: false,
-                        confirmButtonColor: '#00C09A',
-                    })
-                }
-                else{
-                    Swal.fire({
-                        icon: 'error',
-                        text: response,
-                        heightAuto: false,
-                    })
-                }
+            url: base_url+"/CommentController/likeComment",
+            data: { id_comment : id_comment },
+            success: function(response)
+            {
+                console.log(response);
+                $("#totalCommentLikes"+id_comment).html(response);
             }
         });
-    },)
+    }
 }
 
 function deleteSpot(id_spot){//check if it's owner or admin at the controller

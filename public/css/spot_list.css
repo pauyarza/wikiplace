@@ -1,0 +1,108 @@
+.spotListContainer{
+    margin-top: 20px;
+}
+
+h1{
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 34px;
+}
+
+.spots{
+    margin-top: 20px;
+}
+
+.spot{
+    background-color: white;
+    padding: 17px 18px 26px 18px;
+    margin-bottom: 30px;
+    margin: 0px 0px 22px;
+    border-radius: 14px;
+    color: #333;
+}
+
+
+.spot p{
+    margin: 0;
+    display: inline;
+}
+
+/*========Top row========*/
+
+.spot .categoryImg{
+    height: 50px;
+}
+
+.spot h2{
+    font-size: 20px;
+    font-weight: 550;
+    margin-bottom: 0;
+}
+
+.spot .actions{
+    padding: 0;
+}
+
+.spot .actionBtn{
+    height: 19px;
+}
+
+.spot .likeDiv{
+    margin-left: 5px;
+    display: inline;
+}
+
+.spot .likeCount{
+    font-size: 14px;
+    color: #848484;
+    
+}
+
+.spot .liked .likeCount{
+    color: rgba(255, 0, 60, 0.67) !important;
+}
+
+.spot .description{
+    color: #848484;
+    font-size: 15px;
+}
+
+/*========Bottom row========*/
+
+.spot .bottomRow{
+    margin-top: 10px;
+}
+
+.spot .imgDiv{
+    height: 100px;
+    padding: 0 0 0px 20px;
+    align-items: center;
+}
+
+.spot .imgDiv img{
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 6px;
+}
+
+.spot .buttons a{
+    border-radius: 50px;
+    width: 100%;
+    height: 45px;
+}
+
+.spot .maps{
+    background-color: #E8E8E8;
+}
+
+.spot .maps img{
+    height: 100%;
+}
+
+.spot .more{
+    background-color: #34A853;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-top: 10px;
+    font-size: 17px;
+}

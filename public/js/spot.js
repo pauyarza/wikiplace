@@ -24,25 +24,31 @@ $("#commentForm").submit(function(e) {
 });
 
 function likeSpotDisplaySpot(id_spot){
-    image = $("#likeImg");
-    //unlike
-    if($(".likeButton").hasClass("liked")){
-        unlikeSpot(id_spot);
-        image.fadeOut(100, function () {
-            image.attr('src', base_url+'/img/noLikeWhite.png');
-            image.fadeIn(100);
-        });
+    if(!logged_in){
+        $('#registerModal').modal('show');
     }
-    //like
     else{
-        likeSpot(id_spot);
-        image.fadeOut(100, function () {
-            image.attr('src', base_url+'/img/like.png');
-            image.fadeIn(100);
-        });
+        image = $("#likeImg");
+        //unlike
+        if($(".likeButton").hasClass("liked")){
+            unlikeSpot(id_spot);
+            image.fadeOut(100, function () {
+                image.attr('src', base_url+'/img/noLikeWhite.png');
+                image.fadeIn(100);
+            });
+        }
+        //like
+        else{
+            likeSpot(id_spot);
+            image.fadeOut(100, function () {
+                image.attr('src', base_url+'/img/like.png');
+                image.fadeIn(100);
+            });
+        }
+    
+        $(".likeButton").toggleClass("liked");
     }
 
-    $(".likeButton").toggleClass("liked");
 }
 
 function triggerFav(id_spot){
@@ -51,7 +57,7 @@ function triggerFav(id_spot){
     if($(".favButton").hasClass("faved")){
         unfavSpot(id_spot);
         image.fadeOut(100, function () {
-            image.attr('src', base_url+'/img/noFav.svg');
+            image.attr('src', base_url+'/img/nofavWhite.svg');
             image.fadeIn(100);
         });
     }
@@ -59,7 +65,7 @@ function triggerFav(id_spot){
     else{
         favSpot(id_spot);
         image.fadeOut(100, function () {
-            image.attr('src', base_url+'/img/fav.svg');
+            image.attr('src', base_url+'/img/favWhite.svg');
             image.fadeIn(100);
         });
     }

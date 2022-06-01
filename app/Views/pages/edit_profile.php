@@ -73,7 +73,7 @@
                 type="text" 
                 id="usernameedit"
                 name="username"
-                class="input-group-text profile-input-group <?php if(isset($errors["username"])) echo "is-invalid"?>"
+                class="form-control profile-input <?php if(isset($errors["username"])) echo "is-invalid"?>"
                 value="<?=$sessionData["username"]?>"
             >
             <div class="invalid-feedback">
@@ -84,8 +84,17 @@
                 id="descriptionedit" 
                 name="description" 
                 placeholder="Describe yourself here..."
-                class="input-group-text profile-input-group <?php if(isset($errors["description"])) echo "is-invalid"?>"
+                class="form-control profile-input pofile-input-textarea <?php if(isset($errors["description"])) echo "is-invalid"?>"
             ><?=$description?></textarea>
+            <script>
+                //textarea auto resize
+                $(".pofile-input-textarea").each(function () {
+                    this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");
+                }).on("input", function () {
+                    this.style.height = "auto";
+                    this.style.height = (this.scrollHeight) + "px";
+                });
+            </script>
             <div class="invalid-feedback">
                 <?php if(isset($errors["description"])) echo $errors["description"]?>
             </div>

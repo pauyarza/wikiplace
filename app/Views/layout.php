@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <link rel="shortcut icon" href="<?php echo base_url('img/miniLogo.svg');?>" type="image/x-icon">
-    <!--Save base_url to JS--><script>var base_url = "<?=base_url('/')?>";//save base url to js</script>
     <!--CSS Bootstrap 5--><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!--JS bootstrap 5--><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!--SweetAlert2--><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -16,6 +15,18 @@
     <!--JS Menu--><script src="<?php echo base_url('js/menu.js');?>"></script>
     <!--JS General--><script src="<?php echo base_url('js/general.js');?>"></script>
     <!--Unique head--><?= $this->renderSection('head')?>
+    <script>
+        <?php 
+            //save php variables to js
+            if(isset($sessionData["logged_in"]) && $sessionData["logged_in"]){
+                echo "var logged_in = true;";
+            }
+            else{
+                echo "var logged_in = false;";
+            }
+            echo "var base_url='".base_url('/')."';";
+        ?>
+    </script>
 </head>
 <body>
     <?php 

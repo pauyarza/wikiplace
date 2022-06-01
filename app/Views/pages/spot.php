@@ -50,7 +50,7 @@
     <!-- interact buttons -->
     <div class="d-flex justify-content-between interactButtons">
         <button class="btn mapsButton" onclick="goMaps(<?=$spot['latitude'].','.$spot['longitude']?>)">
-            <img class="mapsImg" src="<?=base_url('img/maps.png');?>">
+            <img class="mapsImg" src="<?=base_url('img/maps.png')?>">
         </button>
         <div>
             <!-- report -->
@@ -61,7 +61,7 @@
             >
             <!-- fav -->
             <img 
-                src="<?=base_url('img/noFav.svg');?>"
+                src="<?=base_url('img/nofavWhite.svg');?>"
                 class="favButton"
                 id="favButton"
                 onclick="triggerFav(<?=$spot['id_spot']?>)"
@@ -139,36 +139,49 @@
                         target="_blank"
                     ><i class="fa-solid fa-user"></i> <?=$comment['commenter']?></a>
                     <p><?=$comment['comment']?></p>
-                    <div class="d-flex justify-content-start">
-                        <img class="button-comment-spot commentLike" src="<?=base_url('img/noLikeWhite.png');?>">
-                        <img class="button-comment-spot comment-flag" src="<?=base_url('img/flag.png');?>">
+                    <div class="d-flex justify-content-start buttons-comment">
+                        <img 
+                            class="button-comment-spot comment-like" 
+                            src="<?=base_url('img/noLikeWhite.png');?>"
+                            onclick="likeComment(<?=$comment['id_comment']?>)"
+                        >
+                        <span id="totalCommentLikes<?=$comment['id_comment']?>" class="totalCommentLikes">10</span>
+                        <img
+                            class="button-comment-spot comment-flag" 
+                            src="<?=base_url('img/flag.png');?>"
+                            onclick="reportComment(<?=$comment['id_comment']?>)"
+                        >
                     </div>
                 </div>
             <?php } ?>
         </div>
 
-        <script>
-            //make text area auto resize
-            $("textarea").each(function () {
-                this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");
-            }).on("input", function () {
-                this.style.height = "auto";
-                this.style.height = (this.scrollHeight) + "px";
-            });
-
-            //display comment if necessary
-            <?php if($commentAdded){ ?>
-                Swal.mixin({
-                    toast: true,
-                    position: "bottom",
-                    showConfirmButton: false,
-                    timer: 1200,
-                }).fire({
-                    title: "Comment added"
-                })
-            <?php }?>
-        </script>
     </div>
 </div>
-<!--JS Spot--><script src="<?php echo base_url('js/spot.js');?>"></script>
+<script>
+    //make text area auto resize
+    $("textarea").each(function () {
+        this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");
+    }).on("input", function () {
+        this.style.height = "auto";
+        this.style.height = (this.scrollHeight) + "px";
+    });
+
+    //display comment if necessary
+    <?php if($commentAdded){ ?>
+        //toast
+        Swal.mixin({
+            toast: true,
+            position: "bottom",
+            showConfirmButton: false,
+            timer: 1200,
+        }).fire({
+            title: "Comment added"
+        })
+        //delete get from url
+        window.history.replaceState(null, null, window.location.pathname);
+    <?php }?>
+</script>
+
+<!--Load JS Spot--><script src="<?php echo base_url('js/spot.js');?>"></script>
 <?= $this->endSection('content') ?>

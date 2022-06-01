@@ -459,15 +459,6 @@
 
         //=======LIKE=======//
         $(document).on('click', '.likeDiv', function () {
-            <?php
-                if($sessionData["logged_in"]){
-                    echo "var logged_in = true;";
-                }
-                else{
-                    echo "var logged_in = false;";
-                }
-            ?>
-
             if(!logged_in){
                 $('#registerModal').modal('show');
             }

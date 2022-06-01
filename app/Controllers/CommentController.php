@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 use App\Models\CommentModel;
+use App\Models\CommentReportModel;
+use App\Models\CommentLikeModel;
 
 class CommentController extends BaseController
 {
@@ -16,6 +18,9 @@ class CommentController extends BaseController
         $sessionData["welcome_message"] = session()->welcome_message;
         $this->viewData["sessionData"] = $sessionData;
         session()->set('welcome_message', false);
+
+        // Prepare database
+        $this->db = \Config\Database::connect();
     }
 
     public function addComment()
@@ -43,6 +48,60 @@ class CommentController extends BaseController
             }
             else{
                 echo "database error";
+            }
+        }
+    }
+
+    public function reportComment(){
+        $reportData['id_comment'] = $_POST["id_comment"];
+        $reportData['report_message'] = $_POST["report_message"];
+        $reportData['id_user'] = session()->id_user;
+
+        //check if report already exists
+        $builder = $this->db->table('comment_report');
+        $builder->select('id_comment_report');
+        $builder->where('id_comment', $reportData['id_comment']);
+        $builder->where('id_user', $reportData['id_user']);
+
+        if($builder->countAllResults()==0){
+            //save report
+            $CommentReportModel = new CommentReportModel();
+            if($CommentReportModel->insert($reportData)){
+                echo "ok";
+            }
+            else{
+                echo "database error";
+            }
+        }
+        else{
+            echo "Comment already reported.";
+        }
+    }
+
+    public function likeComment(){
+        if(session()->logged_in){
+            $commentData['id_comment'] = $_POST["id_comment"];
+            $commentData['id_user'] = session()->id_user;
+
+            //check that like doesn't exist
+            $builder = $this->db->table('comment_like');
+            $builder->select('id_comment_like');
+            $builder->where('id_comment', $commentData['id_comment']);
+            $builder->where('id_user', $commentData['id_user']);
+
+            if($builder->countAllResults()==0){
+                $CommentLikeModel = new CommentLikeModel();
+                if($CommentLikeModel->insert($commentData)){
+                    //count comment likes
+                    $builder = $this->db->table('comment_like');
+                    $builder->select('id_comment_like');
+                    $builder->where('id_comment', $commentData['id_comment']);
+                    $commentLikes = $builder->countAllResults();
+                    echo $commentLikes;
+                }
+                else{
+                    echo "database error";
+                }
             }
         }
     }

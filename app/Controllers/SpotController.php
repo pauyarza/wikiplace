@@ -195,7 +195,7 @@ class SpotController extends BaseController
             echo "<div class='buttonsDiv col-5 d-flex align-content-between flex-wrap'>";
             //buttons
                 echo '
-                <button class="btn mapsButton" onclick="goMaps('.$spot['latitude'].','.$spot['longitude'].')">
+                <button class="btn mapsButton" onclick="goMaps('.$spot['latitude'].','.$spot['longitude'].')" target="_blank">
                     <img class="mapsImg" src="img/maps.png">
                 </button>';
                 echo '<a class="btn moreButton" href="'.base_url('SpotController/displaySpot').'/'.$spot['id_spot'].'" >More</a>';
@@ -204,27 +204,29 @@ class SpotController extends BaseController
     }
 
     public function likeSpot(){//ajax
-        $spotData['id_spot'] = $_POST["id_spot"];
-        $spotData['id_user'] = session()->id_user;
+        if(session()->logged_in){
+            $spotData['id_spot'] = $_POST["id_spot"];
+            $spotData['id_user'] = session()->id_user;
 
 
-        $builder = $this->db->table('spot_like');
-        $builder->select('id_spot_like');
-        $builder->where('id_spot', $spotData['id_spot']);
-        $builder->where('id_user', $spotData['id_user']);
+            $builder = $this->db->table('spot_like');
+            $builder->select('id_spot_like');
+            $builder->where('id_spot', $spotData['id_spot']);
+            $builder->where('id_user', $spotData['id_user']);
 
-        if($builder->countAllResults()==0){//if like doesn't exist
-            $SpotLikeModel = new SpotLikeModel();
-            if($SpotLikeModel->insert($spotData)){
-                //count spot likes
-                $builder = $this->db->table('spot_like');
-                $builder->select('id_spot_like');
-                $builder->where('id_spot', $spotData['id_spot']);
-                $spotLikes = $builder->countAllResults();
-                echo $spotLikes;
-            }
-            else{
-                echo "database error";
+            if($builder->countAllResults()==0){//if like doesn't exist
+                $SpotLikeModel = new SpotLikeModel();
+                if($SpotLikeModel->insert($spotData)){
+                    //count spot likes
+                    $builder = $this->db->table('spot_like');
+                    $builder->select('id_spot_like');
+                    $builder->where('id_spot', $spotData['id_spot']);
+                    $spotLikes = $builder->countAllResults();
+                    echo $spotLikes;
+                }
+                else{
+                    echo "database error";
+                }
             }
         }
     }
@@ -247,26 +249,31 @@ class SpotController extends BaseController
     }
 
     public function favSpot(){//ajax
-        $spotData['id_spot'] = $_POST["id_spot"];
-        $spotData['id_user'] = session()->id_user;
-
-
-        $builder = $this->db->table('spot_fav');
-        $builder->select('id_spot_fav');
-        $builder->where('id_spot', $spotData['id_spot']);
-        $builder->where('id_user', $spotData['id_user']);
-
-        if($builder->countAllResults()==0){//if fav doesn't exist
-            $SpotFavModel = new SpotFavModel();
-            if($SpotFavModel->insert($spotData)){
-                echo "ok";
+        if(session()->logged_in){
+            $spotData['id_spot'] = $_POST["id_spot"];
+            $spotData['id_user'] = session()->id_user;
+    
+    
+            $builder = $this->db->table('spot_fav');
+            $builder->select('id_spot_fav');
+            $builder->where('id_spot', $spotData['id_spot']);
+            $builder->where('id_user', $spotData['id_user']);
+    
+            if($builder->countAllResults()==0){//if fav doesn't exist
+                $SpotFavModel = new SpotFavModel();
+                if($SpotFavModel->insert($spotData)){
+                    echo "ok";
+                }
+                else{
+                    echo "database error";
+                }
             }
             else{
-                echo "database error";
+                echo "Already favourite";
             }
         }
         else{
-            echo "Already favourite";
+            echo "User not logged in";
         }
     }
 
@@ -291,12 +298,14 @@ class SpotController extends BaseController
         $reportData['report_message'] = $_POST["report_message"];
         $reportData['id_user'] = session()->id_user;
 
+        //check if report already exists
         $builder = $this->db->table('spot_report');
         $builder->select('id_spot_report');
         $builder->where('id_spot', $reportData['id_spot']);
         $builder->where('id_user', $reportData['id_user']);
 
-        if($builder->countAllResults()==0){//if report doesn't exist
+        if($builder->countAllResults()==0){
+            //save report
             $SpotReportModel = new SpotReportModel();
             if($SpotReportModel->insert($reportData)){
                 echo "ok";
@@ -371,7 +380,7 @@ class SpotController extends BaseController
             commenter.username AS commenter    
         ');
         $builder->where('comment.id_spot', $id_spot);
-        $builder->orderBy('comment', 'DESC');
+        $builder->orderBy('id_comment', 'DESC');
         $builder->join('user commenter', 'commenter.id_user = comment.id_user','left');
     
         $spot['comments'] = $builder->get()->getResultArray();
@@ -435,5 +444,45 @@ class SpotController extends BaseController
         }
 
         return view("pages/spot", $this->viewData);
+    }
+
+    public function displayUserSpots($id_user){
+        //get username for title
+        $builder = $this->db->table('user');
+        $builder->select('username');
+        $builder->where('id_user', $id_user);
+        $user = $builder->get(1)->getRowArray();
+        $this->viewData["title"] = "Spots made by 
+            <b><a href='".base_url("UserController/displayProfile/".$user["username"])."' target='_blank'>".
+                $user["username"]
+            ."</a></b>";
+
+        
+        //get spots
+        $builder = $this->db->table('spot');
+        $builder->select('
+            spot.id_spot,
+            spot.latitude,
+            spot.longitude,
+            spot.spot_name,
+            spot.description,
+            category.name AS category_name,
+            COUNT(spot_like.id_spot_like) AS likes,
+            (select COUNT(*) ulike FROM spot_like ulike
+                WHERE ulike.id_user = '.session()->id_user.'
+                 AND ulike.id_spot = spot.id_spot) AS userlike
+        ');
+        $builder->join('category', 'category.id_category = spot.id_category','left');
+        $builder->join('spot_like', 'spot_like.id_spot = spot.id_spot','left');
+        $builder->groupBy('spot.id_spot');
+        $builder->where('spot.id_user', $id_user);
+
+        $spots =  $builder->get()->getResultArray();
+        $this->viewData["spots"] = $spots;
+        // foreach($spots as $spot){
+        //     print_r($spot);
+        //     echo ("<br>");
+        // }
+        return view("pages/spot_list", $this->viewData);
     }
 }

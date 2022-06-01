@@ -170,3 +170,740 @@ CRITICAL - 2022-05-31 05:58:30 --> unlink(C:\xampp\htdocs\wikiplace\writable\deb
 #6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(308): CodeIgniter\Events\Events::trigger('pre_system')
 #7 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #8 {main}
+CRITICAL - 2022-05-31 06:07:08 --> Undefined array key "report_message"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\SpotController.php(291): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 291)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\SpotController->reportSpot()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SpotController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-31 06:15:31 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\wikiplace\app\Views\parts\menu.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 15)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(424): CodeIgniter\View\View->render('parts/menu', NULL, true)
+#4 C:\xampp\htdocs\wikiplace\app\Views\layout.php(22): CodeIgniter\View\View->include('parts/menu', NULL)
+#5 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#8 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/redirecti...', Array, true)
+#9 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(159): view('pages/redirecti...', Array)
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->logOut()
+#11 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#12 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2022-05-31 06:16:26 --> Got a packet bigger than 'max_allowed_packet' bytes
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('UPDATE `user` S...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1913): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(270): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->updateProfilePic()
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-31 06:16:26 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Malformed UTF-8 characters, possibly incorrectly encoded". in C:\xampp\htdocs\wikiplace\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\wikiplace\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 C:\xampp\htdocs\wikiplace\system\API\ResponseTrait.php(341): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\wikiplace\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\wikiplace\system\Debug\Exceptions.php(115): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(mysqli_sql_exception))
+#5 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-05-31 06:16:36 --> unlink(C:\xampp\htdocs\wikiplace\writable\debugbar/debugbar_1653995225.json): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(C:\\xampp...', 'C:\\xampp\\htdocs...', 74)
+#1 C:\xampp\htdocs\wikiplace\system\Debug\Toolbar\Collectors\History.php(74): unlink('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\Debug\Toolbar.php(487): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1653995794, 20)
+#3 C:\xampp\htdocs\wikiplace\system\Debug\Toolbar.php(464): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 C:\xampp\htdocs\wikiplace\app\Config\Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#5 C:\xampp\htdocs\wikiplace\system\Events\Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(308): CodeIgniter\Events\Events::trigger('pre_system')
+#7 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-05-31 06:16:40 --> MySQL server has gone away
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('UPDATE `user` S...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1913): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(270): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->updateProfilePic()
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-31 06:16:40 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Malformed UTF-8 characters, possibly incorrectly encoded". in C:\xampp\htdocs\wikiplace\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\wikiplace\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 C:\xampp\htdocs\wikiplace\system\API\ResponseTrait.php(341): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\wikiplace\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\wikiplace\system\Debug\Exceptions.php(115): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(mysqli_sql_exception))
+#5 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-05-31 06:17:06 --> unlink(C:\xampp\htdocs\wikiplace\writable\debugbar/debugbar_1653995408.json): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(C:\\xampp...', 'C:\\xampp\\htdocs...', 74)
+#1 C:\xampp\htdocs\wikiplace\system\Debug\Toolbar\Collectors\History.php(74): unlink('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\Debug\Toolbar.php(487): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1653995824, 20)
+#3 C:\xampp\htdocs\wikiplace\system\Debug\Toolbar.php(464): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 C:\xampp\htdocs\wikiplace\app\Config\Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#5 C:\xampp\htdocs\wikiplace\system\Events\Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(308): CodeIgniter\Events\Events::trigger('pre_system')
+#7 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-05-31 06:24:32 --> Undefined array key "report_message"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\SpotController.php(291): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 291)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\SpotController->reportSpot()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SpotController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-31 06:24:36 --> Undefined array key "report_message"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\SpotController.php(291): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 291)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\SpotController->reportSpot()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SpotController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-31 06:24:37 --> Undefined array key "report_message"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\SpotController.php(291): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 291)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\SpotController->reportSpot()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SpotController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-31 06:24:38 --> Undefined array key "report_message"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\SpotController.php(291): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 291)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\SpotController->reportSpot()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SpotController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-31 06:28:38 --> count(): Argument #1 ($var) must be of type Countable|array, null given
+#0 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('admin/admin', Array, true)
+#3 C:\xampp\htdocs\wikiplace\app\Controllers\Admin.php(63): view('admin/admin', Array)
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Admin->index()
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-05-31 07:32:06 --> Unknown column 'comment_id' in 'order clause'
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `comment...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `comment...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `comment...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `comment...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\app\Controllers\SpotController.php(377): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\SpotController->displaySpot('27')
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SpotController))
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-31 07:36:15 --> Undefined array key "report_message"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\SpotController.php(291): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 291)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\SpotController->reportSpot()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SpotController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-31 08:41:27 --> MySQL server has gone away
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('UPDATE `user` S...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1913): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(270): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->updateProfilePic()
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-31 08:41:27 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Malformed UTF-8 characters, possibly incorrectly encoded". in C:\xampp\htdocs\wikiplace\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\wikiplace\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 C:\xampp\htdocs\wikiplace\system\API\ResponseTrait.php(341): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\wikiplace\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\wikiplace\system\Debug\Exceptions.php(115): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(mysqli_sql_exception))
+#5 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-05-31 13:51:15 --> Unknown column 'username' in 'field list'
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `usernam...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `usernam...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `usernam...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `usernam...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\app\Controllers\SpotController.php(445): CodeIgniter\Database\BaseBuilder->get(1)
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\SpotController->displayUserSpots('31')
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SpotController))
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-31 14:14:45 --> Call to undefined method CodeIgniter\Database\MySQLi\Builder::group_by()
+#0 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\SpotController->displayUserSpots('31')
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SpotController))
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-31 14:17:27 --> You must provide a valid column name not separated by comma.
+#0 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(468): CodeIgniter\Database\Exceptions\DataException::forInvalidArgument('column name not...')
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(435): CodeIgniter\Database\BaseBuilder->maxMinAvgSum('\r\n            s...', '', 'SUM')
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\SpotController.php(454): CodeIgniter\Database\BaseBuilder->selectSum('\r\n            s...')
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\SpotController->displayUserSpots('31')
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SpotController))
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-31 14:19:00 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AS likes)
+FROM `spot`
+LEFT JOIN `category` ON `category`.`id_category` = `spo...' at line 1
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `spot`.`...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `spot`.`...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `spot`.`...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `spot`.`...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\app\Controllers\SpotController.php(468): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\SpotController->displayUserSpots('31')
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SpotController))
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-31 14:19:13 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AS likes)
+FROM `spot`
+LEFT JOIN `category` ON `category`.`id_category` = `spo...' at line 1
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `spot`.`...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `spot`.`...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `spot`.`...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `spot`.`...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\app\Controllers\SpotController.php(468): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\SpotController->displayUserSpots('31')
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SpotController))
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-31 14:39:18 --> Got a packet bigger than 'max_allowed_packet' bytes
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('UPDATE `user` S...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1913): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(270): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->updateProfilePic()
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-31 14:39:18 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Malformed UTF-8 characters, possibly incorrectly encoded". in C:\xampp\htdocs\wikiplace\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\wikiplace\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 C:\xampp\htdocs\wikiplace\system\API\ResponseTrait.php(341): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\wikiplace\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\wikiplace\system\Debug\Exceptions.php(115): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(mysqli_sql_exception))
+#5 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-05-31 14:39:27 --> Got a packet bigger than 'max_allowed_packet' bytes
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('UPDATE `user` S...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1913): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(270): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->updateProfilePic()
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-31 14:39:27 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Malformed UTF-8 characters, possibly incorrectly encoded". in C:\xampp\htdocs\wikiplace\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\wikiplace\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 C:\xampp\htdocs\wikiplace\system\API\ResponseTrait.php(341): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\wikiplace\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\wikiplace\system\Debug\Exceptions.php(115): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(mysqli_sql_exception))
+#5 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-05-31 14:39:35 --> MySQL server has gone away
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('UPDATE `user` S...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1913): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(270): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->updateProfilePic()
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-31 14:39:35 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Malformed UTF-8 characters, possibly incorrectly encoded". in C:\xampp\htdocs\wikiplace\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\wikiplace\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 C:\xampp\htdocs\wikiplace\system\API\ResponseTrait.php(341): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\wikiplace\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\wikiplace\system\Debug\Exceptions.php(115): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(mysqli_sql_exception))
+#5 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-05-31 14:53:47 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\wikiplace\app\Views\layout.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 21)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/redirecti...', Array, true)
+#5 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(159): view('pages/redirecti...', Array)
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->logOut()
+#7 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-31 14:54:26 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\wikiplace\app\Views\parts\menu.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 15)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(424): CodeIgniter\View\View->render('parts/menu', NULL, true)
+#4 C:\xampp\htdocs\wikiplace\app\Views\layout.php(33): CodeIgniter\View\View->include('parts/menu', NULL)
+#5 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#8 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/redirecti...', Array, true)
+#9 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(159): view('pages/redirecti...', Array)
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->logOut()
+#11 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#12 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2022-05-31 15:02:41 --> Class "App\Models\CommentReportModel" not found
+#0 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->reportComment()
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-31 15:02:57 --> Class "App\Models\CommentReportModel" not found
+#0 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->reportComment()
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-31 15:04:03 --> Duplicate entry '0' for key 'PRIMARY'
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\wikiplace\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\wikiplace\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(63): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->reportComment()
+#9 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-05-31 15:04:35 --> Duplicate entry '0' for key 'PRIMARY'
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\wikiplace\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\wikiplace\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(62): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->reportComment()
+#9 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-05-31 15:05:51 --> Duplicate entry '0' for key 'PRIMARY'
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\wikiplace\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\wikiplace\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(64): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->reportComment()
+#9 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-05-31 15:06:43 --> Duplicate entry '0' for key 'PRIMARY'
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\wikiplace\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\wikiplace\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(64): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->reportComment()
+#9 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-05-31 15:08:41 --> Duplicate entry '0' for key 'PRIMARY'
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\wikiplace\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\wikiplace\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(66): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->reportComment('12', '1234')
+#9 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-05-31 15:09:24 --> Duplicate entry '0' for key 'PRIMARY'
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\wikiplace\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\wikiplace\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(66): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->reportComment('12', '12345')
+#9 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-05-31 15:09:53 --> Duplicate entry '0' for key 'PRIMARY'
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\wikiplace\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\wikiplace\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(66): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->reportComment('12', '12345')
+#9 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-05-31 15:15:45 --> Cannot add or update a child row: a foreign key constraint fails (`wikiplace`.`comment_report`, CONSTRAINT `comment_report_comment` FOREIGN KEY (`id_comment`) REFERENCES `comment` (`id_comment`) ON DELETE CASCADE)
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\wikiplace\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\wikiplace\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(66): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->reportComment('12', '12345')
+#9 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-05-31 15:18:31 --> Cannot add or update a child row: a foreign key constraint fails (`wikiplace`.`comment_report`, CONSTRAINT `comment_report_comment` FOREIGN KEY (`id_comment`) REFERENCES `comment` (`id_comment`) ON DELETE CASCADE)
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\wikiplace\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\wikiplace\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(66): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->reportComment('12', '12345')
+#9 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-05-31 15:28:58 --> Cannot add or update a child row: a foreign key constraint fails (`wikiplace`.`comment_report`, CONSTRAINT `comment_report_comment` FOREIGN KEY (`id_comment`) REFERENCES `comment` (`id_comment`) ON DELETE CASCADE)
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\wikiplace\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\wikiplace\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(66): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->reportComment('21', '12345')
+#9 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-05-31 15:30:28 --> Cannot add or update a child row: a foreign key constraint fails (`wikiplace`.`comment_report`, CONSTRAINT `comment_report_comment` FOREIGN KEY (`id_comment`) REFERENCES `comment` (`id_comment`) ON DELETE CASCADE)
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\wikiplace\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\wikiplace\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(66): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->reportComment('29', '12345')
+#9 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-05-31 15:31:21 --> Cannot add or update a child row: a foreign key constraint fails (`wikiplace`.`comment_report`, CONSTRAINT `comment_report_comment` FOREIGN KEY (`id_comment`) REFERENCES `comment` (`id_comment`) ON DELETE CASCADE)
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\wikiplace\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\wikiplace\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(66): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->reportComment('29', '12345')
+#9 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-05-31 15:33:55 --> Undefined property: App\Controllers\CommentController::$db
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 60)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->reportComment('29', '12345')
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-31 15:34:29 --> Undefined property: App\Controllers\CommentController::$db
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 60)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->reportComment('29', '12345')
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-31 15:47:00 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\wikiplace\app\Views\parts\menu.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 15)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(424): CodeIgniter\View\View->render('parts/menu', NULL, true)
+#4 C:\xampp\htdocs\wikiplace\app\Views\layout.php(33): CodeIgniter\View\View->include('parts/menu', NULL)
+#5 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#8 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/redirecti...', Array, true)
+#9 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(159): view('pages/redirecti...', Array)
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->logOut()
+#11 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#12 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2022-05-31 15:47:05 --> unlink(C:\xampp\htdocs\wikiplace\writable\debugbar/debugbar_1654029319.json): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(C:\\xampp...', 'C:\\xampp\\htdocs...', 74)
+#1 C:\xampp\htdocs\wikiplace\system\Debug\Toolbar\Collectors\History.php(74): unlink('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\Debug\Toolbar.php(487): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1654030022, 20)
+#3 C:\xampp\htdocs\wikiplace\system\Debug\Toolbar.php(464): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 C:\xampp\htdocs\wikiplace\app\Config\Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#5 C:\xampp\htdocs\wikiplace\system\Events\Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(308): CodeIgniter\Events\Events::trigger('pre_system')
+#7 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-05-31 15:50:28 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\SpotController.php(332): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 332)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\SpotController->deleteSpot()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SpotController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-31 15:58:31 --> Undefined array key "id_comment"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 29)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->addComment()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-31 15:58:47 --> Undefined array key "id_comment"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 29)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->addComment()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-31 15:58:52 --> Undefined array key "id_comment"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 29)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->addComment()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-31 15:59:21 --> Undefined array key "id_comment"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 29)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->addComment()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-31 16:00:03 --> Undefined array key "id_comment"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 29)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->addComment()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-31 16:01:25 --> Undefined array key "id_comment"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 29)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->addComment()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-31 16:02:20 --> Undefined array key "id_comment"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 29)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->addComment()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-31 16:02:49 --> Undefined array key "id_comment"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 29)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->addComment()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-31 16:02:53 --> Undefined array key "id_comment"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 29)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->addComment()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-31 16:03:32 --> Undefined array key "id_comment"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 29)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->addComment()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-31 16:05:13 --> Undefined array key "id_comment"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 29)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->addComment()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-31 16:07:39 --> Duplicate entry '0' for key 'PRIMARY'
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\wikiplace\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\wikiplace\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(94): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->likeComment()
+#9 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-05-31 16:07:44 --> Duplicate entry '0' for key 'PRIMARY'
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\wikiplace\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\wikiplace\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(94): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->likeComment()
+#9 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-05-31 16:08:24 --> Duplicate entry '0' for key 'PRIMARY'
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\wikiplace\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\wikiplace\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(94): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->likeComment()
+#9 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-05-31 16:09:26 --> Duplicate entry '0' for key 'PRIMARY'
+#0 C:\xampp\htdocs\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\wikiplace\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\wikiplace\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\wikiplace\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\wikiplace\app\Controllers\CommentController.php(95): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\CommentController->likeComment('22')
+#9 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CommentController))
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-05-31 16:18:03 --> Call to undefined function form_open()
+#0 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(424): CodeIgniter\View\View->render('parts/login', NULL, true)
+#3 C:\xampp\htdocs\wikiplace\app\Views\layout.php(35): CodeIgniter\View\View->include('parts/login')
+#4 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#6 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#7 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/redirecti...', Array, true)
+#8 C:\xampp\htdocs\wikiplace\app\Controllers\Admin.php(26): view('pages/redirecti...', Array)
+#9 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(809): App\Controllers\Admin->__construct()
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#11 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2022-05-31 16:19:14 --> Undefined array key "id_category"
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\Admin.php(172): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 172)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\Admin->deleteSpotReport()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-31 16:25:43 --> unlink(C:\xampp\htdocs\wikiplace\writable\debugbar/debugbar_1654031986.json): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(C:\\xampp...', 'C:\\xampp\\htdocs...', 74)
+#1 C:\xampp\htdocs\wikiplace\system\Debug\Toolbar\Collectors\History.php(74): unlink('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\Debug\Toolbar.php(487): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1654032340, 20)
+#3 C:\xampp\htdocs\wikiplace\system\Debug\Toolbar.php(464): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 C:\xampp\htdocs\wikiplace\app\Config\Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#5 C:\xampp\htdocs\wikiplace\system\Events\Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#6 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(308): CodeIgniter\Events\Events::trigger('pre_system')
+#7 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-05-31 16:26:09 --> Too few arguments to function App\Controllers\UserController::displayProfile(), 0 passed in C:\xampp\htdocs\wikiplace\system\CodeIgniter.php on line 832 and exactly 1 expected
+#0 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->displayProfile()
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-31 16:26:25 --> Too few arguments to function App\Controllers\UserController::displayProfile(), 0 passed in C:\xampp\htdocs\wikiplace\system\CodeIgniter.php on line 832 and exactly 1 expected
+#0 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->displayProfile()
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-31 16:26:41 --> Call to undefined function form_open()
+#0 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(424): CodeIgniter\View\View->render('parts/login', NULL, true)
+#3 C:\xampp\htdocs\wikiplace\app\Views\layout.php(35): CodeIgniter\View\View->include('parts/login')
+#4 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#6 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#7 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/redirecti...', Array, true)
+#8 C:\xampp\htdocs\wikiplace\app\Controllers\Admin.php(26): view('pages/redirecti...', Array)
+#9 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(809): App\Controllers\Admin->__construct()
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#11 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2022-05-31 16:28:26 --> Undefined variable $catQuery
+#0 C:\xampp\htdocs\wikiplace\app\Controllers\Admin.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 34)
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(809): App\Controllers\Admin->__construct()
+#2 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

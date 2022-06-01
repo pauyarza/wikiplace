@@ -49,8 +49,7 @@
                     class="dropdown-item"
                     href="<?=base_url('UserController/displayProfile').'/'.$sessionData["username"]?>"
                 >Profile</a></li>
-                <li><a class="dropdown-item" href="<?=base_url('UserController/displayEditProfile')?>">Edit profile</a></li>
-                <li><a class="dropdown-item" href="#">My collections</a></li>
+                <li><a class="dropdown-item" href="#">Saved spots</a></li>
                 <li>
                     <hr class="dropdown-divider">
                 </li>
