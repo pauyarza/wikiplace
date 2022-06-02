@@ -62,7 +62,7 @@
             <!-- fav -->
             <?php if($spot["is_saved"]){?>
                 <img 
-                    src="<?=base_url('img/favWhite.svg');?>"
+                    src="<?=base_url('img/FavWhite.svg');?>"
                     class="favButton faved"
                     id="favButton"
                     onclick="triggerFav(<?=$spot['id_spot']?>)"
@@ -71,7 +71,7 @@
             }else{
             ?>
                 <img 
-                    src="<?=base_url('img/nofavWhite.svg');?>"
+                    src="<?=base_url('img/noFavWhite.svg');?>"
                     class="favButton"
                     id="favButton"
                     onclick="triggerFav(<?=$spot['id_spot']?>)"
