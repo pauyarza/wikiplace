@@ -34,18 +34,20 @@
     </div>
 
     <div class="d-flex justify-content-center">
-        <button 
-            class="profile-btn" 
+        <a 
+            class="btn profile-btn" 
             type="submit"
+            href="<?=base_url('SpotController/displayUserSpots/'.$user['id_user'])?>"
         >
             Created spots
-        </button>
-        <button 
-            class="profile-btn" 
+        </a>
+        <a 
+            class="btn profile-btn" 
             type="submit"
+            href="<?=base_url('SpotController/displaySavedSpots/'.$user['id_user'])?>"
         >
             Saved spots
-        </button>
+        </a>
     </div>
     
 </div>

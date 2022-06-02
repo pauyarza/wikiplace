@@ -60,12 +60,23 @@
                 onclick="reportSpot(<?=$spot['id_spot']?>)"
             >
             <!-- fav -->
-            <img 
-                src="<?=base_url('img/nofavWhite.svg');?>"
-                class="favButton"
-                id="favButton"
-                onclick="triggerFav(<?=$spot['id_spot']?>)"
-            >
+            <?php if($spot["is_saved"]){?>
+                <img 
+                    src="<?=base_url('img/favWhite.svg');?>"
+                    class="favButton faved"
+                    id="favButton"
+                    onclick="triggerFav(<?=$spot['id_spot']?>)"
+                >
+            <?php 
+            }else{
+            ?>
+                <img 
+                    src="<?=base_url('img/nofavWhite.svg');?>"
+                    class="favButton"
+                    id="favButton"
+                    onclick="triggerFav(<?=$spot['id_spot']?>)"
+                >
+            <?php } ?>
             <!-- like -->
             <?php if($spot["is_liked"]){?>
                 <img 
@@ -139,13 +150,28 @@
                         target="_blank"
                     ><i class="fa-solid fa-user"></i> <?=$comment['commenter']?></a>
                     <p><?=$comment['comment']?></p>
-                    <div class="d-flex justify-content-start buttons-comment">
-                        <img 
-                            class="button-comment-spot comment-like" 
-                            src="<?=base_url('img/noLikeWhite.png');?>"
-                            onclick="likeComment(<?=$comment['id_comment']?>)"
-                        >
-                        <span id="totalCommentLikes<?=$comment['id_comment']?>" class="totalCommentLikes">10</span>
+                    <div>
+                        <?php if($comment["userlike"]){ ?>
+                            <div class="likeDiv liked">
+                                <img 
+                                    class="button-comment-spot comment-like"
+                                    id="likeComment<?=$comment['id_comment']?>"
+                                    src="<?=base_url('img/like.png');?>"
+                                    onclick="triggerLikeComment(<?=$comment['id_comment']?>)"
+                                >
+                                <span id="totalCommentLikes<?=$comment['id_comment']?>" class="totalCommentLikes"><?=$comment['likes']?></span>
+                            </div>
+                        <?php }else{ ?>
+                            <div class="likeDiv">
+                                <img 
+                                    class="button-comment-spot comment-like"
+                                    id="likeComment<?=$comment['id_comment']?>"
+                                    src="<?=base_url('img/noLikeWhite.png');?>"
+                                    onclick="triggerLikeComment(<?=$comment['id_comment']?>)"
+                                >
+                                <span id="totalCommentLikes<?=$comment['id_comment']?>" class="totalCommentLikes"><?=$comment['likes']?></span>
+                            </div>
+                        <?php } ?>
                         <img
                             class="button-comment-spot comment-flag" 
                             src="<?=base_url('img/flag.png');?>"

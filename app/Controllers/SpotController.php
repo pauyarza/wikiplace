@@ -15,6 +15,7 @@ class SpotController extends BaseController
         // Load session info to viewData
         $sessionData["is_admin"] = session()->is_admin;
         $sessionData["logged_in"] = session()->logged_in;
+        $sessionData["id_user"] = session()->id_user;
         $sessionData["username"] = session()->username;
         $sessionData["profile_pic_src"] = session()->profile_pic_src;
         $sessionData["welcome_message"] = session()->welcome_message;
@@ -374,19 +375,29 @@ class SpotController extends BaseController
         
         //get comments
         $builder = $this->db->table('comment');
+        if(!session()->id_user) session()->set('id_user', '-1');
         $builder->select('
             comment.id_comment, 
             comment.comment,
-            commenter.username AS commenter    
+            commenter.username AS commenter,
+            COUNT(comment_like.id_comment_like) AS likes,
+            (SELECT 
+                COUNT(*) ulike 
+                FROM comment_like ulike
+                WHERE ulike.id_user = '.session()->id_user.'
+                AND ulike.id_comment = comment.id_comment
+            ) AS userlike,
         ');
         $builder->where('comment.id_spot', $id_spot);
-        $builder->orderBy('id_comment', 'DESC');
+        $builder->orderBy('likes DESC','id_comment DESC');
         $builder->join('user commenter', 'commenter.id_user = comment.id_user','left');
-    
+        $builder->join('comment_like', 'comment_like.id_comment = comment.id_comment','left');
+        $builder->groupBy('comment.id_comment');
+
         $spot['comments'] = $builder->get()->getResultArray();
 
 
-        //get if has like
+        //get if spot has like
         if(session()->logged_in){
             $builder = $this->db->table('spot_like');
             $builder->select('id_spot_like');
@@ -415,20 +426,20 @@ class SpotController extends BaseController
         //get if is saved
         if(session()->logged_in){
             $builder = $this->db->table('spot_fav');
-            $builder->select('id_spot_like');
+            $builder->select('id_spot_fav');
             $builder->where('id_spot', $id_spot);
             $builder->where('id_user', session()->id_user);
             if($builder->countAllResults() == 0){
-                //not liked
+                //not saved
                 $spot["is_saved"] = false;
             }
             else{
-                //liked
+                //saved
                 $spot["is_saved"] = true;
             }
         }
         else{
-            //not liked
+            //not saved
             $spot["is_saved"] = false;
         }
 
@@ -454,11 +465,12 @@ class SpotController extends BaseController
         $user = $builder->get(1)->getRowArray();
         $this->viewData["title"] = "Spots made by 
             <b><a href='".base_url("UserController/displayProfile/".$user["username"])."' target='_blank'>".
-                $user["username"]
+                "<i class='fa-solid fa-user'></i> ".$user["username"]
             ."</a></b>";
 
         
         //get spots
+        if(!session()->id_user) session()->set('id_user', '-1');
         $builder = $this->db->table('spot');
         $builder->select('
             spot.id_spot,
@@ -468,14 +480,73 @@ class SpotController extends BaseController
             spot.description,
             category.name AS category_name,
             COUNT(spot_like.id_spot_like) AS likes,
-            (select COUNT(*) ulike FROM spot_like ulike
+            (SELECT 
+                COUNT(*) ulike 
+                FROM spot_like ulike
                 WHERE ulike.id_user = '.session()->id_user.'
-                 AND ulike.id_spot = spot.id_spot) AS userlike
+                AND ulike.id_spot = spot.id_spot
+            ) AS userlike,
+            (SELECT 
+                COUNT(*) ufav 
+                FROM spot_fav ufav
+                WHERE ufav.id_user = '.session()->id_user.'
+                AND ufav.id_spot = spot.id_spot
+            ) AS userfav,
         ');
         $builder->join('category', 'category.id_category = spot.id_category','left');
         $builder->join('spot_like', 'spot_like.id_spot = spot.id_spot','left');
         $builder->groupBy('spot.id_spot');
         $builder->where('spot.id_user', $id_user);
+
+        $spots =  $builder->get()->getResultArray();
+        $this->viewData["spots"] = $spots;
+        // foreach($spots as $spot){
+        //     print_r($spot);
+        //     echo ("<br>");
+        // }
+        return view("pages/spot_list", $this->viewData);
+    }
+
+    public function displaySavedSpots($id_user){
+        //get username for title
+        $builder = $this->db->table('user');
+        $builder->select('username');
+        $builder->where('id_user', $id_user);
+        $user = $builder->get(1)->getRowArray();
+        $this->viewData["title"] = 
+        "<b><a href='".base_url("UserController/displayProfile/".$user["username"])."' target='_blank'>
+            <i class='fa-solid fa-user'></i> ".$user["username"].
+        "</a></b>'s saved spots";
+
+        //get spots
+        if(!session()->id_user) session()->set('id_user', '-1');
+        $builder = $this->db->table('spot');
+        $builder->select('
+            spot.id_spot,
+            spot.latitude,
+            spot.longitude,
+            spot.spot_name,
+            spot.description,
+            category.name AS category_name,
+            COUNT(spot_like.id_spot_like) AS likes,
+            (SELECT 
+                COUNT(*) ulike 
+                FROM spot_like ulike
+                WHERE ulike.id_user = '.session()->id_user.'
+                AND ulike.id_spot = spot.id_spot
+            ) AS userlike,
+            (SELECT 
+                COUNT(*) ufav 
+                FROM spot_fav ufav
+                WHERE ufav.id_user = '.session()->id_user.'
+                AND ufav.id_spot = spot.id_spot
+            ) AS userfav,
+        ');
+        $builder->join('category', 'category.id_category = spot.id_category','left');
+        $builder->join('spot_like', 'spot_like.id_spot = spot.id_spot','left');
+        $builder->join('spot_fav', 'spot_fav.id_spot = spot.id_spot','left');
+        $builder->groupBy('spot.id_spot');
+        $builder->where('spot_fav.id_user', $id_user);
 
         $spots =  $builder->get()->getResultArray();
         $this->viewData["spots"] = $spots;

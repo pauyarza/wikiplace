@@ -30,7 +30,7 @@
         })
         Toast.fire({
             icon: 'success',
-            title: 'User updated successfully'
+            title: 'Profile updated successfully'
         })
     };
     
@@ -46,21 +46,25 @@
             </div>
         </div>
     </div>
-    <script >
-    function readURL(input) {
+    <script>
+    $("#imageUpload").change(function() {
+        $('#imagePreview').css('background-image', 'url("'+base_url+'/img/loadingWhite.svg")');
+        $('#dropdown-profile-pic').css('background-image', 'url("'+base_url+'/img/loadingWhite.svg")');
+    });
+
+    function updatePPic() {
+        input = $("#imageUpload")[0];
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function(e) {
                 $('#imagePreview').css('background-image', 'url('+e.target.result +')');
-                $('#imagePreview').hide();
-                $('#imagePreview').fadeIn(650);
+                $('#dropdown-profile-pic').css('background-image', 'url('+e.target.result +')');
             }
             reader.readAsDataURL(input.files[0]);
         }
     }
-    $("#imageUpload").change(function() {
-        readURL(this);
-    });
+
+
     </script>
     
     <h3><?=$sessionData["username"]?></h3>

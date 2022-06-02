@@ -26,9 +26,9 @@
         if ($sessionData["logged_in"]) {
         ?>
         <div class="dropdown">
-
             <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                 <div 
+                    id="dropdown-profile-pic"
                     class="profile_pic"
                     style="background-image: url('<?=$sessionData['profile_pic_src']?>');"
                 >
@@ -36,29 +36,37 @@
                 <span class="dropdown-username"><?php echo $sessionData["username"] ?></span>
             </a>
 
-
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-            
                 <li><a class="dropdown-item" href="<?=base_url('Home') ?>"><img class="logo-dropdown" src="<?php echo base_url('img/logo2.svg') ?>"></a></li>
                 <?php 
                     if ($sessionData["is_admin"]) {
                         ?><li><a class="dropdown-item" href="<?=base_url('admin')?>">Admin 🔑</a></li><?php
                     }
                 ?>
-                <li><a 
-                    class="dropdown-item"
-                    href="<?=base_url('UserController/displayProfile').'/'.$sessionData["username"]?>"
-                >Profile</a></li>
-                <li><a class="dropdown-item" href="#">Saved spots</a></li>
+                <li>
+                    <a 
+                        class="dropdown-item"
+                        href="<?=base_url('UserController/displayProfile').'/'.$sessionData["username"]?>"
+                    >
+                        Profile
+                    </a>
+                </li>
+                <li>
+                    <a 
+                        class="dropdown-item" 
+                        href="<?=base_url('SpotController/displaySavedSpots/'.$sessionData["id_user"])?>"
+                    >
+                        Saved spots
+                    </a>
+                </li>
                 <li>
                     <hr class="dropdown-divider">
                 </li>
                 <li><a class="dropdown-item" href="<?=base_url('UserController/logout')?>" >Log Out<i style="margin-left: 7px;" class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
-        </div><?php
-
-        }
+        </div>
+        <?php
+            }
         ?>
-
     </nav>
 </body>

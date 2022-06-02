@@ -10,19 +10,19 @@
 <?= $this->section('content') ?>
 
 <div class="container">
-    <h1 class="abouth1">About us !</h1>
-    <p class="aboutp">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+    <h1 class="abouth1">About us!</h1>
+    <p class="aboutp">
+        We are two junior developers who made this web page with love and passion. We decided to do this project because we care about the Internet as a free tool to bring people and communities together.</p>
     <div class="row aboutimgs">
         <div class="col">
-            <img class="profile" src="<?php echo base_url('img/profile.png'); ?>" alt="" srcset="">
-            <p class="text-center aboutp2" style="color: #FFD800">@Pau Yarza<br>pauyarza.com</p>
-            <p class="text-center aboutp2">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <img class="profile" src="<?php echo base_url('img/pau.jpg'); ?>" alt="" srcset="">
+            <p class="text-center aboutp2">@Pau Yarza<br><a href="https://www.pauyarza.com">pauyarza.com</a></p>
+            <p class="text-center aboutp2">Art is my thing, I love playing my guitar and composing music as much as I like designing websites. Where some people see nothing but shapes and colours, I see emotions and thoughts.</p>
         </div>
         <div class="col">   
-            <img class="profile" src="<?php echo base_url('img/profile.png'); ?>" alt="" srcset="">
-            <p class="text-center aboutp2" style="color: #FFD800">@Xavi Patinyo<br>xpatt.com</p>
-            <p class="text-center aboutp2">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <img class="profile" src="<?php echo base_url('img/xavi.jpg'); ?>" alt="" srcset="">
+            <p class="text-center aboutp2">@Xavier Patiño<br><a href="https://www.xpatinyo.com">xpatinyo.com</a></p>
+            <p class="text-center aboutp2">I have enjoyed playing with computers since childhood, and that has continued up to now, that I can proudly say that I am a web developer!</p>
         </div>
     </div>
 </div>

@@ -13,9 +13,9 @@ class UserController extends BaseController
         // Load session info to viewData
         $sessionData["is_admin"] = session()->is_admin;
         $sessionData["logged_in"] = session()->logged_in;
+        $sessionData["id_user"] = session()->id_user;
         $sessionData["username"] = session()->username;
         $sessionData["mail"] = session()->mail;//only here
-        $sessionData["id_user"] = session()->id_user;//only here
         $sessionData["profile_pic_src"] = session()->profile_pic_src;
         $sessionData["welcome_message"] = session()->welcome_message;
         $this->viewData["sessionData"] = $sessionData;
@@ -71,7 +71,7 @@ class UserController extends BaseController
                 'username'  => $userData["username"],
                 'mail'     => $userData["mail"],
                 'logged_in' => true,
-                'welcome_message' => "Welcome to wikiplace ".$userData["username"]."!",
+                'welcome_message' => "Welcome to Wikiplace ".$userData["username"]."!",
                 'profile_pic_src' => base_url('img/profile.png'),//default img
             ];
             session()->set($sessionData);
@@ -233,9 +233,7 @@ class UserController extends BaseController
                 if($userData["username"]){
                     $builder->set('username', $userData["username"]);
                 }
-                if($userData["description"]){
-                    $builder->set('description', $userData["description"]);
-                } 
+                $builder->set('description', $userData["description"]);
                 $builder->where('id_user',session()->id_user);
         
                 if($builder->update()){

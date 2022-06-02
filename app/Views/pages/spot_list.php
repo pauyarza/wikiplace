@@ -4,6 +4,7 @@
 <?= $this->section('head') ?>
     <title>Wikiplace | Spot list</title>
     <!--Spot list CSS--><link rel="stylesheet" type="text/css" href="<?= base_url('css/spot_list.css'); ?>" />
+    <!--Spot list JS--><script src="<?php echo base_url('js/spot_list.js');?>"></script>
 <?= $this->endSection('head') ?>
 
 <!-- Content -->
@@ -11,22 +12,65 @@
     <div class="container spotListContainer">
         <h1><?=$title?></h1>
         <div class="spots row">
-            <?php foreach($spots as $spot){?>
+            <?php 
+                if(!count($spots)){
+                    echo "<p class='emptyMsg'>This list is empty...</p>";
+                }
+                foreach($spots as $spot){
+            ?>
             <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                 <div class="spot">
                     <div class="topRow row">
+                        <!-- Icon -->
                         <div class="col-2 d-flex align-items-center">
-                            <img src="<?=base_url("icons/parkour.svg")?>" class="categoryImg">
+                            <img src="<?=base_url("icons/".$spot['category_name'].".svg")?>" class="categoryImg">
                         </div>
                         <div class="col-10">
                             <div class="titleActions row">
                                 <h2 class="title col-8"><?=$spot['spot_name']?></h2>
                                 <div class="actions col-4">
-                                    <img class="actionBtn favBtn" src="<?=base_url("img/favGrey.png")?>" alt="save">
-                                    <div class="likeDiv liked">
-                                        <img class="actionBtn likeBtn" src="<?=base_url("img/like.png")?>" alt="like">
-                                        <p class="likeCount"><?=$spot['likes']?></p>
-                                    </div>
+                                    <!-- Fav -->
+                                    <?php if($spot['userfav']){ ?>
+                                        <img
+                                            id="favButton<?=$spot['id_spot']?>"
+                                            class="actionBtn favBtn faved" 
+                                            src="<?=base_url("img/favGrey.png")?>" 
+                                            onclick="triggerSpotListFav(<?=$spot['id_spot']?>)" 
+                                            alt="save"
+                                        >
+                                    <?php }else{?>
+                                        <img 
+                                            id="favButton<?=$spot['id_spot']?>"
+                                            class="actionBtn favBtn" 
+                                            src="<?=base_url("img/noFavGrey.png")?>" 
+                                            onclick="triggerSpotListFav(<?=$spot['id_spot']?>)" 
+                                            alt="save"
+                                        >
+                                    <?php } ?>
+                                    <!-- Like -->
+                                    <?php if($spot['userlike']){ ?>
+                                        <div class="likeDiv">
+                                            <img 
+                                                id="likeButton<?=$spot['id_spot']?>"
+                                                class="actionBtn likeBtn liked" 
+                                                src="<?=base_url("img/like.png")?>" 
+                                                onclick="triggerSpotListLike(<?=$spot['id_spot']?>)" 
+                                                alt="like"
+                                            >
+                                            <p id="totalLikes<?=$spot['id_spot']?>" class="likeCount liked"><?=$spot['likes']?></p>
+                                        </div>
+                                    <?php }else{ ?>
+                                        <div class="likeDiv">
+                                            <img 
+                                                id="likeButton<?=$spot['id_spot']?>"
+                                                class="actionBtn likeBtn" 
+                                                src="<?=base_url("img/noLikeGrey.png")?>" 
+                                                onclick="triggerSpotListLike(<?=$spot['id_spot']?>)" 
+                                                alt="like"
+                                            >
+                                            <p id="totalLikes<?=$spot['id_spot']?>" class="likeCount"><?=$spot['likes']?></p>
+                                        </div>
+                                    <?php } ?>
                                 </div>
                             </div>
                             <div class="descriptionDiv">

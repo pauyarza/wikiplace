@@ -72,3 +72,46 @@ function triggerFav(id_spot){
 
     $(".favButton").toggleClass("faved");
 }
+
+function triggerLikeComment(id_comment){
+    if(!logged_in){
+        $('#registerModal').modal('show');
+    }
+    else{
+        image = $("#likeComment"+id_comment);
+        div = image.parent();
+        //unlike
+        if(div.hasClass("liked")){
+            $.ajax({
+                type: "POST",
+                url: base_url+"/commentController/unlikeComment",
+                data: { id_comment : id_comment },
+                success: function(response)
+                {
+                    $("#totalCommentLikes"+id_comment).html(response);
+                }
+            });
+            image.fadeOut(100, function () {
+                image.attr('src', base_url+'/img/noLikeWhite.png');
+                image.fadeIn(100);
+            });
+        }
+        //like
+        else{
+            $.ajax({
+                type: "POST",
+                url: base_url+"/commentController/likeComment",
+                data: { id_comment : id_comment },
+                success: function(response)
+                {
+                    $("#totalCommentLikes"+id_comment).html(response);
+                }
+            });
+            image.fadeOut(100, function () {
+                image.attr('src', base_url+'/img/like.png');
+                image.fadeIn(100);
+            });
+        }
+        div.toggleClass("liked"); 
+    }
+}

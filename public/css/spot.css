@@ -138,12 +138,24 @@
 
 .comment-flag {
     margin-left: 15px;
+    display: inline;
+}
+
+.liked span{
+    color: #ff3765 !important;
+    transition-duration: 0.3s;
+}
+
+.likeDiv{
+    display: inline;
 }
 
 .totalCommentLikes{
-    color: white;
+    color: rgb(203, 203, 203);
     font-size: 11px;
-    padding-left: 2px;
+    display: inline;
+    margin-left: -2px;
+    margin-bottom: 2px;
 }
 
 .input-new-comment-spot {

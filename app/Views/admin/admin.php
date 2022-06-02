@@ -97,6 +97,7 @@ if(!isset($cat_errors)){
                                 >
                                     <i class="fa-solid fa-user-slash"></i>
                                 </a>
+                                <!-- discard report button -->
                                 <a 
                                     onclick="deleteSpotReport(<?=$spotReport['id_spot_report']?>)"
                                     class="btn btn-sm btn-secondary" 
@@ -149,14 +150,14 @@ if(!isset($cat_errors)){
                             </div>
                             <div class="actions col-12">
                                 <!-- display comment button -->
-                                <a 
-                                    href="<?=base_url('CommentController/displayComment/'.$commentReport['id_comment'])?>"
+                                <button 
+                                    onclick="displayCommentAdmin('<?=$commentReport['comment']?>',<?=$commentReport['id_comment']?>,<?=$commentReport['id_reported']?>,<?=$commentReport['id_comment_report']?>)"
                                     target="_blank"
                                     class="btn btn-sm btn-success" 
                                     title="See comment"
                                 >
                                     <i class="fa-solid fa-eye"></i>
-                                </a>
+                                </button>
                                 <!-- delete comment button -->
                                 <a 
                                     onclick="deleteComment(<?=$commentReport['id_comment']?>)"
@@ -173,6 +174,7 @@ if(!isset($cat_errors)){
                                 >
                                     <i class="fa-solid fa-user-slash"></i>
                                 </a>
+                                <!-- discard report button -->
                                 <a 
                                     onclick="deleteCommentReport(<?=$commentReport['id_comment_report']?>)"
                                     class="btn btn-sm btn-secondary" 

@@ -13,6 +13,7 @@ class CommentController extends BaseController
         // Load session info to viewData
         $sessionData["is_admin"] = session()->is_admin;
         $sessionData["logged_in"] = session()->logged_in;
+        $sessionData["id_user"] = session()->id_user;
         $sessionData["username"] = session()->username;
         $sessionData["profile_pic_src"] = session()->profile_pic_src;
         $sessionData["welcome_message"] = session()->welcome_message;
@@ -83,7 +84,7 @@ class CommentController extends BaseController
             $commentData['id_comment'] = $_POST["id_comment"];
             $commentData['id_user'] = session()->id_user;
 
-            //check that like doesn't exist
+            //check that like doesn't existunlike
             $builder = $this->db->table('comment_like');
             $builder->select('id_comment_like');
             $builder->where('id_comment', $commentData['id_comment']);
@@ -103,6 +104,49 @@ class CommentController extends BaseController
                     echo "database error";
                 }
             }
+        }
+    }
+
+    public function unlikeComment(){//ajax
+        $commentData['id_comment'] = $_POST["id_comment"];
+        $commentData['id_user'] = session()->id_user;
+
+        $builder = $this->db->table('comment_like');
+        $builder->where('id_user', $commentData['id_user']);
+        $builder->where('id_comment', $commentData['id_comment']);
+        $builder->delete();
+
+        //count comment likes
+        $builder = $this->db->table('comment_like');
+        $builder->select('id_comment_like');
+        $builder->where('id_comment', $commentData['id_comment']);
+        $commentLikes = $builder->countAllResults();
+        echo $commentLikes;
+    }
+
+    public function deleteComment(){//ajax
+        $id_comment = $_POST["id_comment"];
+
+        //get id_user comment creator
+        $builder = $this->db->table('comment');
+        $builder->select('id_user');
+        $builder->where('id_comment', $id_comment);
+        $comment = $builder->get(1)->getRowArray();
+
+        //if it's owner or admin
+        if($comment['id_user'] == session()->id_user || session()->is_admin == 1){
+            $builder = $this->db->table('comment');
+            $builder->where('id_comment', $id_comment);
+            //delete comment
+            if($builder->delete()){
+                echo "ok";
+            }
+            else{
+                echo "database error";
+            }
+        }
+        else{
+            echo "You are not the owner!";
         }
     }
 }

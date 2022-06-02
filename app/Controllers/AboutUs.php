@@ -10,6 +10,7 @@ class AboutUs extends BaseController
         // Load session info to viewData
         $sessionData["is_admin"] = session()->is_admin;
         $sessionData["logged_in"] = session()->logged_in;
+        $sessionData["id_user"] = session()->id_user;
         $sessionData["username"] = session()->username;
         $sessionData["profile_pic_src"] = session()->profile_pic_src;
         $sessionData["welcome_message"] = session()->welcome_message;

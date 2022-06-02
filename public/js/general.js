@@ -170,24 +170,6 @@ function reportComment(id_comment){
     }
 }
 
-function likeComment(id_comment){
-    if(!logged_in){
-        $('#registerModal').modal('show');
-    }
-    else{
-        $.ajax({
-            type: "POST",
-            url: base_url+"/CommentController/likeComment",
-            data: { id_comment : id_comment },
-            success: function(response)
-            {
-                console.log(response);
-                $("#totalCommentLikes"+id_comment).html(response);
-            }
-        });
-    }
-}
-
 function deleteSpot(id_spot){//check if it's owner or admin at the controller
     Swal.fire({
         heightAuto: false,
@@ -208,7 +190,7 @@ function deleteSpot(id_spot){//check if it's owner or admin at the controller
                 {
                     if(response == 'ok'){
                         console.log("Spot deleted successfully");
-                        $(".spot"+id_spot).hide('slow', function(){ $target.remove(); });//delete reports from this spot
+                        $(".spot"+id_spot).hide('slow', function(){ $(".spot"+id_spot).remove(); });//delete reports from this spot
                     }
                     else{
                         console.log(response);
@@ -242,8 +224,74 @@ function deleteSpotBanUser(id_spot,id_user){//check if it's admin at the control
                 success: function(response)
                 {
                     if(response == 'ok'){
-                        $(".spot"+id_spot).hide('slow', function(){ $target.remove(); });//delete reports from this spot
+                        $(".spot"+id_spot).hide('slow', function(){ $(".spot"+id_spot).remove(); });//delete reports from this spot
                         console.log("spot deleted successfully");
+                    }
+                    else{
+                        console.log(response);
+                    }
+                }
+            });
+        }
+    })
+}
+
+function deleteCommentAdmin(id_comment){
+    Swal.fire({
+        heightAuto: false,
+        title: 'Delete comment?',
+        icon: 'question',
+        showCancelButton: true,
+        cancelButtonText: 'No',
+        confirmButtonText: 'Yes',
+        confirmButtonColor: '#DC3545',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed){
+            $.ajax({
+                type: "POST",
+                url: base_url+"/commentController/deleteComment",
+                data: { id_comment : id_comment },
+                success: function(response)
+                {
+                    if(response == 'ok'){
+                        console.log("Comment deleted successfully");
+                        $(".comment"+id_comment).hide('slow', function(){$(".comment"+id_comment).remove(); });//delete reports from this comment
+                    }
+                    else{
+                        console.log(response);
+                    }
+                }
+            });
+        }
+    })
+}
+
+function deleteCommentBanUser(id_comment,id_user){//check if it's admin at the controller
+    Swal.fire({
+        heightAuto: false,
+        title: 'Delete comment and ban user?',
+        icon: 'question',
+        showCancelButton: true,
+        cancelButtonText: 'No',
+        confirmButtonText: 'Yes',
+        confirmButtonColor: '#DC3545',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed){
+            if(!id_user) id_user = null;
+            $.ajax({
+                type: "POST",
+                url: base_url+"/admin/deleteCommentBanUser",
+                data: {
+                    id_comment: id_comment,
+                    id_user: id_user
+                },
+                success: function(response)
+                {
+                    if(response == 'ok'){
+                        $(".comment"+id_comment).hide('slow', function(){ $(".comment"+id_comment).remove(); });//delete reports from this comment
+                        console.log("comment deleted successfully");
                     }
                     else{
                         console.log(response);

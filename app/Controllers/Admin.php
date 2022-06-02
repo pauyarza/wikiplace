@@ -14,6 +14,7 @@ class Admin extends BaseController
         // Load session info to viewData
         $sessionData["is_admin"] = session()->is_admin;
         $sessionData["logged_in"] = session()->logged_in;
+        $sessionData["id_user"] = session()->id_user;
         $sessionData["username"] = session()->username;
         $sessionData["profile_pic_src"] = session()->profile_pic_src;
         $sessionData["welcome_message"] = session()->welcome_message;
@@ -62,6 +63,8 @@ class Admin extends BaseController
             comment_report.id_comment,
             comment_report.report_message,
 
+            comment.comment,
+
             reported.id_user AS id_reported,
             reported.username AS username_reported,
 
@@ -69,7 +72,7 @@ class Admin extends BaseController
             reporter.username AS username_reporter,
             
         ');
-        $builder->join('comment', 'comment.id_comment = comment_report.id_comment');//join comment table for knowing comment creator id
+        $builder->join('comment', 'comment.id_comment = comment_report.id_comment');//join comment table for knowing comment creator id and comment itself
         $builder->join('user reported', 'reported.id_user = comment.id_user','left');//join user table for knowing reported comment owner name
         $builder->join('user reporter', 'reporter.id_user = comment_report.id_user','left');//join user table for knowing report creator name
 
@@ -81,7 +84,6 @@ class Admin extends BaseController
         return view("admin/admin", $this->viewData);
     }
 
-    //========= MULTIPLE =========//
     public function deleteSpotBanUser(){
         if(session()->is_admin){
             $id_spot = $_POST["id_spot"];
@@ -91,6 +93,7 @@ class Admin extends BaseController
             if($id_user){
                 $userBuilder = $this->db->table('user');
                 $userBuilder->where('id_user', $id_user);
+                $userDeleted = false;
                 if($userBuilder->delete()){
                     $userDeleted = true;
                 }
@@ -100,7 +103,38 @@ class Admin extends BaseController
             $spotBuilder->where('id_spot', $id_spot);
             
             //delete spot
-            if($spotBuilder->delete()){
+            if($spotBuilder->delete() && $userDeleted){
+                echo "ok";
+            }
+            else{
+                echo "database error";
+            }
+        }
+        else{
+            echo "You are not an admin.";
+        }
+    }
+
+    public function deleteCommentBanUser(){
+        if(session()->is_admin){
+            $id_comment = $_POST["id_comment"];
+            $id_user = $_POST["id_user"];
+
+            //delete user if exists
+            if($id_user){
+                $userBuilder = $this->db->table('user');
+                $userBuilder->where('id_user', $id_user);
+                $userDeleted = false;
+                if($userBuilder->delete()){
+                    $userDeleted = true;
+                }
+            }
+
+            $commentBuilder = $this->db->table('comment');
+            $commentBuilder->where('id_comment', $id_comment);
+            
+            //delete comment
+            if($commentBuilder->delete() && $userDeleted){
                 echo "ok";
             }
             else{
@@ -191,6 +225,17 @@ class Admin extends BaseController
 
         $builder = $this->db->table('spot_report');
         $builder->where('id_spot_report', $reportData['id_spot_report']);
+        
+        if($builder->delete()){
+            echo "ok";
+        }
+    }
+
+    public function deleteCommentReport(){
+        $reportData['id_comment_report'] = $_POST['id_comment_report'];
+
+        $builder = $this->db->table('comment_report');
+        $builder->where('id_comment_report', $reportData['id_comment_report']);
         
         if($builder->delete()){
             echo "ok";

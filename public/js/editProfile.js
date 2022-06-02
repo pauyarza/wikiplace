@@ -12,7 +12,18 @@ $("#imageUpload").change(function () {
         data: form_data,                         
         type: 'post',
         success: function (response) {
-            console.log(response);
+            if(response == "ok"){
+                //toast
+                Swal.mixin({
+                    toast: true,
+                    position: "bottom",
+                    showConfirmButton: false,
+                    timer: 1200,
+                }).fire({
+                    title: "Picture updated"
+                })
+                updatePPic();
+            }
         }
     });
 });

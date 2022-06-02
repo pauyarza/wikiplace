@@ -25,10 +25,15 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 50%;
   }
   .aboutp2{
     margin-top: 25px;
     padding: 0 10px;
     text-align: justify;
     color: white;
+  }
+
+  .aboutp2 a{
+      color: #FFD800;
   }

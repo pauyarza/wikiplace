@@ -103,7 +103,7 @@
             }
         </script>
         <br>
-        <button type="submit" class="btn btn-success send">Send petition</button>
+        <button type="submit" class="btn btn-success send">Add new spot</button>
     </form>
 
     <script>
