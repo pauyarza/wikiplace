@@ -24,6 +24,20 @@ a{
     color: white;
 }
 
+
+/*====== GENERAL CLASSES ======*/
+.btn-back{
+    background-color: #00C897;
+    color: white;
+    border-radius: 50px;
+    height: 33px;
+    width: 33px;
+    padding: 2.2px 0 0 !important;
+    border: 2px solid white;
+    display: inline-block;
+}
+
+
 /*====== MEDIA QUERY ======*/
 
 @media only screen and (min-width: 1070px){
@@ -69,12 +83,21 @@ a{
     font-family: 'Josefin Sans', sans-serif;
     color: white;
     text-decoration: none;
-    padding-top: 14px;
-    padding-left: 25px;
+    padding-top: 15px;
+    padding-left: 18px;
 }
 
 .menu-link:hover{
     color: #FFD365;
+}
+
+#menu-logo{
+    height: 20px;
+    margin: 0 0 8px 15px;
+}
+
+#menu-logo img{
+    height: 100%;
 }
 
 

@@ -4,16 +4,21 @@
     max-width: 540px;
 }
 
-.new-spot-form input,
-.new-spot-form textarea,
-.new-spot-form select {
+.new-spot-form .spot-input{
     border: none;
     outline: none;
     border-bottom: 3px solid #00C897;
-    background-color: #e8f0f265;
+    background-color: #d4d4d442 !important;
+    color: white;
     font-family: 'Josefin Sans', sans-serif;
     margin-top: 5px;
     margin-bottom: 20px;
+
+
+}
+
+.new-spot-form .spot-input::placeholder {
+    color: rgb(182, 182, 182);
 }
 
 .new-spot-form label {
@@ -27,7 +32,7 @@
     transition: all 0.5s;
     background-color: #00C897;
     border: none;
-    color: #141E27;
+    color: white;
     max-height: 36px;
 }
 
@@ -36,4 +41,10 @@
     color: #00C897;
     margin-top: 25px;
     margin-bottom: 25px;
+    display: inline-block;
+    font-size: 36px;
+}
+
+.btn-back{
+    margin: 0 9px 17px 0;
 }

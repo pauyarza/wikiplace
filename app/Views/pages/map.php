@@ -223,8 +223,22 @@
             zoomControl: false,
         });
 
-        //default spawn
-        if(!selectedSpotId){
+        //spawn coords
+        if(selectedSpotId){
+            var selectedSpotLat = '<?php if(isset($selectedSpot)) echo $selectedSpot['latitude']?>';
+            var selectedSpotLng = '<?php if(isset($selectedSpot)) echo $selectedSpot['longitude']?>';
+            map.flyTo([selectedSpotLat,selectedSpotLng], 15, {
+                animate: true,
+                duration: 0.5
+            });
+        }
+        else if(localStorage.getItem('lastCoords')){
+            var lastCoords = JSON.parse(localStorage.getItem('lastCoords'));
+            var lastZoom = localStorage.getItem('lastZoom');
+
+            map.setView(lastCoords,lastZoom);
+        }
+        else{
             //move map to location by IP
             $.getJSON('https://geolocation-db.com/json/').done(function(location){
                 latlng = new L.LatLng(location.latitude, location.longitude);
@@ -234,22 +248,22 @@
                 });
             });
         }
-        else{
-            var selectedSpotLat = '<?php if(isset($selectedSpot)) echo $selectedSpot['latitude']?>';
-            var selectedSpotLng = '<?php if(isset($selectedSpot)) echo $selectedSpot['longitude']?>';
-            map.flyTo([selectedSpotLat,selectedSpotLng], 15, {
-                animate: true,
-                duration: 0.5
-            });
-        }
+        
+        //=======MAP LISTENERS=======//
+        //close category list
         map.on('click', function(e) {
             newCategoryMenuOpened = false;  
             setCategoryList();
         });
-
         map.on("movestart", function () {
             newCategoryMenuOpened = false;  
             setCategoryList();
+        });
+
+        //save last coords and zoom
+        map.on('move', function() {
+            localStorage.setItem('lastCoords', JSON.stringify(map.getCenter()));
+            localStorage.setItem('lastZoom', map.getZoom());
         });
         
 
@@ -441,7 +455,6 @@
 
         //=======LOAD POPUP DATA=======//
         function loadSpotData(marker,id_spot){
-            console.log("loadSpotData");
             marker.unbindPopup().bindPopup(
                 "<img class='loadingGif' src='<?= base_url('img/loadingBlack.svg')?>'></img>",
                 {'className' : 'spotPopup'}

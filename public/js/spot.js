@@ -52,25 +52,30 @@ function likeSpotDisplaySpot(id_spot){
 }
 
 function triggerFav(id_spot){
-    image = $("#favButton");
-    image.attr('src', base_url+'/img/loadingWhite.svg');
-    if($(".favButton").hasClass("faved")){
-        unfavSpot(id_spot);
-        image.fadeOut(100, function () {
-            image.attr('src', base_url+'/img/nofavWhite.svg');
-            image.fadeIn(100);
-        });
+    if(!logged_in){
+        $('#registerModal').modal('show');
     }
-    //like
     else{
-        favSpot(id_spot);
-        image.fadeOut(100, function () {
-            image.attr('src', base_url+'/img/favWhite.svg');
-            image.fadeIn(100);
-        });
-    }
+        image = $("#favButton");
+        image.attr('src', base_url+'/img/loadingWhite.svg');
+        if($(".favButton").hasClass("faved")){
+            unfavSpot(id_spot);
+            image.fadeOut(100, function () {
+                image.attr('src', base_url+'/img/nofavWhite.svg');
+                image.fadeIn(100);
+            });
+        }
+        //like
+        else{
+            favSpot(id_spot);
+            image.fadeOut(100, function () {
+                image.attr('src', base_url+'/img/favWhite.svg');
+                image.fadeIn(100);
+            });
+        }
 
-    $(".favButton").toggleClass("faved");
+        $(".favButton").toggleClass("faved");
+    }
 }
 
 function triggerLikeComment(id_comment){

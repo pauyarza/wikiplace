@@ -7,8 +7,8 @@
         </div>
 
         <ul id="menu" class="menu d-none d-flex">
-            <li class="menu-item"><a href="<?php echo base_url('map') ?>" class="menu-link">Map</a></li>
-            <li class="menu-item"><a href="<?php echo base_url('aboutUs') ?>" class="menu-link">About Us</a></li>
+            <li class="menu-item"><a href="<?=base_url('map') ?>" class="menu-link">Map</a></li>
+            <li class="menu-item"><a href="<?=base_url('aboutUs') ?>" class="menu-link">About Us</a></li>
 
             <?php
             //NOT LOGGED IN
@@ -20,6 +20,15 @@
             }
             ?>
         </ul>
+        <?php 
+        //menu logo
+        if(url_is('map')){
+            echo '<a href="'.base_url().'" id="menu-logo"><img src="'.base_url('img/logo.svg').'" alt="wikiplace.org"></a>';
+        }
+        else if(!url_is('')){
+            echo '<a href="'.base_url().'" id="menu-logo"><img src="'.base_url('img/logo2.svg').'" alt="wikiplace.org"></a>';
+        }
+        ?>
         
         <?php 
         //LOGGED IN USERBOX

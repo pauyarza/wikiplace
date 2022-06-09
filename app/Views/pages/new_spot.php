@@ -11,12 +11,15 @@
             }
         </script>
     <?php } ?>
-    <!-- New Spot CSS--><link rel="stylesheet" type="text/css" href="<?php echo base_url('css/new_spot.css'); ?>">
+    <!-- New Spot CSS--><link rel="stylesheet" type="text/css" href="<?=base_url('css/new_spot.css')?>">
 <?= $this->endSection('head') ?>
 
 <!-- Content -->
 <?= $this->section('content') ?>
 <div class="container">
+    <a class="btn btn-back" href="<?=base_url('Map')?>">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
     <h1 class="h1-newspot">New spot</h1>
     <?php
     $formAttributes = [
@@ -30,10 +33,11 @@
                 <!-- NAME -->
                 <label for="inputName">Name</label>
                 <input 
+                    placeholder="Spot name..."
                     name="spot_name" 
                     type="text" 
                     id="inputName"
-                    class="form-control <?php if(isset($errors["spot_name"])) echo "is-invalid"?>"
+                    class="form-control spot-input <?php if(isset($errors["spot_name"])) echo "is-invalid"?>"
                     value="<?= $lastTry['spot_name'] ?? ''?>"
                 >
                 <div class="invalid-feedback">
@@ -47,7 +51,7 @@
                     name="id_category" 
                     required 
                     id="categorySelect"
-                    class="form-select <?php if(isset($errors["id_category"])) echo "is-invalid"?>" 
+                    class="form-select spot-input  <?php if(isset($errors["id_category"])) echo "is-invalid"?>" 
                 >
                     <option disabled <?php if(!isset($lastTry["id_category"])) echo "selected"?>>Select a category</option>
                     <?php foreach($categories as $category){ ?>
@@ -73,7 +77,7 @@
             type="file" name="images[]"
             multiple
             accept=".png, .jpg, .jpeg"
-            class="form-control <?php if(isset($errors["images"])) echo "is-invalid"?>"
+            class="form-control spot-input <?php if(isset($errors["images"])) echo "is-invalid"?>"
         >
         <div class="invalid-feedback">
             <?php if(isset($errors["images"])) echo $errors["images"]?>
@@ -82,9 +86,10 @@
         <!-- DESCRIPTION -->
         <label for="descriptionInput">Description (optional)</label>
         <textarea 
+            placeholder="Spot description..."
             name="description" 
             id="descriptionInput" 
-            class="form-control <?php if(isset($errors["description"])) echo "is-invalid"?>"
+            class="form-control spot-input  <?php if(isset($errors["description"])) echo "is-invalid"?>"
             rows="2"><?= $lastTry['description'] ?? ''?></textarea>
         <div class="invalid-feedback">
                 <?php if(isset($errors["description"])) echo $errors["description"]?>
