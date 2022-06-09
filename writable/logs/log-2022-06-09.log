@@ -1,0 +1,58 @@
+CRITICAL - 2022-06-09 20:00:25 --> The framework needs the following extension(s) installed and loaded: intl.
+#0 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(219): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(177): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 C:\xampp\htdocs\wikiplace\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#3 C:\xampp\htdocs\wikiplace\public\index.php(28): require('C:\\xampp\\htdocs...')
+#4 {main}
+CRITICAL - 2022-06-09 20:02:31 --> The framework needs the following extension(s) installed and loaded: intl.
+#0 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(219): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+#1 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(177): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 C:\xampp\htdocs\wikiplace\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#3 C:\xampp\htdocs\wikiplace\public\index.php(28): require('C:\\xampp\\htdocs...')
+#4 {main}
+CRITICAL - 2022-06-09 13:02:37 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'wikiplace'
+#0 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\Home.php(23): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(809): App\Controllers\Home->__construct()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-06-09 13:02:39 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'wikiplace'
+#0 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\Home.php(23): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(809): App\Controllers\Home->__construct()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-06-09 13:02:39 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'wikiplace'
+#0 C:\xampp\htdocs\wikiplace\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\wikiplace\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\wikiplace\app\Controllers\Home.php(23): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(809): App\Controllers\Home->__construct()
+#4 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#5 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-06-09 13:29:20 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\wikiplace\app\Views\parts\menu.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 15)
+#1 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\wikiplace\system\View\View.php(424): CodeIgniter\View\View->render('parts/menu', NULL, true)
+#4 C:\xampp\htdocs\wikiplace\app\Views\layout.php(33): CodeIgniter\View\View->include('parts/menu', NULL)
+#5 C:\xampp\htdocs\wikiplace\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\wikiplace\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\wikiplace\system\View\View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#8 C:\xampp\htdocs\wikiplace\system\Common.php(1089): CodeIgniter\View\View->render('pages/redirecti...', Array, true)
+#9 C:\xampp\htdocs\wikiplace\app\Controllers\UserController.php(160): view('pages/redirecti...', Array)
+#10 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(832): App\Controllers\UserController->logOut()
+#11 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#12 C:\xampp\htdocs\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
