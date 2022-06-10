@@ -1,0 +1,25 @@
+CRITICAL - 2022-06-06 11:19:53 --> Unknown column 'comment_report.report_message' in 'field list'
+#0 C:\wamp64\www\wikiplace\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `comment...', 0)
+#1 C:\wamp64\www\wikiplace\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `comment...')
+#2 C:\wamp64\www\wikiplace\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `comment...')
+#3 C:\wamp64\www\wikiplace\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `comment...', Array, false)
+#4 C:\wamp64\www\wikiplace\app\Controllers\Admin.php(79): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\wikiplace\system\CodeIgniter.php(809): App\Controllers\Admin->__construct()
+#6 C:\wamp64\www\wikiplace\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#7 C:\wamp64\www\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\wamp64\www\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-06 12:03:43 --> Undefined index: report_message
+#0 C:\wamp64\www\wikiplace\app\Controllers\SpotController.php(299): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\wamp64\\www\\w...', 299, Array)
+#1 C:\wamp64\www\wikiplace\system\CodeIgniter.php(832): App\Controllers\SpotController->reportSpot()
+#2 C:\wamp64\www\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SpotController))
+#3 C:\wamp64\www\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-06-06 12:16:29 --> Undefined index: report_message
+#0 C:\wamp64\www\wikiplace\app\Controllers\SpotController.php(299): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\wamp64\\www\\w...', 299, Array)
+#1 C:\wamp64\www\wikiplace\system\CodeIgniter.php(832): App\Controllers\SpotController->reportSpot()
+#2 C:\wamp64\www\wikiplace\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SpotController))
+#3 C:\wamp64\www\wikiplace\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\wikiplace\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

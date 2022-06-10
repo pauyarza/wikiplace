@@ -17,7 +17,7 @@
         <div class="col">
             <img class="profile" src="<?php echo base_url('img/pau.jpg'); ?>" alt="" srcset="">
             <p class="text-center aboutp2">@Pau Yarza<br><a href="https://www.pauyarza.com">pauyarza.com</a></p>
-            <p class="text-center aboutp2">Art is my thing, I love playing my guitar and composing music as much as I like designing websites. Where some people see nothing but shapes and colours, I see emotions and thoughts.</p>
+            <p class="text-center aboutp2">With an artistic background, I love designing and creating websites.</p>
         </div>
         <div class="col">   
             <img class="profile" src="<?php echo base_url('img/xavi.jpg'); ?>" alt="" srcset="">
