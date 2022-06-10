@@ -61,7 +61,7 @@ function triggerFav(id_spot){
         if($(".favButton").hasClass("faved")){
             unfavSpot(id_spot);
             image.fadeOut(100, function () {
-                image.attr('src', base_url+'/img/nofavWhite.svg');
+                image.attr('src', base_url+'/img/noFavWhite.svg');
                 image.fadeIn(100);
             });
         }
