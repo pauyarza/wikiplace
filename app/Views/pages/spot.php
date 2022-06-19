@@ -3,6 +3,7 @@
 <!-- Unique head -->
 <?= $this->section('head') ?>
     <title>Wikiplace | Spot: <?=$spot['spot_name']?></title>
+    <!--Snippet description--><meta name="description" content="See all the information about this spot.">
     <!--Spot CSS--><link rel="stylesheet" type="text/css" href="<?= base_url('css/spot.css'); ?>" />
 <?= $this->endSection('head') ?>
 

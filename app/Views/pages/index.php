@@ -4,6 +4,7 @@
 <!-- Unique head -->
 <?= $this->section('head')?>
     <title>Wikiplace</title>
+    <!--Snippet description--><meta name="description" content="Find and share spots with your community!">
     <!-- Index CSS--><link rel="stylesheet" type="text/css" href="<?php echo base_url('css/index.css'); ?>">
 <?= $this->endSection('head')?>
 

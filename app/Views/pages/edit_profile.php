@@ -3,6 +3,7 @@
 <!-- Unique head -->
 <?= $this->section('head')?>
     <title>Wikiplace | Edit Profile 👤</title>
+    <!--Snippet description--><meta name="description" content="Edit your Wikiplace profile">
     <!-- Profile CSS--><link rel="stylesheet" type="text/css" href="<?php echo base_url('css/profile.css'); ?>">
     <!--Font Awesome--><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
