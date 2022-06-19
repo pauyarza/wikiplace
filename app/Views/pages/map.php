@@ -283,49 +283,72 @@
         function onLocationFound(e) {
             userLocation = e.latlng;
             var radius = e.accuracy / 2 * 10;
-            if(markerUserLocation){
-                map.removeLayer(markerUserLocation);
-                map.removeLayer(circleUserLocation);
-            }
-
-            //marker
-            markerUserLocation = L.marker(
-                e.latlng,
-                {icon:iconHere}
-            ).addTo(map).bindTooltip("You are here").removeEventListener('click');
             
-            //circle
-            circleUserLocation = L.circle(
+            var enoughPrecision = true;
+            if(radius > 900){
+                enoughPrecision = false;
+            }            
+            
+            if(enoughPrecision){
+                if(markerUserLocation){
+                    map.removeLayer(markerUserLocation);
+                }
+                if(circleUserLocation){
+                    map.removeLayer(circleUserLocation);
+                }
+
+                //marker
+                markerUserLocation = L.marker(
+                    e.latlng,
+                    {icon:iconHere}
+                ).addTo(map).bindTooltip("You are here").removeEventListener('click');
+
+                //circle
+                circleUserLocation = L.circle(
                 e.latlng, radius,
                 {
                     fillOpacity: 0.2,
                     opacity: 0.1
                 }
-            ).addTo(map).removeEventListener('click');
-            $("#userLocationButton").show(100);
-            
-            //circleUserLocation.setStyle({fillColor: 'red'});
+                ).addTo(map).removeEventListener('click');
 
-            //display tooltip on first try
-            if(firstUserLocationOpen){
-                firstUserLocationOpen = false;
-                markerUserLocation.openTooltip();
-                setTimeout(function(){//close tooltip after x seconds
-                    markerUserLocation.closeTooltip();
-                }, 4000);
-            }
+                //display button
+                $("#userLocationButton").show(100);
+                //circleUserLocation.setStyle({fillColor: 'red'});
 
+                //display tooltip on first try
+                if(firstUserLocationOpen){
+                    firstUserLocationOpen = false;
+                    markerUserLocation.openTooltip();
+                    setTimeout(function(){//close tooltip after x seconds
+                        markerUserLocation.closeTooltip();
+                    }, 4000);
+                }
+            }           
         }
 
         function setMapToUserLocation(){
+            //display tooltip
             markerUserLocation.openTooltip();
-            setTimeout(function(){//close tooltip after x seconds
+            //close tooltip after x seconds
+            setTimeout(function(){
                 markerUserLocation.closeTooltip();
             }, 4000);
 
-            map.flyTo(userLocation, 14, {
-                    animate: true,
-                    duration: 1.5
+            //zoom in only
+            var zoomToSet;
+            console.log(map.getZoom());
+            if(map.getZoom() < 14){
+                zoomToSet = 14;
+            }
+            else{
+                zoomToSet = map.getZoom();
+            }
+
+            //relocate map
+            map.flyTo(userLocation, zoomToSet, {
+                animate: true,
+                duration: 1.5
             });
         }
 

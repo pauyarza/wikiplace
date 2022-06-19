@@ -63,9 +63,8 @@ a{
     padding: 0;
     list-style: none;
     display: flex;
-    width: 100%;
     max-width: 350px;
-    margin-right: 30px;
+    margin-right: 16px;
     height: 100%;
 }
 
