@@ -7,6 +7,10 @@
     text-align: center !important;
 }
 
+.adminButtons{
+    margin-bottom: 10px;
+}
+
 /*=====CAROUSEL=====*/
 .carousel {
     border: 1px solid white;

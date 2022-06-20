@@ -75,7 +75,6 @@ if(!isset($cat_errors)){
                                 <!-- display spot button -->
                                 <a 
                                     href="<?=base_url('SpotController/displaySpot/'.$spotReport['id_spot'])?>"
-                                    target="_blank"
                                     class="btn btn-sm btn-success" 
                                     title="See spot"
                                 >

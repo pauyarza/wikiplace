@@ -10,6 +10,27 @@
 <!-- Content -->
 <?= $this->section('content') ?>
 <div class="container spotContainer">
+    <?php if($sessionData["is_admin"]) { //print admin buttons if user is admin?>
+    <div class="adminButtons">
+        <!-- delete spot button -->
+        <a 
+        onclick="deleteSpot(<?=$spot['id_spot']?>)"
+        class="btn btn-sm btn-warning" 
+        title="Delete spot"
+        >
+            <i class="fa-solid fa-circle-minus"></i>
+        </a>
+        <!-- delete spot ban user button -->
+        <a 
+        onclick="deleteSpotBanUser(<?=$spot['id_spot']?>,<?=$spot['id_user']?>)"
+        class="btn btn-sm btn-danger" 
+            title="Delete spot and ban user"
+        >
+            <i class="fa-solid fa-user-slash"></i>
+        </a>
+    </div>
+    <?php } ?>
+    
     <?php if(isset($spot['images_src'])){ //print carousel if images exist?>
     <!-- carousel -->
     <div id="carouselUserIndicators" class="carousel slide" data-bs-ride="carousel">

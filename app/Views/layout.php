@@ -24,6 +24,9 @@
                 echo "var logged_in = false;";
             }
             echo "var base_url='".base_url('/')."';";
+            echo "var uri_string='".uri_string()."';";
+            echo "var previous_url='".previous_url()."';";
+
         ?>
     </script>
 </head>

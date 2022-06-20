@@ -358,11 +358,17 @@ class SpotController extends BaseController
             spot.longitude,
             spot.spot_name,
             spot.description,
+            author.id_user,
             author.username AS author_username,
         ');
         $builder->where('id_spot', $id_spot);
         $builder->join('user author', 'author.id_user = spot.id_user','left');//join user table for knowing author name
         $spot = $builder->get(1)->getRowArray();
+
+        if(!$spot){ //redirect if no spot found
+            $this->viewData["goTo"] = base_url('map');
+            return view("pages/redirecting", $this->viewData);
+        }
 
         //get images
         $builder = $this->db->table('spot_image');

@@ -190,10 +190,18 @@ function deleteSpot(id_spot){//check if it's owner or admin at the controller
                 {
                     if(response == 'ok'){
                         console.log("Spot deleted successfully");
-                        $(".spot"+id_spot).hide('slow', function(){ $(".spot"+id_spot).remove(); });//delete reports from this spot
+                        //user is in admin panel
+                        if(uri_string == 'admin'){
+                            $(".spot"+id_spot).hide('slow', function(){ $(".spot"+id_spot).remove(); });//delete reports from this spot
+                        }
+                        //user is in displaySpot
+                        else if(uri_string.includes('displaySpot')){
+                            alert("Spot deleted successfully");
+                            location.replace(previous_url);
+                        }
                     }
                     else{
-                        console.log(response);
+                        alert(response);
                     }
                 }
             });
@@ -224,11 +232,19 @@ function deleteSpotBanUser(id_spot,id_user){//check if it's admin at the control
                 success: function(response)
                 {
                     if(response == 'ok'){
-                        $(".spot"+id_spot).hide('slow', function(){ $(".spot"+id_spot).remove(); });//delete reports from this spot
-                        console.log("spot deleted successfully");
+                        console.log("Spot deleted successfully");
+                        //user is in admin panel
+                        if(uri_string == 'admin'){
+                            $(".spot"+id_spot).hide('slow', function(){ $(".spot"+id_spot).remove(); });//delete reports from this spot
+                        }
+                        //user is in displaySpot
+                        else if(uri_string.includes('displaySpot')){
+                            alert("Spot and user deleted successfully");
+                            location.replace(previous_url);
+                        }
                     }
                     else{
-                        console.log(response);
+                        alert(response);
                     }
                 }
             });
@@ -294,7 +310,7 @@ function deleteCommentBanUser(id_comment,id_user){//check if it's admin at the c
                         console.log("comment deleted successfully");
                     }
                     else{
-                        console.log(response);
+                        alert(response);
                     }
                 }
             });
