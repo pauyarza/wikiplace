@@ -27,6 +27,7 @@
 
 <!-- Content -->
 <?= $this->section('content') ?>
+    <img src="<?=base_url('img/cross.svg')?>" style="display: none;"><!--preload image to prevent lag-->
     <div id="categoriesListWrapper">
         <div id="categoriesList"></div>
     </div>
