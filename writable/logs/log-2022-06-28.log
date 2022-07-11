@@ -1,0 +1,36 @@
+CRITICAL - 2022-06-28 04:19:38 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'wikiplace'
+#0 /opt/lampp/htdocs/wikiplace/system/Database/BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 /opt/lampp/htdocs/wikiplace/system/Database/BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 /opt/lampp/htdocs/wikiplace/app/Controllers/Home.php(23): CodeIgniter\Database\BaseBuilder->get()
+#3 /opt/lampp/htdocs/wikiplace/system/CodeIgniter.php(809): App\Controllers\Home->__construct()
+#4 /opt/lampp/htdocs/wikiplace/system/CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#5 /opt/lampp/htdocs/wikiplace/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /opt/lampp/htdocs/wikiplace/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-06-28 04:19:40 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'wikiplace'
+#0 /opt/lampp/htdocs/wikiplace/system/Database/BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 /opt/lampp/htdocs/wikiplace/system/Database/BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 /opt/lampp/htdocs/wikiplace/app/Controllers/Home.php(23): CodeIgniter\Database\BaseBuilder->get()
+#3 /opt/lampp/htdocs/wikiplace/system/CodeIgniter.php(809): App\Controllers\Home->__construct()
+#4 /opt/lampp/htdocs/wikiplace/system/CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#5 /opt/lampp/htdocs/wikiplace/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /opt/lampp/htdocs/wikiplace/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-06-28 04:25:51 --> Trying to access array offset on value of type null
+#0 /opt/lampp/htdocs/wikiplace/app/Views/parts/menu.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', '/opt/lampp/htdo...', 15)
+#1 /opt/lampp/htdocs/wikiplace/system/View/View.php(210): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/wikiplace/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /opt/lampp/htdocs/wikiplace/system/View/View.php(424): CodeIgniter\View\View->render('parts/menu', NULL, true)
+#4 /opt/lampp/htdocs/wikiplace/app/Views/layout.php(35): CodeIgniter\View\View->include('parts/menu', NULL)
+#5 /opt/lampp/htdocs/wikiplace/system/View/View.php(210): include('/opt/lampp/htdo...')
+#6 /opt/lampp/htdocs/wikiplace/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 /opt/lampp/htdocs/wikiplace/system/View/View.php(226): CodeIgniter\View\View->render('layout', Array, true)
+#8 /opt/lampp/htdocs/wikiplace/system/Common.php(1089): CodeIgniter\View\View->render('pages/redirecti...', Array, true)
+#9 /opt/lampp/htdocs/wikiplace/app/Controllers/UserController.php(160): view('pages/redirecti...', Array)
+#10 /opt/lampp/htdocs/wikiplace/system/CodeIgniter.php(832): App\Controllers\UserController->logOut()
+#11 /opt/lampp/htdocs/wikiplace/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#12 /opt/lampp/htdocs/wikiplace/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 /opt/lampp/htdocs/wikiplace/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
